@@ -1,0 +1,370 @@
+/* ════════════════════════════════════════════════════════
+   4_quiz_account.css  —  퀴즈 · 계정 · 오답노트 스타일
+   ✏️  퀴즈 UI, 계정 화면, 오답노트 UI 수정 시 이 파일 편집
+════════════════════════════════════════════════════════ */
+
+/* ════════════
+   문제 수 선택 화면
+════════════ */
+#quizCountScreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-count-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height));
+  padding: 24px;
+}
+
+.quiz-count-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 40px 32px;
+}
+
+.quiz-count-card h2 {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 700; letter-spacing: 2px;
+  text-align: center; margin-bottom: 6px;
+}
+.quiz-count-card p {
+  font-size: 13px; color: var(--text-secondary);
+  text-align: center; margin-bottom: 28px;
+}
+
+/* 프리셋 버튼 2×2 그리드 */
+.count-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.count-option-btn {
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-btn);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.count-option-btn:hover,
+.count-option-btn.selected {
+  background: var(--accent-glow);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* 직접 입력 행 */
+.custom-count-row { margin-bottom: 24px; }
+
+.custom-count-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-btn);
+  color: var(--text-primary);
+  font-family: var(--font-kr); font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.custom-count-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+
+/* 퀴즈 시작 버튼 */
+.btn-start-quiz {
+  width: 100%; padding: 15px;
+  background: var(--gradient-main);
+  border: none; border-radius: var(--radius-btn);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 700; letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-start-quiz:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,212,255,0.35); }
+
+/* ════════════
+   퀴즈 화면
+════════════ */
+#quizScreen { position: relative; }
+
+/* 퀴즈 헤더 (진행바 포함) */
+.quiz-header {
+  position: sticky;
+  top: 0; z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: var(--header-height);
+  gap: 14px;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 진행바 */
+.quiz-progress-wrap {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-card);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.quiz-progress-bar {
+  height: 100%;
+  background: var(--gradient-main);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.quiz-counter {
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* 퀴즈 콘텐츠 영역 */
+.quiz-content {
+  position: relative; z-index: 1;
+  padding: 0 20px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 문제 카드 (일본어 단어 박스) */
+.question-card {
+  margin-top: 24px;
+  min-height: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px 28px;
+  margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+
+/* 카드 내부 빛 효과 */
+.question-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,212,255,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* 단어 (크게) */
+.quiz-word-jp {
+  font-family: var(--font-jp);
+  font-size: 52px; font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  position: relative; z-index: 1;
+  line-height: 1.2;
+}
+
+/* 발음 (작게) */
+.quiz-word-reading {
+  font-family: var(--font-jp);
+  font-size: 16px;
+  color: var(--accent-blue);
+  margin-top: 12px;
+  text-align: center;
+  position: relative; z-index: 1;
+  opacity: 0.85;
+}
+
+/* 보기 버튼 3열 그리드 */
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.answer-btn {
+  padding: 18px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-kr); font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  min-height: 72px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; line-height: 1.4;
+}
+.answer-btn:hover:not(:disabled) {
+  background: var(--accent-glow);
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+}
+.answer-btn:disabled { cursor: not-allowed; }
+
+/* 정답 / 오답 상태 색상 */
+.answer-btn.correct { background: rgba(100,255,218,0.15); border-color: #64ffda; color: #64ffda; }
+.answer-btn.wrong   { background: rgba(255,77,109,0.15);  border-color: #ff4d6d; color: #ff4d6d; }
+
+/* ── 퀴즈 결과 오버레이 ──────────────────────────────── */
+.quiz-result-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.82);
+  z-index: 300;
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.quiz-result-overlay.show { display: flex; }
+
+.result-card {
+  width: 100%; max-width: 340px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.result-emoji { font-size: 52px; margin-bottom: 16px; }
+
+.result-score {
+  font-family: var(--font-display);
+  font-size: 52px; font-weight: 700;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.result-label { font-size: 14px; color: var(--text-secondary); margin-top: 6px; margin-bottom: 28px; }
+
+.result-btns { display: flex; flex-direction: column; gap: 10px; }
+
+.btn-retry {
+  padding: 13px;
+  background: var(--gradient-main);
+  border: none; border-radius: var(--radius-btn);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700; letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-retry:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,212,255,0.3); }
+
+.btn-to-list {
+  padding: 13px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-btn);
+  color: var(--text-secondary);
+  font-family: var(--font-kr); font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-to-list:hover { border-color: var(--accent-blue); color: var(--text-primary); }
+
+/* ════════════
+   계정 화면
+════════════ */
+#accountScreen { position: relative; }
+
+.account-content {
+  position: relative; z-index: 1;
+  padding: 28px 20px 60px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.account-avatar {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: var(--gradient-main);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px;
+  margin: 0 auto 24px;
+}
+
+/* 정보 카드 박스 */
+.account-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 22px;
+  margin-bottom: 14px;
+}
+
+.account-card h3 {
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.account-field        { margin-bottom: 14px; }
+.account-field:last-child { margin-bottom: 0; }
+
+.account-field label {
+  display: block;
+  font-size: 11px; color: var(--text-secondary);
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.account-field input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-kr); font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.account-field input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+
+.btn-save {
+  width: 100%; padding: 14px;
+  background: var(--gradient-main);
+  border: none; border-radius: var(--radius-btn);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700; letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 6px;
+}
+.btn-save:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,212,255,0.3); }
+
+/* ════════════
+   오답 노트 화면
+════════════ */
+#wrongNoteScreen { position: relative; }
+
+.wrongnote-content {
+  position: relative; z-index: 1;
+  padding: 14px 20px 60px;
+  max-width: 640px;
+  margin: 0 auto;
+}

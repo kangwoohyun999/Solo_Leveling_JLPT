@@ -1,0 +1,372 @@
+/* ════════════════════════════════════════════════════════
+   3_main.css  —  메인화면 · 헤더 · 드로어 · 단어목록 스타일
+   ✏️  메인 화면 레이아웃, 레벨 버튼, 단어 카드 수정 시 편집
+════════════════════════════════════════════════════════ */
+
+/* ════════════
+   공통 헤더 바
+════════════ */
+.page-header {
+  position: sticky;
+  top: 0; z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  height: var(--header-height);
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-header-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
+
+/* ════════════
+   메인 헤더
+════════════ */
+.main-header {
+  position: sticky;
+  top: 0; z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: var(--header-height);
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 로고 아이콘 (헤더용 소형) */
+.header-logo {
+  width: 36px; height: 36px;
+  background: var(--gradient-main);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+
+/* 앱 이름 (중앙) */
+.header-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 햄버거 버튼 (≡) */
+.hamburger-btn {
+  display: flex; flex-direction: column; gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background: none; border: none;
+  transition: background 0.2s;
+}
+.hamburger-btn:hover { background: var(--accent-glow); }
+.hamburger-btn span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+}
+
+/* ════════════
+   사이드 드로어
+════════════ */
+
+/* 반투명 오버레이 */
+.drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  display: none;
+  backdrop-filter: blur(4px);
+}
+.drawer-overlay.open { display: block; }
+
+/* 드로어 패널 */
+.drawer {
+  position: fixed;
+  top: 0; right: -300px;
+  width: 280px; height: 100vh;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  z-index: 201;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex; flex-direction: column;
+  overflow-y: auto;
+}
+.drawer.open { right: 0; }
+
+.drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-title {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 700; letter-spacing: 1px;
+  color: var(--text-accent);
+}
+
+.drawer-close {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.drawer-close:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+
+/* 유저 영역 */
+.drawer-user {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--gradient-main);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.drawer-username { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.drawer-email    { font-size: 12px; color: var(--text-secondary); margin-top: 3px; }
+
+/* 메뉴 아이템 */
+.drawer-menu { padding: 16px; flex: 1; }
+
+.drawer-menu-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 4px;
+  border: none; background: none;
+  width: 100%; text-align: left;
+  color: var(--text-secondary);
+  font-family: var(--font-kr); font-size: 14px;
+}
+.drawer-menu-item:hover { background: var(--accent-glow); color: var(--text-primary); }
+.drawer-menu-item .menu-icon { font-size: 18px; width: 24px; text-align: center; }
+
+/* 로그아웃 */
+.drawer-logout { padding: 16px; border-top: 1px solid var(--border-color); }
+
+.btn-logout {
+  width: 100%; padding: 12px;
+  background: rgba(255, 77, 109, 0.1);
+  border: 1px solid rgba(255, 77, 109, 0.3);
+  border-radius: var(--radius-btn);
+  color: #ff4d6d;
+  font-family: var(--font-kr); font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-logout:hover { background: rgba(255, 77, 109, 0.22); }
+
+/* ════════════
+   메인 콘텐츠
+════════════ */
+#mainScreen { position: relative; }
+
+.main-content {
+  position: relative; z-index: 1;
+  padding: 32px 20px 60px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.main-greeting { margin-bottom: 28px; }
+.main-greeting h2 {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 700; letter-spacing: 1px;
+}
+.main-greeting p { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+/* ════════════
+   레벨 버튼 목록
+════════════ */
+.level-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.level-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 왼쪽 강조 줄 (hover 시 나타남) */
+.level-btn::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gradient-main);
+  border-radius: 0 2px 2px 0;
+  transform: scaleY(0);
+  transition: transform 0.25s ease;
+}
+.level-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-active);
+  transform: translateX(4px);
+  box-shadow: -4px 0 20px rgba(0,212,255,0.08);
+}
+.level-btn:hover::before  { transform: scaleY(1); }
+.level-btn:disabled       { opacity: 0.45; cursor: not-allowed; }
+.level-btn:disabled:hover { transform: none; box-shadow: none; border-color: var(--border-color); }
+
+.level-btn-left { display: flex; align-items: center; gap: 16px; }
+
+/* 레벨 뱃지 (왼쪽 작은 박스) */
+.level-badge {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 13px; font-weight: 700; letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.level-btn-info h3 {
+  font-family: var(--font-display);
+  font-size: 16px; font-weight: 700; letter-spacing: 1px;
+  color: var(--text-primary);
+}
+.level-btn-info p { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+.level-btn-arrow {
+  font-size: 20px; color: var(--text-secondary);
+  transition: color 0.2s, transform 0.2s;
+}
+.level-btn:hover .level-btn-arrow { color: var(--accent-blue); transform: translateX(4px); }
+
+/* ── 레벨별 뱃지 색상 ────────────────────────────────── */
+/* ✏️ 레벨 색상 변경 시 아래만 수정 */
+.level-n5   .level-badge { background: rgba(100,255,218,0.15); color: #64ffda; }
+.level-n4   .level-badge { background: rgba(0,212,255,0.15);   color: #00d4ff; }
+.level-n3   .level-badge { background: rgba(123,47,255,0.15);  color: #a78bfa; }
+.level-n2   .level-badge { background: rgba(255,165,0,0.15);   color: #ffa500; }
+.level-n1   .level-badge { background: rgba(255,77,109,0.15);  color: #ff4d6d; }
+.level-renk .level-badge { background: rgba(255,215,0,0.15);   color: #ffd700; }
+
+/* ════════════
+   단어 목록 화면
+════════════ */
+#wordScreen { position: relative; }
+
+.word-header-badge {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  flex-shrink: 0;
+}
+
+/* 목록 영역 */
+.word-list-content {
+  position: relative; z-index: 1;
+  padding: 14px 20px 110px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* 컬럼 헤더 행 */
+.word-list-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1fr;
+  gap: 12px;
+  padding: 8px 20px;
+  margin-bottom: 6px;
+}
+.word-list-header span {
+  font-size: 11px; letter-spacing: 1.5px;
+  color: var(--text-secondary); text-transform: uppercase;
+}
+.word-list-header span:last-child { text-align: right; }
+
+/* 단어 카드 한 줄 */
+.word-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  animation: slideIn 0.3s ease backwards;
+}
+.word-card:hover {
+  border-color: var(--border-active);
+  background: var(--bg-card-hover);
+  transform: translateX(3px);
+}
+
+/* 단어 카드 내부 요소 */
+.word-jp      { font-family: var(--font-jp); font-size: 18px; font-weight: 700; }
+.word-reading { font-family: var(--font-jp); font-size: 13px; color: var(--accent-blue); }
+.word-kr      { font-size: 13px; color: var(--text-secondary); text-align: right; }
+
+/* ── Q (퀴즈) 플로팅 버튼 ────────────────────────────── */
+.quiz-fab {
+  position: fixed;
+  bottom: 28px; right: 22px;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--gradient-main);
+  border: none;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 700;
+  cursor: pointer;
+  z-index: 150;
+  display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,212,255,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+}
+.quiz-fab.visible { display: flex; }
+.quiz-fab:hover   { transform: scale(1.12); box-shadow: 0 8px 32px rgba(0,212,255,0.55); }

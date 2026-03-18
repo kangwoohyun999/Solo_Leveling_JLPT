@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>SLW — Solo Leveling Word</title>
+  <meta name="description" content="JLPT 일본어 단어 학습 앱">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!--
+  ══════════════════════════════════════════════
+  CSS 로드 순서
+    1_base.css         → 변수·리셋·공통 요소
+    2_login.css        → 로그인·회원가입 스타일
+    3_main.css         → 메인·헤더·드로어·단어목록
+    4_quiz_account.css → 퀴즈·계정·오답노트
+  ══════════════════════════════════════════════
+  -->
+  <link rel="stylesheet" href="./css/1_base.css">
+  <link rel="stylesheet" href="./css/2_login.css">
+  <link rel="stylesheet" href="./css/3_main.css">
+  <link rel="stylesheet" href="./css/4_quiz_account.css">
+</head>
+<body>
+
+<!-- 배경 격자 (고정, 모든 화면 공통) -->
+<div class="grid-bg"></div>
+
+<!-- 토스트 알림 -->
+<div class="toast" id="toast"></div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 1]  로그인 화면
+     파일: css/2_login.css  |  js/3_auth.js
+══════════════════════════════════════════════════════ -->
+<div id="loginScreen" class="screen active">
+
+  <div class="login-container">
+
+    <!-- 로고 & 타이틀 -->
+    <div class="login-logo-area">
+      <div class="login-logo">⚔</div>
+      <div class="login-title">SOLO LEVELING WORD</div>
+      <div class="login-subtitle">JLPT 단어 학습 플랫폼</div>
+    </div>
+
+    <!-- 로그인 폼 -->
+    <div class="login-card">
+      <div class="form-group">
+        <label class="form-label" for="loginEmail">이메일</label>
+        <input class="form-input" type="email" id="loginEmail"
+               placeholder="example@email.com" autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="loginPw">비밀번호</label>
+        <input class="form-input" type="password" id="loginPw"
+               placeholder="비밀번호 입력" autocomplete="current-password">
+      </div>
+
+      <div class="error-msg" id="loginError"></div>
+
+      <button class="btn-login" id="btnLogin">LOGIN</button>
+
+      <div class="login-divider"><span>또는</span></div>
+
+      <button class="btn-register-outline" id="btnOpenRegister">계정 만들기</button>
+    </div>
+
+  </div>
+</div><!-- /loginScreen -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [MODAL]  회원가입 모달
+     파일: css/2_login.css  |  js/3_auth.js
+══════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal-card">
+
+    <div class="modal-close-row">
+      <button class="modal-close-btn" id="btnCloseRegister">✕</button>
+    </div>
+
+    <div class="modal-title">회원가입</div>
+
+    <div class="form-group">
+      <label class="form-label">이름</label>
+      <input class="form-input" type="text" id="regName" placeholder="이름 입력">
+    </div>
+    <div class="form-group">
+      <label class="form-label">이메일</label>
+      <input class="form-input" type="email" id="regEmail" placeholder="이메일 입력">
+    </div>
+    <div class="form-group">
+      <label class="form-label">비밀번호</label>
+      <input class="form-input" type="password" id="regPw" placeholder="비밀번호 입력">
+    </div>
+
+    <div class="error-msg" id="regError"></div>
+
+    <button class="btn-login" id="btnRegister">REGISTER</button>
+
+  </div>
+</div><!-- /registerModal -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 2]  메인 화면
+     파일: css/3_main.css  |  js/4_wordlist.js
+══════════════════════════════════════════════════════ -->
+<div id="mainScreen" class="screen">
+
+  <!-- ── 상단 헤더 ── -->
+  <header class="main-header">
+    <!-- 왼쪽: 로고 -->
+    <div class="header-logo">⚔</div>
+
+    <!-- 중앙: 앱 이름 -->
+    <div class="header-title">SLW</div>
+
+    <!-- 오른쪽: 햄버거(≡) 메뉴 버튼 -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="메뉴 열기">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ── 사이드 드로어 오버레이 ── -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- ── 사이드 드로어 패널 ── -->
+  <nav class="drawer" id="mainDrawer">
+
+    <div class="drawer-header">
+      <span class="drawer-title">MENU</span>
+      <button class="drawer-close" id="drawerCloseBtn" aria-label="메뉴 닫기">✕</button>
+    </div>
+
+    <!-- 유저 정보 -->
+    <div class="drawer-user">
+      <div class="drawer-avatar">👤</div>
+      <div class="drawer-username" id="drawerUsername">사용자</div>
+      <div class="drawer-email"    id="drawerEmail"></div>
+    </div>
+
+    <!-- 메뉴 항목 -->
+    <div class="drawer-menu">
+      <button class="drawer-menu-item" id="drawerMenuAccount">
+        <span class="menu-icon">⚙️</span>
+        <span>계정 정보 (정보 수정)</span>
+      </button>
+      <button class="drawer-menu-item" id="drawerMenuWrong">
+        <span class="menu-icon">📝</span>
+        <span>오답 노트</span>
+      </button>
+    </div>
+
+    <!-- 로그아웃 -->
+    <div class="drawer-logout">
+      <button class="btn-logout" id="btnLogout">로그아웃</button>
+    </div>
+
+  </nav><!-- /drawer -->
+
+  <!-- ── 중간 & 하단 콘텐츠: 레벨 선택 버튼 ── -->
+  <main class="main-content">
+
+    <div class="main-greeting">
+      <h2>LEVEL SELECT</h2>
+      <p>학습할 단어 레벨을 선택하세요</p>
+    </div>
+
+    <!-- 레벨 버튼 목록 (세로 6개) -->
+    <div class="level-grid">
+
+      <!-- 연계 (준비 중 — 버튼만 존재, 기능 미구현) -->
+      <button class="level-btn level-renk" data-level="RENK" disabled>
+        <div class="level-btn-left">
+          <div class="level-badge">연계</div>
+          <div class="level-btn-info">
+            <h3>연계</h3>
+            <p>준비 중 · Coming Soon</p>
+          </div>
+        </div>
+        <span class="level-btn-arrow" style="opacity:0.3">›</span>
+      </button>
+
+      <!-- N5 -->
+      <button class="level-btn level-n5" data-level="N5">
+        <div class="level-btn-left">
+          <div class="level-badge">N5</div>
+          <div class="level-btn-info">
+            <h3>JLPT N5</h3>
+            <p>입문 · 기초 단어</p>
+          </div>
+        </div>
+        <span class="level-btn-arrow">›</span>
+      </button>
+
+      <!-- N4 -->
+      <button class="level-btn level-n4" data-level="N4">
+        <div class="level-btn-left">
+          <div class="level-badge">N4</div>
+          <div class="level-btn-info">
+            <h3>JLPT N4</h3>
+            <p>초급 · 일상 회화</p>
+          </div>
+        </div>
+        <span class="level-btn-arrow">›</span>
+      </button>
+
+      <!-- N3 -->
+      <button class="level-btn level-n3" data-level="N3">
+        <div class="level-btn-left">
+          <div class="level-badge">N3</div>
+          <div class="level-btn-info">
+            <h3>JLPT N3</h3>
+            <p>중급 · 실생활 활용</p>
+          </div>
+        </div>
+        <span class="level-btn-arrow">›</span>
+      </button>
+
+      <!-- N2 -->
+      <button class="level-btn level-n2" data-level="N2">
+        <div class="level-btn-left">
+          <div class="level-badge">N2</div>
+          <div class="level-btn-info">
+            <h3>JLPT N2</h3>
+            <p>중상급 · 비즈니스</p>
+          </div>
+        </div>
+        <span class="level-btn-arrow">›</span>
+      </button>
+
+      <!-- N1 -->
+      <button class="level-btn level-n1" data-level="N1">
+        <div class="level-btn-left">
+          <div class="level-badge">N1</div>
+          <div class="level-btn-info">
+            <h3>JLPT N1</h3>
+            <p>최고급 · 전문 어휘</p>
+          </div>
+        </div>
+        <span class="level-btn-arrow">›</span>
+      </button>
+
+    </div><!-- /level-grid -->
+  </main>
+
+</div><!-- /mainScreen -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 3]  단어 목록 화면
+     파일: css/3_main.css  |  js/4_wordlist.js
+══════════════════════════════════════════════════════ -->
+<div id="wordScreen" class="screen">
+
+  <!-- 상단 헤더 -->
+  <header class="page-header">
+    <button class="btn-back" id="btnBackFromWord">‹</button>
+    <span class="page-header-title" id="wordScreenTitle">N5</span>
+    <span class="word-header-badge"  id="wordCountBadge">0개</span>
+  </header>
+
+  <!-- 단어 목록 -->
+  <div class="word-list-content">
+
+    <!-- 컬럼 헤더 -->
+    <div class="word-list-header">
+      <span>단어</span>
+      <span>발음</span>
+      <span style="text-align:right">뜻</span>
+    </div>
+
+    <!-- JS로 동적 생성되는 단어 카드 목록 -->
+    <div id="wordList"></div>
+
+  </div>
+
+  <!-- Q 퀴즈 플로팅 버튼 (스크롤 고정) -->
+  <button class="quiz-fab" id="quizFab" aria-label="퀴즈 시작">Q</button>
+
+</div><!-- /wordScreen -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 4]  문제 수 선택 화면
+     파일: css/4_quiz_account.css  |  js/5_quiz.js
+══════════════════════════════════════════════════════ -->
+<div id="quizCountScreen" class="screen">
+
+  <header class="page-header">
+    <button class="btn-back" id="btnBackFromCount">‹</button>
+    <span class="page-header-title">문제 수 선택</span>
+  </header>
+
+  <div class="quiz-count-wrap">
+    <div class="quiz-count-card">
+
+      <h2>몇 문제 풀까요?</h2>
+      <p>풀고 싶은 단어 수를 선택하세요</p>
+
+      <!-- 프리셋 버튼 (2×2) -->
+      <div class="count-options">
+        <button class="count-option-btn" data-count="5">5</button>
+        <button class="count-option-btn selected" data-count="10">10</button>
+        <button class="count-option-btn" data-count="20">20</button>
+        <button class="count-option-btn" data-count="30">30</button>
+      </div>
+
+      <!-- 직접 입력 -->
+      <div class="custom-count-row">
+        <input class="custom-count-input" type="number"
+               id="customCountInput" min="1" max="200"
+               placeholder="직접 입력 (예: 15)">
+      </div>
+
+      <button class="btn-start-quiz" id="btnStartQuiz">START QUIZ</button>
+
+    </div>
+  </div>
+
+</div><!-- /quizCountScreen -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 5]  퀴즈 화면
+     파일: css/4_quiz_account.css  |  js/5_quiz.js
+══════════════════════════════════════════════════════ -->
+<div id="quizScreen" class="screen">
+
+  <!-- 상단: 뒤로가기 + 진행바 + 진행 카운터 -->
+  <header class="quiz-header">
+    <button class="btn-back" id="btnBackFromQuiz">‹</button>
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-bar" id="quizProgressBar" style="width:0%"></div>
+    </div>
+    <span class="quiz-counter" id="quizCounter">1 / 10</span>
+  </header>
+
+  <div class="quiz-content">
+
+    <!-- 문제 카드 (상단 ~ 중간): 일본어 단어 + 발음 -->
+    <div class="question-card">
+      <div class="quiz-word-jp"      id="quizWordJp">日本語</div>
+      <div class="quiz-word-reading" id="quizWordReading">にほんご</div>
+    </div>
+
+    <!-- 하단: 보기 버튼 3개 (3열) — JS로 동적 생성 -->
+    <div class="answers-grid" id="answersGrid"></div>
+
+  </div>
+
+  <!-- 결과 오버레이 (퀴즈 완료 시 표시) -->
+  <div class="quiz-result-overlay" id="quizResultOverlay">
+    <div class="result-card">
+      <div class="result-emoji" id="resultEmoji">🎉</div>
+      <div class="result-score" id="resultScore">8/10</div>
+      <div class="result-label" id="resultLabel">정답률 80%</div>
+      <div class="result-btns">
+        <button class="btn-retry"   id="btnRetry">RETRY</button>
+        <button class="btn-to-list" id="btnToList">단어 목록으로</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /quizScreen -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 6]  계정 정보 화면
+     파일: css/4_quiz_account.css  |  js/3_auth.js
+══════════════════════════════════════════════════════ -->
+<div id="accountScreen" class="screen">
+
+  <header class="page-header">
+    <button class="btn-back" id="btnBackFromAccount">‹</button>
+    <span class="page-header-title">계정 정보</span>
+  </header>
+
+  <div class="account-content">
+
+    <div class="account-avatar">👤</div>
+
+    <!-- 기본 정보 카드 -->
+    <div class="account-card">
+      <h3>기본 정보</h3>
+      <div class="account-field">
+        <label>이름</label>
+        <input type="text" id="accName" placeholder="이름 입력">
+      </div>
+      <div class="account-field">
+        <label>이메일</label>
+        <input type="email" id="accEmail" placeholder="이메일" readonly
+               style="opacity:0.5; cursor:not-allowed;">
+      </div>
+    </div>
+
+    <!-- 비밀번호 변경 카드 -->
+    <div class="account-card">
+      <h3>비밀번호 변경</h3>
+      <div class="account-field">
+        <label>새 비밀번호</label>
+        <input type="password" id="accPw" placeholder="변경할 비밀번호 (선택 사항)">
+      </div>
+    </div>
+
+    <button class="btn-save" id="btnSaveAccount">저장하기</button>
+
+  </div>
+
+</div><!-- /accountScreen -->
+
+
+<!-- ══════════════════════════════════════════════════════
+     [SCREEN 7]  오답 노트 화면
+     파일: css/4_quiz_account.css  |  js/4_wordlist.js
+══════════════════════════════════════════════════════ -->
+<div id="wrongNoteScreen" class="screen">
+
+  <header class="page-header">
+    <button class="btn-back" id="btnBackFromWrong">‹</button>
+    <span class="page-header-title">오답 노트</span>
+  </header>
+
+  <div class="wrongnote-content">
+    <!-- JS로 동적 생성 -->
+    <div id="wrongNoteList"></div>
+  </div>
+
+</div><!-- /wrongNoteScreen -->
+
+
+<!--
+══════════════════════════════════════════════════════
+  JS 로드 순서 (의존 관계 순서대로 로드)
+    1_state.js   → App 상태 객체, showScreen, showToast
+    2_data.js    → loadWordData (CSV 파싱)
+    3_auth.js    → 로그인·세션·계정 수정
+    4_wordlist.js→ 드로어, 단어목록, 오답노트 렌더링
+    5_quiz.js    → 퀴즈 로직, 오답 저장/불러오기
+    6_init.js    → 이벤트 바인딩 & 앱 시작 (항상 마지막)
+══════════════════════════════════════════════════════
+-->
+<script src="./js/1_state.js"></script>
+<script src="./js/2_data.js"></script>
+<script src="./js/3_auth.js"></script>
+<script src="./js/4_wordlist.js"></script>
+<script src="./js/5_quiz.js"></script>
+<script src="./js/6_init.js"></script>
+
+</body>
+</html>

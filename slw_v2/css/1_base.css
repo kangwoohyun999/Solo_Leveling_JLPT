@@ -1,0 +1,171 @@
+/* ════════════════════════════════════════════════════════
+   1_base.css  —  디자인 변수 & 전역 리셋
+   ✏️  색상, 폰트, 공통 애니메이션 수정 시 이 파일만 편집
+════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+/* ── 디자인 토큰 (색상 · 폰트 · 그림자) ────────────────── */
+:root {
+  /* 배경 */
+  --bg-primary:    #0a0a0f;
+  --bg-secondary:  #0f0f1a;
+  --bg-card:       #12121f;
+  --bg-card-hover: #1a1a2e;
+
+  /* 강조색 */
+  --accent-blue:         #00d4ff;
+  --accent-purple:       #7b2fff;
+  --accent-glow:         rgba(0, 212, 255, 0.12);
+  --accent-purple-glow:  rgba(123, 47, 255, 0.18);
+
+  /* 텍스트 */
+  --text-primary:   #e8eaf6;
+  --text-secondary: #8892b0;
+  --text-accent:    #00d4ff;
+
+  /* 테두리 */
+  --border-color:  rgba(0, 212, 255, 0.15);
+  --border-active: rgba(0, 212, 255, 0.5);
+
+  /* 그림자 */
+  --shadow-blue:   0 0 20px rgba(0, 212, 255, 0.2);
+  --shadow-purple: 0 0 20px rgba(123, 47, 255, 0.3);
+
+  /* 그라디언트 */
+  --gradient-main: linear-gradient(135deg, #00d4ff 0%, #7b2fff 100%);
+
+  /* 폰트 */
+  --font-display: 'Rajdhani', sans-serif;
+  --font-kr:      'Noto Sans KR', sans-serif;
+  --font-jp:      'Noto Sans JP', sans-serif;
+
+  /* 레이아웃 */
+  --header-height: 64px;
+  --max-width:     560px;
+  --radius-card:   14px;
+  --radius-btn:    10px;
+}
+
+/* ── 전역 리셋 ───────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html  { scroll-behavior: smooth; }
+body  {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-kr);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── 스크롤바 ────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-purple); border-radius: 2px; }
+
+/* ── 공통 애니메이션 ─────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0);   box-shadow: var(--shadow-blue), var(--shadow-purple); }
+  50%       { transform: translateY(-6px); box-shadow: 0 10px 40px rgba(0,212,255,0.4), 0 10px 40px rgba(123,47,255,0.4); }
+}
+
+/* ── 화면 공통 ───────────────────────────────────────── */
+.screen { display: none; min-height: 100vh; animation: fadeIn 0.35s ease; }
+.screen.active { display: block; }
+
+/* ── 배경 그리드 (고정) ──────────────────────────────── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 토스트 알림 ─────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border-active);
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 14px;
+  color: var(--text-primary);
+  z-index: 999;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── 공통 에러 메시지 ────────────────────────────────── */
+.error-msg          { color: #ff4d6d; font-size: 12px; margin-top: 8px; display: none; }
+.error-msg.show     { display: block; }
+
+/* ── 공통 폼 요소 ────────────────────────────────────── */
+.form-group  { margin-bottom: 20px; }
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: var(--text-accent);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 212, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-btn);
+  color: var(--text-primary);
+  font-family: var(--font-kr);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.form-input:focus {
+  border-color: var(--accent-blue);
+  background: rgba(0, 212, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+.form-input::placeholder { color: var(--text-secondary); font-size: 14px; }
+
+/* ── 공통 뒤로가기 버튼 ──────────────────────────────── */
+.btn-back {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.btn-back:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+
+/* ── 공통 빈 상태 ────────────────────────────────────── */
+.empty-state      { text-align: center; padding: 60px 20px; }
+.empty-state .empty-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state p    { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
