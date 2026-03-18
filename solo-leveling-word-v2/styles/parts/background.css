@@ -1,0 +1,31 @@
+/* =============================================
+   styles/parts/background.css
+   배경 그리드 / 글로우 효과
+   배경 분위기를 바꾸려면 여기서 수정
+   ============================================= */
+
+/* 격자 그리드 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(61, 107, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 107, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 방사형 배경 글로우 */
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background:
+    radial-gradient(ellipse at 65% 15%, rgba(61, 107, 255, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 85%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}

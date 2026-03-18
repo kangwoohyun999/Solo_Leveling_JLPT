@@ -1,0 +1,174 @@
+/* =============================================
+   styles/parts/components.css
+   버튼, 카드, 모달, 폼 등 UI 컴포넌트
+   ============================================= */
+
+/* ── 공통 버튼 ── */
+.btn-primary {
+  display: block; width: 100%;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  border: none; border-radius: 10px;
+  padding: 14px;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-size: 14px; font-weight: 700; letter-spacing: 2px;
+  cursor: pointer; text-align: center; text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-primary:hover { box-shadow: var(--glow-blue); transform: translateY(-1px); }
+
+.btn-secondary {
+  display: block; width: 100%;
+  background: none;
+  border: 1px solid var(--border-color); border-radius: 10px;
+  padding: 13px;
+  color: var(--text-secondary);
+  font-size: 14px; cursor: pointer;
+  transition: all 0.2s; margin-top: 10px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.btn-secondary:hover { border-color: var(--accent-blue); color: var(--text-primary); }
+
+/* ── 폼 ── */
+.form-group  { margin-bottom: 16px; }
+
+.form-label {
+  display: block;
+  font-size: 11px; letter-spacing: 1.5px;
+  color: var(--text-muted); text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: 'Cinzel', serif;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color); border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 15px; font-family: 'Noto Sans JP', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(61, 107, 255, 0.15);
+}
+
+.form-error {
+  color: var(--accent-red);
+  font-size: 13px; margin-top: 8px;
+}
+
+/* ── 모달 ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--page-padding);
+}
+
+.modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color); border-radius: 16px;
+  padding: 32px;
+  width: 100%; max-width: 340px;
+  box-shadow: var(--glow-blue);
+}
+
+.modal-title {
+  font-family: 'Cinzel', serif;
+  font-size: 18px; font-weight: 700;
+  text-align: center; margin-bottom: 24px;
+  color: var(--accent-cyan); letter-spacing: 2px;
+}
+
+.modal-input-group {
+  display: flex; align-items: center; gap: 14px;
+  justify-content: center; margin-bottom: 16px;
+}
+
+.modal-number-input {
+  width: 80px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color); border-radius: 8px;
+  padding: 10px;
+  color: var(--text-primary);
+  font-size: 22px; text-align: center;
+  font-family: 'Cinzel', serif; font-weight: 700;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.modal-number-input:focus { border-color: var(--accent-blue); }
+
+.modal-step-btn {
+  width: 36px; height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color); border-radius: 8px;
+  color: var(--text-primary); font-size: 20px;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-step-btn:hover { border-color: var(--accent-blue); color: var(--accent-cyan); }
+
+.modal-info {
+  text-align: center;
+  color: var(--text-muted); font-size: 13px;
+  margin-bottom: 24px;
+}
+
+/* ── 단어 카드 ── */
+.word-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color); border-radius: 10px;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center; gap: 12px;
+  transition: all 0.2s;
+}
+.word-card:hover {
+  border-color: rgba(61, 107, 255, 0.4);
+  background: var(--bg-card-hover);
+}
+
+.word-japanese { font-size: 20px; font-weight: 500; }
+.word-reading  { font-size: 13px; color: var(--accent-cyan); text-align: center; }
+.word-meaning  { font-size: 14px; color: var(--text-secondary); text-align: right; }
+
+/* ── 오답 카드 ── */
+.wrong-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 64, 96, 0.2); border-radius: 10px;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  align-items: center; gap: 12px;
+  margin-bottom: 8px;
+}
+
+.wrong-count-badge {
+  background: rgba(255, 64, 96, 0.12);
+  border: 1px solid var(--accent-red); border-radius: 6px;
+  padding: 2px 8px; font-size: 12px;
+  color: var(--accent-red);
+  font-family: 'Cinzel', serif;
+  white-space: nowrap;
+}
+
+/* ── 빈 상태 ── */
+.empty-state {
+  text-align: center; padding: 80px 24px;
+  color: var(--text-muted);
+}
+.empty-state-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+.empty-state-text { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 2px; }
+
+/* ── 알림 배너 ── */
+.alert-success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid var(--accent-green); border-radius: 10px;
+  padding: 12px; text-align: center;
+  color: var(--accent-green); font-size: 14px; margin-bottom: 12px;
+}
