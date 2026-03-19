@@ -1,10 +1,10 @@
-### 📘 Solo Leveling JLPT API
+# 📘 Solo Leveling JLPT API
 
 JLPT 학습을 위한 Solo Leveling.JLPT(@sololeveling.jlpt) 기반 콘텐츠 API입니다.
 문장, 단어, 문제 등을 제공하여 일본어 학습을 보다 재미있게 할 수 있도록 설계되었습니다.
 
 --
-# URL
+## URL
 https://sololevelingjlpt-production.up.railway.app/
 
 --
