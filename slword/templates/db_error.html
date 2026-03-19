@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}DB 오류{% endblock %}
+{% block body %}
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;">
+  <div>
+    <div style="font-size:40px;margin-bottom:16px;">⚠️</div>
+    <h2 style="font-size:18px;margin-bottom:8px;">데이터베이스 연결 실패</h2>
+    <p style="color:var(--muted);font-size:14px;">DATABASE_URL 환경변수를 확인해주세요.</p>
+  </div>
+</div>
+{% endblock %}

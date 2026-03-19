@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}오답노트 — SoloLeveling Word{% endblock %}
+
+{% block extra_style %}
+.note-list { padding:14px 16px 64px; }
+
+.note-card {
+  display:grid;
+  grid-template-columns: 1fr 1.3fr 1fr auto;
+  align-items:center; gap:10px;
+  padding:13px 14px; margin-bottom:8px;
+}
+.nc-word    { font-family:'Noto Sans JP', sans-serif; font-size:16px; font-weight:700; }
+.nc-hira    { font-family:'Noto Sans JP', sans-serif; font-size:12px; color:var(--muted); text-align:center; }
+.nc-meaning { font-size:13px; text-align:right; color:var(--accent2); }
+.nc-del     { color:var(--muted); font-size:15px; padding:4px 6px; transition:color .15s; }
+.nc-del:hover { color:var(--danger); }
+
+.level-tag {
+  display:inline-block; padding:2px 7px;
+  background:rgba(108,99,255,.12); color:var(--accent2);
+  border-radius:4px; font-size:10px; font-family:var(--mono);
+  margin-left:6px; vertical-align:middle;
+}
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title">오답노트</span>
+  <span class="page-sub" id="note-count">{{ notes|length }}개</span>
+</div>
+
+<div class="note-list" id="note-list">
+  {% if notes %}
+    {% for n in notes %}
+    <div class="card note-card" id="note-{{ n.id }}">
+      <div class="nc-word">
+        {{ n.word }}
+        <span class="level-tag">{{ n.level }}</span>
+      </div>
+      <div class="nc-hira">{{ n.hiragana }}</div>
+      <div class="nc-meaning">{{ n.meaning }}</div>
+      <button class="nc-del" onclick="deleteNote({{ n.id }})">🗑</button>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty-state" id="empty-msg">
+      <div class="ei">✨</div>
+      <p>오답노트가 비어있어요!</p>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+async function deleteNote(id) {
+  const res = await fetch(`/api/wrongnote/${id}`, { method: 'DELETE' });
+  if (!res.ok) { toast('삭제 실패', 'err'); return; }
+
+  document.getElementById('note-' + id)?.remove();
+
+  const remaining = document.querySelectorAll('.note-card').length;
+  document.getElementById('note-count').textContent = remaining + '개';
+  if (remaining === 0) {
+    document.getElementById('note-list').innerHTML =
+      '<div class="empty-state"><div class="ei">✨</div><p>오답노트가 비어있어요!</p></div>';
+  }
+}
+</script>
+{% endblock %}

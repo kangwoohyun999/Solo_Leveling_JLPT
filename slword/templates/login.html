@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}로그인 — SoloLeveling Word{% endblock %}
+
+{% block extra_style %}
+.auth-wrap {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(ellipse at 50% 0%, #1a1040 0%, var(--bg) 70%);
+  padding:24px;
+}
+.auth-box { width:100%; max-width:380px; }
+.auth-logo { text-align:center; margin-bottom:36px; }
+.auth-logo .logo-lg {
+  width:54px; height:54px; background:var(--accent); border-radius:14px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:26px; margin-bottom:12px;
+  box-shadow:0 0 30px rgba(108,99,255,.4);
+}
+.auth-logo h1 { font-size:20px; font-weight:700; letter-spacing:.06em; }
+.auth-logo p  { color:var(--muted); font-size:13px; margin-top:4px; }
+
+.auth-tabs {
+  display:flex; background:var(--surface); border-radius:var(--radius);
+  padding:4px; margin-bottom:24px;
+}
+.auth-tab {
+  flex:1; padding:10px; text-align:center;
+  border-radius:8px; color:var(--muted); font-size:14px;
+  transition:all .2s;
+}
+.auth-tab.active { background:var(--accent); color:#fff; }
+{% endblock %}
+
+{% block body %}
+<div class="auth-wrap">
+  <div class="auth-box">
+    <div class="auth-logo">
+      <div class="logo-lg">⚔</div>
+      <h1>SoloLeveling Word</h1>
+      <p>일본어 단어 정복 플랫폼</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active">로그인</button>
+      <button class="auth-tab" onclick="location.href='/register'">회원가입</button>
+    </div>
+
+    <form method="POST" action="/login">
+      <div class="field-group">
+        <label>아이디</label>
+        <input type="text" name="username" placeholder="아이디 입력" autocomplete="username" required>
+      </div>
+      <div class="field-group">
+        <label>비밀번호</label>
+        <input type="password" name="password" placeholder="비밀번호 입력" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn-primary">로그인</button>
+    </form>
+    {% if error %}
+    <p class="msg-error">{{ error }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

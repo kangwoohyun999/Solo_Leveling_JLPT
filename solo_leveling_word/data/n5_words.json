@@ -1,0 +1,3986 @@
+[
+  {
+    "no": 1,
+    "word": "あう",
+    "hiragana": "あう",
+    "meaning": "만나다"
+  },
+  {
+    "no": 2,
+    "word": "あおい",
+    "hiragana": "あおい",
+    "meaning": "푸른"
+  },
+  {
+    "no": 3,
+    "word": "赤い",
+    "hiragana": "あかい",
+    "meaning": "빨간"
+  },
+  {
+    "no": 4,
+    "word": "明い",
+    "hiragana": "あかるい",
+    "meaning": "선명한"
+  },
+  {
+    "no": 5,
+    "word": "秋",
+    "hiragana": "あき",
+    "meaning": "가을"
+  },
+  {
+    "no": 6,
+    "word": "開く",
+    "hiragana": "あく",
+    "meaning": "열리다"
+  },
+  {
+    "no": 7,
+    "word": "開ける",
+    "hiragana": "あける",
+    "meaning": "열기"
+  },
+  {
+    "no": 8,
+    "word": "上げる",
+    "hiragana": "あげる",
+    "meaning": "주다"
+  },
+  {
+    "no": 9,
+    "word": "朝",
+    "hiragana": "あさ",
+    "meaning": "아침"
+  },
+  {
+    "no": 10,
+    "word": "朝御飯",
+    "hiragana": "あさごはん",
+    "meaning": "아침밥"
+  },
+  {
+    "no": 11,
+    "word": "あさって",
+    "hiragana": "あさって",
+    "meaning": "모레"
+  },
+  {
+    "no": 12,
+    "word": "足",
+    "hiragana": "あし",
+    "meaning": "다리"
+  },
+  {
+    "no": 13,
+    "word": "明日",
+    "hiragana": "あした",
+    "meaning": "내일"
+  },
+  {
+    "no": 14,
+    "word": "あそこ",
+    "hiragana": "あそこ",
+    "meaning": "저기"
+  },
+  {
+    "no": 15,
+    "word": "遊ぶ",
+    "hiragana": "あそぶ",
+    "meaning": "놀다"
+  },
+  {
+    "no": 16,
+    "word": "暖かい",
+    "hiragana": "あたたかい",
+    "meaning": "따뜻한"
+  },
+  {
+    "no": 17,
+    "word": "頭",
+    "hiragana": "あたま",
+    "meaning": "머리"
+  },
+  {
+    "no": 18,
+    "word": "新しい",
+    "hiragana": "あたらしい",
+    "meaning": "새로운"
+  },
+  {
+    "no": 19,
+    "word": "あちら",
+    "hiragana": "あちら",
+    "meaning": "저쪽"
+  },
+  {
+    "no": 20,
+    "word": "暑い",
+    "hiragana": "あつい",
+    "meaning": "덥다"
+  },
+  {
+    "no": 21,
+    "word": "熱い",
+    "hiragana": "あつい",
+    "meaning": "뜨거다"
+  },
+  {
+    "no": 22,
+    "word": "厚い",
+    "hiragana": "あつい",
+    "meaning": "두꺼다"
+  },
+  {
+    "no": 23,
+    "word": "あっち",
+    "hiragana": "あっち",
+    "meaning": "저기"
+  },
+  {
+    "no": 24,
+    "word": "後",
+    "hiragana": "あと",
+    "meaning": "나중에"
+  },
+  {
+    "no": 25,
+    "word": "あなた",
+    "hiragana": "あなた",
+    "meaning": "당신"
+  },
+  {
+    "no": 26,
+    "word": "兄",
+    "hiragana": "あに",
+    "meaning": "형"
+  },
+  {
+    "no": 27,
+    "word": "姉",
+    "hiragana": "あね",
+    "meaning": "언니"
+  },
+  {
+    "no": 28,
+    "word": "あの",
+    "hiragana": "あの",
+    "meaning": "그"
+  },
+  {
+    "no": 29,
+    "word": "あの",
+    "hiragana": "あの",
+    "meaning": "음 ..."
+  },
+  {
+    "no": 30,
+    "word": "アパ?ト",
+    "hiragana": "アパ?ト",
+    "meaning": "아파트"
+  },
+  {
+    "no": 31,
+    "word": "あびる",
+    "hiragana": "あびる",
+    "meaning": "목욕하다"
+  },
+  {
+    "no": 32,
+    "word": "危ない",
+    "hiragana": "あぶない",
+    "meaning": "위험하다"
+  },
+  {
+    "no": 33,
+    "word": "甘い",
+    "hiragana": "あまい",
+    "meaning": "달콤한"
+  },
+  {
+    "no": 34,
+    "word": "あまり",
+    "hiragana": "あまり",
+    "meaning": "별로"
+  },
+  {
+    "no": 35,
+    "word": "雨",
+    "hiragana": "あめ",
+    "meaning": "비"
+  },
+  {
+    "no": 36,
+    "word": "飴",
+    "hiragana": "あめ",
+    "meaning": "사탕"
+  },
+  {
+    "no": 37,
+    "word": "洗う",
+    "hiragana": "あらう",
+    "meaning": "씻다"
+  },
+  {
+    "no": 38,
+    "word": "ある",
+    "hiragana": "ある",
+    "meaning": "있다"
+  },
+  {
+    "no": 39,
+    "word": "あるく",
+    "hiragana": "あるく",
+    "meaning": "걷다"
+  },
+  {
+    "no": 40,
+    "word": "あれ",
+    "hiragana": "あれ",
+    "meaning": "그것"
+  },
+  {
+    "no": 41,
+    "word": "いい",
+    "hiragana": "いい",
+    "meaning": "좋은"
+  },
+  {
+    "no": 42,
+    "word": "いいえ",
+    "hiragana": "いいえ",
+    "meaning": "아니오"
+  },
+  {
+    "no": 43,
+    "word": "言う",
+    "hiragana": "いう",
+    "meaning": "말"
+  },
+  {
+    "no": 44,
+    "word": "家",
+    "hiragana": "いえ",
+    "meaning": "집"
+  },
+  {
+    "no": 45,
+    "word": "いかが",
+    "hiragana": "いかが",
+    "meaning": "어떻게"
+  },
+  {
+    "no": 46,
+    "word": "行く",
+    "hiragana": "いく",
+    "meaning": "가다"
+  },
+  {
+    "no": 47,
+    "word": "いくつ",
+    "hiragana": "いくつ",
+    "meaning": "몇"
+  },
+  {
+    "no": 48,
+    "word": "いくら",
+    "hiragana": "いくら",
+    "meaning": "얼마"
+  },
+  {
+    "no": 49,
+    "word": "池",
+    "hiragana": "いけ",
+    "meaning": "연못"
+  },
+  {
+    "no": 50,
+    "word": "いしゃ",
+    "hiragana": "いしゃ",
+    "meaning": "의사"
+  },
+  {
+    "no": 51,
+    "word": "いす",
+    "hiragana": "いす",
+    "meaning": "의자"
+  },
+  {
+    "no": 52,
+    "word": "忙しい",
+    "hiragana": "いそがしい",
+    "meaning": "바쁘다"
+  },
+  {
+    "no": 53,
+    "word": "痛い",
+    "hiragana": "いたい",
+    "meaning": "아프다"
+  },
+  {
+    "no": 54,
+    "word": "一",
+    "hiragana": "いち",
+    "meaning": "일"
+  },
+  {
+    "no": 55,
+    "word": "一日",
+    "hiragana": "いちにち",
+    "meaning": "일일"
+  },
+  {
+    "no": 56,
+    "word": "いちばん",
+    "hiragana": "いちばん",
+    "meaning": "가장"
+  },
+  {
+    "no": 57,
+    "word": "いつ",
+    "hiragana": "いつ",
+    "meaning": "언제"
+  },
+  {
+    "no": 58,
+    "word": "五日",
+    "hiragana": "いつか",
+    "meaning": "5 일"
+  },
+  {
+    "no": 59,
+    "word": "いっしょ",
+    "hiragana": "いっしょ",
+    "meaning": "함께"
+  },
+  {
+    "no": 60,
+    "word": "五つ",
+    "hiragana": "いつつ",
+    "meaning": "다섯"
+  },
+  {
+    "no": 61,
+    "word": "いつも",
+    "hiragana": "いつも",
+    "meaning": "항상"
+  },
+  {
+    "no": 62,
+    "word": "犬",
+    "hiragana": "いぬ",
+    "meaning": "개"
+  },
+  {
+    "no": 63,
+    "word": "今",
+    "hiragana": "いま",
+    "meaning": "지금"
+  },
+  {
+    "no": 64,
+    "word": "意味",
+    "hiragana": "いみ",
+    "meaning": "의미"
+  },
+  {
+    "no": 65,
+    "word": "妹",
+    "hiragana": "いもうと",
+    "meaning": "여동생"
+  },
+  {
+    "no": 66,
+    "word": "嫌",
+    "hiragana": "いや",
+    "meaning": "싫음"
+  },
+  {
+    "no": 67,
+    "word": "入口",
+    "hiragana": "いりぐち",
+    "meaning": "입구"
+  },
+  {
+    "no": 68,
+    "word": "居る",
+    "hiragana": "いる",
+    "meaning": "있다"
+  },
+  {
+    "no": 69,
+    "word": "要る",
+    "hiragana": "いる",
+    "meaning": "필요하다"
+  },
+  {
+    "no": 70,
+    "word": "入れる",
+    "hiragana": "いれる",
+    "meaning": "넣다"
+  },
+  {
+    "no": 71,
+    "word": "色",
+    "hiragana": "いろ",
+    "meaning": "색"
+  },
+  {
+    "no": 72,
+    "word": "いろいろ",
+    "hiragana": "いろいろ",
+    "meaning": "여러가지"
+  },
+  {
+    "no": 73,
+    "word": "上",
+    "hiragana": "うえ",
+    "meaning": "위"
+  },
+  {
+    "no": 74,
+    "word": "後ろ",
+    "hiragana": "うしろ",
+    "meaning": "뒤에"
+  },
+  {
+    "no": 75,
+    "word": "薄い",
+    "hiragana": "うすい",
+    "meaning": "얇다"
+  },
+  {
+    "no": 76,
+    "word": "歌",
+    "hiragana": "うた",
+    "meaning": "노래"
+  },
+  {
+    "no": 77,
+    "word": "歌う",
+    "hiragana": "うたう",
+    "meaning": "노래하다"
+  },
+  {
+    "no": 78,
+    "word": "生まれる",
+    "hiragana": "うまれる",
+    "meaning": "태어나다"
+  },
+  {
+    "no": 79,
+    "word": "海",
+    "hiragana": "うみ",
+    "meaning": "바다"
+  },
+  {
+    "no": 80,
+    "word": "うる",
+    "hiragana": "うる",
+    "meaning": "팔다"
+  },
+  {
+    "no": 81,
+    "word": "煩い",
+    "hiragana": "うるさい",
+    "meaning": "시끄럽다"
+  },
+  {
+    "no": 82,
+    "word": "上着",
+    "hiragana": "うわぎ",
+    "meaning": "겉옷"
+  },
+  {
+    "no": 83,
+    "word": "え",
+    "hiragana": "え",
+    "meaning": "그림"
+  },
+  {
+    "no": 84,
+    "word": "えいが",
+    "hiragana": "えいが",
+    "meaning": "영화"
+  },
+  {
+    "no": 85,
+    "word": "えいがかん",
+    "hiragana": "えいがかん",
+    "meaning": "영화관"
+  },
+  {
+    "no": 86,
+    "word": "英語",
+    "hiragana": "えいご",
+    "meaning": "영어"
+  },
+  {
+    "no": 87,
+    "word": "ええ",
+    "hiragana": "ええ",
+    "meaning": "예"
+  },
+  {
+    "no": 88,
+    "word": "えき",
+    "hiragana": "えき",
+    "meaning": "역"
+  },
+  {
+    "no": 89,
+    "word": "エレベ?タ?",
+    "hiragana": "エレベ?タ?",
+    "meaning": "엘리베이터"
+  },
+  {
+    "no": 90,
+    "word": "鉛筆",
+    "hiragana": "えんぴつ",
+    "meaning": "연필"
+  },
+  {
+    "no": 91,
+    "word": "おいしい",
+    "hiragana": "おいしい",
+    "meaning": "맛있는"
+  },
+  {
+    "no": 92,
+    "word": "多い",
+    "hiragana": "おおい",
+    "meaning": "많은"
+  },
+  {
+    "no": 93,
+    "word": "大きい",
+    "hiragana": "おおきい",
+    "meaning": "큰"
+  },
+  {
+    "no": 94,
+    "word": "大きな",
+    "hiragana": "おおきな",
+    "meaning": "큰"
+  },
+  {
+    "no": 95,
+    "word": "大勢",
+    "hiragana": "おおぜい",
+    "meaning": "대세"
+  },
+  {
+    "no": 96,
+    "word": "お母さん",
+    "hiragana": "おかあさん",
+    "meaning": "엄마"
+  },
+  {
+    "no": 97,
+    "word": "お菓子",
+    "hiragana": "おかし",
+    "meaning": "과자"
+  },
+  {
+    "no": 98,
+    "word": "お金",
+    "hiragana": "おかね",
+    "meaning": "돈"
+  },
+  {
+    "no": 99,
+    "word": "起きる",
+    "hiragana": "おきる",
+    "meaning": "일어나다"
+  },
+  {
+    "no": 100,
+    "word": "置く",
+    "hiragana": "おく",
+    "meaning": "두다"
+  },
+  {
+    "no": 101,
+    "word": "おくさん",
+    "hiragana": "おくさん",
+    "meaning": "부인"
+  },
+  {
+    "no": 102,
+    "word": "お酒",
+    "hiragana": "おさけ",
+    "meaning": "술"
+  },
+  {
+    "no": 103,
+    "word": "お皿",
+    "hiragana": "おさら",
+    "meaning": "접시"
+  },
+  {
+    "no": 104,
+    "word": "伯父",
+    "hiragana": "おじいさん",
+    "meaning": "할아버지"
+  },
+  {
+    "no": 105,
+    "word": "おしえる",
+    "hiragana": "おしえる",
+    "meaning": "가르치다"
+  },
+  {
+    "no": 106,
+    "word": "伯父",
+    "hiragana": "おじさん",
+    "meaning": "아저씨"
+  },
+  {
+    "no": 107,
+    "word": "押す",
+    "hiragana": "おす",
+    "meaning": "밀다"
+  },
+  {
+    "no": 108,
+    "word": "おそい",
+    "hiragana": "おそい",
+    "meaning": "늦다"
+  },
+  {
+    "no": 109,
+    "word": "お茶",
+    "hiragana": "おちゃ",
+    "meaning": "차"
+  },
+  {
+    "no": 110,
+    "word": "お手洗い",
+    "hiragana": "おてあらい",
+    "meaning": "화장실"
+  },
+  {
+    "no": 111,
+    "word": "お父さん",
+    "hiragana": "おとうさん",
+    "meaning": "아버지"
+  },
+  {
+    "no": 112,
+    "word": "弟",
+    "hiragana": "おとうと",
+    "meaning": "동생"
+  },
+  {
+    "no": 113,
+    "word": "男",
+    "hiragana": "おとこ",
+    "meaning": "남자"
+  },
+  {
+    "no": 114,
+    "word": "男の子",
+    "hiragana": "おとこのこ",
+    "meaning": "소년"
+  },
+  {
+    "no": 115,
+    "word": "一昨日",
+    "hiragana": "おととい",
+    "meaning": "그저께"
+  },
+  {
+    "no": 116,
+    "word": "一昨年",
+    "hiragana": "おととし",
+    "meaning": "지난해"
+  },
+  {
+    "no": 117,
+    "word": "大人",
+    "hiragana": "おとな",
+    "meaning": "성인"
+  },
+  {
+    "no": 118,
+    "word": "おなか",
+    "hiragana": "おなか",
+    "meaning": "배"
+  },
+  {
+    "no": 119,
+    "word": "同じ",
+    "hiragana": "おなじ",
+    "meaning": "같은"
+  },
+  {
+    "no": 120,
+    "word": "お兄さん",
+    "hiragana": "おにいさん",
+    "meaning": "형"
+  },
+  {
+    "no": 121,
+    "word": "お姉さん",
+    "hiragana": "おねえさん",
+    "meaning": "언니"
+  },
+  {
+    "no": 122,
+    "word": "おばあさん",
+    "hiragana": "おばあさん",
+    "meaning": "할머니"
+  },
+  {
+    "no": 123,
+    "word": "伯母さん/叔母さん",
+    "hiragana": "おばさん",
+    "meaning": "아주머니"
+  },
+  {
+    "no": 124,
+    "word": "お風呂",
+    "hiragana": "おふろ",
+    "meaning": "목욕"
+  },
+  {
+    "no": 125,
+    "word": "おべんとう",
+    "hiragana": "おべんとう",
+    "meaning": "도시락"
+  },
+  {
+    "no": 126,
+    "word": "おぼえる",
+    "hiragana": "おぼえる",
+    "meaning": "기억하다"
+  },
+  {
+    "no": 127,
+    "word": "おまわりさん",
+    "hiragana": "おまわりさん",
+    "meaning": "경찰"
+  },
+  {
+    "no": 128,
+    "word": "重い",
+    "hiragana": "おもい",
+    "meaning": "무거운"
+  },
+  {
+    "no": 129,
+    "word": "おもしろい",
+    "hiragana": "おもしろい",
+    "meaning": "재미"
+  },
+  {
+    "no": 130,
+    "word": "泳ぐ",
+    "hiragana": "およぐ",
+    "meaning": "수영"
+  },
+  {
+    "no": 131,
+    "word": "降りる",
+    "hiragana": "おりる",
+    "meaning": "내리다"
+  },
+  {
+    "no": 132,
+    "word": "終る",
+    "hiragana": "おわる",
+    "meaning": "끝나다"
+  },
+  {
+    "no": 133,
+    "word": "おんがく",
+    "hiragana": "おんがく",
+    "meaning": "음악"
+  },
+  {
+    "no": 134,
+    "word": "女",
+    "hiragana": "おんな",
+    "meaning": "여자"
+  },
+  {
+    "no": 135,
+    "word": "女の子",
+    "hiragana": "おんなのこ",
+    "meaning": "소녀"
+  },
+  {
+    "no": 136,
+    "word": "がいこく",
+    "hiragana": "がいこく",
+    "meaning": "외국"
+  },
+  {
+    "no": 137,
+    "word": "がいこくじん",
+    "hiragana": "がいこくじん",
+    "meaning": "외국인"
+  },
+  {
+    "no": 138,
+    "word": "かいしゃ",
+    "hiragana": "かいしゃ",
+    "meaning": "회사"
+  },
+  {
+    "no": 139,
+    "word": "階段",
+    "hiragana": "かいだん",
+    "meaning": "계단"
+  },
+  {
+    "no": 140,
+    "word": "買い物",
+    "hiragana": "かいもの",
+    "meaning": "쇼핑"
+  },
+  {
+    "no": 141,
+    "word": "買う",
+    "hiragana": "かう",
+    "meaning": "구매"
+  },
+  {
+    "no": 142,
+    "word": "返す",
+    "hiragana": "かえす",
+    "meaning": "반환하다"
+  },
+  {
+    "no": 143,
+    "word": "かえる",
+    "hiragana": "かえる",
+    "meaning": "돌아"
+  },
+  {
+    "no": 144,
+    "word": "かかる",
+    "hiragana": "かかる",
+    "meaning": "걸리다"
+  },
+  {
+    "no": 145,
+    "word": "かぎ",
+    "hiragana": "かぎ",
+    "meaning": "열쇠"
+  },
+  {
+    "no": 146,
+    "word": "書く",
+    "hiragana": "かく",
+    "meaning": "쓰기"
+  },
+  {
+    "no": 147,
+    "word": "がくせい",
+    "hiragana": "がくせい",
+    "meaning": "학생"
+  },
+  {
+    "no": 148,
+    "word": "かける",
+    "hiragana": "かける",
+    "meaning": "걸다"
+  },
+  {
+    "no": 149,
+    "word": "傘",
+    "hiragana": "かさ",
+    "meaning": "우산"
+  },
+  {
+    "no": 150,
+    "word": "貸す",
+    "hiragana": "かす",
+    "meaning": "빌려"
+  },
+  {
+    "no": 151,
+    "word": "風",
+    "hiragana": "かぜ",
+    "meaning": "바람"
+  },
+  {
+    "no": 152,
+    "word": "風邪",
+    "hiragana": "かぜ",
+    "meaning": "감기"
+  },
+  {
+    "no": 153,
+    "word": "家族",
+    "hiragana": "かぞく",
+    "meaning": "가족"
+  },
+  {
+    "no": 154,
+    "word": "方",
+    "hiragana": "かた",
+    "meaning": "방법"
+  },
+  {
+    "no": 155,
+    "word": "がっこう",
+    "hiragana": "がっこう",
+    "meaning": "학교"
+  },
+  {
+    "no": 156,
+    "word": "カップ",
+    "hiragana": "カップ",
+    "meaning": "컵"
+  },
+  {
+    "no": 157,
+    "word": "家庭",
+    "hiragana": "かてい",
+    "meaning": "가정"
+  },
+  {
+    "no": 158,
+    "word": "角",
+    "hiragana": "かど",
+    "meaning": "모서리"
+  },
+  {
+    "no": 159,
+    "word": "かばん",
+    "hiragana": "かばん",
+    "meaning": "가방"
+  },
+  {
+    "no": 160,
+    "word": "かびん",
+    "hiragana": "かびん",
+    "meaning": "꽃병"
+  },
+  {
+    "no": 161,
+    "word": "紙",
+    "hiragana": "かみ",
+    "meaning": "종이"
+  },
+  {
+    "no": 162,
+    "word": "カメラ",
+    "hiragana": "カメラ",
+    "meaning": "카메라"
+  },
+  {
+    "no": 163,
+    "word": "火曜日",
+    "hiragana": "かようび",
+    "meaning": "화요일"
+  },
+  {
+    "no": 164,
+    "word": "辛い",
+    "hiragana": "からい",
+    "meaning": "맵다"
+  },
+  {
+    "no": 165,
+    "word": "からだ",
+    "hiragana": "からだ",
+    "meaning": "몸"
+  },
+  {
+    "no": 166,
+    "word": "借りる",
+    "hiragana": "かりる",
+    "meaning": "빌리다"
+  },
+  {
+    "no": 167,
+    "word": "かるい",
+    "hiragana": "かるい",
+    "meaning": "가볍다"
+  },
+  {
+    "no": 168,
+    "word": "カレ?",
+    "hiragana": "カレ?",
+    "meaning": "카레"
+  },
+  {
+    "no": 169,
+    "word": "カレンダ?",
+    "hiragana": "カレンダ?",
+    "meaning": "달력"
+  },
+  {
+    "no": 170,
+    "word": "川/河",
+    "hiragana": "かわ",
+    "meaning": "강"
+  },
+  {
+    "no": 171,
+    "word": "かわいい",
+    "hiragana": "かわいい",
+    "meaning": "귀엽다"
+  },
+  {
+    "no": 172,
+    "word": "漢字",
+    "hiragana": "かんじ",
+    "meaning": "한자"
+  },
+  {
+    "no": 173,
+    "word": "木",
+    "hiragana": "き",
+    "meaning": "나무"
+  },
+  {
+    "no": 174,
+    "word": "きいろい",
+    "hiragana": "きいろい",
+    "meaning": "노랗다"
+  },
+  {
+    "no": 175,
+    "word": "消える",
+    "hiragana": "きえる",
+    "meaning": "사라"
+  },
+  {
+    "no": 176,
+    "word": "聞く",
+    "hiragana": "きく",
+    "meaning": "듣다"
+  },
+  {
+    "no": 177,
+    "word": "北",
+    "hiragana": "きた",
+    "meaning": "북"
+  },
+  {
+    "no": 178,
+    "word": "ギタ?",
+    "hiragana": "ギタ?",
+    "meaning": "기타"
+  },
+  {
+    "no": 179,
+    "word": "汚い",
+    "hiragana": "きたない",
+    "meaning": "더러운"
+  },
+  {
+    "no": 180,
+    "word": "喫茶店",
+    "hiragana": "きっさてん",
+    "meaning": "커피숖"
+  },
+  {
+    "no": 181,
+    "word": "切手",
+    "hiragana": "きって",
+    "meaning": "우표"
+  },
+  {
+    "no": 182,
+    "word": "切符",
+    "hiragana": "きっぷ",
+    "meaning": "티켓"
+  },
+  {
+    "no": 183,
+    "word": "昨日",
+    "hiragana": "きのう",
+    "meaning": "어제"
+  },
+  {
+    "no": 184,
+    "word": "九",
+    "hiragana": "きゅう",
+    "meaning": "아홉"
+  },
+  {
+    "no": 185,
+    "word": "牛肉",
+    "hiragana": "ぎゅうにく",
+    "meaning": "쇠고기"
+  },
+  {
+    "no": 186,
+    "word": "牛乳",
+    "hiragana": "ぎゅうにゅう",
+    "meaning": "우유"
+  },
+  {
+    "no": 187,
+    "word": "今日",
+    "hiragana": "きょう",
+    "meaning": "오늘"
+  },
+  {
+    "no": 188,
+    "word": "きょうしつ",
+    "hiragana": "きょうしつ",
+    "meaning": "교실"
+  },
+  {
+    "no": 189,
+    "word": "兄弟",
+    "hiragana": "きょうだい",
+    "meaning": "형제"
+  },
+  {
+    "no": 190,
+    "word": "去年",
+    "hiragana": "きょねん",
+    "meaning": "작년"
+  },
+  {
+    "no": 191,
+    "word": "嫌い",
+    "hiragana": "きらい",
+    "meaning": "싫음"
+  },
+  {
+    "no": 192,
+    "word": "切る",
+    "hiragana": "きる",
+    "meaning": "자르다"
+  },
+  {
+    "no": 193,
+    "word": "着る",
+    "hiragana": "きる",
+    "meaning": "옷을 입다"
+  },
+  {
+    "no": 194,
+    "word": "きれい",
+    "hiragana": "きれい",
+    "meaning": "예쁨"
+  },
+  {
+    "no": 195,
+    "word": "キロ",
+    "hiragana": "キロ",
+    "meaning": "킬로그램"
+  },
+  {
+    "no": 196,
+    "word": "キロ",
+    "hiragana": "キロ",
+    "meaning": "킬로미터"
+  },
+  {
+    "no": 197,
+    "word": "銀行",
+    "hiragana": "ぎんこう",
+    "meaning": "은행"
+  },
+  {
+    "no": 198,
+    "word": "金曜日",
+    "hiragana": "きんようび",
+    "meaning": "금요일"
+  },
+  {
+    "no": 199,
+    "word": "くすり",
+    "hiragana": "くすり",
+    "meaning": "약"
+  },
+  {
+    "no": 200,
+    "word": "ください",
+    "hiragana": "ください",
+    "meaning": "~해 주세요"
+  },
+  {
+    "no": 201,
+    "word": "果物",
+    "hiragana": "くだもの",
+    "meaning": "과일"
+  },
+  {
+    "no": 202,
+    "word": "口",
+    "hiragana": "くち",
+    "meaning": "입"
+  },
+  {
+    "no": 203,
+    "word": "靴",
+    "hiragana": "くつ",
+    "meaning": "신발"
+  },
+  {
+    "no": 204,
+    "word": "靴下",
+    "hiragana": "くつした",
+    "meaning": "양말"
+  },
+  {
+    "no": 205,
+    "word": "くに",
+    "hiragana": "くに",
+    "meaning": "국가"
+  },
+  {
+    "no": 206,
+    "word": "曇り",
+    "hiragana": "くもり",
+    "meaning": "흐림"
+  },
+  {
+    "no": 207,
+    "word": "曇る",
+    "hiragana": "くもる",
+    "meaning": "흐리다"
+  },
+  {
+    "no": 208,
+    "word": "暗い",
+    "hiragana": "くらい",
+    "meaning": "어둡다"
+  },
+  {
+    "no": 209,
+    "word": "クラス",
+    "hiragana": "クラス",
+    "meaning": "클래스"
+  },
+  {
+    "no": 210,
+    "word": "グラム",
+    "hiragana": "グラム",
+    "meaning": "그램"
+  },
+  {
+    "no": 211,
+    "word": "くる",
+    "hiragana": "くる",
+    "meaning": "오다"
+  },
+  {
+    "no": 212,
+    "word": "車",
+    "hiragana": "くるま",
+    "meaning": "자동차"
+  },
+  {
+    "no": 213,
+    "word": "くろ",
+    "hiragana": "くろ",
+    "meaning": "검정"
+  },
+  {
+    "no": 214,
+    "word": "くろい",
+    "hiragana": "くろい",
+    "meaning": "검은"
+  },
+  {
+    "no": 215,
+    "word": "警官",
+    "hiragana": "けいかん",
+    "meaning": "경찰"
+  },
+  {
+    "no": 216,
+    "word": "今朝",
+    "hiragana": "けさ",
+    "meaning": "오늘 아침"
+  },
+  {
+    "no": 217,
+    "word": "消す",
+    "hiragana": "けす",
+    "meaning": "지우"
+  },
+  {
+    "no": 218,
+    "word": "結構",
+    "hiragana": "けっこう",
+    "meaning": "훌륭함"
+  },
+  {
+    "no": 219,
+    "word": "結婚",
+    "hiragana": "けっこん",
+    "meaning": "결혼"
+  },
+  {
+    "no": 220,
+    "word": "月曜日",
+    "hiragana": "げつようび",
+    "meaning": "월요일"
+  },
+  {
+    "no": 221,
+    "word": "げんかん",
+    "hiragana": "げんかん",
+    "meaning": "현관"
+  },
+  {
+    "no": 222,
+    "word": "げんき",
+    "hiragana": "げんき",
+    "meaning": "건강"
+  },
+  {
+    "no": 223,
+    "word": "五",
+    "hiragana": "ご",
+    "meaning": "다섯"
+  },
+  {
+    "no": 224,
+    "word": "公園",
+    "hiragana": "こうえん",
+    "meaning": "공원"
+  },
+  {
+    "no": 225,
+    "word": "交差点",
+    "hiragana": "こうさてん",
+    "meaning": "교차로"
+  },
+  {
+    "no": 226,
+    "word": "紅茶",
+    "hiragana": "こうちゃ",
+    "meaning": "차"
+  },
+  {
+    "no": 227,
+    "word": "交番",
+    "hiragana": "こうばん",
+    "meaning": "파출소"
+  },
+  {
+    "no": 228,
+    "word": "こえ",
+    "hiragana": "こえ",
+    "meaning": "목소리"
+  },
+  {
+    "no": 229,
+    "word": "コ?ト",
+    "hiragana": "コ?ト",
+    "meaning": "코트"
+  },
+  {
+    "no": 230,
+    "word": "コ?ヒ?",
+    "hiragana": "コ?ヒ?",
+    "meaning": "커피"
+  },
+  {
+    "no": 231,
+    "word": "ここ",
+    "hiragana": "ここ",
+    "meaning": "여기"
+  },
+  {
+    "no": 232,
+    "word": "午後",
+    "hiragana": "ごご",
+    "meaning": "오후"
+  },
+  {
+    "no": 233,
+    "word": "九日",
+    "hiragana": "ここのか",
+    "meaning": "9일"
+  },
+  {
+    "no": 234,
+    "word": "九つ",
+    "hiragana": "ここのつ",
+    "meaning": "아홉"
+  },
+  {
+    "no": 235,
+    "word": "午前",
+    "hiragana": "ごぜん",
+    "meaning": "오전"
+  },
+  {
+    "no": 236,
+    "word": "答える",
+    "hiragana": "こたえる",
+    "meaning": "대답하다"
+  },
+  {
+    "no": 237,
+    "word": "こちら",
+    "hiragana": "こちら",
+    "meaning": "이쪽"
+  },
+  {
+    "no": 238,
+    "word": "こっち",
+    "hiragana": "こっち",
+    "meaning": "여기"
+  },
+  {
+    "no": 239,
+    "word": "コップ",
+    "hiragana": "コップ",
+    "meaning": "컵"
+  },
+  {
+    "no": 240,
+    "word": "今年",
+    "hiragana": "ことし",
+    "meaning": "올해"
+  },
+  {
+    "no": 241,
+    "word": "言葉",
+    "hiragana": "ことば",
+    "meaning": "말"
+  },
+  {
+    "no": 242,
+    "word": "子供",
+    "hiragana": "こども",
+    "meaning": "아이"
+  },
+  {
+    "no": 243,
+    "word": "この",
+    "hiragana": "この",
+    "meaning": "이"
+  },
+  {
+    "no": 244,
+    "word": "御飯",
+    "hiragana": "ごはん",
+    "meaning": "밥"
+  },
+  {
+    "no": 245,
+    "word": "コピ?する",
+    "hiragana": "コピ?する",
+    "meaning": "복사"
+  },
+  {
+    "no": 246,
+    "word": "困る",
+    "hiragana": "こまる",
+    "meaning": "곤란하다"
+  },
+  {
+    "no": 247,
+    "word": "これ",
+    "hiragana": "これ",
+    "meaning": "이것"
+  },
+  {
+    "no": 248,
+    "word": "今月",
+    "hiragana": "こんげつ",
+    "meaning": "금월"
+  },
+  {
+    "no": 249,
+    "word": "今週",
+    "hiragana": "こんしゅう",
+    "meaning": "이번 주"
+  },
+  {
+    "no": 250,
+    "word": "こんな",
+    "hiragana": "こんな",
+    "meaning": "이러한"
+  },
+  {
+    "no": 251,
+    "word": "今晩",
+    "hiragana": "こんばん",
+    "meaning": "오늘 밤"
+  },
+  {
+    "no": 252,
+    "word": "さあ",
+    "hiragana": "さあ",
+    "meaning": "잘…"
+  },
+  {
+    "no": 253,
+    "word": "財布",
+    "hiragana": "さいふ",
+    "meaning": "지갑"
+  },
+  {
+    "no": 254,
+    "word": "魚",
+    "hiragana": "さかな",
+    "meaning": "물고기"
+  },
+  {
+    "no": 255,
+    "word": "先",
+    "hiragana": "さき",
+    "meaning": "앞"
+  },
+  {
+    "no": 256,
+    "word": "さく",
+    "hiragana": "さく",
+    "meaning": "피다"
+  },
+  {
+    "no": 257,
+    "word": "作文",
+    "hiragana": "さくぶん",
+    "meaning": "작문"
+  },
+  {
+    "no": 258,
+    "word": "差す",
+    "hiragana": "さす",
+    "meaning": "가리다"
+  },
+  {
+    "no": 259,
+    "word": "ざっし",
+    "hiragana": "ざっし",
+    "meaning": "잡지"
+  },
+  {
+    "no": 260,
+    "word": "砂糖",
+    "hiragana": "さとう",
+    "meaning": "설탕"
+  },
+  {
+    "no": 261,
+    "word": "寒い",
+    "hiragana": "さむい",
+    "meaning": "춥다"
+  },
+  {
+    "no": 262,
+    "word": "さらいねん",
+    "hiragana": "さらいねん",
+    "meaning": "다음 해"
+  },
+  {
+    "no": 263,
+    "word": "三",
+    "hiragana": "さん",
+    "meaning": "셋"
+  },
+  {
+    "no": 264,
+    "word": "さんぽする",
+    "hiragana": "さんぽする",
+    "meaning": "산책"
+  },
+  {
+    "no": 265,
+    "word": "四",
+    "hiragana": "し",
+    "meaning": "넷"
+  },
+  {
+    "no": 266,
+    "word": "しお",
+    "hiragana": "しお",
+    "meaning": "소금"
+  },
+  {
+    "no": 267,
+    "word": "しかし",
+    "hiragana": "しかし",
+    "meaning": "그러나"
+  },
+  {
+    "no": 268,
+    "word": "時間",
+    "hiragana": "じかん",
+    "meaning": "시간"
+  },
+  {
+    "no": 269,
+    "word": "仕事",
+    "hiragana": "しごと",
+    "meaning": "일"
+  },
+  {
+    "no": 270,
+    "word": "じしょ",
+    "hiragana": "じしょ",
+    "meaning": "사전"
+  },
+  {
+    "no": 271,
+    "word": "しずか",
+    "hiragana": "しずか",
+    "meaning": "조용"
+  },
+  {
+    "no": 272,
+    "word": "下",
+    "hiragana": "した",
+    "meaning": "아래"
+  },
+  {
+    "no": 273,
+    "word": "七",
+    "hiragana": "しち",
+    "meaning": "칠"
+  },
+  {
+    "no": 274,
+    "word": "質問",
+    "hiragana": "しつもん",
+    "meaning": "질문"
+  },
+  {
+    "no": 275,
+    "word": "じてんしゃ",
+    "hiragana": "じてんしゃ",
+    "meaning": "자전거"
+  },
+  {
+    "no": 276,
+    "word": "自動車",
+    "hiragana": "じどうしゃ",
+    "meaning": "자동차"
+  },
+  {
+    "no": 277,
+    "word": "死ぬ",
+    "hiragana": "しぬ",
+    "meaning": "죽다"
+  },
+  {
+    "no": 278,
+    "word": "字引",
+    "hiragana": "じびき",
+    "meaning": "사전"
+  },
+  {
+    "no": 279,
+    "word": "自分",
+    "hiragana": "じぶん",
+    "meaning": "자신"
+  },
+  {
+    "no": 280,
+    "word": "閉まる",
+    "hiragana": "しまる",
+    "meaning": "꼭 닫히다"
+  },
+  {
+    "no": 281,
+    "word": "閉める",
+    "hiragana": "しめる",
+    "meaning": "닫다"
+  },
+  {
+    "no": 282,
+    "word": "締める",
+    "hiragana": "しめる",
+    "meaning": "닫다"
+  },
+  {
+    "no": 283,
+    "word": "じゃ",
+    "hiragana": "じゃ",
+    "meaning": "그럼"
+  },
+  {
+    "no": 284,
+    "word": "しゃしん",
+    "hiragana": "しゃしん",
+    "meaning": "사진"
+  },
+  {
+    "no": 285,
+    "word": "シャツ",
+    "hiragana": "シャツ",
+    "meaning": "셔츠"
+  },
+  {
+    "no": 286,
+    "word": "シャワ?",
+    "hiragana": "シャワ?",
+    "meaning": "샤워"
+  },
+  {
+    "no": 287,
+    "word": "十",
+    "hiragana": "じゅう",
+    "meaning": "십"
+  },
+  {
+    "no": 288,
+    "word": "授業",
+    "hiragana": "じゅぎょう",
+    "meaning": "수업"
+  },
+  {
+    "no": 289,
+    "word": "宿題",
+    "hiragana": "しゅくだい",
+    "meaning": "숙제"
+  },
+  {
+    "no": 290,
+    "word": "上手",
+    "hiragana": "じょうず",
+    "meaning": "잘"
+  },
+  {
+    "no": 291,
+    "word": "丈夫",
+    "hiragana": "じょうぶ",
+    "meaning": "건강함"
+  },
+  {
+    "no": 292,
+    "word": "しょうゆ",
+    "hiragana": "しょうゆ",
+    "meaning": "간장"
+  },
+  {
+    "no": 293,
+    "word": "食堂",
+    "hiragana": "しょくどう",
+    "meaning": "식당"
+  },
+  {
+    "no": 294,
+    "word": "知る",
+    "hiragana": "しる",
+    "meaning": "알"
+  },
+  {
+    "no": 295,
+    "word": "白い",
+    "hiragana": "しろい",
+    "meaning": "하얀"
+  },
+  {
+    "no": 296,
+    "word": "新聞",
+    "hiragana": "しんぶん",
+    "meaning": "신문"
+  },
+  {
+    "no": 297,
+    "word": "水曜日",
+    "hiragana": "すいようび",
+    "meaning": "수요일"
+  },
+  {
+    "no": 298,
+    "word": "吸う",
+    "hiragana": "すう",
+    "meaning": "들이마시다"
+  },
+  {
+    "no": 299,
+    "word": "スカ?ト",
+    "hiragana": "スカ?ト",
+    "meaning": "스커트"
+  },
+  {
+    "no": 300,
+    "word": "好き",
+    "hiragana": "すき",
+    "meaning": "좋아함"
+  },
+  {
+    "no": 301,
+    "word": "少ない",
+    "hiragana": "すくない",
+    "meaning": "적다"
+  },
+  {
+    "no": 302,
+    "word": "すぐに",
+    "hiragana": "すぐに",
+    "meaning": "즉시"
+  },
+  {
+    "no": 303,
+    "word": "少し",
+    "hiragana": "すこし",
+    "meaning": "조금"
+  },
+  {
+    "no": 304,
+    "word": "すずしい",
+    "hiragana": "すずしい",
+    "meaning": "차가운"
+  },
+  {
+    "no": 305,
+    "word": "スト?ブ",
+    "hiragana": "スト?ブ",
+    "meaning": "스토브"
+  },
+  {
+    "no": 306,
+    "word": "スプ?ン",
+    "hiragana": "スプ?ン",
+    "meaning": "숟가락"
+  },
+  {
+    "no": 307,
+    "word": "スポ?ツ",
+    "hiragana": "スポ?ツ",
+    "meaning": "스포츠"
+  },
+  {
+    "no": 308,
+    "word": "ズボン",
+    "hiragana": "ズボン",
+    "meaning": "바지"
+  },
+  {
+    "no": 309,
+    "word": "住む",
+    "hiragana": "すむ",
+    "meaning": "살다"
+  },
+  {
+    "no": 310,
+    "word": "スリッパ",
+    "hiragana": "スリッパ",
+    "meaning": "슬리퍼"
+  },
+  {
+    "no": 311,
+    "word": "する",
+    "hiragana": "する",
+    "meaning": "하다"
+  },
+  {
+    "no": 312,
+    "word": "座る",
+    "hiragana": "すわる",
+    "meaning": "앉다"
+  },
+  {
+    "no": 313,
+    "word": "背",
+    "hiragana": "せ",
+    "meaning": "키"
+  },
+  {
+    "no": 314,
+    "word": "生徒",
+    "hiragana": "せいと",
+    "meaning": "학생"
+  },
+  {
+    "no": 315,
+    "word": "セ?タ?",
+    "hiragana": "セ?タ?",
+    "meaning": "스웨터"
+  },
+  {
+    "no": 316,
+    "word": "せっけん",
+    "hiragana": "せっけん",
+    "meaning": "경제"
+  },
+  {
+    "no": 317,
+    "word": "せびろ",
+    "hiragana": "せびろ",
+    "meaning": "정장"
+  },
+  {
+    "no": 318,
+    "word": "せまい",
+    "hiragana": "せまい",
+    "meaning": "좁다"
+  },
+  {
+    "no": 319,
+    "word": "ゼロ",
+    "hiragana": "ゼロ",
+    "meaning": "제로"
+  },
+  {
+    "no": 320,
+    "word": "千",
+    "hiragana": "せん",
+    "meaning": "천"
+  },
+  {
+    "no": 321,
+    "word": "先月",
+    "hiragana": "せんげつ",
+    "meaning": "지난 달"
+  },
+  {
+    "no": 322,
+    "word": "先週",
+    "hiragana": "せんしゅう",
+    "meaning": "지난"
+  },
+  {
+    "no": 323,
+    "word": "先生",
+    "hiragana": "せんせい",
+    "meaning": "선생님"
+  },
+  {
+    "no": 324,
+    "word": "洗濯",
+    "hiragana": "せんたく",
+    "meaning": "세탁"
+  },
+  {
+    "no": 325,
+    "word": "全部",
+    "hiragana": "ぜんぶ",
+    "meaning": "전체"
+  },
+  {
+    "no": 326,
+    "word": "掃除",
+    "hiragana": "そうじする",
+    "meaning": "청소하다"
+  },
+  {
+    "no": 327,
+    "word": "そうして",
+    "hiragana": "そうして",
+    "meaning": "그리고"
+  },
+  {
+    "no": 328,
+    "word": "そこ",
+    "hiragana": "そこ",
+    "meaning": "거기"
+  },
+  {
+    "no": 329,
+    "word": "そちら",
+    "hiragana": "そちら",
+    "meaning": "그 쪽"
+  },
+  {
+    "no": 330,
+    "word": "そっち",
+    "hiragana": "そっち",
+    "meaning": "그쪽"
+  },
+  {
+    "no": 331,
+    "word": "外",
+    "hiragana": "そと",
+    "meaning": "외부"
+  },
+  {
+    "no": 332,
+    "word": "その",
+    "hiragana": "その",
+    "meaning": "그"
+  },
+  {
+    "no": 333,
+    "word": "そば",
+    "hiragana": "そば",
+    "meaning": "옆"
+  },
+  {
+    "no": 334,
+    "word": "空",
+    "hiragana": "そら",
+    "meaning": "하늘"
+  },
+  {
+    "no": 335,
+    "word": "それ",
+    "hiragana": "それ",
+    "meaning": "그것"
+  },
+  {
+    "no": 336,
+    "word": "それから",
+    "hiragana": "それから",
+    "meaning": "그 다음에"
+  },
+  {
+    "no": 337,
+    "word": "それでは",
+    "hiragana": "それでは",
+    "meaning": "그러면"
+  },
+  {
+    "no": 338,
+    "word": "だいがく",
+    "hiragana": "だいがく",
+    "meaning": "대학"
+  },
+  {
+    "no": 339,
+    "word": "大使館",
+    "hiragana": "たいしかん",
+    "meaning": "대사관"
+  },
+  {
+    "no": 340,
+    "word": "大丈夫",
+    "hiragana": "だいじょうぶ",
+    "meaning": "괜찮아"
+  },
+  {
+    "no": 341,
+    "word": "大好き",
+    "hiragana": "だいすき",
+    "meaning": "매우 좋음"
+  },
+  {
+    "no": 342,
+    "word": "大切",
+    "hiragana": "たいせつ",
+    "meaning": "중요"
+  },
+  {
+    "no": 343,
+    "word": "台所",
+    "hiragana": "だいどころ",
+    "meaning": "부엌"
+  },
+  {
+    "no": 344,
+    "word": "たいへん",
+    "hiragana": "たいへん",
+    "meaning": "몹시"
+  },
+  {
+    "no": 345,
+    "word": "たいへん",
+    "hiragana": "たいへん",
+    "meaning": "큰일"
+  },
+  {
+    "no": 346,
+    "word": "高い",
+    "hiragana": "たかい",
+    "meaning": "높다"
+  },
+  {
+    "no": 347,
+    "word": "たくさん",
+    "hiragana": "たくさん",
+    "meaning": "많음"
+  },
+  {
+    "no": 348,
+    "word": "タクシ?",
+    "hiragana": "タクシ?",
+    "meaning": "택시"
+  },
+  {
+    "no": 349,
+    "word": "出す",
+    "hiragana": "だす",
+    "meaning": "내다"
+  },
+  {
+    "no": 350,
+    "word": "立つ",
+    "hiragana": "たつ",
+    "meaning": "일어서다"
+  },
+  {
+    "no": 351,
+    "word": "たて",
+    "hiragana": "たて",
+    "meaning": "세로"
+  },
+  {
+    "no": 352,
+    "word": "建物",
+    "hiragana": "たてもの",
+    "meaning": "건물"
+  },
+  {
+    "no": 353,
+    "word": "たのしい",
+    "hiragana": "たのしい",
+    "meaning": "재미"
+  },
+  {
+    "no": 354,
+    "word": "たのむ",
+    "hiragana": "たのむ",
+    "meaning": "부탁하다"
+  },
+  {
+    "no": 355,
+    "word": "たばこ",
+    "hiragana": "たばこ",
+    "meaning": "담배"
+  },
+  {
+    "no": 356,
+    "word": "たぶん",
+    "hiragana": "たぶん",
+    "meaning": "아마"
+  },
+  {
+    "no": 357,
+    "word": "食べ物",
+    "hiragana": "たべもの",
+    "meaning": "음식"
+  },
+  {
+    "no": 358,
+    "word": "食べる",
+    "hiragana": "たべる",
+    "meaning": "먹다"
+  },
+  {
+    "no": 359,
+    "word": "卵",
+    "hiragana": "たまご",
+    "meaning": "계란"
+  },
+  {
+    "no": 360,
+    "word": "誰",
+    "hiragana": "だれ",
+    "meaning": "누구"
+  },
+  {
+    "no": 361,
+    "word": "誰",
+    "hiragana": "だれか",
+    "meaning": "누군가"
+  },
+  {
+    "no": 362,
+    "word": "誕生日",
+    "hiragana": "たんじょうび",
+    "meaning": "생일"
+  },
+  {
+    "no": 363,
+    "word": "だんだん",
+    "hiragana": "だんだん",
+    "meaning": "차차"
+  },
+  {
+    "no": 364,
+    "word": "小さい",
+    "hiragana": "ちいさい",
+    "meaning": "작은"
+  },
+  {
+    "no": 365,
+    "word": "小さな",
+    "hiragana": "ちいさな",
+    "meaning": "작은"
+  },
+  {
+    "no": 366,
+    "word": "近い",
+    "hiragana": "ちかい",
+    "meaning": "가깝다"
+  },
+  {
+    "no": 367,
+    "word": "違う",
+    "hiragana": "ちがう",
+    "meaning": "다른"
+  },
+  {
+    "no": 368,
+    "word": "近く",
+    "hiragana": "ちかく",
+    "meaning": "근처"
+  },
+  {
+    "no": 369,
+    "word": "ちかてつ",
+    "hiragana": "ちかてつ",
+    "meaning": "지하철"
+  },
+  {
+    "no": 370,
+    "word": "ちず",
+    "hiragana": "ちず",
+    "meaning": "지도"
+  },
+  {
+    "no": 371,
+    "word": "茶色",
+    "hiragana": "ちゃいろ",
+    "meaning": "갈색"
+  },
+  {
+    "no": 372,
+    "word": "ちゃわん",
+    "hiragana": "ちゃわん",
+    "meaning": "그릇"
+  },
+  {
+    "no": 373,
+    "word": "ちょうど",
+    "hiragana": "ちょうど",
+    "meaning": "꼭"
+  },
+  {
+    "no": 374,
+    "word": "ちょっと",
+    "hiragana": "ちょっと",
+    "meaning": "조금"
+  },
+  {
+    "no": 375,
+    "word": "一日",
+    "hiragana": "ついたち",
+    "meaning": "초하루"
+  },
+  {
+    "no": 376,
+    "word": "使う",
+    "hiragana": "つかう",
+    "meaning": "쓰다"
+  },
+  {
+    "no": 377,
+    "word": "疲れる",
+    "hiragana": "つかれる",
+    "meaning": "피곤"
+  },
+  {
+    "no": 378,
+    "word": "次",
+    "hiragana": "つぎ",
+    "meaning": "다음"
+  },
+  {
+    "no": 379,
+    "word": "着く",
+    "hiragana": "つく",
+    "meaning": "도착"
+  },
+  {
+    "no": 380,
+    "word": "机",
+    "hiragana": "つくえ",
+    "meaning": "책상"
+  },
+  {
+    "no": 381,
+    "word": "作る",
+    "hiragana": "つくる",
+    "meaning": "만들다"
+  },
+  {
+    "no": 382,
+    "word": "つける",
+    "hiragana": "つける",
+    "meaning": "붙이다"
+  },
+  {
+    "no": 383,
+    "word": "勤める",
+    "hiragana": "つとめる",
+    "meaning": "근무하다"
+  },
+  {
+    "no": 384,
+    "word": "つまらない",
+    "hiragana": "つまらない",
+    "meaning": "시시하다"
+  },
+  {
+    "no": 385,
+    "word": "冷たい",
+    "hiragana": "つめたい",
+    "meaning": "차갑다"
+  },
+  {
+    "no": 386,
+    "word": "つよい",
+    "hiragana": "つよい",
+    "meaning": "강한"
+  },
+  {
+    "no": 387,
+    "word": "手",
+    "hiragana": "て",
+    "meaning": "손"
+  },
+  {
+    "no": 388,
+    "word": "テ?プ",
+    "hiragana": "テ?プ",
+    "meaning": "테이프"
+  },
+  {
+    "no": 389,
+    "word": "テ?ブル",
+    "hiragana": "テ?ブル",
+    "meaning": "테이블"
+  },
+  {
+    "no": 390,
+    "word": "テ?プレコ?ダ?",
+    "hiragana": "テ?プレコ?ダ?",
+    "meaning": "테이프 레코더"
+  },
+  {
+    "no": 391,
+    "word": "出かける",
+    "hiragana": "でかける",
+    "meaning": "외출"
+  },
+  {
+    "no": 392,
+    "word": "手紙",
+    "hiragana": "てがみ",
+    "meaning": "편지"
+  },
+  {
+    "no": 393,
+    "word": "できる",
+    "hiragana": "できる",
+    "meaning": "할 수 있다"
+  },
+  {
+    "no": 394,
+    "word": "出口",
+    "hiragana": "でぐち",
+    "meaning": "출구"
+  },
+  {
+    "no": 395,
+    "word": "テスト",
+    "hiragana": "テスト",
+    "meaning": "테스트"
+  },
+  {
+    "no": 396,
+    "word": "では",
+    "hiragana": "では",
+    "meaning": "그러면"
+  },
+  {
+    "no": 397,
+    "word": "デパ?ト",
+    "hiragana": "デパ?ト",
+    "meaning": "백화점"
+  },
+  {
+    "no": 398,
+    "word": "でも",
+    "hiragana": "でも",
+    "meaning": "그러나"
+  },
+  {
+    "no": 399,
+    "word": "出る",
+    "hiragana": "でる",
+    "meaning": "나가다"
+  },
+  {
+    "no": 400,
+    "word": "テレビ",
+    "hiragana": "テレビ",
+    "meaning": "텔레비전"
+  },
+  {
+    "no": 401,
+    "word": "てんき",
+    "hiragana": "てんき",
+    "meaning": "날씨"
+  },
+  {
+    "no": 402,
+    "word": "でんき",
+    "hiragana": "でんき",
+    "meaning": "전기"
+  },
+  {
+    "no": 403,
+    "word": "電車",
+    "hiragana": "でんしゃ",
+    "meaning": "전차"
+  },
+  {
+    "no": 404,
+    "word": "電話",
+    "hiragana": "でんわ",
+    "meaning": "전화"
+  },
+  {
+    "no": 405,
+    "word": "と",
+    "hiragana": "と",
+    "meaning": "문"
+  },
+  {
+    "no": 406,
+    "word": "ドア",
+    "hiragana": "ドア",
+    "meaning": "문"
+  },
+  {
+    "no": 407,
+    "word": "トイレ",
+    "hiragana": "トイレ",
+    "meaning": "화장실"
+  },
+  {
+    "no": 408,
+    "word": "どう",
+    "hiragana": "どう",
+    "meaning": "어떻게"
+  },
+  {
+    "no": 409,
+    "word": "どうして",
+    "hiragana": "どうして",
+    "meaning": "어떻게"
+  },
+  {
+    "no": 410,
+    "word": "どうぞ",
+    "hiragana": "どうぞ",
+    "meaning": "아무쪼록"
+  },
+  {
+    "no": 411,
+    "word": "動物",
+    "hiragana": "どうぶつ",
+    "meaning": "동물"
+  },
+  {
+    "no": 412,
+    "word": "どうも",
+    "hiragana": "どうも",
+    "meaning": "감사합니다"
+  },
+  {
+    "no": 413,
+    "word": "遠い",
+    "hiragana": "とおい",
+    "meaning": "멀다"
+  },
+  {
+    "no": 414,
+    "word": "十日",
+    "hiragana": "とおか",
+    "meaning": "열흘"
+  },
+  {
+    "no": 415,
+    "word": "ときどき",
+    "hiragana": "ときどき",
+    "meaning": "때때로"
+  },
+  {
+    "no": 416,
+    "word": "時計",
+    "hiragana": "とけい",
+    "meaning": "시계"
+  },
+  {
+    "no": 417,
+    "word": "どこ",
+    "hiragana": "どこ",
+    "meaning": "어디"
+  },
+  {
+    "no": 418,
+    "word": "所",
+    "hiragana": "ところ",
+    "meaning": "곳"
+  },
+  {
+    "no": 419,
+    "word": "年",
+    "hiragana": "とし",
+    "meaning": "년"
+  },
+  {
+    "no": 420,
+    "word": "としょかん",
+    "hiragana": "としょかん",
+    "meaning": "도서관"
+  },
+  {
+    "no": 421,
+    "word": "どちら",
+    "hiragana": "どちら",
+    "meaning": "어느 쪽"
+  },
+  {
+    "no": 422,
+    "word": "どっち",
+    "hiragana": "どっち",
+    "meaning": "어느 쪽"
+  },
+  {
+    "no": 423,
+    "word": "とても",
+    "hiragana": "とても",
+    "meaning": "아무리 해도"
+  },
+  {
+    "no": 424,
+    "word": "どなた",
+    "hiragana": "どなた",
+    "meaning": "누구"
+  },
+  {
+    "no": 425,
+    "word": "隣",
+    "hiragana": "となり",
+    "meaning": "이웃"
+  },
+  {
+    "no": 426,
+    "word": "どの",
+    "hiragana": "どの",
+    "meaning": "어느"
+  },
+  {
+    "no": 427,
+    "word": "飛ぶ",
+    "hiragana": "とぶ",
+    "meaning": "날다"
+  },
+  {
+    "no": 428,
+    "word": "止まる",
+    "hiragana": "とまる",
+    "meaning": "멈추다"
+  },
+  {
+    "no": 429,
+    "word": "友達",
+    "hiragana": "ともだち",
+    "meaning": "친구"
+  },
+  {
+    "no": 430,
+    "word": "土曜日",
+    "hiragana": "どようび",
+    "meaning": "토요일"
+  },
+  {
+    "no": 431,
+    "word": "鳥",
+    "hiragana": "とり",
+    "meaning": "새"
+  },
+  {
+    "no": 432,
+    "word": "とり肉",
+    "hiragana": "とりにく",
+    "meaning": "닭고기"
+  },
+  {
+    "no": 433,
+    "word": "取る",
+    "hiragana": "とる",
+    "meaning": "가지고"
+  },
+  {
+    "no": 434,
+    "word": "撮る",
+    "hiragana": "とる",
+    "meaning": "찍다"
+  },
+  {
+    "no": 435,
+    "word": "どれ",
+    "hiragana": "どれ",
+    "meaning": "어느"
+  },
+  {
+    "no": 436,
+    "word": "ナイフ",
+    "hiragana": "ナイフ",
+    "meaning": "칼"
+  },
+  {
+    "no": 437,
+    "word": "中",
+    "hiragana": "なか",
+    "meaning": "가운데"
+  },
+  {
+    "no": 438,
+    "word": "長い",
+    "hiragana": "ながい",
+    "meaning": "긴"
+  },
+  {
+    "no": 439,
+    "word": "鳴く",
+    "hiragana": "なく",
+    "meaning": "울다"
+  },
+  {
+    "no": 440,
+    "word": "無くす",
+    "hiragana": "なくす",
+    "meaning": "없애다"
+  },
+  {
+    "no": 441,
+    "word": "なぜ",
+    "hiragana": "なぜ",
+    "meaning": "왜"
+  },
+  {
+    "no": 442,
+    "word": "夏",
+    "hiragana": "なつ",
+    "meaning": "여름"
+  },
+  {
+    "no": 443,
+    "word": "夏休み",
+    "hiragana": "なつやすみ",
+    "meaning": "여름 방학"
+  },
+  {
+    "no": 444,
+    "word": "など",
+    "hiragana": "など",
+    "meaning": "등"
+  },
+  {
+    "no": 445,
+    "word": "七つ",
+    "hiragana": "ななつ",
+    "meaning": "일곱"
+  },
+  {
+    "no": 446,
+    "word": "七日",
+    "hiragana": "なのか",
+    "meaning": "일곱째 날"
+  },
+  {
+    "no": 447,
+    "word": "名前",
+    "hiragana": "なまえ",
+    "meaning": "이름"
+  },
+  {
+    "no": 448,
+    "word": "習う",
+    "hiragana": "ならう",
+    "meaning": "배우"
+  },
+  {
+    "no": 449,
+    "word": "ならぶ",
+    "hiragana": "ならぶ",
+    "meaning": "늘어선"
+  },
+  {
+    "no": 450,
+    "word": "ならべる",
+    "hiragana": "ならべる",
+    "meaning": "나란히"
+  },
+  {
+    "no": 451,
+    "word": "なる",
+    "hiragana": "なる",
+    "meaning": "되다"
+  },
+  {
+    "no": 452,
+    "word": "何",
+    "hiragana": "なん",
+    "meaning": "무엇"
+  },
+  {
+    "no": 453,
+    "word": "二",
+    "hiragana": "に",
+    "meaning": "둘"
+  },
+  {
+    "no": 454,
+    "word": "賑やか",
+    "hiragana": "にぎやか",
+    "meaning": "분주"
+  },
+  {
+    "no": 455,
+    "word": "肉",
+    "hiragana": "にく",
+    "meaning": "고기"
+  },
+  {
+    "no": 456,
+    "word": "西",
+    "hiragana": "にし",
+    "meaning": "서쪽"
+  },
+  {
+    "no": 457,
+    "word": "日曜日",
+    "hiragana": "にちようび",
+    "meaning": "일요일"
+  },
+  {
+    "no": 458,
+    "word": "荷物",
+    "hiragana": "にもつ",
+    "meaning": "짐"
+  },
+  {
+    "no": 459,
+    "word": "ニュ?ス",
+    "hiragana": "ニュ?ス",
+    "meaning": "뉴스"
+  },
+  {
+    "no": 460,
+    "word": "庭",
+    "hiragana": "にわ",
+    "meaning": "정원"
+  },
+  {
+    "no": 461,
+    "word": "ぬぐ",
+    "hiragana": "ぬぐ",
+    "meaning": "옷을 벗다"
+  },
+  {
+    "no": 462,
+    "word": "ぬるい",
+    "hiragana": "ぬるい",
+    "meaning": "미지근한"
+  },
+  {
+    "no": 463,
+    "word": "ネクタイ",
+    "hiragana": "ネクタイ",
+    "meaning": "넥타이"
+  },
+  {
+    "no": 464,
+    "word": "猫",
+    "hiragana": "ねこ",
+    "meaning": "고양이"
+  },
+  {
+    "no": 465,
+    "word": "ねる",
+    "hiragana": "ねる",
+    "meaning": "자다"
+  },
+  {
+    "no": 466,
+    "word": "ノ?ト",
+    "hiragana": "ノ?ト",
+    "meaning": "노트"
+  },
+  {
+    "no": 467,
+    "word": "登る",
+    "hiragana": "のぼる",
+    "meaning": "등반"
+  },
+  {
+    "no": 468,
+    "word": "のみもの",
+    "hiragana": "のみもの",
+    "meaning": "음료"
+  },
+  {
+    "no": 469,
+    "word": "のむ",
+    "hiragana": "のむ",
+    "meaning": "마시다"
+  },
+  {
+    "no": 470,
+    "word": "のる",
+    "hiragana": "のる",
+    "meaning": "타다"
+  },
+  {
+    "no": 471,
+    "word": "は",
+    "hiragana": "は",
+    "meaning": "치아"
+  },
+  {
+    "no": 472,
+    "word": "パ?ティ?",
+    "hiragana": "パ?ティ?",
+    "meaning": "파티"
+  },
+  {
+    "no": 473,
+    "word": "はい",
+    "hiragana": "はい",
+    "meaning": "예"
+  },
+  {
+    "no": 474,
+    "word": "灰皿",
+    "hiragana": "はいざら",
+    "meaning": "재떨이"
+  },
+  {
+    "no": 475,
+    "word": "入る",
+    "hiragana": "はいる",
+    "meaning": "들어가다"
+  },
+  {
+    "no": 476,
+    "word": "葉書",
+    "hiragana": "はがき",
+    "meaning": "엽서"
+  },
+  {
+    "no": 477,
+    "word": "はく",
+    "hiragana": "はく",
+    "meaning": "입다"
+  },
+  {
+    "no": 478,
+    "word": "箱",
+    "hiragana": "はこ",
+    "meaning": "상자"
+  },
+  {
+    "no": 479,
+    "word": "橋",
+    "hiragana": "はし",
+    "meaning": "다리"
+  },
+  {
+    "no": 480,
+    "word": "はし",
+    "hiragana": "はし",
+    "meaning": "젓가락"
+  },
+  {
+    "no": 481,
+    "word": "始まる",
+    "hiragana": "はじまる",
+    "meaning": "시작"
+  },
+  {
+    "no": 482,
+    "word": "初め/始め",
+    "hiragana": "はじめ",
+    "meaning": "처음"
+  },
+  {
+    "no": 483,
+    "word": "初めて",
+    "hiragana": "はじめて",
+    "meaning": "처음"
+  },
+  {
+    "no": 484,
+    "word": "走る",
+    "hiragana": "はしる",
+    "meaning": "달리다"
+  },
+  {
+    "no": 485,
+    "word": "バス",
+    "hiragana": "バス",
+    "meaning": "버스"
+  },
+  {
+    "no": 486,
+    "word": "バタ?",
+    "hiragana": "バタ?",
+    "meaning": "버터"
+  },
+  {
+    "no": 487,
+    "word": "はたち",
+    "hiragana": "はたち",
+    "meaning": "스무 살"
+  },
+  {
+    "no": 488,
+    "word": "はたらく",
+    "hiragana": "はたらく",
+    "meaning": "일하다"
+  },
+  {
+    "no": 489,
+    "word": "八",
+    "hiragana": "はち",
+    "meaning": "여덟"
+  },
+  {
+    "no": 490,
+    "word": "二十日",
+    "hiragana": "はつか",
+    "meaning": "20일"
+  },
+  {
+    "no": 491,
+    "word": "花",
+    "hiragana": "はな",
+    "meaning": "꽃"
+  },
+  {
+    "no": 492,
+    "word": "鼻",
+    "hiragana": "はな",
+    "meaning": "코"
+  },
+  {
+    "no": 493,
+    "word": "話",
+    "hiragana": "はなし",
+    "meaning": "이야기"
+  },
+  {
+    "no": 494,
+    "word": "話す",
+    "hiragana": "はなす",
+    "meaning": "이야기하다"
+  },
+  {
+    "no": 495,
+    "word": "早い",
+    "hiragana": "はやい",
+    "meaning": "이르다"
+  },
+  {
+    "no": 496,
+    "word": "速い",
+    "hiragana": "はやい",
+    "meaning": "빠르다"
+  },
+  {
+    "no": 497,
+    "word": "春",
+    "hiragana": "はる",
+    "meaning": "봄"
+  },
+  {
+    "no": 498,
+    "word": "貼る",
+    "hiragana": "はる",
+    "meaning": "붙이다"
+  },
+  {
+    "no": 499,
+    "word": "晴れ",
+    "hiragana": "はれ",
+    "meaning": "맑음"
+  },
+  {
+    "no": 500,
+    "word": "晴れる",
+    "hiragana": "はれる",
+    "meaning": "맑은"
+  },
+  {
+    "no": 501,
+    "word": "半",
+    "hiragana": "はん",
+    "meaning": "반"
+  },
+  {
+    "no": 502,
+    "word": "晩",
+    "hiragana": "ばん",
+    "meaning": "저녁"
+  },
+  {
+    "no": 503,
+    "word": "パン",
+    "hiragana": "パン",
+    "meaning": "빵"
+  },
+  {
+    "no": 504,
+    "word": "ハンカチ",
+    "hiragana": "ハンカチ",
+    "meaning": "손수건"
+  },
+  {
+    "no": 505,
+    "word": "ばんごう",
+    "hiragana": "ばんごう",
+    "meaning": "번호"
+  },
+  {
+    "no": 506,
+    "word": "晩御飯",
+    "hiragana": "ばんごはん",
+    "meaning": "저녁 식사"
+  },
+  {
+    "no": 507,
+    "word": "半分",
+    "hiragana": "はんぶん",
+    "meaning": "반"
+  },
+  {
+    "no": 508,
+    "word": "東",
+    "hiragana": "ひがし",
+    "meaning": "동쪽"
+  },
+  {
+    "no": 509,
+    "word": "引く",
+    "hiragana": "ひく",
+    "meaning": "끌다"
+  },
+  {
+    "no": 510,
+    "word": "ひく",
+    "hiragana": "ひく",
+    "meaning": "연주하다"
+  },
+  {
+    "no": 511,
+    "word": "低い",
+    "hiragana": "ひくい",
+    "meaning": "낮다"
+  },
+  {
+    "no": 512,
+    "word": "飛行機",
+    "hiragana": "ひこうき",
+    "meaning": "비행기"
+  },
+  {
+    "no": 513,
+    "word": "左",
+    "hiragana": "ひだり",
+    "meaning": "왼쪽"
+  },
+  {
+    "no": 514,
+    "word": "人",
+    "hiragana": "ひと",
+    "meaning": "사람"
+  },
+  {
+    "no": 515,
+    "word": "一つ",
+    "hiragana": "ひとつ",
+    "meaning": "하나"
+  },
+  {
+    "no": 516,
+    "word": "一月",
+    "hiragana": "ひとつき",
+    "meaning": "한달"
+  },
+  {
+    "no": 517,
+    "word": "一人",
+    "hiragana": "ひとり",
+    "meaning": "한 사람"
+  },
+  {
+    "no": 518,
+    "word": "暇",
+    "hiragana": "ひま",
+    "meaning": "자유 시간"
+  },
+  {
+    "no": 519,
+    "word": "百",
+    "hiragana": "ひゃく",
+    "meaning": "백"
+  },
+  {
+    "no": 520,
+    "word": "病院",
+    "hiragana": "びょういん",
+    "meaning": "병원"
+  },
+  {
+    "no": 521,
+    "word": "びょうき",
+    "hiragana": "びょうき",
+    "meaning": "질병"
+  },
+  {
+    "no": 522,
+    "word": "ひる",
+    "hiragana": "ひる",
+    "meaning": "낮"
+  },
+  {
+    "no": 523,
+    "word": "ひるごはん",
+    "hiragana": "ひるごはん",
+    "meaning": "점심"
+  },
+  {
+    "no": 524,
+    "word": "ひろい",
+    "hiragana": "ひろい",
+    "meaning": "넓은"
+  },
+  {
+    "no": 525,
+    "word": "フィルム",
+    "hiragana": "フィルム",
+    "meaning": "필름"
+  },
+  {
+    "no": 526,
+    "word": "封筒",
+    "hiragana": "ふうとう",
+    "meaning": "봉투"
+  },
+  {
+    "no": 527,
+    "word": "プ?ル",
+    "hiragana": "プ?ル",
+    "meaning": "수영장"
+  },
+  {
+    "no": 528,
+    "word": "フォ?ク",
+    "hiragana": "フォ?ク",
+    "meaning": "포크"
+  },
+  {
+    "no": 529,
+    "word": "吹く",
+    "hiragana": "ふく",
+    "meaning": "불다"
+  },
+  {
+    "no": 530,
+    "word": "服",
+    "hiragana": "ふく",
+    "meaning": "옷"
+  },
+  {
+    "no": 531,
+    "word": "二つ",
+    "hiragana": "ふたつ",
+    "meaning": "둘"
+  },
+  {
+    "no": 532,
+    "word": "豚肉",
+    "hiragana": "ぶたにく",
+    "meaning": "돼지 고기"
+  },
+  {
+    "no": 533,
+    "word": "二人",
+    "hiragana": "ふたり",
+    "meaning": "두 사람"
+  },
+  {
+    "no": 534,
+    "word": "二日",
+    "hiragana": "ふつか",
+    "meaning": "이틀"
+  },
+  {
+    "no": 535,
+    "word": "太い",
+    "hiragana": "ふとい",
+    "meaning": "굵다"
+  },
+  {
+    "no": 536,
+    "word": "冬",
+    "hiragana": "ふゆ",
+    "meaning": "겨울"
+  },
+  {
+    "no": 537,
+    "word": "降る",
+    "hiragana": "ふる",
+    "meaning": "내리다"
+  },
+  {
+    "no": 538,
+    "word": "古い",
+    "hiragana": "ふるい",
+    "meaning": "오래되다"
+  },
+  {
+    "no": 539,
+    "word": "ふろ",
+    "hiragana": "ふろ",
+    "meaning": "욕조"
+  },
+  {
+    "no": 540,
+    "word": "文章",
+    "hiragana": "ぶんしょう",
+    "meaning": "문장"
+  },
+  {
+    "no": 541,
+    "word": "ペ?ジ",
+    "hiragana": "ペ?ジ",
+    "meaning": "페이지"
+  },
+  {
+    "no": 542,
+    "word": "下手",
+    "hiragana": "へた",
+    "meaning": "어설픔"
+  },
+  {
+    "no": 543,
+    "word": "ベッド",
+    "hiragana": "ベッド",
+    "meaning": "침대"
+  },
+  {
+    "no": 544,
+    "word": "ペット",
+    "hiragana": "ペット",
+    "meaning": "애완 동물"
+  },
+  {
+    "no": 545,
+    "word": "部屋",
+    "hiragana": "へや",
+    "meaning": "방"
+  },
+  {
+    "no": 546,
+    "word": "へん",
+    "hiragana": "へん",
+    "meaning": "지역"
+  },
+  {
+    "no": 547,
+    "word": "ペン",
+    "hiragana": "ペン",
+    "meaning": "펜"
+  },
+  {
+    "no": 548,
+    "word": "べんきょうする",
+    "hiragana": "べんきょうする",
+    "meaning": "공부"
+  },
+  {
+    "no": 549,
+    "word": "便利",
+    "hiragana": "べんり",
+    "meaning": "편리"
+  },
+  {
+    "no": 550,
+    "word": "帽子",
+    "hiragana": "ぼうし",
+    "meaning": "모자"
+  },
+  {
+    "no": 551,
+    "word": "ボ?ルペン",
+    "hiragana": "ボ?ルペン",
+    "meaning": "볼펜"
+  },
+  {
+    "no": 552,
+    "word": "ほか",
+    "hiragana": "ほか",
+    "meaning": "다른 것"
+  },
+  {
+    "no": 553,
+    "word": "ポケット",
+    "hiragana": "ポケット",
+    "meaning": "포켓"
+  },
+  {
+    "no": 554,
+    "word": "欲しい",
+    "hiragana": "ほしい",
+    "meaning": "바라다"
+  },
+  {
+    "no": 555,
+    "word": "ポスト",
+    "hiragana": "ポスト",
+    "meaning": "우편"
+  },
+  {
+    "no": 556,
+    "word": "細い",
+    "hiragana": "ほそい",
+    "meaning": "얇은"
+  },
+  {
+    "no": 557,
+    "word": "ボタン",
+    "hiragana": "ボタン",
+    "meaning": "버튼"
+  },
+  {
+    "no": 558,
+    "word": "ホテル",
+    "hiragana": "ホテル",
+    "meaning": "호텔"
+  },
+  {
+    "no": 559,
+    "word": "本",
+    "hiragana": "ほん",
+    "meaning": "책"
+  },
+  {
+    "no": 560,
+    "word": "本棚",
+    "hiragana": "ほんだな",
+    "meaning": "책장"
+  },
+  {
+    "no": 561,
+    "word": "ほんとう",
+    "hiragana": "ほんとう",
+    "meaning": "진실"
+  },
+  {
+    "no": 562,
+    "word": "まいあさ",
+    "hiragana": "まいあさ",
+    "meaning": "매일 아침"
+  },
+  {
+    "no": 563,
+    "word": "まいげつ",
+    "hiragana": "まいげつ",
+    "meaning": "매월"
+  },
+  {
+    "no": 564,
+    "word": "まいしゅう",
+    "hiragana": "まいしゅう",
+    "meaning": "매주"
+  },
+  {
+    "no": 565,
+    "word": "まいにち",
+    "hiragana": "まいにち",
+    "meaning": "매일"
+  },
+  {
+    "no": 566,
+    "word": "まいねん",
+    "hiragana": "まいねん",
+    "meaning": "매년"
+  },
+  {
+    "no": 567,
+    "word": "まいばん",
+    "hiragana": "まいばん",
+    "meaning": "매일 밤"
+  },
+  {
+    "no": 568,
+    "word": "前",
+    "hiragana": "まえ",
+    "meaning": "전"
+  },
+  {
+    "no": 569,
+    "word": "曲る",
+    "hiragana": "まがる",
+    "meaning": "구부리"
+  },
+  {
+    "no": 570,
+    "word": "まずい",
+    "hiragana": "まずい",
+    "meaning": "맛이 없다"
+  },
+  {
+    "no": 571,
+    "word": "また",
+    "hiragana": "また",
+    "meaning": "다른 때"
+  },
+  {
+    "no": 572,
+    "word": "まだ",
+    "hiragana": "まだ",
+    "meaning": "아직"
+  },
+  {
+    "no": 573,
+    "word": "町",
+    "hiragana": "まち",
+    "meaning": "마을"
+  },
+  {
+    "no": 574,
+    "word": "待つ",
+    "hiragana": "まつ",
+    "meaning": "기다리다"
+  },
+  {
+    "no": 575,
+    "word": "まっすぐ",
+    "hiragana": "まっすぐ",
+    "meaning": "똑바로"
+  },
+  {
+    "no": 576,
+    "word": "マッチ",
+    "hiragana": "マッチ",
+    "meaning": "경기"
+  },
+  {
+    "no": 577,
+    "word": "窓",
+    "hiragana": "まど",
+    "meaning": "창문"
+  },
+  {
+    "no": 578,
+    "word": "丸い/円い",
+    "hiragana": "まるい",
+    "meaning": "둥글다"
+  },
+  {
+    "no": 579,
+    "word": "万",
+    "hiragana": "まん",
+    "meaning": "만"
+  },
+  {
+    "no": 580,
+    "word": "万年筆",
+    "hiragana": "まんねんひつ",
+    "meaning": "만년필"
+  },
+  {
+    "no": 581,
+    "word": "磨く",
+    "hiragana": "みがく",
+    "meaning": "연마"
+  },
+  {
+    "no": 582,
+    "word": "右",
+    "hiragana": "みぎ",
+    "meaning": "오른쪽"
+  },
+  {
+    "no": 583,
+    "word": "短い",
+    "hiragana": "みじかい",
+    "meaning": "짧다"
+  },
+  {
+    "no": 584,
+    "word": "水",
+    "hiragana": "みず",
+    "meaning": "물"
+  },
+  {
+    "no": 585,
+    "word": "店",
+    "hiragana": "みせ",
+    "meaning": "가게"
+  },
+  {
+    "no": 586,
+    "word": "見せる",
+    "hiragana": "みせる",
+    "meaning": "보이다"
+  },
+  {
+    "no": 587,
+    "word": "道",
+    "hiragana": "みち",
+    "meaning": "길"
+  },
+  {
+    "no": 588,
+    "word": "三日",
+    "hiragana": "みっか",
+    "meaning": "삼일"
+  },
+  {
+    "no": 589,
+    "word": "三つ",
+    "hiragana": "みっつ",
+    "meaning": "세"
+  },
+  {
+    "no": 590,
+    "word": "みどり",
+    "hiragana": "みどり",
+    "meaning": "녹색"
+  },
+  {
+    "no": 591,
+    "word": "皆さん",
+    "hiragana": "みなさん",
+    "meaning": "여러분"
+  },
+  {
+    "no": 592,
+    "word": "南",
+    "hiragana": "みなみ",
+    "meaning": "남"
+  },
+  {
+    "no": 593,
+    "word": "耳",
+    "hiragana": "みみ",
+    "meaning": "귀"
+  },
+  {
+    "no": 594,
+    "word": "みる",
+    "hiragana": "みる",
+    "meaning": "보다"
+  },
+  {
+    "no": 595,
+    "word": "みんな",
+    "hiragana": "みんな",
+    "meaning": "모두"
+  },
+  {
+    "no": 596,
+    "word": "六日",
+    "hiragana": "むいか",
+    "meaning": "6일"
+  },
+  {
+    "no": 597,
+    "word": "向こう",
+    "hiragana": "むこう",
+    "meaning": "저쪽"
+  },
+  {
+    "no": 598,
+    "word": "難しい",
+    "hiragana": "むずかしい",
+    "meaning": "어렵다"
+  },
+  {
+    "no": 599,
+    "word": "六つ",
+    "hiragana": "むっつ",
+    "meaning": "여섯"
+  },
+  {
+    "no": 600,
+    "word": "村",
+    "hiragana": "むら",
+    "meaning": "마을"
+  },
+  {
+    "no": 601,
+    "word": "目",
+    "hiragana": "め",
+    "meaning": "눈"
+  },
+  {
+    "no": 602,
+    "word": "メ?トル",
+    "hiragana": "メ?トル",
+    "meaning": "미터"
+  },
+  {
+    "no": 603,
+    "word": "眼鏡",
+    "hiragana": "めがね",
+    "meaning": "안경"
+  },
+  {
+    "no": 604,
+    "word": "もう",
+    "hiragana": "もう",
+    "meaning": "벌써"
+  },
+  {
+    "no": 605,
+    "word": "もう一度",
+    "hiragana": "もういちど",
+    "meaning": "다시"
+  },
+  {
+    "no": 606,
+    "word": "木曜日",
+    "hiragana": "もくようび",
+    "meaning": "목요일"
+  },
+  {
+    "no": 607,
+    "word": "持つ",
+    "hiragana": "もつ",
+    "meaning": "쥐다"
+  },
+  {
+    "no": 608,
+    "word": "もっと",
+    "hiragana": "もっと",
+    "meaning": "더"
+  },
+  {
+    "no": 609,
+    "word": "物",
+    "hiragana": "もの",
+    "meaning": "물건"
+  },
+  {
+    "no": 610,
+    "word": "門",
+    "hiragana": "もん",
+    "meaning": "문"
+  },
+  {
+    "no": 611,
+    "word": "問題",
+    "hiragana": "もんだい",
+    "meaning": "문제"
+  },
+  {
+    "no": 612,
+    "word": "八百屋",
+    "hiragana": "やおや",
+    "meaning": "청과물"
+  },
+  {
+    "no": 613,
+    "word": "野菜",
+    "hiragana": "やさい",
+    "meaning": "야채"
+  },
+  {
+    "no": 614,
+    "word": "易しい",
+    "hiragana": "やさしい",
+    "meaning": "쉽다"
+  },
+  {
+    "no": 615,
+    "word": "安い",
+    "hiragana": "やすい",
+    "meaning": "싸다"
+  },
+  {
+    "no": 616,
+    "word": "休み",
+    "hiragana": "やすみ",
+    "meaning": "휴가"
+  },
+  {
+    "no": 617,
+    "word": "休む",
+    "hiragana": "やすむ",
+    "meaning": "쉬다"
+  },
+  {
+    "no": 618,
+    "word": "八つ",
+    "hiragana": "やっつ",
+    "meaning": "여덟"
+  },
+  {
+    "no": 619,
+    "word": "山",
+    "hiragana": "やま",
+    "meaning": "산"
+  },
+  {
+    "no": 620,
+    "word": "やる",
+    "hiragana": "やる",
+    "meaning": "하다"
+  },
+  {
+    "no": 621,
+    "word": "夕方",
+    "hiragana": "ゆうがた",
+    "meaning": "저녁"
+  },
+  {
+    "no": 622,
+    "word": "夕飯",
+    "hiragana": "ゆうはん",
+    "meaning": "저녁밥"
+  },
+  {
+    "no": 623,
+    "word": "郵便局",
+    "hiragana": "ゆうびんきょく",
+    "meaning": "우체국"
+  },
+  {
+    "no": 624,
+    "word": "昨夜",
+    "hiragana": "ゆうべ",
+    "meaning": "지난 밤"
+  },
+  {
+    "no": 625,
+    "word": "有名",
+    "hiragana": "ゆうめい",
+    "meaning": "유명"
+  },
+  {
+    "no": 626,
+    "word": "雪",
+    "hiragana": "ゆき",
+    "meaning": "눈"
+  },
+  {
+    "no": 627,
+    "word": "行く",
+    "hiragana": "ゆく",
+    "meaning": "가다"
+  },
+  {
+    "no": 628,
+    "word": "ゆっくりと",
+    "hiragana": "ゆっくりと",
+    "meaning": "천천히"
+  },
+  {
+    "no": 629,
+    "word": "八日",
+    "hiragana": "ようか",
+    "meaning": "8일"
+  },
+  {
+    "no": 630,
+    "word": "洋服",
+    "hiragana": "ようふく",
+    "meaning": "옷"
+  },
+  {
+    "no": 631,
+    "word": "よく",
+    "hiragana": "よく",
+    "meaning": "잘"
+  },
+  {
+    "no": 632,
+    "word": "よこ",
+    "hiragana": "よこ",
+    "meaning": "옆"
+  },
+  {
+    "no": 633,
+    "word": "四日",
+    "hiragana": "よっか",
+    "meaning": "4일"
+  },
+  {
+    "no": 634,
+    "word": "四つ",
+    "hiragana": "よっつ",
+    "meaning": "넷"
+  },
+  {
+    "no": 635,
+    "word": "呼ぶ",
+    "hiragana": "よぶ",
+    "meaning": "부르다"
+  },
+  {
+    "no": 636,
+    "word": "よむ",
+    "hiragana": "よむ",
+    "meaning": "읽다"
+  },
+  {
+    "no": 637,
+    "word": "夜",
+    "hiragana": "よる",
+    "meaning": "밤"
+  },
+  {
+    "no": 638,
+    "word": "弱い",
+    "hiragana": "よわい",
+    "meaning": "약한"
+  },
+  {
+    "no": 639,
+    "word": "らいげつ",
+    "hiragana": "らいげつ",
+    "meaning": "다음달"
+  },
+  {
+    "no": 640,
+    "word": "らいしゅう",
+    "hiragana": "らいしゅう",
+    "meaning": "다음주"
+  },
+  {
+    "no": 641,
+    "word": "らいねん",
+    "hiragana": "らいねん",
+    "meaning": "내년"
+  },
+  {
+    "no": 642,
+    "word": "ラジオ",
+    "hiragana": "ラジオ",
+    "meaning": "라디오"
+  },
+  {
+    "no": 643,
+    "word": "ラジカセ",
+    "hiragana": "ラジカセ",
+    "meaning": "카세트"
+  },
+  {
+    "no": 644,
+    "word": "りっぱ",
+    "hiragana": "りっぱ",
+    "meaning": "훌륭함"
+  },
+  {
+    "no": 645,
+    "word": "りゅうがくせい",
+    "hiragana": "りゅうがくせい",
+    "meaning": "유학생"
+  },
+  {
+    "no": 646,
+    "word": "りょうしん",
+    "hiragana": "りょうしん",
+    "meaning": "부모"
+  },
+  {
+    "no": 647,
+    "word": "料理",
+    "hiragana": "りょうり",
+    "meaning": "요리"
+  },
+  {
+    "no": 648,
+    "word": "旅行",
+    "hiragana": "りょこう",
+    "meaning": "여행"
+  },
+  {
+    "no": 649,
+    "word": "零",
+    "hiragana": "れい",
+    "meaning": "영"
+  },
+  {
+    "no": 650,
+    "word": "れいぞうこ",
+    "hiragana": "れいぞうこ",
+    "meaning": "냉장고"
+  },
+  {
+    "no": 651,
+    "word": "レコ?ド",
+    "hiragana": "レコ?ド",
+    "meaning": "기록"
+  },
+  {
+    "no": 652,
+    "word": "レストラン",
+    "hiragana": "レストラン",
+    "meaning": "레스토랑"
+  },
+  {
+    "no": 653,
+    "word": "練習",
+    "hiragana": "れんしゅうする",
+    "meaning": "연습"
+  },
+  {
+    "no": 654,
+    "word": "廊下",
+    "hiragana": "ろうか",
+    "meaning": "복도"
+  },
+  {
+    "no": 655,
+    "word": "六",
+    "hiragana": "ろく",
+    "meaning": "육"
+  },
+  {
+    "no": 656,
+    "word": "ワイシャツ",
+    "hiragana": "ワイシャツ",
+    "meaning": "셔츠"
+  },
+  {
+    "no": 657,
+    "word": "若い",
+    "hiragana": "わかい",
+    "meaning": "젊은"
+  },
+  {
+    "no": 658,
+    "word": "分かる",
+    "hiragana": "わかる",
+    "meaning": "알다"
+  },
+  {
+    "no": 659,
+    "word": "忘れる",
+    "hiragana": "わすれる",
+    "meaning": "잊어 버리다"
+  },
+  {
+    "no": 660,
+    "word": "私",
+    "hiragana": "わたくし",
+    "meaning": "나"
+  },
+  {
+    "no": 661,
+    "word": "私",
+    "hiragana": "わたし",
+    "meaning": "나"
+  },
+  {
+    "no": 662,
+    "word": "渡す",
+    "hiragana": "わたす",
+    "meaning": "건네주다"
+  },
+  {
+    "no": 663,
+    "word": "渡る",
+    "hiragana": "わたる",
+    "meaning": "건너다"
+  },
+  {
+    "no": 664,
+    "word": "わるい",
+    "hiragana": "わるい",
+    "meaning": "나쁘다"
+  }
+]
