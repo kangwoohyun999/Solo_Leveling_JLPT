@@ -1,0 +1,666 @@
+no,ÀÏº»¾î´Ü¾î,ÇÑ±¹¾î ¶æ,¿µ¾î ¶æ,ºñ°í,Hiragana,Kanji
+1,?ª¦,¸¸³ª´Ù,to meet,,ª¢ª¦,?ª¦
+2,?ª¤,Çª¸¥,blue,,ª¢ªªª¤,?ª¤
+3,îåª¤,»¡°£,red,,ª¢ª«ª¤,îåª¤
+4,Ù¥ª¤,¼±¸íÇÑ,bright,,ª¢ª«ªëª¤,Ù¥ª¤
+5,õÕ,°¡À»,autumn,,ª¢ª­,õÕ
+6,ËÒª¯,¿­¸®´Ù,"to open, to become open",,ª¢ª¯,ËÒª¯
+7,ËÒª±ªë,¿­±â,to open,,ª¢ª±ªë,ËÒª±ªë
+8,ß¾ª²ªë,ÁÖ´Ù,to give,,ª¢ª²ªë,ß¾ª²ªë
+9,ğÈ,¾ÆÄ§,morning,,ª¢ªµ,ğÈ
+10,ğÈåÙÚù,¾ÆÄ§¹ä,breakfast,,ª¢ªµª´ªÏªó,ğÈåÙÚù
+11,ª¢ªµªÃªÆ,¸ğ·¹,day after tomorrow,,ª¢ªµªÃªÆ,
+12,ğë,´Ù¸®,"foot, leg",,ª¢ª·,ğë
+13,Ù¥ìí,³»ÀÏ,tomorrow,,ª¢ª·ª¿,Ù¥ìí
+14,ª¢ª½ª³,Àú±â,over there,,ª¢ª½ª³,
+15,ë´ªÖ,³î´Ù,"to play, to make a visit",,ª¢ª½ªÖ,ë´ªÖ
+16,Ñìª«ª¤,µû¶æÇÑ,warm,,ª¢ª¿ª¿ª«ª¤,Ñìª«ª¤
+17,Ôé,¸Ó¸®,head,,ª¢ª¿ªŞ,Ôé
+18,ãæª·ª¤,»õ·Î¿î,new,,ª¢ª¿ªéª·ª¤,ãæª·ª¤
+19,ª¢ªÁªé,ÀúÂÊ,there,,ª¢ªÁªé,
+20,ßôª¤,´ş´Ù,hot,,ª¢ªÄª¤,ßôª¤
+21,æğª¤,¶ß°Å´Ù,hot to the touch,,ª¢ªÄª¤,æğª¤
+22,ı§ª¤,µÎ²¨´Ù,"kind, deep, thick",,ª¢ªÄª¤,ı§ª¤
+23,ª¢ªÃªÁ,Àú±â,over there,,ª¢ªÃªÁ,
+24,ı­,³ªÁß¿¡,afterwards,,ª¢ªÈ,ı­
+25,ª¢ªÊª¿,´ç½Å,you,,ª¢ªÊª¿,
+26,úü,Çü,(humble) older brother,,ª¢ªË,úü
+27,í«,¾ğ´Ï,(humble) older sister,,ª¢ªÍ,í«
+28,ª¢ªÎ,±×,that over there,,ª¢ªÎ,
+29,ª¢ªÎ,À½ ...,um...,,ª¢ªÎ,
+30,«¢«Ñ?«È,¾ÆÆÄÆ®,apartment,,«¢«Ñ?«È,
+31,ª¢ªÓªë,¸ñ¿åÇÏ´Ù,"to bathe, to shower",,ª¢ªÓªë,
+32,êËªÊª¤,À§ÇèÇÏ´Ù,dangerous,,ª¢ªÖªÊª¤,êËªÊª¤
+33,Êöª¤,´ŞÄŞÇÑ,sweet,,ª¢ªŞª¤,Êöª¤
+34,ª¢ªŞªê,º°·Î,not very,,ª¢ªŞªê,
+35,éë,ºñ,rain,,ª¢ªá,éë
+36,ìÇ,»çÅÁ,candy,,ª¢ªá,ìÇ
+37,á©ª¦,¾Ä´Ù,to wash,,ª¢ªéª¦,á©ª¦
+38,ª¢ªë,ÀÖ´Ù,"to be,to have (used for inanimate objects)",,ª¢ªë,
+39,?ª¯,°È´Ù,to walk,,ª¢ªëª¯,?ª¯
+40,ª¢ªì,±×°Í,that,,ª¢ªì,
+41,ª¤ª¤,ÁÁÀº,good,ªèª¤,ª¤ª¤,
+42,ª¤ª¤ª¨,¾Æ´Ï¿À,no,,ª¤ª¤ª¨,
+43,åëª¦,¸»,to say,,ª¤ª¦,åëª¦
+44,Ê«,Áı,house,,ª¤ª¨,Ê«
+45,ª¤ª«ª¬,¾î¶»°Ô,how,,ª¤ª«ª¬,
+46,ú¼ª¯,°¡´Ù,to go,,ª¤ª¯,ú¼ª¯
+47,ª¤ª¯ªÄ,¸î,"how many?,how old?",,ª¤ª¯ªÄ,
+48,ª¤ª¯ªé,¾ó¸¶,how much?,,ª¤ª¯ªé,
+49,ò®,¿¬¸ø,pond,,ª¤ª±,ò®
+50,?íº,ÀÇ»ç,medical doctor,,ª¤ª·ªã,?íº
+51,ª¤ª¹,ÀÇÀÚ,chair,,ª¤ª¹,
+52,ØÏª·ª¤,¹Ù»Ú´Ù,"busy, irritated",,ª¤ª½ª¬ª·ª¤,ØÏª·ª¤
+53,÷Ôª¤,¾ÆÇÁ´Ù,painful,,ª¤ª¿ª¤,÷Ôª¤
+54,ìé,ÀÏ,one,,ª¤ªÁ,ìé
+55,ìéìí,ÀÏÀÏ,first of the month,,ª¤ªÁªËªÁ,ìéìí
+56,ª¤ªÁªĞªó,°¡Àå,"best, first",,ª¤ªÁªĞªó,
+57,ª¤ªÄ,¾ğÁ¦,when,,ª¤ªÄ,
+58,çéìí,5 ÀÏ,"five days, fifth day",,ª¤ªÄª«,çéìí
+59,ìé?,ÇÔ²²,together,,ª¤ªÃª·ªç,ìé?
+60,çéªÄ,´Ù¼¸,five,,ª¤ªÄªÄ,çéªÄ
+61,ª¤ªÄªâ,Ç×»ó,always,,ª¤ªÄªâ,
+62,Ì³,°³,dog,,ª¤ªÌ,Ì³
+63,ĞÑ,Áö±İ,now,,ª¤ªŞ,ĞÑ
+64,ëòÚ«,ÀÇ¹Ì,meaning,,ª¤ªß,ëòÚ«
+65,ØÙ,¿©µ¿»ı,(humble) younger sister,,ª¤ªâª¦ªÈ,ØÙ
+66,úî,½ÈÀ½,unpleasant,,ª¤ªä,úî
+67,ìıÏ¢,ÀÔ±¸,entrance,,ª¤ªêª°ªÁ,ìıÏ¢
+68,ËÜªë,ÀÖ´Ù,"to be, to have (used for people and animals)",,ª¤ªë,ËÜªë
+69,é©ªë,ÇÊ¿äÇÏ´Ù,to need,,ª¤ªë,é©ªë
+70,ìıªìªë,³Ö´Ù,to put in,,ª¤ªìªë,ìıªìªë
+71,ßä,»ö,colour,,ª¤ªí,ßä
+72,ª¤ªíª¤ªí,¿©·¯°¡Áö,various,,ª¤ªíª¤ªí,
+73,ß¾,À§,on top of,,ª¦ª¨,ß¾
+74,ı­ªí,µÚ¿¡,behind,,ª¦ª·ªí,ı­ªí
+75,Úİª¤,¾ã´Ù,"thin,weak",,ª¦ª¹ª¤,Úİª¤
+76,Ê°,³ë·¡,song,,ª¦ª¿,Ê°
+77,Ê°ª¦,³ë·¡ÇÏ´Ù,to sing,,ª¦ª¿ª¦,Ê°ª¦
+78,ßæªŞªìªë, ÅÂ¾î³ª´Ù,to be born,,ª¦ªŞªìªë,ßæªŞªìªë
+79,ú­,¹Ù´Ù,sea,,ª¦ªß,ú­
+80,?ªë,ÆÈ´Ù,to sell,,ª¦ªë,?ªë
+81,Ûáª¤,½Ã²ô·´´Ù,"noisy, annoying",,ª¦ªëªµª¤,Ûáª¤
+82,ß¾ó·,°Ñ¿Ê,jacket,,ª¦ªïª®,ß¾ó·
+83,?,±×¸²,picture,,ª¨,?
+84,ç±?,¿µÈ­,movie,,ª¨ª¤ª¬,ç±?
+85,ç±?Î½,¿µÈ­°ü,cinema,,ª¨ª¤ª¬ª«ªó,ç±?Î½
+86,çÈåŞ,¿µ¾î,English language,,ª¨ª¤ª´,çÈåŞ
+87,ª¨ª¨,¿¹,yes,,ª¨ª¨,
+88,?,¿ª,station,,ª¨ª­,?
+89,«¨«ì«Ù?«¿?,¿¤¸®º£ÀÌÅÍ,elevator,,«¨«ì«Ù?«¿?,
+90,æçù¶,¿¬ÇÊ,pencil,,ª¨ªóªÔªÄ,æçù¶
+91,ªªª¤ª·ª¤,¸ÀÀÖ´Â,delicious,,ªªª¤ª·ª¤,
+92,Òıª¤,¸¹Àº,many,,ªªªªª¤,Òıª¤
+93,ÓŞª­ª¤,Å«,big,,ªªªªª­ª¤,ÓŞª­ª¤
+94,ÓŞª­ªÊ,Å«,big,,ªªªªª­ªÊ,ÓŞª­ªÊ
+95,ÓŞá§,´ë¼¼,great number of people,,ªªªªª¼ª¤,ÓŞá§
+96,ªªÙ½ªµªó,¾ö¸¶,(honorable) mother,,ªªª«ª¢ªµªó,ªªÙ½ªµªó
+97,ªªÎ¢í­,°úÀÚ,"sweets, candy",,ªªª«ª·,ªªÎ¢í­
+98,ªªÑÑ,µ·,money,,ªªª«ªÍ,ªªÑÑ
+99,ÑÃª­ªë,ÀÏ¾î³ª´Ù,to get up,,ªªª­ªë,ÑÃª­ªë
+100,öÇª¯,µÎ´Ù,to put,,ªªª¯,öÇª¯
+101,?ªµªó,ºÎÀÎ,(honorable) wife,,ªªª¯ªµªó,?ªµªó
+102,ªªñĞ,¼ú,"alcohol, rice wine",,ªªªµª±,ªªñĞ
+103,ªªÙ©,Á¢½Ã,"plate, dish",,ªªªµªé,ªªÙ©
+104,Û×İ«ªµªó,ÇÒ¾Æ¹öÁö,"grandfather, male senior citizen",âÒİ«,ªªª¸ª¤ªµªó,Û×İ«
+105,?ª¨ªë,°¡¸£Ä¡´Ù,"to teach, to tell",,ªªª·ª¨ªë,?ª¨ªë
+106,Û×İ«ªµªó,¾ÆÀú¾¾,"uncle, middle aged gentleman",âÒİ«,ªªª¸ªµªó,Û×İ«
+107,äãª¹,¹Ğ´Ù,"to push, to stamp something",,ªªª¹,äãª¹
+108,?ª¤,´Ê´Ù,"late, slow",,ªªª½ª¤,?ª¤
+109,ªªÒş,Â÷,green tea,,ªªªÁªã,ªªÒş
+110,ªªâ¢á©ª¤,È­Àå½Ç,bathroom,,ªªªÆª¢ªéª¤,ªªâ¢á©ª¤
+111,ªªİ«ªµªó,¾Æ¹öÁö,(honorable) father,,ªªªÈª¦ªµªó,ªªİ«ªµªó
+112,ğ©,µ¿»ı,younger brother,,ªªªÈª¦ªÈ,ğ©
+113,Ñû,³²ÀÚ,Man,,ªªªÈª³,Ñû
+114,ÑûªÎí­,¼Ò³â,Boy,,ªªªÈª³ªÎª³,ÑûªÎí­
+115,ìéíÆìí,±×Àú²²,day before yesterday,,ªªªÈªÈª¤,ìéíÆìí
+116,ìéíÆÒ´,Áö³­ÇØ,year before last,,ªªªÈªÈª·,ìéíÆÒ´
+117,ÓŞìÑ,¼ºÀÎ,Adult,,ªªªÈªÊ,ÓŞìÑ
+118,ªªªÊª«,¹è,stomach,,ªªªÊª«,
+119,ÔÒª¸,°°Àº,same,,ªªªÊª¸,ÔÒª¸
+120,ªªúüªµªó,Çü,(honorable) older brother,,ªªªËª¤ªµªó,ªªúüªµªó
+121,ªªí«ªµªó,¾ğ´Ï,(honorable) older sister,,ªªªÍª¨ªµªó,ªªí«ªµªó
+122,ªªªĞª¢ªµªó,ÇÒ¸Ó´Ï,"grandmother, female senior-citizen",,ªªªĞª¢ªµªó,
+123,Û×Ù½ªµªó,¾ÆÁÖ¸Ó´Ï,Aunt,âÒÙ½ªµªó,ªªªĞªµªó,Û×Ù½ªµªó/âÒÙ½ªµªó
+124,ªªù¦Õå,¸ñ¿å,Bath,,ªªªÕªí,ªªù¦Õå
+125,ªªÜ§?,µµ½Ã¶ô,boxed lunch,,ªªªÙªóªÈª¦,ªªÜ§?
+126,?ª¨ªë,±â¾ïÇÏ´Ù,to remember,,ªªªÜª¨ªë,?ª¨ªë
+127,ªªªŞªïªêªµªó,°æÂû,friendly term for policeman,,ªªªŞªïªêªµªó,
+128,ñìª¤,¹«°Å¿î,Heavy,,ªªªâª¤,ñìª¤
+129,ªªªâª·ªíª¤,Àç¹Ì,Interesting,,ªªªâª·ªíª¤,
+130,ç¶ª°,¼ö¿µ,to swim,,ªªªèª°,ç¶ª°
+131,Ë½ªêªë,³»¸®´Ù,"to get off, to descend",,ªªªêªë,Ë½ªêªë
+132,ğûªë,³¡³ª´Ù,to finish,,ªªªïªë,ğûªë
+133,ëå?,À½¾Ç,Music,,ªªªóª¬ª¯,ëå?
+134,Ò³,¿©ÀÚ,Woman,,ªªªóªÊ,Ò³
+135,Ò³ªÎí­,¼Ò³à,Girl,,ªªªóªÊªÎª³,Ò³ªÎí­
+136,èâ?,¿Ü±¹,foreign country,,ª¬ª¤ª³ª¯,èâ?
+137,èâ?ìÑ,¿Ü±¹ÀÎ,Foreigner,,ª¬ª¤ª³ª¯ª¸ªó,èâ?ìÑ
+138,?Şä,È¸»ç,Company,,ª«ª¤ª·ªã,?Şä
+139,Í­Ó«,°è´Ü,Stairs,,ª«ª¤ªÀªó,Í­Ó«
+140,Øâª¤Úª,¼îÇÎ,Shopping,,ª«ª¤ªâªÎ,Øâª¤Úª
+141,Øâª¦,±¸¸Å,to buy,,ª«ª¦,Øâª¦
+142,Ú÷ª¹,¹İÈ¯ÇÏ´Ù,to return something,,ª«ª¨ª¹,Ú÷ª¹
+143,?ªë,µ¹¾Æ,to go back,,ª«ª¨ªë,?ªë
+144,ª«ª«ªë,°É¸®´Ù,to take time or money,,ª«ª«ªë,
+145,ª«ª®,¿­¼è,Key,,ª«ª®,
+146,ßöª¯,¾²±â,to write,,ª«ª¯,ßöª¯
+147,?ßæ,ÇĞ»ı,Student,,ª¬ª¯ª»ª¤,?ßæ
+148,ª«ª±ªë,°É´Ù,to call by phone,,ª«ª±ªë,
+149,ß¡,¿ì»ê,Umbrella,,ª«ªµ,ß¡
+150,Óèª¹,ºô·Á,to lend,,ª«ª¹,Óèª¹
+151,ù¦,¹Ù¶÷,Wind,,ª«ª¼,ù¦
+152,ù¦Ş÷,°¨±â,a cold,,ª«ª¼,ù¦Ş÷
+153,Ê«ğé,°¡Á·,Family,,ª«ª¾ª¯,Ê«ğé
+154,Û°,¹æ¹ı,"person, way of doing",,ª«ª¿,Û°
+155,?Îè,ÇĞ±³,School,,ª¬ªÃª³ª¦,?Îè
+156,«««Ã«×,ÄÅ,Cup,,«««Ã«×,
+157,Ê«ïÔ,°¡Á¤,Household,,ª«ªÆª¤,Ê«ïÔ
+158,ÊÇ,¸ğ¼­¸®,a corner,,ª«ªÉ,ÊÇ
+159,ª«ªĞªó,°¡¹æ,"bag, basket",,ª«ªĞªó,
+160,ü£?,²Éº´,a vase,,ª«ªÓªó,ü£?
+161,òµ,Á¾ÀÌ,paper,,ª«ªß,òµ
+162,«««á«é,Ä«¸Ş¶ó,camera,,«««á«é,
+163,ûıèøìí,È­¿äÀÏ,Tuesday,,ª«ªèª¦ªÓ,ûıèøìí
+164,ãôª¤,¸Ê´Ù,Spicy,,ª«ªéª¤,ãôª¤
+165,?,¸ö,Body,,ª«ªéªÀ,?
+166,ó¨ªêªë,ºô¸®´Ù,to borrow,,ª«ªêªë,ó¨ªêªë
+167,?ª¤,°¡º±´Ù,Light,,ª«ªëª¤,?ª¤
+168,«««ì?,Ä«·¹,Curry,,«««ì?,
+169,«««ì«ó«À?,´Ş·Â,calendar,,«««ì«ó«À?,
+170,ô¹,°­,River,ùÁ,ª«ªï,ô¹/ùÁ
+171,ª«ªïª¤ª¤,±Í¿±´Ù,Cute,,ª«ªïª¤ª¤,
+172,ùÓí®,ÇÑÀÚ,Chinese character,,ª«ªóª¸,ùÓí®
+173,ÙÊ,³ª¹«,"tree, wood",,ª­,ÙÊ
+174,?ßäª¤,³ë¶ş´Ù,yellow,,ª­ª¤ªíª¤,?ßäª¤
+175,á¼ª¨ªë,»ç¶ó,to disappear,,ª­ª¨ªë,á¼ª¨ªë
+176,Ú¤ª¯,µè´Ù,"to hear, to listen to, to ask",,ª­ª¯,Ú¤ª¯
+177,İÁ,ºÏ,North,,ª­ª¿,İÁ
+178,«®«¿?,±âÅ¸,Guitar,,«®«¿?,
+179,çıª¤,´õ·¯¿î,Dirty,,ª­ª¿ªÊª¤,çıª¤
+180,ÑÒÒşïÁ,Ä¿ÇÇ™ö,coffee lounge,,ª­ªÃªµªÆªó,ÑÒÒşïÁ
+181,ï·â¢,¿ìÇ¥,postage stamp,,ª­ªÃªÆ,ï·â¢
+182,ï·İ¬,Æ¼ÄÏ,Ticket,,ª­ªÃª×,ï·İ¬
+183,íÆìí,¾îÁ¦,Yesterday,,ª­ªÎª¦,íÆìí
+184,Îú,¾ÆÈ©,Nine,ª¯,ª­ªåª¦,Îú
+185,éÚë¿,¼è°í±â,Beef,,ª®ªåª¦ªËª¯,éÚë¿
+186,éÚêá,¿ìÀ¯,Milk,,ª®ªåª¦ªËªåª¦,éÚêá
+187,ĞÑìí,¿À´Ã,Today,,ª­ªçª¦,ĞÑìí
+188,?ãø,±³½Ç,Classroom,,ª­ªçª¦ª·ªÄ,?ãø
+189,úüğ©,ÇüÁ¦,(humble) siblings,,ª­ªçª¦ªÀª¤,úüğ©
+190,ËÛÒ´,ÀÛ³â,last year,,ª­ªçªÍªó,ËÛÒ´
+191,úîª¤,½ÈÀ½,Hate,,ª­ªéª¤,úîª¤
+192,ï·ªë,ÀÚ¸£´Ù,to cut,,ª­ªë,ï·ªë
+193,ó·ªë,¿ÊÀ» ÀÔ´Ù,to put on from the shoulders down,,ª­ªë,ó·ªë
+194,ª­ªìª¤,¿¹»İ,"pretty, clean",,ª­ªìª¤,
+195,«­«í,Å³·Î±×·¥,Kilogram,«­«í«°«é«à,«­«í,
+196,«­«í,Å³·Î¹ÌÅÍ,Kilometer,«­«í«á?«È«ë,«­«í,
+197,ëŞú¼,ÀºÇà,Bank,,ª®ªóª³ª¦,ëŞú¼
+198,ÑÑèøìí,±İ¿äÀÏ,Friday,,ª­ªóªèª¦ªÓ,ÑÑèøìí
+199,?,¾à,medicine,,ª¯ª¹ªê,?
+200,ª¯ªÀªµª¤,~ÇØ ÁÖ¼¼¿ä,Please,,ª¯ªÀªµª¤,
+201,ÍıÚª,°úÀÏ,Fruit,,ª¯ªÀªâªÎ,ÍıÚª
+202,Ï¢,ÀÔ,"mouth, opening",,ª¯ªÁ,Ï¢
+203,ü¨,½Å¹ß,Shoes,,ª¯ªÄ,ü¨
+204,ü¨ù»,¾ç¸»,Socks,,ª¯ªÄª·ª¿,ü¨ù»
+205,?,±¹°¡,Country,,ª¯ªË,?
+206,Ó¾ªê,Èå¸²,cloudy weather,,ª¯ªâªê,Ó¾ªê
+207,Ó¾ªë,Èå¸®´Ù,"to become cloudy, to become dim",,ª¯ªâªë,Ó¾ªë
+208,äŞª¤,¾îµÓ´Ù,Gloomy,,ª¯ªéª¤,äŞª¤
+209,«¯«é«¹,Å¬·¡½º,Class,,«¯«é«¹,
+210,«°«é«à,±×·¥,Gram,,«°«é«à,
+211,?ªë,¿À´Ù,to come,,ª¯ªë,?ªë
+212,ó³,ÀÚµ¿Â÷,"car, vehicle",,ª¯ªëªŞ,ó³
+213,?,°ËÁ¤,Black,,ª¯ªí,?
+214,?ª¤,°ËÀº,black,,ª¯ªíª¤,?ª¤
+215,ÌíÎ¯,°æÂû,policeman,,ª±ª¤ª«ªó,ÌíÎ¯
+216,ĞÑğÈ,¿À´Ã ¾ÆÄ§,this morning,,ª±ªµ,ĞÑğÈ
+217,á¼ª¹,Áö¿ì,"to erase, to turn off power",,ª±ª¹,á¼ª¹
+218,Ì¿Ï°,ÈÇ¸¢ÇÔ,"splendid, enough",,ª±ªÃª³ª¦,Ì¿Ï°
+219,Ì¿ûæ,°áÈ¥,Marriage,,ª±ªÃª³ªó,Ì¿ûæ
+220,êÅèøìí,¿ù¿äÀÏ,Monday,,ª²ªÄªèª¦ªÓ,êÅèøìí
+221,úÜ?,Çö°ü,entry hall,,ª²ªóª«ªó,úÜ?
+222,êª?,°Ç°­,"health, vitality",,ª²ªóª­,êª?
+223,çé,´Ù¼¸,Five,,ª´,çé
+224,Íëê®,°ø¿ø,Park,,ª³ª¦ª¨ªó,Íëê®
+225,Îßó¬ïÃ,±³Â÷·Î,intersection,,ª³ª¦ªµªÆªó,Îßó¬ïÃ
+226,ûõÒş,Â÷,black tea,,ª³ª¦ªÁªã,ûõÒş
+227,ÎßÛã,ÆÄÃâ¼Ò,police box,,ª³ª¦ªĞªó,ÎßÛã
+228,?,¸ñ¼Ò¸®,Voice,,ª³ª¨,?
+229,«³?«È,ÄÚÆ®,"coat, tennis court",,«³?«È,
+230,«³?«Ò?,Ä¿ÇÇ,Coffee,,«³?«Ò?,
+231,ª³ª³,¿©±â,Here,,ª³ª³,
+232,çíı­,¿ÀÈÄ,afternoon,,ª´ª´,çíı­
+233,Îúìí,9ÀÏ,"nine days, ninth day",,ª³ª³ªÎª«,Îúìí
+234,ÎúªÄ,¾ÆÈ©,Nine,,ª³ª³ªÎªÄ,ÎúªÄ
+235,çíîñ,¿ÀÀü,morning,,ª´ª¼ªó,çíîñ
+236,ÓÍª¨ªë,´ë´äÇÏ´Ù,to answer,,ª³ª¿ª¨ªë,ÓÍª¨ªë
+237,ª³ªÁªé,ÀÌÂÊ,this person or way,,ª³ªÁªé,
+238,ª³ªÃªÁ,¿©±â,this person or way,,ª³ªÃªÁ,
+239,«³«Ã«×,ÄÅ,a glass,,«³«Ã«×,
+240,ĞÑÒ´,¿ÃÇØ,this year,,ª³ªÈª·,ĞÑÒ´
+241,åëç¨,¸»,"word, language",,ª³ªÈªĞ,åëç¨
+242,í­Íê,¾ÆÀÌ,Child,,ª³ªÉªâ,í­Íê
+243,ª³ªÎ,ÀÌ,This,,ª³ªÎ,
+244,åÙÚù,¹ä,"cooked rice, meal",,ª´ªÏªó,åÙÚù
+245,«³«Ô?ª¹ªë,º¹»ç,to copy,,«³«Ô?ª¹ªë,
+246,Íİªë,°ï¶õÇÏ´Ù,to be worried,,ª³ªŞªë,Íİªë
+247,ª³ªì,ÀÌ°Í,This,,ª³ªì,
+248,ĞÑêÅ,±İ¿ù,this month,,ª³ªóª²ªÄ,ĞÑêÅ
+249,ĞÑñÎ,ÀÌ¹ø ÁÖ,this week,,ª³ªóª·ªåª¦,ĞÑñÎ
+250,ª³ªóªÊ,ÀÌ·¯ÇÑ,Such,,ª³ªóªÊ,
+251,ĞÑØ¹,¿À´Ã ¹ã,this evening,,ª³ªóªĞªó,ĞÑØ¹
+252,ªµª¢,Àß¡¦,well¡¦,,ªµª¢,
+253,î¯øÖ,Áö°©,Wallet,,ªµª¤ªÕ,î¯øÖ
+254,åà,¹°°í±â,Fish,,ªµª«ªÊ,åà
+255,à»,¾Õ,"the future, previous",,ªµª­,à»
+256,?ª¯,ÇÇ´Ù,to bloom,,ªµª¯,?ª¯
+257,íÂÙş,ÀÛ¹®,"composition, writing",,ªµª¯ªÖªó,íÂÙş
+258,ó¬ª¹,°¡¸®´Ù,"to stretch out hands, to raise an umbrella",,ªµª¹,ó¬ª¹
+259,?ò¼,ÀâÁö,Magazine,,ª¶ªÃª·,?ò¼
+260,ŞãÓØ,¼³ÅÁ,Sugar,,ªµªÈª¦,ŞãÓØ
+261,ùÎª¤,Ãä´Ù,Cold,,ªµªàª¤,ùÎª¤
+262,ªµ?Ò´,´ÙÀ½ ÇØ,year after next,,ªµªéª¤ªÍªó,ªµ?Ò´
+263,ß²,¼Â,Three,,ªµªó,ß²
+264,ß¤?ª¹ªë,»êÃ¥,to stroll,,ªµªóªİª¹ªë,ß¤?
+265,ŞÌ,³İ,Four,ªèªó,ª·,ŞÌ
+266,?,¼Ò±İ,Salt,,ª·ªª,?
+267,ª·ª«ª·,±×·¯³ª,However,,ª·ª«ª·,
+268,ãÁÊà,½Ã°£,Time,,ª¸ª«ªó,ãÁÊà
+269,ŞÂŞÀ,ÀÏ,Job,,ª·ª´ªÈ,ŞÂŞÀ
+270,?ßö,»çÀü,Dictionary,,ª¸ª·ªç,?ßö
+271,?ª«,Á¶¿ë,Quiet,,ª·ªºª«,?ª«
+272,ù»,¾Æ·¡,Below,,ª·ª¿,ù»
+273,öÒ,Ä¥,Seven,ªÊªÊ,ª·ªÁ,öÒ
+274,òõÙı,Áú¹®,Question,,ª·ªÄªâªó,òõÙı
+275,í»?ó³,ÀÚÀü°Å,Bicycle,,ª¸ªÆªóª·ªã,í»?ó³
+276,í»ÔÑó³,ÀÚµ¿Â÷,Automobile,,ª¸ªÉª¦ª·ªã,í»ÔÑó³
+277,ŞİªÌ,Á×´Ù,to die,,ª·ªÌ,ŞİªÌ
+278,í®ìÚ,»çÀü,Dictionary,,ª¸ªÓª­,í®ìÚ
+279,í»İÂ,ÀÚ½Å,Oneself,,ª¸ªÖªó,í»İÂ
+280,øÍªŞªë,²À ´İÈ÷´Ù,"to close, to be closed",,ª·ªŞªë,øÍªŞªë
+281,øÍªáªë,´İ´Ù,to close something,,ª·ªáªë,øÍªáªë
+282,ôóªáªë,´İ´Ù,to tie,,ª·ªáªë,ôóªáªë
+283,ª¸ªã,±×·³,well then¡¦,ª¸ªãª¢,ª¸ªã,
+284,??,»çÁø,photograph,,ª·ªãª·ªó,??
+285,«·«ã«Ä,¼ÅÃ÷,Shirt,,«·«ã«Ä,
+286,«·«ã«ï?,»ş¿ö,Shower,,«·«ã«ï?,
+287,ä¨,½Ê,Ten,,ª¸ªåª¦,ä¨
+288,â£åö,¼ö¾÷,"lesson, class work",,ª¸ªåª®ªçª¦,â£åö
+289,âÖğ¹,¼÷Á¦,homework,,ª·ªåª¯ªÀª¤,âÖğ¹
+290,ß¾â¢,Àß,Skillful,,ª¸ªçª¦ªº,ß¾â¢
+291,íÛÜı,°Ç°­ÇÔ,"strong, durable",,ª¸ªçª¦ªÖ,íÛÜı
+292,ª·ªçª¦ªæ,°£Àå,soy sauce,,ª·ªçª¦ªæ,
+293,ãİÓÑ,½Ä´ç,dining hall,,ª·ªçª¯ªÉª¦,ãİÓÑ
+294,ò±ªë,¾Ë,to know,,ª·ªë,ò±ªë
+295,ÛÜª¤,ÇÏ¾á,White,,ª·ªíª¤,ÛÜª¤
+296,ãæÚ¤,½Å¹®,newspaper,,ª·ªóªÖªó,ãæÚ¤
+297,â©èøìí,¼ö¿äÀÏ,Wednesday,,ª¹ª¤ªèª¦ªÓ,â©èøìí
+298,ıåª¦,µéÀÌ¸¶½Ã´Ù,"to smoke, to suck",,ª¹ª¦,ıåª¦
+299,«¹««?«È,½ºÄ¿Æ®,Skirt,,«¹««?«È,
+300,û¿ª­,ÁÁ¾ÆÇÔ,Likeable,,ª¹ª­,û¿ª­
+301,á´ªÊª¤,Àû´Ù,a few,,ª¹ª¯ªÊª¤,á´ªÊª¤
+302,ª¹ª°ªË,Áï½Ã,Instantly,,ª¹ª°ªË,
+303,á´ª·,Á¶±İ,Few,,ª¹ª³ª·,á´ª·
+304,?ª·ª¤,Â÷°¡¿î,Refreshing,,ª¹ªºª·ª¤,?ª·ª¤
+305,«¹«È?«Ö,½ºÅäºê,Heater,,«¹«È?«Ö,
+306,«¹«×?«ó,¼ù°¡¶ô,Spoon,,«¹«×?«ó,
+307,«¹«İ?«Ä,½ºÆ÷Ã÷,Sport,,«¹«İ?«Ä,
+308,«º«Ü«ó,¹ÙÁö,Trousers,,«º«Ü«ó,
+309,ñ¬ªà,»ì´Ù,to live in,,ª¹ªà,ñ¬ªà
+310,«¹«ê«Ã«Ñ,½½¸®ÆÛ,Slippers,,«¹«ê«Ã«Ñ,
+311,ª¹ªë,ÇÏ´Ù,to do,,ª¹ªë,
+312,ñ¨ªë,¾É´Ù,to sit,,ª¹ªïªë,ñ¨ªë
+313,ÛÎ,Å°,"height, stature",,ª»,ÛÎ
+314,ßæÓù,ÇĞ»ı,Pupil,,ª»ª¤ªÈ,ßæÓù
+315,«»?«¿?,½º¿şÅÍ,"sweater, jumper",,«»?«¿?,
+316,ª»ªÃª±ªó,°æÁ¦,Economy,,ª»ªÃª±ªó,
+317,ÛÎ?,Á¤Àå,business suit,,ª»ªÓªí,ÛÎ?
+318,?ª¤,Á¼´Ù,Narrow,,ª»ªŞª¤,?ª¤
+319,«¼«í,Á¦·Î,Zero,,«¼«í,
+320,ô¶,Ãµ,Thousand,,ª»ªó,ô¶
+321,à»êÅ,Áö³­ ´Ş,last month,,ª»ªóª²ªÄ,à»êÅ
+322,à»ñÎ,Áö³­,last week,,ª»ªóª·ªåª¦,à»ñÎ
+323,à»ßæ,¼±»ı´Ô,"teacher, doctor",,ª»ªóª»ª¤,à»ßæ
+324,á©öû,¼¼Å¹,Washing,,ª»ªóª¿ª¯,á©öû
+325,îïİ»,ÀüÃ¼,All,,ª¼ªóªÖ,îïİ»
+326,á·ğ¶ª¹ªë,Ã»¼ÒÇÏ´Ù,"to clean, to sweep",,ª½ª¦ª¸ª¹ªë,á·ğ¶
+327,ª½ª¦ª·ªÆ,±×¸®°í,And,ª½ª·ªÆ,ª½ª¦ª·ªÆ,
+328,ª½ª³,°Å±â,that place,,ª½ª³,
+329,ª½ªÁªé,±× ÂÊ,over there,,ª½ªÁªé,
+330,ª½ªÃªÁ,±×ÂÊ,over there,,ª½ªÃªÁ,
+331,èâ,¿ÜºÎ,Outside,,ª½ªÈ,èâ
+332,ª½ªÎ,±×,That,,ª½ªÎ,
+333,ª½ªĞ,¿·,"near, beside",,ª½ªĞ,
+334,Íö,ÇÏ´Ã,Sky,,ª½ªé,Íö
+335,ª½ªì,±×°Í,that,,ª½ªì,
+336,ª½ªìª«ªé,±× ´ÙÀ½¿¡,after that,,ª½ªìª«ªé,
+337,ª½ªìªÇªÏ,±×·¯¸é,in that situation,,ª½ªìªÇªÏ,
+338,ÓŞ?,´ëÇĞ,university,,ªÀª¤ª¬ª¯,ÓŞ?
+339,ÓŞŞÅÎ½,´ë»ç°ü,embassy,,ª¿ª¤ª·ª«ªó,ÓŞŞÅÎ½
+340,ÓŞíÛÜı,±¦Âú¾Æ,all right,,ªÀª¤ª¸ªçª¦ªÖ,ÓŞíÛÜı
+341,ÓŞû¿ª­,¸Å¿ì ÁÁÀ½,to be very likeable,,ªÀª¤ª¹ª­,ÓŞû¿ª­
+342,ÓŞï·,Áß¿ä,important,,ª¿ª¤ª»ªÄ,ÓŞï·
+343,÷»á¶,ºÎ¾ı,kitchen,,ªÀª¤ªÉª³ªí,÷»á¶
+344,ª¿ª¤ªØªó,¸÷½Ã,very,,ª¿ª¤ªØªó,
+345,ª¿ª¤ªØªó,Å«ÀÏ,difficult situation,,ª¿ª¤ªØªó,
+346,ÍÔª¤,³ô´Ù,"tall, expensive",,ª¿ª«ª¤,ÍÔª¤
+347,ª¿ª¯ªµªó,¸¹À½,many,,ª¿ª¯ªµªó,
+348,«¿«¯«·?,ÅÃ½Ã,taxi,,«¿«¯«·?,
+349,õóª¹,³»´Ù,to put out,,ªÀª¹,õóª¹
+350,Ø¡ªÄ,ÀÏ¾î¼­´Ù,to stand,,ª¿ªÄ,Ø¡ªÄ
+351,ª¿ªÆ,¼¼·Î,"length,height",,ª¿ªÆ,
+352,ËïÚª,°Ç¹°,building,,ª¿ªÆªâªÎ,ËïÚª
+353,?ª·ª¤,Àç¹Ì,enjoyable,,ª¿ªÎª·ª¤,?ª·ª¤
+354,?ªà,ºÎÅ¹ÇÏ´Ù,to ask,,ª¿ªÎªà,?ªà
+355,ª¿ªĞª³,´ã¹è,"tobacco,cigarettes",,ª¿ªĞª³,
+356,ª¿ªÖªó,¾Æ¸¶,probably,,ª¿ªÖªó,
+357,ãİªÙÚª,À½½Ä,food,,ª¿ªÙªâªÎ,ãİªÙÚª
+358,ãİªÙªë,¸Ô´Ù,to eat,,ª¿ªÙªë,ãİªÙªë
+359,Õ°,°è¶õ,egg,,ª¿ªŞª´,Õ°
+360,âÁ,´©±¸,who,,ªÀªì,âÁ
+361,âÁª«,´©±º°¡,somebody,,ªÀªìª«,âÁ
+362,÷«ßæìí,»ıÀÏ,birthday,,ª¿ªóª¸ªçª¦ªÓ,÷«ßæìí
+363,ªÀªóªÀªó,Â÷Â÷,gradually,,ªÀªóªÀªó,
+364,á³ªµª¤,ÀÛÀº,little,,ªÁª¤ªµª¤,á³ªµª¤
+365,á³ªµªÊ,ÀÛÀº,little,,ªÁª¤ªµªÊ,á³ªµªÊ
+366,ĞÎª¤,°¡±õ´Ù,near,,ªÁª«ª¤,ĞÎª¤
+367,êŞª¦,´Ù¸¥,to differ,,ªÁª¬ª¦,êŞª¦
+368,ĞÎª¯,±ÙÃ³,near,,ªÁª«ª¯,ĞÎª¯
+369,ò¢ù»?,ÁöÇÏÃ¶,underground train,,ªÁª«ªÆªÄ,ò¢ù»?
+370,ò¢?,Áöµµ,map,,ªÁªº,ò¢?
+371,Òşßä,°¥»ö,brown,,ªÁªãª¤ªí,Òşßä
+372,ªÁªãªïªó,±×¸©,rice bowl,,ªÁªãªïªó,
+373,ªÁªçª¦ªÉ,²À,exactly,,ªÁªçª¦ªÉ,
+374,ªÁªçªÃªÈ,Á¶±İ,somewhat,,ªÁªçªÃªÈ,
+375,ìéìí,ÃÊÇÏ·ç,first of month,,ªÄª¤ª¿ªÁ,ìéìí
+376,ŞÅª¦,¾²´Ù,to use,,ªÄª«ª¦,ŞÅª¦
+377,ùªªìªë,ÇÇ°ï,to get tired,,ªÄª«ªìªë,ùªªìªë
+378,ó­,´ÙÀ½,next,,ªÄª®,ó­
+379,ó·ª¯,µµÂø,to arrive at,,ªÄª¯,ó·ª¯
+380,Ïõ,Ã¥»ó,desk,,ªÄª¯ª¨,Ïõ
+381,íÂªë,¸¸µé´Ù,to make,,ªÄª¯ªë,íÂªë
+382,ªÄª±ªë,ºÙÀÌ´Ù,to turn on,,ªÄª±ªë,
+383,ĞÃªáªë,±Ù¹«ÇÏ´Ù,to work for someone,,ªÄªÈªáªë,ĞÃªáªë
+384,ªÄªŞªéªÊª¤,½Ã½ÃÇÏ´Ù,boring,,ªÄªŞªéªÊª¤,
+385,ÕÒª¿ª¤,Â÷°©´Ù,cold to the touch,,ªÄªáª¿ª¤,ÕÒª¿ª¤
+386,?ª¤,°­ÇÑ,powerful,,ªÄªèª¤,?ª¤
+387,â¢,¼Õ,hand,,ªÆ,â¢
+388,«Æ?«×,Å×ÀÌÇÁ,tape,,«Æ?«×,
+389,«Æ?«Ö«ë,Å×ÀÌºí,table,,«Æ?«Ö«ë,
+390,«Æ?«×«ì«³?«À?,Å×ÀÌÇÁ ·¹ÄÚ´õ,tape recorder,,«Æ?«×«ì«³?«À?,
+391,õóª«ª±ªë,¿ÜÃâ,to go out,,ªÇª«ª±ªë,õóª«ª±ªë
+392,â¢òµ,ÆíÁö,letter,,ªÆª¬ªß,â¢òµ
+393,ªÇª­ªë,ÇÒ ¼ö ÀÖ´Ù,to be able to,,ªÇª­ªë,
+394,õóÏ¢,Ãâ±¸,exit,,ªÇª°ªÁ,õóÏ¢
+395,«Æ«¹«È,Å×½ºÆ®,test,,«Æ«¹«È,
+396,ªÇªÏ,±×·¯¸é,with that...,,ªÇªÏ,
+397,«Ç«Ñ?«È,¹éÈ­Á¡,department store,,«Ç«Ñ?«È,
+398,ªÇªâ,±×·¯³ª,but,,ªÇªâ,
+399,õóªë,³ª°¡´Ù,"to appear,to leave",,ªÇªë,õóªë
+400,«Æ«ì«Ó,ÅÚ·¹ºñÀü,television,,«Æ«ì«Ó,
+401,ô¸?,³¯¾¾,weather,,ªÆªóª­,ô¸?
+402,ï³?,Àü±â,"electricity,electric light",,ªÇªóª­,ï³?
+403,ï³ó³,ÀüÂ÷,electric train,,ªÇªóª·ªã,ï³ó³
+404,ï³ü¥,ÀüÈ­,telephone,,ªÇªóªï,ï³ü¥
+405,?,¹®,Japanese style door,,ªÈ,?
+406,«É«¢,¹®,Western style door,,«É«¢,
+407,«È«¤«ì,È­Àå½Ç,toilet,,«È«¤«ì,
+408,ªÉª¦,¾î¶»°Ô,"how,in what way",,ªÉª¦,
+409,ªÉª¦ª·ªÆ,¾î¶»°Ô,for what reason,,ªÉª¦ª·ªÆ,
+410,ªÉª¦ª¾,¾Æ¹«ÂÉ·Ï,please,,ªÉª¦ª¾,
+411,ÔÑÚª,µ¿¹°,animal,,ªÉª¦ªÖªÄ,ÔÑÚª
+412,ªÉª¦ªâ,°¨»çÇÕ´Ï´Ù,thanks,,ªÉª¦ªâ,
+413,êÀª¤,¸Ö´Ù,far,,ªÈªªª¤,êÀª¤
+414,ä¨ìí,¿­Èê,"ten days,the tenth day",,ªÈªªª«,ä¨ìí
+415,ãÁ?,¶§¶§·Î,sometimes,,ªÈª­ªÉª­,ãÁ?
+416,ãÁÍª,½Ã°è,"watch,clock",,ªÈª±ª¤,ãÁÍª
+417,ªÉª³,¾îµğ,where,,ªÉª³,
+418,á¶,°÷,place,,ªÈª³ªí,á¶
+419,Ò´,³â,year,,ªÈª·,Ò´
+420,?ßöÎ½,µµ¼­°ü,library,,ªÈª·ªçª«ªó,?ßöÎ½
+421,ªÉªÁªé,¾î´À ÂÊ,which of two,,ªÉªÁªé,
+422,ªÉªÃªÁ,¾î´À ÂÊ,which,,ªÉªÃªÁ,
+423,ªÈªÆªâ,¾Æ¹«¸® ÇØµµ,very,,ªÈªÆªâ,
+424,ªÉªÊª¿,´©±¸,who,,ªÉªÊª¿,
+425,×ö,ÀÌ¿ô,next door to,,ªÈªÊªê,×ö
+426,ªÉªÎ,¾î´À,which,,ªÉªÎ,
+427,Ş«ªÖ,³¯´Ù,"to fly,to hop",,ªÈªÖ,Ş«ªÖ
+428,ò­ªŞªë,¸ØÃß´Ù,to come to a halt,,ªÈªŞªë,ò­ªŞªë
+429,éÒÓ¹,Ä£±¸,friend,,ªÈªâªÀªÁ,éÒÓ¹
+430,÷Ïèøìí,Åä¿äÀÏ,Saturday,,ªÉªèª¦ªÓ,÷Ïèøìí
+431,ğè,»õ,bird,,ªÈªê,ğè
+432,ªÈªêë¿,´ß°í±â,chicken meat,,ªÈªêªËª¯,ªÈªêë¿
+433,ö¢ªë,°¡Áö°í,to take something,,ªÈªë,ö¢ªë
+434,õÉªë,Âï´Ù,to take a photo or record a film,,ªÈªë,õÉªë
+435,ªÉªì,¾î´À,which (of three or more),,ªÉªì,
+436,«Ê«¤«Õ,Ä®,knife,,«Ê«¤«Õ,
+437,ñé,°¡¿îµ¥,middle,,ªÊª«,ñé
+438,íşª¤,±ä,long,,ªÊª¬ª¤,íşª¤
+439,Ù°ª¯,¿ï´Ù,"animal noise. to chirp, roar or croak etc.",,ªÊª¯,Ù°ª¯
+440,Ùíª¯ª¹,¾ø¾Ö´Ù,to lose something,,ªÊª¯ª¹,Ùíª¯ª¹
+441,ªÊª¼,¿Ö,why,,ªÊª¼,
+442,ù¾,¿©¸§,summer,,ªÊªÄ,ù¾
+443,ù¾ıÌªß,¿©¸§ ¹æÇĞ,summer holiday,,ªÊªÄªäª¹ªß,ù¾ıÌªß
+444,ªÊªÉ,µî,et cetera,,ªÊªÉ,
+445,öÒªÄ,ÀÏ°ö,seven,,ªÊªÊªÄ,öÒªÄ
+446,öÒìí,ÀÏ°öÂ° ³¯,"seven days,the seventh day",,ªÊªÎª«,öÒìí
+447,Ù£îñ,ÀÌ¸§,name,,ªÊªŞª¨,Ù£îñ
+448,ã§ª¦,¹è¿ì,to learn,,ªÊªéª¦,ã§ª¦
+449,?ªÖ,´Ã¾î¼±,"to line up,to stand in a line",,ªÊªéªÖ,?ªÖ
+450,?ªÙªë,³ª¶õÈ÷,"to line up,to set up",,ªÊªéªÙªë,?ªÙªë
+451,ªÊªë,µÇ´Ù,to become,,ªÊªë,
+452,ù¼,¹«¾ù,what,ªÊªË,ªÊªó,ù¼
+453,ì£,µÑ,two,,ªË,ì£
+454,òáªäª«,ºĞÁÖ,"bustling,busy",,ªËª®ªäª«,òáªäª«
+455,ë¿,°í±â,meat,,ªËª¯,ë¿
+456,à¤,¼­ÂÊ,west,,ªËª·,à¤
+457,ìíèøìí,ÀÏ¿äÀÏ,Sunday,,ªËªÁªèª¦ªÓ,ìíèøìí
+458,ùÃÚª,Áü,luggage,,ªËªâªÄ,ùÃÚª
+459,«Ë«å?«¹,´º½º,news,,«Ë«å?«¹,
+460,ïÔ,Á¤¿ø,garden,,ªËªï,ïÔ
+461,?ª°,¿ÊÀ» ¹ş´Ù,to take off clothes,,ªÌª°,?ª°
+462,?ª¤,¹ÌÁö±ÙÇÑ,luke warm,,ªÌªëª¤,?ª¤
+463,«Í«¯«¿«¤,³ØÅ¸ÀÌ,"tie,necktie",,«Í«¯«¿«¤,
+464,ÙŞ,°í¾çÀÌ,cat,,ªÍª³,ÙŞ
+465,?ªë,ÀÚ´Ù,"to go to bed,to sleep",,ªÍªë,?ªë
+466,«Î?«È,³ëÆ®,"notebook,exercise book",,«Î?«È,
+467,Ôôªë,µî¹İ,to climb,,ªÎªÜªë,Ôôªë
+468,?ªßÚª,À½·á,a drink,,ªÎªßªâªÎ,?ªßÚª
+469,?ªà,¸¶½Ã´Ù,to drink,,ªÎªà,?ªà
+470,?ªë,Å¸´Ù,"to get on,to ride",,ªÎªë,?ªë
+471,?,Ä¡¾Æ,tooth,,ªÏ,?
+472,«Ñ?«Æ«£?,ÆÄÆ¼,party,,«Ñ?«Æ«£?,
+473,ªÏª¤,¿¹,yes,,ªÏª¤,
+474,üéÙ©,Àç¶³ÀÌ,ashtray,,ªÏª¤ª¶ªé,üéÙ©
+475,ìıªë,µé¾î°¡´Ù,"to enter,to contain",,ªÏª¤ªë,ìıªë
+476,ç¨ßö,¿±¼­,postcard,,ªÏª¬ª­,ç¨ßö
+477,ªÏª¯,ÀÔ´Ù,"to wear,to put on trousers",,ªÏª¯,
+478,ßÕ,»óÀÚ,box,,ªÏª³,ßÕ
+479,Îé,´Ù¸®,bridge,,ªÏª·,Îé
+480,ªÏª·,Á£°¡¶ô,chopsticks,,ªÏª·,
+481,ã·ªŞªë,½ÃÀÛ,to begin,,ªÏª¸ªŞªë,ã·ªŞªë
+482,ôøªá,Ã³À½,beginning,ã·ªá,ªÏª¸ªá,ôøªá/ã·ªá
+483,ôøªáªÆ,Ã³À½,for the first time,,ªÏª¸ªáªÆ,ôøªáªÆ
+484,ñËªë,´Ş¸®´Ù,to run,,ªÏª·ªë,ñËªë
+485,«Ğ«¹,¹ö½º,bus,,«Ğ«¹,
+486,«Ğ«¿?,¹öÅÍ,butter,,«Ğ«¿?,
+487,ì£ä¨?,½º¹« »ì,"20 years old,20th year",,ªÏª¿ªÁ,ì£ä¨?
+488,?ª¯,ÀÏÇÏ´Ù,to work,,ªÏª¿ªéª¯,?ª¯
+489,ø¢,¿©´ü,eight,,ªÏªÁ,ø¢
+490,ì£ä¨ìí,20ÀÏ,"twenty days,twentieth",,ªÏªÄª«,ì£ä¨ìí
+491,ü£,²É,flower,,ªÏªÊ,ü£
+492,Ş¬,ÄÚ,nose,,ªÏªÊ,Ş¬
+493,ü¥,ÀÌ¾ß±â,"talk,story",,ªÏªÊª·,ü¥
+494,ü¥ª¹,ÀÌ¾ß±âÇÏ´Ù,to speak,,ªÏªÊª¹,ü¥ª¹
+495,ğÄª¤,ÀÌ¸£´Ù,early,,ªÏªäª¤,ğÄª¤
+496,áÜª¤,ºü¸£´Ù,quick,,ªÏªäª¤,áÜª¤
+497,õğ,º½,spring,,ªÏªë,õğ
+498,ôäªë,ºÙÀÌ´Ù,to stick,,ªÏªë,ôäªë
+499,ôçªì,¸¼À½,clear weather,,ªÏªì,ôçªì
+500,ôçªìªë,¸¼Àº,to be sunny,,ªÏªìªë,ôçªìªë
+501,Úâ,¹İ,half,,ªÏªó,Úâ
+502,Ø¹,Àú³á,evening,,ªĞªó,Ø¹
+503,«Ñ«ó,»§,bread,,«Ñ«ó,
+504,«Ï«ó«««Á,¼Õ¼ö°Ç,handkerchief,,«Ï«ó«««Á,
+505,Ûã?,¹øÈ£,number,,ªĞªóª´ª¦,Ûã?
+506,Ø¹åÙÚù,Àú³á ½Ä»ç,evening meal,,ªĞªóª´ªÏªó,Ø¹åÙÚù
+507,ÚâİÂ,¹İ,half minute,,ªÏªóªÖªó,ÚâİÂ
+508,ÔÔ,µ¿ÂÊ,east,,ªÒª¬ª·,ÔÔ
+509,ìÚª¯,²ø´Ù,to pull,,ªÒª¯,ìÚª¯
+510,?ª¯,¿¬ÁÖÇÏ´Ù,"to play an instrument with strings, including piano",,ªÒª¯,?ª¯
+511,î¸ª¤,³·´Ù,"short,low",,ªÒª¯ª¤,î¸ª¤
+512,Ş«ú¼Ñ¦,ºñÇà±â,aeroplane,,ªÒª³ª¦ª­,Ş«ú¼Ñ¦
+513,ñ§,¿ŞÂÊ,left hand side,,ªÒªÀªê,ñ§
+514,ìÑ,»ç¶÷,person,,ªÒªÈ,ìÑ
+515,ìéªÄ,ÇÏ³ª,one,,ªÒªÈªÄ,ìéªÄ
+516,ìéêÅ,ÇÑ´Ş,one month,,ªÒªÈªÄª­,ìéêÅ
+517,ìéìÑ,ÇÑ »ç¶÷,one person,,ªÒªÈªê,ìéìÑ
+518,Ê¬,ÀÚÀ¯ ½Ã°£,free time,,ªÒªŞ,Ê¬
+519,Ûİ,¹é,hundred,,ªÒªãª¯,Ûİ
+520,Ü»êÂ,º´¿ø,hospital,,ªÓªçª¦ª¤ªó,Ü»êÂ
+521,Ü»?,Áúº´,illness,,ªÓªçª¦ª­,Ü»?
+522,?,³·,"noon, daytime",,ªÒªë,?
+523,?åÙÚù,Á¡½É,midday meal,,ªÒªëª´ªÏªó,?åÙÚù
+524,?ª¤,³ĞÀº,"spacious,wide",,ªÒªíª¤,?ª¤
+525,«Õ«£«ë«à,ÇÊ¸§,roll of film,,«Õ«£«ë«à,
+526,Üæ÷Õ,ºÀÅõ,envelope,,ªÕª¦ªÈª¦,Üæ÷Õ
+527,«×?«ë,¼ö¿µÀå,swimming pool,,«×?«ë,
+528,«Õ«©?«¯,Æ÷Å©,fork,,«Õ«©?«¯,
+529,ö£ª¯,ºÒ´Ù,to blow,,ªÕª¯,ö£ª¯
+530,Ü×,¿Ê,clothes,,ªÕª¯,Ü×
+531,ì£ªÄ,µÑ,two,,ªÕª¿ªÄ,ì£ªÄ
+532,ÔÊë¿,µÅÁö °í±â,pork,,ªÖª¿ªËª¯,ÔÊë¿
+533,ì£ìÑ,µÎ »ç¶÷,two people,,ªÕª¿ªê,ì£ìÑ
+534,ì£ìí,ÀÌÆ²,"two days, second day of the month",,ªÕªÄª«,ì£ìí
+535,÷¼ª¤,±½´Ù,fat,,ªÕªÈª¤,÷¼ª¤
+536,ÔÏ,°Ü¿ï,winter,,ªÕªæ,ÔÏ
+537,Ë½ªë,³»¸®´Ù,"to fall, e.g. rain or snow",,ªÕªë,Ë½ªë
+538,Í¯ª¤,¿À·¡µÇ´Ù,old (not used for people),,ªÕªëª¤,Í¯ª¤
+539,ªÕªí,¿åÁ¶,bath,,ªÕªí,
+540,Ùşíñ,¹®Àå,"sentence,text",,ªÖªóª·ªçª¦,Ùşíñ
+541,«Ú?«¸,ÆäÀÌÁö,page,,«Ú?«¸,
+542,ù»â¢,¾î¼³ÇÄ,unskillful,,ªØª¿,ù»â¢
+543,«Ù«Ã«É,Ä§´ë,bed,,«Ù«Ã«É,
+544,«Ú«Ã«È,¾Ö¿Ï µ¿¹°,pet,,«Ú«Ã«È,
+545,İ»è©,¹æ,room,,ªØªä,İ»è©
+546,?,Áö¿ª,area,,ªØªó,?
+547,«Ú«ó,Ææ,pen,,«Ú«ó,
+548,Øõ?ª¹ªë,°øºÎ,to study,,ªÙªóª­ªçª¦ª¹ªë,Øõ?
+549,øµ××,Æí¸®,"useful, convenient",,ªÙªóªê,øµ××
+550,Ù¶í­,¸ğÀÚ,hat,,ªÜª¦ª·,Ù¶í­
+551,«Ü?«ë«Ú«ó,º¼Ææ,ball-point pen,,«Ü?«ë«Ú«ó,
+552,ªÛª«,´Ù¸¥ °Í,"other, the rest",,ªÛª«,
+553,«İ«±«Ã«È,Æ÷ÄÏ,pocket,,«İ«±«Ã«È,
+554,é°ª·ª¤,¹Ù¶ó´Ù,want,,ªÛª·ª¤,é°ª·ª¤
+555,«İ«¹«È,¿ìÆí,post,,«İ«¹«È,
+556,á¬ª¤,¾ãÀº,thin,,ªÛª½ª¤,á¬ª¤
+557,«Ü«¿«ó,¹öÆ°,button,,«Ü«¿«ó,
+558,«Û«Æ«ë,È£ÅÚ,hotel,,«Û«Æ«ë,
+559,Üâ,Ã¥,book,,ªÛªó,Üâ
+560,ÜâİÜ,Ã¥Àå,bookshelves,,ªÛªóªÀªÊ,ÜâİÜ
+561,ªÛªóªÈª¦,Áø½Ç,truth,,ªÛªóªÈª¦,
+562,?ğÈ,¸ÅÀÏ ¾ÆÄ§,every morning,,ªŞª¤ª¢ªµ,?ğÈ
+563,?êÅ,¸Å¿ù,every month,ªŞª¤ªÄª­,ªŞª¤ª²ªÄ,?êÅ
+564,?ñÎ,¸ÅÁÖ,every week,,ªŞª¤ª·ªåª¦,?ñÎ
+565,?ìí,¸ÅÀÏ,every day,,ªŞª¤ªËªÁ,?ìí
+566,?Ò´,¸Å³â,every year,ªŞª¤ªÈª·,ªŞª¤ªÍªó,?Ò´
+567,?Ø¹,¸ÅÀÏ ¹ã,every night,,ªŞª¤ªĞªó,?Ø¹
+568,îñ,Àü,before,,ªŞª¨,îñ
+569,ÍØªë,±¸ºÎ¸®,"to turn,to bend",,ªŞª¬ªë,ÍØªë
+570,ªŞªºª¤,¸ÀÀÌ ¾ø´Ù,unpleasant,,ªŞªºª¤,
+571,ªŞª¿,´Ù¸¥ ¶§,"again,and",,ªŞª¿,
+572,ªŞªÀ,¾ÆÁ÷,"yet,still",,ªŞªÀ,
+573,ïë,¸¶À»,"town,city",,ªŞªÁ,ïë
+574,ÓâªÄ,±â´Ù¸®´Ù,to wait,,ªŞªÄ,ÓâªÄ
+575,ªŞªÃª¹ª°,¶È¹Ù·Î,"straight ahead,direct",,ªŞªÃª¹ª°,
+576,«Ş«Ã«Á,°æ±â,match,,«Ş«Ã«Á,
+577,óë,Ã¢¹®,window,,ªŞªÉ,óë
+578,ü¯ª¤,µÕ±Û´Ù,"round,circular",å÷ª¤,ªŞªëª¤,ü¯ª¤/å÷ª¤
+579,Ø²,¸¸,ten thousand,,ªŞªó,Ø²
+580,Ø²Ò´ù¶,¸¸³âÇÊ,fountain pen,,ªŞªóªÍªóªÒªÄ,Ø²Ò´ù¶
+581,Ø¨ª¯,¿¬¸¶,"to brush teeth, to polish",,ªßª¬ª¯,Ø¨ª¯
+582,éÓ,¿À¸¥ÂÊ,right side,,ªßª®,éÓ
+583,Ó­ª¤,Âª´Ù,short,,ªßª¸ª«ª¤,Ó­ª¤
+584,â©,¹°,water,,ªßªº,â©
+585,ïÁ,°¡°Ô,shop,,ªßª»,ïÁ
+586,Ì¸ª»ªë,º¸ÀÌ´Ù,to show,,ªßª»ªë,Ì¸ª»ªë
+587,Ô³,±æ,street,,ªßªÁ,Ô³
+588,ß²ìí,»ïÀÏ,"three days, third day of the month",,ªßªÃª«,ß²ìí
+589,ß²ªÄ,¼¼,three,,ªßªÃªÄ,ß²ªÄ
+590,?,³ì»ö,green,,ªßªÉªê,?
+591,ËËªµªó,¿©·¯ºĞ,everyone,,ªßªÊªµªó,ËËªµªó
+592,Ñõ,³²,south,,ªßªÊªß,Ñõ
+593,ì¼,±Í,ear,,ªßªß,ì¼
+594,Ì¸ªë,º¸´Ù,"to see, to watch",?ªë,ªßªë,Ì¸ªë ?ªë
+595,ªßªóªÊ,¸ğµÎ,everyone,,ªßªóªÊ,
+596,×¿ìí,6ÀÏ,"six days, sixth day of the month",,ªàª¤ª«,×¿ìí
+597,ú¾ª³ª¦,ÀúÂÊ,over there,,ªàª³ª¦,ú¾ª³ª¦
+598,Ññª·ª¤,¾î·Æ´Ù,difficult,,ªàªºª«ª·ª¤,Ññª·ª¤
+599,×¿ªÄ,¿©¼¸,six,,ªàªÃªÄ,×¿ªÄ
+600,õ½,¸¶À»,village,,ªàªé,õ½
+601,ÙÍ,´«,eye,,ªá,ÙÍ
+602,«á?«È«ë,¹ÌÅÍ,metre,,«á?«È«ë,
+603,äÑÌğ,¾È°æ,glasses,,ªáª¬ªÍ,äÑÌğ
+604,ªâª¦,¹ú½á,already,,ªâª¦,
+605,ªâª¦ìéÓø,´Ù½Ã,again,,ªâª¦ª¤ªÁªÉ,ªâª¦ìéÓø
+606,ÙÊèøìí,¸ñ¿äÀÏ,Thursday,,ªâª¯ªèª¦ªÓ,ÙÊèøìí
+607,ò¥ªÄ,Áã´Ù,to hold,,ªâªÄ,ò¥ªÄ
+608,ªâªÃªÈ,´õ,more,,ªâªÃªÈ,
+609,Úª,¹°°Ç,thing,,ªâªÎ,Úª
+610,Ú¦,¹®,gate,,ªâªó,Ú¦
+611,Ùığ¹,¹®Á¦,problem,,ªâªóªÀª¤,Ùığ¹
+612,ø¢Ûİè©,Ã»°ú¹°,greengrocer,,ªäªªªä,ø¢Ûİè©
+613,å¯óø,¾ßÃ¤,vegetable,,ªäªµª¤,å¯óø
+614,æ¶ª·ª¤,½±´Ù,"easy, simple",,ªäªµª·ª¤,æ¶ª·ª¤
+615,äÌª¤,½Î´Ù,cheap,,ªäª¹ª¤,äÌª¤
+616,ıÌªß,ÈŞ°¡,"rest,holiday",,ªäª¹ªß,ıÌªß
+617,ıÌªà,½¬´Ù,to rest,,ªäª¹ªà,ıÌªà
+618,ø¢ªÄ,¿©´ü,eight,,ªäªÃªÄ,ø¢ªÄ
+619,ß£,»ê,mountain,,ªäªŞ,ß£
+620,ªäªë,ÇÏ´Ù,to do,,ªäªë,
+621,àªÛ°,Àú³á,evening,,ªæª¦ª¬ª¿,àªÛ°
+622,àªÚù,Àú³á¹ä,dinner,,ªæª¦ªÏªó,àªÚù
+623,éèøµÏÑ,¿ìÃ¼±¹,post office,,ªæª¦ªÓªóª­ªçª¯,éèøµÏÑ
+624,íÆå¨,Áö³­ ¹ã,last night,,ªæª¦ªÙ,íÆå¨
+625,êóÙ£,À¯¸í,famous,,ªæª¦ªáª¤,êóÙ£
+626,àä,´«,snow,,ªæª­,àä
+627,ú¼ª¯,°¡´Ù,to go,,ªæª¯,ú¼ª¯
+628,ªæªÃª¯ªêªÈ,ÃµÃµÈ÷,slowly,,ªæªÃª¯ªêªÈ,
+629,ø¢ìí,8ÀÏ,"eight days, eighth day of the month",,ªèª¦ª«,ø¢ìí
+630,åÇÜ×,¿Ê,western-style clothes,,ªèª¦ªÕª¯,åÇÜ×
+631,ªèª¯,Àß,"often, well",,ªèª¯,
+632,?,¿·,"beside,side,width",,ªèª³,?
+633,ŞÌìí,4ÀÏ,"four days, fouth day of the month",,ªèªÃª«,ŞÌìí
+634,ŞÌªÄ,³İ,four,,ªèªÃªÄ,ŞÌªÄ
+635,û¼ªÖ,ºÎ¸£´Ù,"to call out,to invite",,ªèªÖ,û¼ªÖ
+636,?ªà,ÀĞ´Ù,to read,,ªèªà,?ªà
+637,å¨,¹ã,"evening,night",,ªèªë,å¨
+638,å°ª¤,¾àÇÑ,weak,,ªèªïª¤,å°ª¤
+639,?êÅ,´ÙÀ½´Ş,next month,,ªéª¤ª²ªÄ,?êÅ
+640,?ñÎ,´ÙÀ½ÁÖ,next week,,ªéª¤ª·ªåª¦,?ñÎ
+641,?Ò´,³»³â,next year,,ªéª¤ªÍªó,?Ò´
+642,«é«¸«ª,¶óµğ¿À,radio,,«é«¸«ª,
+643,«é«¸«««»,Ä«¼¼Æ®,radio cassette player,«é«¸«ª«««»«Ã«È,«é«¸«««»,
+644,ªêªÃªÑ,ÈÇ¸¢ÇÔ,splendid,,ªêªÃªÑ,
+645,×º?ßæ,À¯ÇĞ»ı,overseas student,,ªêªåª¦ª¬ª¯ª»ª¤,×º?ßæ
+646,?öÑ,ºÎ¸ğ,both parents,,ªêªçª¦ª·ªó,?öÑ
+647,Öù×â,¿ä¸®,cuisine,,ªêªçª¦ªê,Öù×â
+648,Õéú¼,¿©Çà,travel,,ªêªçª³ª¦,Õéú¼
+649,ÖÃ,¿µ,zero,,ªìª¤,ÖÃ
+650,ÕÒ?Í·,³ÃÀå°í,refrigerator,,ªìª¤ª¾ª¦ª³,ÕÒ?Í·
+651,«ì«³?«É,±â·Ï,record,,«ì«³?«É,
+652,«ì«¹«È«é«ó,·¹½ºÅä¶û,restaurant,,«ì«¹«È«é«ó,
+653,Ö£ã§ª¹ªë,¿¬½À,to practice,,ªìªóª·ªåª¦ª¹ªë,Ö£ã§
+654,ÕÆù»,º¹µµ,corridor,,ªíª¦ª«,ÕÆù»
+655,×¿,À°,six,,ªíª¯,×¿
+656,«ï«¤«·«ã«Ä,¼ÅÃ÷,business shirt,,«ï«¤«·«ã«Ä,
+657,å´ª¤,ÀşÀº,young,,ªïª«ª¤,å´ª¤
+658,İÂª«ªë,¾Ë´Ù,to be understood,,ªïª«ªë,İÂª«ªë
+659,ØÎªìªë,ÀØ¾î ¹ö¸®´Ù,to forget,,ªïª¹ªìªë,ØÎªìªë
+660,Şç,³ª,"(humble) I,myself",,ªïª¿ª¯ª·,Şç
+661,Şç,³ª,"I,myself",,ªïª¿ª·,Şç
+662,Ô¤ª¹,°Ç³×ÁÖ´Ù,to hand over,,ªïª¿ª¹,Ô¤ª¹
+663,Ô¤ªë,°Ç³Ê´Ù,to go across,,ªïª¿ªë,Ô¤ªë
+664,?ª¤,³ª»Ú´Ù,bad,,ªïªëª¤,?ª¤
+,,,,,,

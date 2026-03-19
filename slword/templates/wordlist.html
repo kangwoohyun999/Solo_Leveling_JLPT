@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block title %}{{ level }} 단어장 — SoloLeveling Word{% endblock %}
+
+{% block extra_style %}
+.word-list { padding:14px 16px 88px; }
+
+.word-card {
+  display:grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items:center; gap:10px;
+  padding:13px 16px; margin-bottom:8px;
+}
+.wc-word {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:17px; font-weight:700;
+}
+.wc-hira {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:12px; color:var(--muted); text-align:center;
+}
+.wc-meaning {
+  font-size:13px; text-align:right; color:var(--accent2);
+}
+
+/* Q 버튼 (fixed) */
+.q-fab {
+  position:fixed; bottom:26px; right:26px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--accent); color:#fff;
+  font-size:17px; font-weight:700; font-family:var(--mono);
+  box-shadow:0 4px 20px rgba(108,99,255,.5);
+  transition:transform .2s, box-shadow .2s;
+}
+.q-fab:hover {
+  transform:scale(1.1);
+  box-shadow:0 6px 28px rgba(108,99,255,.7);
+}
+
+/* 퀴즈 개수 모달 */
+.modal-bg {
+  display:none; position:fixed; inset:0; z-index:300;
+  background:rgba(0,0,0,.6); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:24px;
+}
+.modal-bg.open { display:flex; }
+.modal-box {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; padding:28px 24px; width:100%; max-width:340px;
+}
+.modal-box h3 { font-size:17px; font-weight:700; margin-bottom:6px; }
+.modal-box p  { font-size:13px; color:var(--muted); margin-bottom:22px; }
+
+.count-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px;
+}
+.count-opt {
+  padding:18px; background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius); text-align:center;
+  font-size:20px; font-weight:700; font-family:var(--mono); color:var(--text);
+  transition:all .15s;
+}
+.count-opt small {
+  display:block; font-size:11px; color:var(--muted);
+  font-family:'Noto Sans KR'; margin-top:3px; font-weight:400;
+}
+.count-opt:hover { border-color:var(--accent); color:var(--accent2); }
+
+.custom-row { display:flex; gap:8px; margin-bottom:14px; }
+.custom-row input {
+  flex:1; padding:11px 14px; background:var(--surface2);
+  border:1px solid var(--border); border-radius:var(--radius);
+  color:var(--text); font-size:15px; font-family:var(--mono);
+}
+.custom-row input:focus { outline:none; border-color:var(--accent); }
+.custom-row button {
+  padding:11px 16px; background:var(--accent); border-radius:var(--radius);
+  color:#fff; font-size:14px; font-weight:700;
+}
+{% endblock %}
+
+{% block body %}
+<!-- 상단 -->
+<div class="page-header">
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title">{{ level }}</span>
+  <span class="page-sub">{{ words|length }}개</span>
+</div>
+
+<!-- 단어 목록 -->
+<div class="word-list">
+  {% for w in words %}
+  <div class="card word-card">
+    <div class="wc-word">{{ w.word }}</div>
+    <div class="wc-hira">{{ w.hiragana }}</div>
+    <div class="wc-meaning">{{ w.meaning }}</div>
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <div class="ei">📭</div>
+    <p>단어가 없습니다.</p>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Q 버튼 -->
+<button class="q-fab" onclick="openQuizModal()">Q</button>
+
+<!-- 퀴즈 개수 모달 -->
+<div class="modal-bg" id="quiz-modal" onclick="if(event.target===this)closeQuizModal()">
+  <div class="modal-box">
+    <h3>문제 수 선택</h3>
+    <p>{{ level }} 단어에서 출제합니다</p>
+    <div class="count-grid">
+      <button class="count-opt" onclick="startQuiz(10)">10<small>입문</small></button>
+      <button class="count-opt" onclick="startQuiz(20)">20<small>기본</small></button>
+      <button class="count-opt" onclick="startQuiz(30)">30<small>도전</small></button>
+      <button class="count-opt" onclick="startQuiz(50)">50<small>고난이도</small></button>
+    </div>
+    <div class="custom-row">
+      <input type="number" id="custom-cnt" placeholder="직접 입력" min="1" max="{{ words|length }}">
+      <button onclick="startQuizCustom()">시작</button>
+    </div>
+    <button class="btn-ghost" onclick="closeQuizModal()">취소</button>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+const LEVEL = '{{ level }}';
+
+function openQuizModal()  { document.getElementById('quiz-modal').classList.add('open'); }
+function closeQuizModal() { document.getElementById('quiz-modal').classList.remove('open'); }
+
+function startQuiz(count) {
+  location.href = `/quiz/${LEVEL.toLowerCase()}?count=${count}`;
+}
+function startQuizCustom() {
+  const v = parseInt(document.getElementById('custom-cnt').value);
+  if (!v || v < 1) { toast('1개 이상 입력하세요', 'err'); return; }
+  startQuiz(v);
+}
+</script>
+{% endblock %}

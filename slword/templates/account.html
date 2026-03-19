@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}계정 정보 — SoloLeveling Word{% endblock %}
+
+{% block extra_style %}
+.account-body {
+  max-width:460px; margin:0 auto; padding:28px 20px 64px;
+}
+.avatar {
+  width:60px; height:60px; background:var(--accent); border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px; margin:0 auto 24px;
+}
+.section-label {
+  font-size:11px; color:var(--muted); letter-spacing:.08em;
+  text-transform:uppercase; margin:22px 0 10px;
+}
+.info-row {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:13px 16px; border-radius:var(--radius);
+  margin-bottom:6px;
+}
+.ir-label { font-size:13px; color:var(--muted); }
+.ir-value { font-size:14px; font-weight:600; }
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title">계정 정보</span>
+</div>
+
+<div class="account-body">
+  <div class="avatar">👤</div>
+
+  <div class="section-label">기본 정보</div>
+  <div class="card info-row">
+    <span class="ir-label">아이디</span>
+    <span class="ir-value">{{ user.username }}</span>
+  </div>
+  <div class="card info-row">
+    <span class="ir-label">현재 닉네임</span>
+    <span class="ir-value" id="cur-nick">{{ user.nickname }}</span>
+  </div>
+
+  <div class="section-label">닉네임 변경</div>
+  <div class="field-group">
+    <input type="text" id="new-nick" placeholder="새 닉네임" value="{{ user.nickname }}">
+  </div>
+
+  <div class="section-label">비밀번호 변경</div>
+  <div class="field-group">
+    <label>현재 비밀번호</label>
+    <input type="password" id="cur-pw" placeholder="현재 비밀번호">
+  </div>
+  <div class="field-group">
+    <label>새 비밀번호 (6자 이상)</label>
+    <input type="password" id="new-pw" placeholder="새 비밀번호">
+  </div>
+
+  <button class="btn-primary" style="margin-top:8px" onclick="saveAccount()">저장</button>
+  <p id="acc-msg" class="msg-error" style="min-height:18px"></p>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+async function saveAccount() {
+  const nickname    = document.getElementById('new-nick').value.trim();
+  const cur_password = document.getElementById('cur-pw').value;
+  const new_password = document.getElementById('new-pw').value;
+  const msgEl       = document.getElementById('acc-msg');
+  msgEl.textContent = '';
+
+  const payload = {};
+  if (nickname) payload.nickname = nickname;
+  if (new_password) {
+    payload.current_password = cur_password;
+    payload.new_password     = new_password;
+  }
+  if (!Object.keys(payload).length) {
+    msgEl.textContent = '변경할 내용을 입력하세요.';
+    return;
+  }
+
+  const res  = await fetch('/api/account', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  const data = await res.json();
+
+  if (!res.ok) {
+    msgEl.style.color = 'var(--danger)';
+    msgEl.textContent = data.error || '오류가 발생했습니다.';
+    return;
+  }
+
+  if (nickname) document.getElementById('cur-nick').textContent = nickname;
+  msgEl.style.color = 'var(--success)';
+  msgEl.textContent = '저장되었습니다!';
+  document.getElementById('cur-pw').value = '';
+  document.getElementById('new-pw').value = '';
+  toast('저장 완료!', 'ok');
+}
+</script>
+{% endblock %}

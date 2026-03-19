@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% block title %}퀴즈 — {{ level }}{% endblock %}
+
+{% block extra_style %}
+/* 진행 바 */
+.progress-bar { height:3px; background:var(--border); }
+.progress-fill { height:100%; background:var(--accent); transition:width .3s ease; }
+
+/* 퀴즈 헤더 */
+.quiz-header {
+  display:flex; align-items:center; padding:14px 20px;
+  gap:12px;
+}
+.quiz-no { font-size:13px; color:var(--muted); font-family:var(--mono); }
+.quit-btn { margin-left:auto; color:var(--muted); font-size:20px; }
+
+/* 단어 박스 */
+.quiz-body { padding:0 20px 24px; display:flex; flex-direction:column; align-items:center; }
+.word-box {
+  width:100%; max-width:480px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; padding:44px 28px;
+  text-align:center; margin-bottom:24px;
+  min-height:190px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+}
+.qz-word {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:52px; font-weight:700; line-height:1; margin-bottom:14px;
+}
+.qz-hira {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:17px; color:var(--muted);
+}
+
+/* 선택지 */
+.choices { width:100%; max-width:480px; }
+.choice {
+  display:block; width:100%; padding:17px 20px; margin-bottom:9px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); color:var(--text); font-size:15px;
+  text-align:left; transition:all .12s;
+}
+.choice:hover:not(:disabled) { border-color:var(--accent); background:var(--surface2); }
+.choice.correct { border-color:var(--success) !important; background:rgba(34,211,160,.1) !important; color:var(--success) !important; }
+.choice.wrong   { border-color:var(--danger)  !important; background:rgba(255,77,109,.1) !important; color:var(--danger)  !important; }
+.choice:disabled { cursor:default; }
+
+/* 결과 화면 */
+.result-wrap {
+  min-height:100vh; display:none; flex-direction:column;
+  align-items:center; justify-content:flex-start; padding:48px 24px 64px;
+  background:radial-gradient(ellipse at 50% 20%, #0d1a30 0%, var(--bg) 70%);
+  overflow-y:auto;
+}
+.result-wrap.show { display:flex; }
+
+.score-ring {
+  width:110px; height:110px; border-radius:50%; margin-bottom:20px;
+  background:conic-gradient(var(--accent) var(--angle, 0deg), var(--surface) 0);
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+.score-ring::before {
+  content:''; position:absolute; inset:10px;
+  background:var(--bg); border-radius:50%;
+}
+.score-pct { position:relative; font-size:24px; font-weight:700; font-family:var(--mono); }
+
+.result-title { font-size:20px; font-weight:700; margin-bottom:6px; }
+.result-sub   { color:var(--muted); font-size:13px; margin-bottom:28px; }
+
+.wrong-list { width:100%; max-width:440px; margin-bottom:24px; text-align:left; }
+.wl-header  { font-size:12px; color:var(--muted); letter-spacing:.06em; margin-bottom:10px; }
+.wl-row {
+  display:grid; grid-template-columns:1fr 1.3fr 1fr;
+  gap:8px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:8px; margin-bottom:6px; font-size:13px;
+}
+.wl-word    { font-family:'Noto Sans JP', sans-serif; font-weight:700; }
+.wl-hira    { font-family:'Noto Sans JP', sans-serif; color:var(--muted); text-align:center; }
+.wl-meaning { text-align:right; color:var(--accent2); }
+
+.result-btns { width:100%; max-width:440px; display:flex; flex-direction:column; gap:8px; }
+{% endblock %}
+
+{% block body %}
+<!-- 퀴즈 영역 -->
+<div id="quiz-area">
+  <div class="progress-bar">
+    <div class="progress-fill" id="prog" style="width:0%"></div>
+  </div>
+  <div class="quiz-header">
+    <span class="quiz-no" id="quiz-no">1 / —</span>
+    <button class="quit-btn" onclick="confirmQuit()">✕</button>
+  </div>
+  <div class="quiz-body">
+    <div class="word-box">
+      <div class="qz-word" id="qz-word">...</div>
+      <div class="qz-hira" id="qz-hira">...</div>
+    </div>
+    <div class="choices" id="choices">
+      <!-- 선택지 JS로 렌더링 -->
+    </div>
+  </div>
+</div>
+
+<!-- 결과 영역 -->
+<div class="result-wrap" id="result-wrap">
+  <div class="score-ring" id="score-ring">
+    <span class="score-pct" id="score-pct">0%</span>
+  </div>
+  <h2 class="result-title" id="result-title">결과</h2>
+  <p class="result-sub" id="result-sub"></p>
+  <div class="wrong-list" id="wrong-list"></div>
+  <div class="result-btns">
+    <button class="btn-primary" onclick="retryQuiz()">다시 풀기</button>
+    <a href="/wordlist/{{ level.lower() }}" class="btn-ghost" style="text-align:center;padding:12px">단어장으로</a>
+    <a href="/main" class="btn-ghost" style="text-align:center;padding:12px">메인으로</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+const LEVEL = '{{ level }}';
+const COUNT = parseInt(new URLSearchParams(location.search).get('count') || '10');
+
+let questions = [];
+let idx = 0;
+let wrongList = [];
+
+// 퀴즈 로드
+async function loadQuiz() {
+  document.getElementById('quiz-no').textContent = `로딩 중...`;
+  const res = await fetch(`/api/quiz/${LEVEL.toLowerCase()}?count=${COUNT}`);
+  const data = await res.json();
+  questions = data.questions || [];
+  idx = 0; wrongList = [];
+  renderQ();
+}
+
+function renderQ() {
+  const q = questions[idx];
+  const pct = Math.round(idx / questions.length * 100);
+  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('quiz-no').textContent = `${idx + 1} / ${questions.length}`;
+  document.getElementById('qz-word').textContent = q.word;
+  document.getElementById('qz-hira').textContent = q.hiragana;
+
+  document.getElementById('choices').innerHTML = q.choices.map(c => `
+    <button class="choice" onclick="answer('${c.replace(/'/g,"\\'")}', this)">${c}</button>
+  `).join('');
+}
+
+function answer(chosen, btn) {
+  const q = questions[idx];
+  document.querySelectorAll('.choice').forEach(b => {
+    b.disabled = true;
+    if (b.textContent === q.answer) b.classList.add('correct');
+  });
+  if (chosen !== q.answer) {
+    btn.classList.add('wrong');
+    wrongList.push(q);
+    // 오답노트 자동 저장
+    fetch('/api/wrongnote', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ word: q.word, hiragana: q.hiragana, meaning: q.answer, level: LEVEL })
+    }).catch(() => {});
+  }
+  setTimeout(() => {
+    idx++;
+    if (idx < questions.length) renderQ();
+    else showResult();
+  }, 850);
+}
+
+function showResult() {
+  document.getElementById('prog').style.width = '100%';
+  const total   = questions.length;
+  const correct = total - wrongList.length;
+  const pct     = Math.round(correct / total * 100);
+
+  document.getElementById('score-ring').style.setProperty('--angle', (pct / 100 * 360) + 'deg');
+  document.getElementById('score-pct').textContent   = pct + '%';
+  document.getElementById('result-title').textContent =
+    pct === 100 ? '완벽해요! 🎉' : pct >= 80 ? '훌륭해요! 👏' : pct >= 60 ? '잘 했어요! 💪' : '더 연습해봐요 📚';
+  document.getElementById('result-sub').textContent  = `${total}문제 중 ${correct}개 정답`;
+
+  const wl = document.getElementById('wrong-list');
+  if (wrongList.length) {
+    wl.innerHTML = `<p class="wl-header">틀린 단어 ${wrongList.length}개 — 오답노트에 자동 저장됨</p>` +
+      wrongList.map(w => `
+        <div class="wl-row">
+          <div class="wl-word">${w.word}</div>
+          <div class="wl-hira">${w.hiragana}</div>
+          <div class="wl-meaning">${w.answer}</div>
+        </div>
+      `).join('');
+  } else {
+    wl.innerHTML = '';
+  }
+
+  document.getElementById('quiz-area').style.display  = 'none';
+  document.getElementById('result-wrap').classList.add('show');
+}
+
+function retryQuiz() {
+  document.getElementById('quiz-area').style.display  = '';
+  document.getElementById('result-wrap').classList.remove('show');
+  loadQuiz();
+}
+
+function confirmQuit() {
+  if (confirm('퀴즈를 종료할까요?')) {
+    location.href = `/wordlist/${LEVEL.toLowerCase()}`;
+  }
+}
+
+// 시작
+loadQuiz();
+</script>
+{% endblock %}
