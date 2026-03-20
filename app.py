@@ -54,8 +54,20 @@ def init_db():
             id       SERIAL PRIMARY KEY,
             username TEXT UNIQUE NOT NULL,
             password TEXT NOT NULL,
-            nickname TEXT NOT NULL
+            nickname TEXT UNIQUE NOT NULL
         )
+    """)
+    # 기존 DB에 nickname UNIQUE 없으면 안전하게 추가
+    cur.execute("""
+        DO $$
+        BEGIN
+            IF NOT EXISTS (
+                SELECT 1 FROM pg_constraint
+                WHERE conname = 'users_nickname_key'
+            ) THEN
+                ALTER TABLE users ADD CONSTRAINT users_nickname_key UNIQUE (nickname);
+            END IF;
+        END$$;
     """)
     cur.execute("""
         CREATE TABLE IF NOT EXISTS wrong_notes (
@@ -66,6 +78,17 @@ def init_db():
             meaning  TEXT NOT NULL,
             level    TEXT NOT NULL DEFAULT 'N5',
             UNIQUE (username, word, level)
+        )
+    """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS rankings (
+            id         SERIAL PRIMARY KEY,
+            username   TEXT NOT NULL REFERENCES users(username) ON DELETE CASCADE,
+            nickname   TEXT NOT NULL,
+            level      TEXT NOT NULL,
+            elapsed_ms INTEGER NOT NULL,
+            score      INTEGER NOT NULL,
+            created_at TIMESTAMP NOT NULL DEFAULT NOW()
         )
     """)
     conn.commit()
@@ -138,6 +161,11 @@ def register():
             return render_template('register.html', error='비밀번호는 6자 이상이어야 합니다.')
         try:
             conn = get_db(); cur = conn.cursor()
+            # 닉네임 중복 사전 체크
+            cur.execute('SELECT 1 FROM users WHERE nickname = %s', (nickname,))
+            if cur.fetchone():
+                cur.close(); conn.close()
+                return render_template('register.html', error='이미 사용 중인 닉네임입니다.')
             cur.execute(
                 'INSERT INTO users (username, password, nickname) VALUES (%s, %s, %s)',
                 (username, password, nickname)
@@ -147,7 +175,7 @@ def register():
             return redirect(url_for('main'))
         except psycopg2.errors.UniqueViolation:
             conn.rollback(); cur.close(); conn.close()
-            return render_template('register.html', error='이미 존재하는 아이디입니다.')
+            return render_template('register.html', error='이미 존재하는 아이디 또는 닉네임입니다.')
         except Exception as e:
             print(f'[register 오류] {e}')
             return render_template('register.html', error=f'서버 오류: {str(e)}')
@@ -297,18 +325,21 @@ def api_update_account():
     if 'username' not in session:
         return jsonify({'error': 'unauthorized'}), 401
     try:
-        body = request.get_json()
-        nickname    = body.get('nickname', '').strip()
-        cur_pw      = body.get('current_password', '')
-        new_pw      = body.get('new_password', '')
+        body     = request.get_json()
+        nickname = body.get('nickname', '').strip()
+        cur_pw   = body.get('current_password', '')
+        new_pw   = body.get('new_password', '')
 
         conn = get_db(); cur = conn.cursor()
         user = get_user(session['username'])
+        updates = []; params = []
 
-        updates = []
-        params  = []
-
-        if nickname:
+        if nickname and nickname != user['nickname']:
+            cur.execute('SELECT 1 FROM users WHERE nickname = %s AND username != %s',
+                        (nickname, session['username']))
+            if cur.fetchone():
+                cur.close(); conn.close()
+                return jsonify({'error': '이미 사용 중인 닉네임입니다.'}), 400
             updates.append('nickname=%s'); params.append(nickname)
 
         if new_pw:
@@ -322,10 +353,10 @@ def api_update_account():
 
         if updates:
             params.append(session['username'])
-            cur.execute(
-                f"UPDATE users SET {', '.join(updates)} WHERE username=%s",
-                params
-            )
+            cur.execute(f"UPDATE users SET {', '.join(updates)} WHERE username=%s", params)
+            if nickname and nickname != user['nickname']:
+                cur.execute('UPDATE rankings SET nickname=%s WHERE username=%s',
+                            (nickname, session['username']))
             conn.commit()
 
         cur.close(); conn.close()
@@ -333,6 +364,98 @@ def api_update_account():
     except Exception as e:
         print(f'[api_update_account 오류] {e}')
         return jsonify({'error': str(e)}), 500
+
+# ── 랭킹 페이지 ───────────────────────────────────────────
+@app.route('/ranking')
+def ranking():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    level = request.args.get('level', 'N5').upper()
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute("""
+            SELECT DISTINCT ON (username)
+                nickname, elapsed_ms, score, created_at
+            FROM rankings
+            WHERE level = %s AND score = 20
+            ORDER BY username, elapsed_ms ASC
+        """, (level,))
+        rows = [dict(r) for r in cur.fetchall()]
+        rows.sort(key=lambda x: x['elapsed_ms'])
+        for r in rows:
+            r['created_at'] = r['created_at'].strftime('%Y-%m-%d') if r.get('created_at') else ''
+        cur.close(); conn.close()
+    except Exception as e:
+        print(f'[ranking 오류] {e}')
+        rows = []
+    return render_template('ranking.html', user=user, level=level, rows=rows)
+
+# ── 랭킹 저장 API ─────────────────────────────────────────
+@app.route('/api/ranking', methods=['POST'])
+def api_save_ranking():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        body       = request.get_json()
+        level      = body.get('level', 'N5').upper()
+        elapsed_ms = int(body.get('elapsed_ms', 0))
+        score      = int(body.get('score', 0))
+        user       = get_user(session['username'])
+        if not user:
+            return jsonify({'error': 'user not found'}), 404
+        conn = get_db(); cur = conn.cursor()
+        cur.execute("""
+            INSERT INTO rankings (username, nickname, level, elapsed_ms, score)
+            VALUES (%s, %s, %s, %s, %s)
+        """, (session['username'], user['nickname'], level, elapsed_ms, score))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        print(f'[api_save_ranking 오류] {e}')
+        return jsonify({'error': str(e)}), 500
+
+# ── 랭킹 조회 API ─────────────────────────────────────────
+@app.route('/api/ranking/<level>')
+def api_get_ranking(level):
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    level = level.upper()
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute("""
+            SELECT DISTINCT ON (username)
+                nickname, elapsed_ms, score, created_at
+            FROM rankings
+            WHERE level = %s AND score = 20
+            ORDER BY username, elapsed_ms ASC
+        """, (level,))
+        rows = [dict(r) for r in cur.fetchall()]
+        rows.sort(key=lambda x: x['elapsed_ms'])
+        for r in rows:
+            r['created_at'] = r['created_at'].strftime('%Y-%m-%d') if r.get('created_at') else ''
+        cur.close(); conn.close()
+        return jsonify({'rankings': rows[:20]})
+    except Exception as e:
+        print(f'[api_get_ranking 오류] {e}')
+        return jsonify({'rankings': []}), 500
+
+# ── 닉네임 중복 체크 API ──────────────────────────────────
+@app.route('/api/check_nickname')
+def api_check_nickname():
+    nickname = request.args.get('nickname', '').strip()
+    if not nickname:
+        return jsonify({'available': False})
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('SELECT 1 FROM users WHERE nickname = %s', (nickname,))
+        exists = cur.fetchone() is not None
+        cur.close(); conn.close()
+        return jsonify({'available': not exists})
+    except Exception as e:
+        return jsonify({'available': False, 'error': str(e)})
 
 # ── 헬스체크 ─────────────────────────────────────────────
 @app.route('/health')
@@ -348,3 +471,4 @@ def health():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
+

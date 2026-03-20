@@ -39,6 +39,31 @@
   box-shadow:0 6px 28px rgba(108,99,255,.7);
 }
 
+/* 랭킹 버튼 (fixed, Q 왼쪽) */
+.rank-fab {
+  position:fixed; bottom:26px; right:88px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--warning); color:#000;
+  font-size:17px; font-weight:700;
+  box-shadow:0 4px 20px rgba(251,191,36,.5);
+  transition:transform .2s, box-shadow .2s;
+}
+.rank-fab:hover {
+  transform:scale(1.1);
+  box-shadow:0 6px 28px rgba(251,191,36,.7);
+}
+
+/* 랭킹 모드 버튼 */
+.ranking-mode-btn {
+  width:100%; padding:16px; margin-bottom:14px;
+  background:linear-gradient(135deg, rgba(251,191,36,.15), rgba(251,191,36,.05));
+  border:1px solid var(--warning); border-radius:var(--radius);
+  color:var(--warning); font-size:15px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:all .15s;
+}
+.ranking-mode-btn:hover { background:rgba(251,191,36,.2); }
+
 /* 퀴즈 개수 모달 */
 .modal-bg {
   display:none; position:fixed; inset:0; z-index:300;
@@ -107,12 +132,20 @@
 
 <!-- Q 버튼 -->
 <button class="q-fab" onclick="openQuizModal()">Q</button>
+<!-- 랭킹 버튼 -->
+<button class="rank-fab" onclick="location.href='/ranking?level={{ level }}'">🏆</button>
 
 <!-- 퀴즈 개수 모달 -->
 <div class="modal-bg" id="quiz-modal" onclick="if(event.target===this)closeQuizModal()">
   <div class="modal-box">
     <h3>문제 수 선택</h3>
     <p>{{ level }} 단어에서 출제합니다</p>
+
+    <!-- 랭킹 모드 -->
+    <button class="ranking-mode-btn" onclick="startQuiz(20, true)">
+      🏆 랭킹 모드 <small style="font-weight:400;font-size:12px">(20문제 고정 · 시간 기록)</small>
+    </button>
+
     <div class="count-grid">
       <button class="count-opt" onclick="startQuiz(10)">10<small>입문</small></button>
       <button class="count-opt" onclick="startQuiz(20)">20<small>기본</small></button>
@@ -135,8 +168,10 @@ const LEVEL = '{{ level }}';
 function openQuizModal()  { document.getElementById('quiz-modal').classList.add('open'); }
 function closeQuizModal() { document.getElementById('quiz-modal').classList.remove('open'); }
 
-function startQuiz(count) {
-  location.href = `/quiz/${LEVEL.toLowerCase()}?count=${count}`;
+function startQuiz(count, ranking=false) {
+  let url = `/quiz/${LEVEL.toLowerCase()}?count=${count}`;
+  if (ranking) url += '&mode=ranking';
+  location.href = url;
 }
 function startQuizCustom() {
   const v = parseInt(document.getElementById('custom-cnt').value);
