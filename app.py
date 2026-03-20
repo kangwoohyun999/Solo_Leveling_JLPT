@@ -11,10 +11,27 @@ from flask import (
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'slword_secret_2025')
 
-# ── N5 단어 로드 ──────────────────────────────────────────
+# ── 단어 데이터 로드 (N1~N5 전체) ────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(BASE_DIR, 'data', 'n5_words.json'), encoding='utf-8') as f:
-    N5_WORDS = json.load(f)
+
+WORDS = {}
+LEVEL_INFO = {
+    'N5': {'label': '입문'},
+    'N4': {'label': '초급'},
+    'N3': {'label': '중급'},
+    'N2': {'label': '중상급'},
+    'N1': {'label': '고급'},
+}
+
+for lv in ['N5', 'N4', 'N3', 'N2', 'N1']:
+    fpath = os.path.join(BASE_DIR, 'data', f'{lv.lower()}_words.json')
+    try:
+        with open(fpath, encoding='utf-8') as f:
+            WORDS[lv] = json.load(f)
+        print(f'[단어로드] {lv}: {len(WORDS[lv])}개')
+    except FileNotFoundError:
+        WORDS[lv] = []
+        print(f'[단어로드] {lv}: 파일 없음')
 
 # ── DB 연결 ──────────────────────────────────────────────
 def get_db_url():
@@ -150,7 +167,8 @@ def main():
     if not user:
         session.pop('username', None)
         return redirect(url_for('login'))
-    return render_template('main.html', user=user)
+    level_counts = {lv: len(WORDS.get(lv, [])) for lv in LEVEL_INFO}
+    return render_template('main.html', user=user, level_counts=level_counts)
 
 @app.route('/wordlist/<level>')
 def wordlist(level):
@@ -160,10 +178,7 @@ def wordlist(level):
     if not user:
         return redirect(url_for('login'))
     level = level.upper()
-    if level == 'N5':
-        words = N5_WORDS
-    else:
-        words = []
+    words = WORDS.get(level, [])
     return render_template('wordlist.html', user=user, level=level, words=words)
 
 @app.route('/quiz/<level>')
@@ -173,7 +188,9 @@ def quiz(level):
     user = get_user(session['username'])
     if not user:
         return redirect(url_for('login'))
-    return render_template('quiz.html', user=user, level=level.upper())
+    level = level.upper()
+    total = len(WORDS.get(level, []))
+    return render_template('quiz.html', user=user, level=level, total=total)
 
 @app.route('/wrongnote')
 def wrongnote():
@@ -185,7 +202,7 @@ def wrongnote():
     try:
         conn = get_db(); cur = conn.cursor()
         cur.execute(
-            'SELECT * FROM wrong_notes WHERE username=%s ORDER BY id DESC',
+            'SELECT * FROM wrong_notes WHERE username=%s ORDER BY level, id DESC',
             (session['username'],)
         )
         notes = [dict(r) for r in cur.fetchall()]
@@ -215,10 +232,9 @@ def api_quiz(level):
     except ValueError:
         count = 10
 
-    if level == 'N5':
-        pool = N5_WORDS
-    else:
-        return jsonify({'questions': []})
+    pool = WORDS.get(level, [])
+    if not pool:
+        return jsonify({'questions': [], 'error': f'{level} 단어 데이터가 없습니다.'}), 404
 
     count = min(count, len(pool))
     selected = random.sample(pool, count)
@@ -226,7 +242,8 @@ def api_quiz(level):
 
     questions = []
     for w in selected:
-        wrong = random.sample([m for m in all_meanings if m != w['meaning']], 2)
+        other = [m for m in all_meanings if m != w['meaning']]
+        wrong = random.sample(other, min(2, len(other)))
         choices = wrong + [w['meaning']]
         random.shuffle(choices)
         questions.append({
@@ -235,7 +252,7 @@ def api_quiz(level):
             'answer':   w['meaning'],
             'choices':  choices
         })
-    return jsonify({'questions': questions})
+    return jsonify({'questions': questions, 'total': len(pool)})
 
 @app.route('/api/wrongnote', methods=['POST'])
 def api_add_wrongnote():

@@ -1,0 +1,4952 @@
+[
+  {
+    "word": "潤う",
+    "hiragana": "潤う",
+    "meaning": "(1) 축축해지다 (2) 윤택해지다",
+    "level": "N1"
+  },
+  {
+    "word": "極めて",
+    "hiragana": "極めて",
+    "meaning": "매우, 지극히",
+    "level": "N1"
+  },
+  {
+    "word": "契約",
+    "hiragana": "契約",
+    "meaning": "계약",
+    "level": "N1"
+  },
+  {
+    "word": "推理",
+    "hiragana": "推理",
+    "meaning": "추리",
+    "level": "N1"
+  },
+  {
+    "word": "壊す",
+    "hiragana": "壊す",
+    "meaning": "부수다, 망가뜨리다",
+    "level": "N1"
+  },
+  {
+    "word": "(紐を)締める",
+    "hiragana": "(紐を)締める",
+    "meaning": "(끈을) 매다",
+    "level": "N1"
+  },
+  {
+    "word": "手薄な",
+    "hiragana": "手薄な",
+    "meaning": "허술한, 불충분한",
+    "level": "N1"
+  },
+  {
+    "word": "練る",
+    "hiragana": "練る",
+    "meaning": "반죽하다, (계획, 문장을) 다듬다",
+    "level": "N1"
+  },
+  {
+    "word": "華々しい",
+    "hiragana": "華々しい",
+    "meaning": "화려하다",
+    "level": "N1"
+  },
+  {
+    "word": "繁盛",
+    "hiragana": "繁盛",
+    "meaning": "번성, 번창",
+    "level": "N1"
+  },
+  {
+    "word": "伴奏",
+    "hiragana": "伴奏",
+    "meaning": "반주",
+    "level": "N1"
+  },
+  {
+    "word": "本筋",
+    "hiragana": "本筋",
+    "meaning": "본론, 본 줄거리",
+    "level": "N1"
+  },
+  {
+    "word": "閲覧",
+    "hiragana": "閲覧",
+    "meaning": "열람",
+    "level": "N1"
+  },
+  {
+    "word": "合併",
+    "hiragana": "合併",
+    "meaning": "합병",
+    "level": "N1"
+  },
+  {
+    "word": "肝心な",
+    "hiragana": "肝心な",
+    "meaning": "중요한",
+    "level": "N1"
+  },
+  {
+    "word": "兆し",
+    "hiragana": "兆し",
+    "meaning": "징조, 조짐",
+    "level": "N1"
+  },
+  {
+    "word": "考慮",
+    "hiragana": "考慮",
+    "meaning": "고려",
+    "level": "N1"
+  },
+  {
+    "word": "根拠",
+    "hiragana": "根拠",
+    "meaning": "근거",
+    "level": "N1"
+  },
+  {
+    "word": "遮る",
+    "hiragana": "遮る",
+    "meaning": "차단하다",
+    "level": "N1"
+  },
+  {
+    "word": "釈明",
+    "hiragana": "釈明",
+    "meaning": "석명(해명, 설명)",
+    "level": "N1"
+  },
+  {
+    "word": "鈍る",
+    "hiragana": "鈍る",
+    "meaning": "둔해지다, 무디어지다",
+    "level": "N1"
+  },
+  {
+    "word": "逃れる",
+    "hiragana": "逃れる",
+    "meaning": "벗어나다, 피하다",
+    "level": "N1"
+  },
+  {
+    "word": "漠然と",
+    "hiragana": "漠然と",
+    "meaning": "막연하게",
+    "level": "N1"
+  },
+  {
+    "word": "利益",
+    "hiragana": "利益",
+    "meaning": "이익",
+    "level": "N1"
+  },
+  {
+    "word": "改革",
+    "hiragana": "改革",
+    "meaning": "개혁",
+    "level": "N1"
+  },
+  {
+    "word": "覆す",
+    "hiragana": "覆す",
+    "meaning": "뒤집어엎다",
+    "level": "N1"
+  },
+  {
+    "word": "克明に",
+    "hiragana": "克明に",
+    "meaning": "극명하게",
+    "level": "N1"
+  },
+  {
+    "word": "群衆",
+    "hiragana": "群衆",
+    "meaning": "군중",
+    "level": "N1"
+  },
+  {
+    "word": "心地よい",
+    "hiragana": "心地よい",
+    "meaning": "기분 좋다, 상쾌하다",
+    "level": "N1"
+  },
+  {
+    "word": "費やす",
+    "hiragana": "費やす",
+    "meaning": "사용하다, 소비하다",
+    "level": "N1"
+  },
+  {
+    "word": "手際",
+    "hiragana": "手際",
+    "meaning": "일처리 솜씨, 수완",
+    "level": "N1"
+  },
+  {
+    "word": "踏襲する",
+    "hiragana": "踏襲する",
+    "meaning": "답습하다",
+    "level": "N1"
+  },
+  {
+    "word": "名誉",
+    "hiragana": "名誉",
+    "meaning": "명예",
+    "level": "N1"
+  },
+  {
+    "word": "網羅",
+    "hiragana": "網羅",
+    "meaning": "망라",
+    "level": "N1"
+  },
+  {
+    "word": "由緒",
+    "hiragana": "由緒",
+    "meaning": "유서, 내력",
+    "level": "N1"
+  },
+  {
+    "word": "枠",
+    "hiragana": "枠",
+    "meaning": "틀, 테두리",
+    "level": "N1"
+  },
+  {
+    "word": "跡地",
+    "hiragana": "跡地",
+    "meaning": "철거 부지",
+    "level": "N1"
+  },
+  {
+    "word": "憤り",
+    "hiragana": "憤り",
+    "meaning": "분노",
+    "level": "N1"
+  },
+  {
+    "word": "憩い",
+    "hiragana": "憩い",
+    "meaning": "휴식",
+    "level": "N1"
+  },
+  {
+    "word": "おろかな",
+    "hiragana": "おろかな",
+    "meaning": "어리석은",
+    "level": "N1"
+  },
+  {
+    "word": "緩和",
+    "hiragana": "緩和",
+    "meaning": "완화",
+    "level": "N1"
+  },
+  {
+    "word": "巧妙な",
+    "hiragana": "巧妙な",
+    "meaning": "교묘한",
+    "level": "N1"
+  },
+  {
+    "word": "趣旨",
+    "hiragana": "趣旨",
+    "meaning": "취지",
+    "level": "N1"
+  },
+  {
+    "word": "需要",
+    "hiragana": "需要",
+    "meaning": "수요",
+    "level": "N1"
+  },
+  {
+    "word": "貫く",
+    "hiragana": "貫く",
+    "meaning": "관철하다",
+    "level": "N1"
+  },
+  {
+    "word": "日夜",
+    "hiragana": "日夜",
+    "meaning": "밤낮, 늘",
+    "level": "N1"
+  },
+  {
+    "word": "把握",
+    "hiragana": "把握",
+    "meaning": "파악",
+    "level": "N1"
+  },
+  {
+    "word": "貧富",
+    "hiragana": "貧富",
+    "meaning": "빈부",
+    "level": "N1"
+  },
+  {
+    "word": "否めない",
+    "hiragana": "否めない",
+    "meaning": "부정할 수 없다",
+    "level": "N1"
+  },
+  {
+    "word": "概略",
+    "hiragana": "概略",
+    "meaning": "개략",
+    "level": "N1"
+  },
+  {
+    "word": "凝縮",
+    "hiragana": "凝縮",
+    "meaning": "응축",
+    "level": "N1"
+  },
+  {
+    "word": "厳正な",
+    "hiragana": "厳正な",
+    "meaning": "엄정한",
+    "level": "N1"
+  },
+  {
+    "word": "拒む",
+    "hiragana": "拒む",
+    "meaning": "거부하다",
+    "level": "N1"
+  },
+  {
+    "word": "遂行",
+    "hiragana": "遂行",
+    "meaning": "수행",
+    "level": "N1"
+  },
+  {
+    "word": "健やかな",
+    "hiragana": "健やかな",
+    "meaning": "건강한",
+    "level": "N1"
+  },
+  {
+    "word": "漂う",
+    "hiragana": "漂う",
+    "meaning": "떠돌다, 감돌다",
+    "level": "N1"
+  },
+  {
+    "word": "中枢",
+    "hiragana": "中枢",
+    "meaning": "중추",
+    "level": "N1"
+  },
+  {
+    "word": "督促",
+    "hiragana": "督促",
+    "meaning": "독촉",
+    "level": "N1"
+  },
+  {
+    "word": "臨む",
+    "hiragana": "臨む",
+    "meaning": "임하다, (상황에) 직면하다",
+    "level": "N1"
+  },
+  {
+    "word": "躍進",
+    "hiragana": "躍進",
+    "meaning": "약진",
+    "level": "N1"
+  },
+  {
+    "word": "値する",
+    "hiragana": "値する",
+    "meaning": "~할 가치가 있다",
+    "level": "N1"
+  },
+  {
+    "word": "淡い",
+    "hiragana": "淡い",
+    "meaning": "연하다, 흐리다",
+    "level": "N1"
+  },
+  {
+    "word": "画一的な",
+    "hiragana": "画一的な",
+    "meaning": "획일적인",
+    "level": "N1"
+  },
+  {
+    "word": "興奮",
+    "hiragana": "興奮",
+    "meaning": "흥분",
+    "level": "N1"
+  },
+  {
+    "word": "慕われる",
+    "hiragana": "慕われる",
+    "meaning": "추앙받다, 존경받다",
+    "level": "N1"
+  },
+  {
+    "word": "承諾",
+    "hiragana": "承諾",
+    "meaning": "승낙",
+    "level": "N1"
+  },
+  {
+    "word": "随時",
+    "hiragana": "随時",
+    "meaning": "수시로",
+    "level": "N1"
+  },
+  {
+    "word": "添付",
+    "hiragana": "添付",
+    "meaning": "첨부",
+    "level": "N1"
+  },
+  {
+    "word": "唱える",
+    "hiragana": "唱える",
+    "meaning": "외치다, 주장하다",
+    "level": "N1"
+  },
+  {
+    "word": "励む",
+    "hiragana": "励む",
+    "meaning": "힘쓰다",
+    "level": "N1"
+  },
+  {
+    "word": "破損",
+    "hiragana": "破損",
+    "meaning": "파손",
+    "level": "N1"
+  },
+  {
+    "word": "変遷",
+    "hiragana": "変遷",
+    "meaning": "변천",
+    "level": "N1"
+  },
+  {
+    "word": "賢い",
+    "hiragana": "賢い",
+    "meaning": "똑똑하다",
+    "level": "N1"
+  },
+  {
+    "word": "偏る",
+    "hiragana": "偏る",
+    "meaning": "치우치다, 편향되다",
+    "level": "N1"
+  },
+  {
+    "word": "鑑定",
+    "hiragana": "鑑定",
+    "meaning": "감정(판정)",
+    "level": "N1"
+  },
+  {
+    "word": "顕著な",
+    "hiragana": "顕著な",
+    "meaning": "현저한",
+    "level": "N1"
+  },
+  {
+    "word": "樹木",
+    "hiragana": "樹木",
+    "meaning": "수목(커다란 나무)",
+    "level": "N1"
+  },
+  {
+    "word": "人脈",
+    "hiragana": "人脈",
+    "meaning": "인맥",
+    "level": "N1"
+  },
+  {
+    "word": "廃れる",
+    "hiragana": "廃れる",
+    "meaning": "쇠퇴하다",
+    "level": "N1"
+  },
+  {
+    "word": "相場",
+    "hiragana": "相場",
+    "meaning": "시세",
+    "level": "N1"
+  },
+  {
+    "word": "多岐",
+    "hiragana": "多岐",
+    "meaning": "다기, 다방면",
+    "level": "N1"
+  },
+  {
+    "word": "蓄える",
+    "hiragana": "蓄える",
+    "meaning": "저축하다, 비축하다",
+    "level": "N1"
+  },
+  {
+    "word": "陳列",
+    "hiragana": "陳列",
+    "meaning": "진열",
+    "level": "N1"
+  },
+  {
+    "word": "華やかな",
+    "hiragana": "華やかな",
+    "meaning": "화려한",
+    "level": "N1"
+  },
+  {
+    "word": "潤す",
+    "hiragana": "潤す",
+    "meaning": "축축하게 하다, 적시다",
+    "level": "N1"
+  },
+  {
+    "word": "傾斜",
+    "hiragana": "傾斜",
+    "meaning": "경사, 기울기",
+    "level": "N1"
+  },
+  {
+    "word": "殺菌",
+    "hiragana": "殺菌",
+    "meaning": "살균",
+    "level": "N1"
+  },
+  {
+    "word": "託す",
+    "hiragana": "託す",
+    "meaning": "맡기다, 부탁하다",
+    "level": "N1"
+  },
+  {
+    "word": "暴露",
+    "hiragana": "暴露",
+    "meaning": "폭로",
+    "level": "N1"
+  },
+  {
+    "word": "阻む",
+    "hiragana": "阻む",
+    "meaning": "저지하다, 가로막다",
+    "level": "N1"
+  },
+  {
+    "word": "開拓",
+    "hiragana": "開拓",
+    "meaning": "개척",
+    "level": "N1"
+  },
+  {
+    "word": "復興",
+    "hiragana": "復興",
+    "meaning": "부흥",
+    "level": "N1"
+  },
+  {
+    "word": "怠る",
+    "hiragana": "怠る",
+    "meaning": "소홀히하다",
+    "level": "N1"
+  },
+  {
+    "word": "了承",
+    "hiragana": "了承",
+    "meaning": "승낙,양해",
+    "level": "N1"
+  },
+  {
+    "word": "巡り",
+    "hiragana": "巡り",
+    "meaning": "순회",
+    "level": "N1"
+  },
+  {
+    "word": "指図",
+    "hiragana": "指図",
+    "meaning": "지시",
+    "level": "N1"
+  },
+  {
+    "word": "回顧",
+    "hiragana": "回顧",
+    "meaning": "회고",
+    "level": "N1"
+  },
+  {
+    "word": "偽り",
+    "hiragana": "偽り",
+    "meaning": "거짓, 허구",
+    "level": "N1"
+  },
+  {
+    "word": "嫌悪感",
+    "hiragana": "嫌悪感",
+    "meaning": "혐오감",
+    "level": "N1"
+  },
+  {
+    "word": "自粛",
+    "hiragana": "自粛",
+    "meaning": "자숙",
+    "level": "N1"
+  },
+  {
+    "word": "戒める",
+    "hiragana": "戒める",
+    "meaning": "(1) 훈계하다 (2) 금지하다",
+    "level": "N1"
+  },
+  {
+    "word": "丘陵",
+    "hiragana": "丘陵",
+    "meaning": "구릉",
+    "level": "N1"
+  },
+  {
+    "word": "豪快に",
+    "hiragana": "豪快に",
+    "meaning": "호쾌하게",
+    "level": "N1"
+  },
+  {
+    "word": "忍耐",
+    "hiragana": "忍耐",
+    "meaning": "인내",
+    "level": "N1"
+  },
+  {
+    "word": "募る",
+    "hiragana": "募る",
+    "meaning": "(1) 모집하다 (2) (정도가)심해지다",
+    "level": "N1"
+  },
+  {
+    "word": "膨大な",
+    "hiragana": "膨大な",
+    "meaning": "방대한",
+    "level": "N1"
+  },
+  {
+    "word": "滞る",
+    "hiragana": "滞る",
+    "meaning": "밀리다, 정체되다",
+    "level": "N1"
+  },
+  {
+    "word": "驚嘆する",
+    "hiragana": "驚嘆する",
+    "meaning": "경탄하다, 놀라다",
+    "level": "N1"
+  },
+  {
+    "word": "猛烈に",
+    "hiragana": "猛烈に",
+    "meaning": "맹렬히",
+    "level": "N1"
+  },
+  {
+    "word": "克服する",
+    "hiragana": "克服する",
+    "meaning": "극복하다",
+    "level": "N1"
+  },
+  {
+    "word": "崩れる",
+    "hiragana": "崩れる",
+    "meaning": "무너지다, 흐트러지다",
+    "level": "N1"
+  },
+  {
+    "word": "繁殖",
+    "hiragana": "繁殖",
+    "meaning": "번식",
+    "level": "N1"
+  },
+  {
+    "word": "履歴",
+    "hiragana": "履歴",
+    "meaning": "이력",
+    "level": "N1"
+  },
+  {
+    "word": "映える",
+    "hiragana": "映える",
+    "meaning": "(1) 아름답게 빛나다 (2) 잘 어울리다",
+    "level": "N1"
+  },
+  {
+    "word": "披露する",
+    "hiragana": "披露する",
+    "meaning": "피로하다, 공개하다",
+    "level": "N1"
+  },
+  {
+    "word": "砕ける",
+    "hiragana": "砕ける",
+    "meaning": "부서지다, (기세 등)꺾이다",
+    "level": "N1"
+  },
+  {
+    "word": "執着する",
+    "hiragana": "執着する",
+    "meaning": "집착하다",
+    "level": "N1"
+  },
+  {
+    "word": "債務",
+    "hiragana": "債務",
+    "meaning": "채무",
+    "level": "N1"
+  },
+  {
+    "word": "貢献する",
+    "hiragana": "貢献する",
+    "meaning": "공헌하다",
+    "level": "N1"
+  },
+  {
+    "word": "潔い",
+    "hiragana": "潔い",
+    "meaning": "(미련 없이)깨끗하다",
+    "level": "N1"
+  },
+  {
+    "word": "干渉する",
+    "hiragana": "干渉する",
+    "meaning": "간섭하다",
+    "level": "N1"
+  },
+  {
+    "word": "粘る",
+    "hiragana": "粘る",
+    "meaning": "끈기 있게 버티다",
+    "level": "N1"
+  },
+  {
+    "word": "促す",
+    "hiragana": "促す",
+    "meaning": "재촉하다, 독촉하다, 촉구하다",
+    "level": "N1"
+  },
+  {
+    "word": "措置",
+    "hiragana": "措置",
+    "meaning": "조치",
+    "level": "N1"
+  },
+  {
+    "word": "振興",
+    "hiragana": "振興",
+    "meaning": "진흥",
+    "level": "N1"
+  },
+  {
+    "word": "遺憾に",
+    "hiragana": "遺憾に",
+    "meaning": "유감스럽게",
+    "level": "N1"
+  },
+  {
+    "word": "閉鎖する",
+    "hiragana": "閉鎖する",
+    "meaning": "폐쇄하다",
+    "level": "N1"
+  },
+  {
+    "word": "心遣い",
+    "hiragana": "心遣い",
+    "meaning": "배려",
+    "level": "N1"
+  },
+  {
+    "word": "憤る",
+    "hiragana": "憤る",
+    "meaning": "분노하다, 분개하다",
+    "level": "N1"
+  },
+  {
+    "word": "治癒する",
+    "hiragana": "治癒する",
+    "meaning": "치유하다",
+    "level": "N1"
+  },
+  {
+    "word": "錯覚",
+    "hiragana": "錯覚",
+    "meaning": "착각",
+    "level": "N1"
+  },
+  {
+    "word": "尊い",
+    "hiragana": "尊い",
+    "meaning": "소중하다, 존귀하다",
+    "level": "N1"
+  },
+  {
+    "word": "枯渇",
+    "hiragana": "枯渇",
+    "meaning": "고갈",
+    "level": "N1"
+  },
+  {
+    "word": "慰める",
+    "hiragana": "慰める",
+    "meaning": "위로하다, 달래다",
+    "level": "N1"
+  },
+  {
+    "word": "緊迫する",
+    "hiragana": "緊迫する",
+    "meaning": "긴박하다",
+    "level": "N1"
+  },
+  {
+    "word": "勇敢に",
+    "hiragana": "勇敢に",
+    "meaning": "용감하게",
+    "level": "N1"
+  },
+  {
+    "word": "忠告",
+    "hiragana": "忠告",
+    "meaning": "충고",
+    "level": "N1"
+  },
+  {
+    "word": "慕う",
+    "hiragana": "慕う",
+    "meaning": "(1) 그리워하다 (2) 따르다, 우러르다",
+    "level": "N1"
+  },
+  {
+    "word": "施錠する",
+    "hiragana": "施錠する",
+    "meaning": "자물쇠를 채우다, 잠그다",
+    "level": "N1"
+  },
+  {
+    "word": "沈下",
+    "hiragana": "沈下",
+    "meaning": "침하",
+    "level": "N1"
+  },
+  {
+    "word": "監督",
+    "hiragana": "監督",
+    "meaning": "감독",
+    "level": "N1"
+  },
+  {
+    "word": "派生",
+    "hiragana": "派生",
+    "meaning": "파생",
+    "level": "N1"
+  },
+  {
+    "word": "透ける",
+    "hiragana": "透ける",
+    "meaning": "비쳐보이다, 들여다보이다",
+    "level": "N1"
+  },
+  {
+    "word": "恩恵",
+    "hiragana": "恩恵",
+    "meaning": "은혜",
+    "level": "N1"
+  },
+  {
+    "word": "如実に",
+    "hiragana": "如実に",
+    "meaning": "여실히",
+    "level": "N1"
+  },
+  {
+    "word": "騒然",
+    "hiragana": "騒然",
+    "meaning": "시끄러운 상태, 떠들썩한 모습",
+    "level": "N1"
+  },
+  {
+    "word": "諭す",
+    "hiragana": "諭す",
+    "meaning": "잘 타이르다",
+    "level": "N1"
+  },
+  {
+    "word": "秩序",
+    "hiragana": "秩序",
+    "meaning": "질서",
+    "level": "N1"
+  },
+  {
+    "word": "潜伏",
+    "hiragana": "潜伏",
+    "meaning": "잠복",
+    "level": "N1"
+  },
+  {
+    "word": "朗らかな",
+    "hiragana": "朗らかな",
+    "meaning": "명랑한",
+    "level": "N1"
+  },
+  {
+    "word": "軌跡",
+    "hiragana": "軌跡",
+    "meaning": "궤적",
+    "level": "N1"
+  },
+  {
+    "word": "偏り",
+    "hiragana": "偏り",
+    "meaning": "치우침, 편향",
+    "level": "N1"
+  },
+  {
+    "word": "矛盾",
+    "hiragana": "矛盾",
+    "meaning": "모순",
+    "level": "N1"
+  },
+  {
+    "word": "誇張する",
+    "hiragana": "誇張する",
+    "meaning": "과장하다",
+    "level": "N1"
+  },
+  {
+    "word": "賄う",
+    "hiragana": "賄う",
+    "meaning": "(1) 식사를 제공하다 (2) 조달하다",
+    "level": "N1"
+  },
+  {
+    "word": "軽率な",
+    "hiragana": "軽率な",
+    "meaning": "경솔한",
+    "level": "N1"
+  },
+  {
+    "word": "腐敗",
+    "hiragana": "腐敗",
+    "meaning": "부패",
+    "level": "N1"
+  },
+  {
+    "word": "粗い",
+    "hiragana": "粗い",
+    "meaning": "거칠다",
+    "level": "N1"
+  },
+  {
+    "word": "粘膜",
+    "hiragana": "粘膜",
+    "meaning": "점막",
+    "level": "N1"
+  },
+  {
+    "word": "寿命",
+    "hiragana": "寿命",
+    "meaning": "수명",
+    "level": "N1"
+  },
+  {
+    "word": "誓約書",
+    "hiragana": "誓約書",
+    "meaning": "서약서",
+    "level": "N1"
+  },
+  {
+    "word": "絶叫",
+    "hiragana": "絶叫",
+    "meaning": "절규",
+    "level": "N1"
+  },
+  {
+    "word": "背後",
+    "hiragana": "背後",
+    "meaning": "배후",
+    "level": "N1"
+  },
+  {
+    "word": "抱負",
+    "hiragana": "抱負",
+    "meaning": "포부",
+    "level": "N1"
+  },
+  {
+    "word": "侮る",
+    "hiragana": "侮る",
+    "meaning": "무시하다",
+    "level": "N1"
+  },
+  {
+    "word": "筋道",
+    "hiragana": "筋道",
+    "meaning": "조리, 사리",
+    "level": "N1"
+  },
+  {
+    "word": "奔放な",
+    "hiragana": "奔放な",
+    "meaning": "분방한",
+    "level": "N1"
+  },
+  {
+    "word": "円滑な",
+    "hiragana": "円滑な",
+    "meaning": "원활한",
+    "level": "N1"
+  },
+  {
+    "word": "及ぼす",
+    "hiragana": "及ぼす",
+    "meaning": "(영향을 ) 미치다, 끼치다",
+    "level": "N1"
+  },
+  {
+    "word": "完結",
+    "hiragana": "完結",
+    "meaning": "완결",
+    "level": "N1"
+  },
+  {
+    "word": "キャリア",
+    "hiragana": "キャリア",
+    "meaning": "커리어, 경력",
+    "level": "N1"
+  },
+  {
+    "word": "結束",
+    "hiragana": "結束",
+    "meaning": "결속",
+    "level": "N1"
+  },
+  {
+    "word": "(歴史)上",
+    "hiragana": "(歴史)上",
+    "meaning": "~상(역사상)",
+    "level": "N1"
+  },
+  {
+    "word": "当(ホテル)",
+    "hiragana": "当(ホテル)",
+    "meaning": "당~(당 호텔)",
+    "level": "N1"
+  },
+  {
+    "word": "念願",
+    "hiragana": "念願",
+    "meaning": "염원",
+    "level": "N1"
+  },
+  {
+    "word": "背景",
+    "hiragana": "背景",
+    "meaning": "배경",
+    "level": "N1"
+  },
+  {
+    "word": "フォローする",
+    "hiragana": "フォローする",
+    "meaning": "보조하다, 지원하다",
+    "level": "N1"
+  },
+  {
+    "word": "報じる",
+    "hiragana": "報じる",
+    "meaning": "알리다, 보도하다",
+    "level": "N1"
+  },
+  {
+    "word": "本音",
+    "hiragana": "本音",
+    "meaning": "본심, 속내",
+    "level": "N1"
+  },
+  {
+    "word": "綿密な",
+    "hiragana": "綿密な",
+    "meaning": "면밀한",
+    "level": "N1"
+  },
+  {
+    "word": "やんわり",
+    "hiragana": "やんわり",
+    "meaning": "부드럽게, 살며시",
+    "level": "N1"
+  },
+  {
+    "word": "逸材",
+    "hiragana": "逸材",
+    "meaning": "일재, 뛰어난 인재",
+    "level": "N1"
+  },
+  {
+    "word": "会心(の出来)",
+    "hiragana": "会心(の出来)",
+    "meaning": "회심(의 완성도 - 만족스러운 결과)",
+    "level": "N1"
+  },
+  {
+    "word": "実情",
+    "hiragana": "実情",
+    "meaning": "실정, 실제 사정",
+    "level": "N1"
+  },
+  {
+    "word": "修復",
+    "hiragana": "修復",
+    "meaning": "수복, 복원",
+    "level": "N1"
+  },
+  {
+    "word": "ストック",
+    "hiragana": "ストック",
+    "meaning": "스톡, 재고",
+    "level": "N1"
+  },
+  {
+    "word": "強み",
+    "hiragana": "強み",
+    "meaning": "강점",
+    "level": "N1"
+  },
+  {
+    "word": "ニュアンス",
+    "hiragana": "ニュアンス",
+    "meaning": "뉘앙스",
+    "level": "N1"
+  },
+  {
+    "word": "弾む",
+    "hiragana": "弾む",
+    "meaning": "튀다, 들뜨다",
+    "level": "N1"
+  },
+  {
+    "word": "抜粋",
+    "hiragana": "抜粋",
+    "meaning": "발췌",
+    "level": "N1"
+  },
+  {
+    "word": "不備",
+    "hiragana": "不備",
+    "meaning": "불비, 미비, 불충분함",
+    "level": "N1"
+  },
+  {
+    "word": "平行",
+    "hiragana": "平行",
+    "meaning": "평행",
+    "level": "N1"
+  },
+  {
+    "word": "まみれ",
+    "hiragana": "まみれ",
+    "meaning": "~투성이, ~범벅",
+    "level": "N1"
+  },
+  {
+    "word": "無謀な",
+    "hiragana": "無謀な",
+    "meaning": "무모한",
+    "level": "N1"
+  },
+  {
+    "word": "猛(反対)",
+    "hiragana": "猛(反対)",
+    "meaning": "맹~(맹렬한 반대)",
+    "level": "N1"
+  },
+  {
+    "word": "言い張る",
+    "hiragana": "言い張る",
+    "meaning": "우겨대다, 주장하다",
+    "level": "N1"
+  },
+  {
+    "word": "大筋",
+    "hiragana": "大筋",
+    "meaning": "요점, 대강",
+    "level": "N1"
+  },
+  {
+    "word": "改訂版",
+    "hiragana": "改訂版",
+    "meaning": "개정판",
+    "level": "N1"
+  },
+  {
+    "word": "加工する",
+    "hiragana": "加工する",
+    "meaning": "가공하다",
+    "level": "N1"
+  },
+  {
+    "word": "急遽",
+    "hiragana": "急遽",
+    "meaning": "급거, 갑작스럽게",
+    "level": "N1"
+  },
+  {
+    "word": "究明する",
+    "hiragana": "究明する",
+    "meaning": "규명하다",
+    "level": "N1"
+  },
+  {
+    "word": "寄与",
+    "hiragana": "寄与",
+    "meaning": "기여",
+    "level": "N1"
+  },
+  {
+    "word": "妥協",
+    "hiragana": "妥協",
+    "meaning": "타협",
+    "level": "N1"
+  },
+  {
+    "word": "ハードル",
+    "hiragana": "ハードル",
+    "meaning": "허들, 장애물",
+    "level": "N1"
+  },
+  {
+    "word": "人出",
+    "hiragana": "人出",
+    "meaning": "인파, 밖으로 나온 사람들",
+    "level": "N1"
+  },
+  {
+    "word": "紛らわしい",
+    "hiragana": "紛らわしい",
+    "meaning": "혼란스럽다",
+    "level": "N1"
+  },
+  {
+    "word": "催す",
+    "hiragana": "催す",
+    "meaning": "개최하다",
+    "level": "N1"
+  },
+  {
+    "word": "和らぐ",
+    "hiragana": "和らぐ",
+    "meaning": "누그러지다",
+    "level": "N1"
+  },
+  {
+    "word": "リストアップ",
+    "hiragana": "リストアップ",
+    "meaning": "리스트 업, 목록 작성",
+    "level": "N1"
+  },
+  {
+    "word": "一任",
+    "hiragana": "一任",
+    "meaning": "일임(모두 맡김)",
+    "level": "N1"
+  },
+  {
+    "word": "腕前",
+    "hiragana": "腕前",
+    "meaning": "솜씨, 실력",
+    "level": "N1"
+  },
+  {
+    "word": "強硬に",
+    "hiragana": "強硬に",
+    "meaning": "강경하게",
+    "level": "N1"
+  },
+  {
+    "word": "(気に)障る",
+    "hiragana": "(気に)障る",
+    "meaning": "기분 상하다, 불쾌하게 여겨지다",
+    "level": "N1"
+  },
+  {
+    "word": "じめじめする",
+    "hiragana": "じめじめする",
+    "meaning": "축축하다",
+    "level": "N1"
+  },
+  {
+    "word": "そわそわ",
+    "hiragana": "そわそわ",
+    "meaning": "불안한 모습, 안절부절못하는 모습",
+    "level": "N1"
+  },
+  {
+    "word": "立て替える",
+    "hiragana": "立て替える",
+    "meaning": "대신하여 지불하다",
+    "level": "N1"
+  },
+  {
+    "word": "ためらう",
+    "hiragana": "ためらう",
+    "meaning": "주저하다, 망설이다",
+    "level": "N1"
+  },
+  {
+    "word": "とりわけ",
+    "hiragana": "とりわけ",
+    "meaning": "특히",
+    "level": "N1"
+  },
+  {
+    "word": "荷(が重い)",
+    "hiragana": "荷(が重い)",
+    "meaning": "짐(이 무겁다)",
+    "level": "N1"
+  },
+  {
+    "word": "担う",
+    "hiragana": "担う",
+    "meaning": "짊어지다, 떠맡다",
+    "level": "N1"
+  },
+  {
+    "word": "(対策を)練る",
+    "hiragana": "(対策を)練る",
+    "meaning": "(대책을) 세우다",
+    "level": "N1"
+  },
+  {
+    "word": "念頭",
+    "hiragana": "念頭",
+    "meaning": "염두",
+    "level": "N1"
+  },
+  {
+    "word": "無性に",
+    "hiragana": "無性に",
+    "meaning": "몹시, 까닭 없이",
+    "level": "N1"
+  },
+  {
+    "word": "異色",
+    "hiragana": "異色",
+    "meaning": "이색, 매우 특색 있음",
+    "level": "N1"
+  },
+  {
+    "word": "ウエイト",
+    "hiragana": "ウエイト",
+    "meaning": "웨이트, 중량",
+    "level": "N1"
+  },
+  {
+    "word": "おびただしい",
+    "hiragana": "おびただしい",
+    "meaning": "엄청나다, 수량이 매우 많다",
+    "level": "N1"
+  },
+  {
+    "word": "可決",
+    "hiragana": "可決",
+    "meaning": "가결",
+    "level": "N1"
+  },
+  {
+    "word": "食い止める",
+    "hiragana": "食い止める",
+    "meaning": "저지하다, 막다",
+    "level": "N1"
+  },
+  {
+    "word": "駆使する",
+    "hiragana": "駆使する",
+    "meaning": "구사하다",
+    "level": "N1"
+  },
+  {
+    "word": "心細い",
+    "hiragana": "心細い",
+    "meaning": "불안하다",
+    "level": "N1"
+  },
+  {
+    "word": "支障",
+    "hiragana": "支障",
+    "meaning": "지장",
+    "level": "N1"
+  },
+  {
+    "word": "絶大な(人気)",
+    "hiragana": "絶大な(人気)",
+    "meaning": "지대한 (인기)",
+    "level": "N1"
+  },
+  {
+    "word": "(平行線を)たどる",
+    "hiragana": "(平行線を)たどる",
+    "meaning": "(평행선을) 달리다",
+    "level": "N1"
+  },
+  {
+    "word": "てきぱき",
+    "hiragana": "てきぱき",
+    "meaning": "척척",
+    "level": "N1"
+  },
+  {
+    "word": "ノルマ",
+    "hiragana": "ノルマ",
+    "meaning": "노르마, 업무 할당량",
+    "level": "N1"
+  },
+  {
+    "word": "揺らぐ",
+    "hiragana": "揺らぐ",
+    "meaning": "흔들리다",
+    "level": "N1"
+  },
+  {
+    "word": "予断(を許さない)",
+    "hiragana": "予断(を許さない)",
+    "meaning": "예단을 용납하지 않는다(예단할 수 없다)",
+    "level": "N1"
+  },
+  {
+    "word": "おおらかな",
+    "hiragana": "おおらかな",
+    "meaning": "대범한",
+    "level": "N1"
+  },
+  {
+    "word": "該当する",
+    "hiragana": "該当する",
+    "meaning": "해당하다",
+    "level": "N1"
+  },
+  {
+    "word": "稼働",
+    "hiragana": "稼働",
+    "meaning": "가동",
+    "level": "N1"
+  },
+  {
+    "word": "起伏",
+    "hiragana": "起伏",
+    "meaning": "기복",
+    "level": "N1"
+  },
+  {
+    "word": "強制",
+    "hiragana": "強制",
+    "meaning": "강제",
+    "level": "N1"
+  },
+  {
+    "word": "くよくよ",
+    "hiragana": "くよくよ",
+    "meaning": "끙끙(사소한 일을 걱정하는 모습)",
+    "level": "N1"
+  },
+  {
+    "word": "合意",
+    "hiragana": "合意",
+    "meaning": "합의",
+    "level": "N1"
+  },
+  {
+    "word": "しいて",
+    "hiragana": "しいて",
+    "meaning": "억지로, 굳이",
+    "level": "N1"
+  },
+  {
+    "word": "すさまじい",
+    "hiragana": "すさまじい",
+    "meaning": "대단하다, 무시무시하다",
+    "level": "N1"
+  },
+  {
+    "word": "直面する",
+    "hiragana": "直面する",
+    "meaning": "직면하다",
+    "level": "N1"
+  },
+  {
+    "word": "取り戻す",
+    "hiragana": "取り戻す",
+    "meaning": "되찾다, 회복하다",
+    "level": "N1"
+  },
+  {
+    "word": "幅広い",
+    "hiragana": "幅広い",
+    "meaning": "폭넓다",
+    "level": "N1"
+  },
+  {
+    "word": "紛れる",
+    "hiragana": "紛れる",
+    "meaning": "뒤섞이다",
+    "level": "N1"
+  },
+  {
+    "word": "メディア",
+    "hiragana": "メディア",
+    "meaning": "미디어",
+    "level": "N1"
+  },
+  {
+    "word": "愛着",
+    "hiragana": "愛着",
+    "meaning": "애착",
+    "level": "N1"
+  },
+  {
+    "word": "一掃",
+    "hiragana": "一掃",
+    "meaning": "일소(모두 제거함)",
+    "level": "N1"
+  },
+  {
+    "word": "基盤",
+    "hiragana": "基盤",
+    "meaning": "기반",
+    "level": "N1"
+  },
+  {
+    "word": "教訓",
+    "hiragana": "教訓",
+    "meaning": "교훈",
+    "level": "N1"
+  },
+  {
+    "word": "切り出す",
+    "hiragana": "切り出す",
+    "meaning": "말을 꺼내다",
+    "level": "N1"
+  },
+  {
+    "word": "染みる",
+    "hiragana": "染みる",
+    "meaning": "스며들다, 배다",
+    "level": "N1"
+  },
+  {
+    "word": "すんなり",
+    "hiragana": "すんなり",
+    "meaning": "수월하게, 순조롭게",
+    "level": "N1"
+  },
+  {
+    "word": "センス",
+    "hiragana": "センス",
+    "meaning": "센스",
+    "level": "N1"
+  },
+  {
+    "word": "尽くす",
+    "hiragana": "尽くす",
+    "meaning": "애쓰다, 있는 힘을 다하다",
+    "level": "N1"
+  },
+  {
+    "word": "ノウハウ",
+    "hiragana": "ノウハウ",
+    "meaning": "노하우",
+    "level": "N1"
+  },
+  {
+    "word": "頻繁に",
+    "hiragana": "頻繁に",
+    "meaning": "빈번하게",
+    "level": "N1"
+  },
+  {
+    "word": "へとへと",
+    "hiragana": "へとへと",
+    "meaning": "기진맥진",
+    "level": "N1"
+  },
+  {
+    "word": "見かける",
+    "hiragana": "見かける",
+    "meaning": "발견하다",
+    "level": "N1"
+  },
+  {
+    "word": "流出",
+    "hiragana": "流出",
+    "meaning": "유출",
+    "level": "N1"
+  },
+  {
+    "word": "一環",
+    "hiragana": "一環",
+    "meaning": "일환",
+    "level": "N1"
+  },
+  {
+    "word": "コンスタントに",
+    "hiragana": "コンスタントに",
+    "meaning": "일정하게, 꾸준하게",
+    "level": "N1"
+  },
+  {
+    "word": "たたえる",
+    "hiragana": "たたえる",
+    "meaning": "칭찬하다, 찬양하다",
+    "level": "N1"
+  },
+  {
+    "word": "非",
+    "hiragana": "非",
+    "meaning": "비, 잘못, 부정",
+    "level": "N1"
+  },
+  {
+    "word": "もっぱら",
+    "hiragana": "もっぱら",
+    "meaning": "오로지, 한결같이",
+    "level": "N1"
+  },
+  {
+    "word": "よみがえる",
+    "hiragana": "よみがえる",
+    "meaning": "되살아나다, 소생하다",
+    "level": "N1"
+  },
+  {
+    "word": "打診",
+    "hiragana": "打診",
+    "meaning": "타진",
+    "level": "N1"
+  },
+  {
+    "word": "経歴",
+    "hiragana": "経歴",
+    "meaning": "경력",
+    "level": "N1"
+  },
+  {
+    "word": "弾く",
+    "hiragana": "弾く",
+    "meaning": "튀기다,튕겨내다",
+    "level": "N1"
+  },
+  {
+    "word": "逸脱",
+    "hiragana": "逸脱",
+    "meaning": "일탈",
+    "level": "N1"
+  },
+  {
+    "word": "いとも",
+    "hiragana": "いとも",
+    "meaning": "매우,아주",
+    "level": "N1"
+  },
+  {
+    "word": "まちまち",
+    "hiragana": "まちまち",
+    "meaning": "가지각색",
+    "level": "N1"
+  },
+  {
+    "word": "在庫",
+    "hiragana": "在庫",
+    "meaning": "재고",
+    "level": "N1"
+  },
+  {
+    "word": "リスク",
+    "hiragana": "リスク",
+    "meaning": "리스크, 위험",
+    "level": "N1"
+  },
+  {
+    "word": "堅実な",
+    "hiragana": "堅実な",
+    "meaning": "견실한",
+    "level": "N1"
+  },
+  {
+    "word": "遮断",
+    "hiragana": "遮断",
+    "meaning": "차단",
+    "level": "N1"
+  },
+  {
+    "word": "がらりと(変わる)",
+    "hiragana": "がらりと(変わる)",
+    "meaning": "싹 (바뀌다)",
+    "level": "N1"
+  },
+  {
+    "word": "なだめる",
+    "hiragana": "なだめる",
+    "meaning": "달래다",
+    "level": "N1"
+  },
+  {
+    "word": "言及",
+    "hiragana": "言及",
+    "meaning": "언급",
+    "level": "N1"
+  },
+  {
+    "word": "解除",
+    "hiragana": "解除",
+    "meaning": "해제",
+    "level": "N1"
+  },
+  {
+    "word": "レイアウト",
+    "hiragana": "レイアウト",
+    "meaning": "레이아웃",
+    "level": "N1"
+  },
+  {
+    "word": "起用",
+    "hiragana": "起用",
+    "meaning": "기용",
+    "level": "N1"
+  },
+  {
+    "word": "駆けつける",
+    "hiragana": "駆けつける",
+    "meaning": "달려가다",
+    "level": "N1"
+  },
+  {
+    "word": "多角的な",
+    "hiragana": "多角的な",
+    "meaning": "다각적인",
+    "level": "N1"
+  },
+  {
+    "word": "盛大に",
+    "hiragana": "盛大に",
+    "meaning": "성대하게",
+    "level": "N1"
+  },
+  {
+    "word": "せかせかと",
+    "hiragana": "せかせかと",
+    "meaning": "조급히, 분주히",
+    "level": "N1"
+  },
+  {
+    "word": "センサー",
+    "hiragana": "センサー",
+    "meaning": "센서",
+    "level": "N1"
+  },
+  {
+    "word": "壮大な",
+    "hiragana": "壮大な",
+    "meaning": "장대한",
+    "level": "N1"
+  },
+  {
+    "word": "ここちよく",
+    "hiragana": "ここちよく",
+    "meaning": "기분좋게, 쾌적하게",
+    "level": "N1"
+  },
+  {
+    "word": "従事",
+    "hiragana": "従事",
+    "meaning": "종사하다",
+    "level": "N1"
+  },
+  {
+    "word": "にじむ",
+    "hiragana": "にじむ",
+    "meaning": "번지다, 스며들다",
+    "level": "N1"
+  },
+  {
+    "word": "禁物",
+    "hiragana": "禁物",
+    "meaning": "금물",
+    "level": "N1"
+  },
+  {
+    "word": "ひしひしと",
+    "hiragana": "ひしひしと",
+    "meaning": "절실히, 절절히(강하게 느끼는 모양)",
+    "level": "N1"
+  },
+  {
+    "word": "表明",
+    "hiragana": "表明",
+    "meaning": "표명",
+    "level": "N1"
+  },
+  {
+    "word": "精力的に",
+    "hiragana": "精力的に",
+    "meaning": "정력적으로",
+    "level": "N1"
+  },
+  {
+    "word": "気がかり",
+    "hiragana": "気がかり",
+    "meaning": "걱정, 불안, 근심",
+    "level": "N1"
+  },
+  {
+    "word": "推移",
+    "hiragana": "推移",
+    "meaning": "추이",
+    "level": "N1"
+  },
+  {
+    "word": "危ぶむ",
+    "hiragana": "危ぶむ",
+    "meaning": "불안해하다, 위험하게 생각하다",
+    "level": "N1"
+  },
+  {
+    "word": "ずっしりと",
+    "hiragana": "ずっしりと",
+    "meaning": "묵직한 모습, 무거운 느낌",
+    "level": "N1"
+  },
+  {
+    "word": "歴然としている",
+    "hiragana": "歴然としている",
+    "meaning": "역력하다, 뚜렷하다, 분명하다",
+    "level": "N1"
+  },
+  {
+    "word": "クレーム",
+    "hiragana": "クレーム",
+    "meaning": "클레임, 불만",
+    "level": "N1"
+  },
+  {
+    "word": "経緯",
+    "hiragana": "経緯",
+    "meaning": "경위",
+    "level": "N1"
+  },
+  {
+    "word": "みっちり",
+    "hiragana": "みっちり",
+    "meaning": "착실히, 충분히",
+    "level": "N1"
+  },
+  {
+    "word": "撤去",
+    "hiragana": "撤去",
+    "meaning": "철거",
+    "level": "N1"
+  },
+  {
+    "word": "うずうず",
+    "hiragana": "うずうず",
+    "meaning": "근질근질(좀이 쑤시는 모양)",
+    "level": "N1"
+  },
+  {
+    "word": "却下する",
+    "hiragana": "却下する",
+    "meaning": "각하하다",
+    "level": "N1"
+  },
+  {
+    "word": "旺盛だ",
+    "hiragana": "旺盛だ",
+    "meaning": "왕성하다",
+    "level": "N1"
+  },
+  {
+    "word": "施す",
+    "hiragana": "施す",
+    "meaning": "⑴베풀다 ⑵(장식, 세공, 가공 등을)하다",
+    "level": "N1"
+  },
+  {
+    "word": "余波",
+    "hiragana": "余波",
+    "meaning": "여파",
+    "level": "N1"
+  },
+  {
+    "word": "目先",
+    "hiragana": "目先",
+    "meaning": "눈앞",
+    "level": "N1"
+  },
+  {
+    "word": "ぎくしゃくする",
+    "hiragana": "ぎくしゃくする",
+    "meaning": "원활하지 못하다, 껄끄럽다",
+    "level": "N1"
+  },
+  {
+    "word": "存続",
+    "hiragana": "存続",
+    "meaning": "존속",
+    "level": "N1"
+  },
+  {
+    "word": "～派",
+    "hiragana": "～派",
+    "meaning": "~파",
+    "level": "N1"
+  },
+  {
+    "word": "風習",
+    "hiragana": "風習",
+    "meaning": "풍습",
+    "level": "N1"
+  },
+  {
+    "word": "もどかしい",
+    "hiragana": "もどかしい",
+    "meaning": "답답하다, 안타깝다",
+    "level": "N1"
+  },
+  {
+    "word": "熟知",
+    "hiragana": "熟知",
+    "meaning": "숙지",
+    "level": "N1"
+  },
+  {
+    "word": "拗れる",
+    "hiragana": "拗れる",
+    "meaning": "(1) (병 등이)도지다",
+    "level": "N1"
+  },
+  {
+    "word": "めきめき",
+    "hiragana": "めきめき",
+    "meaning": "두드러지게, 눈에 띄게, 부쩍",
+    "level": "N1"
+  },
+  {
+    "word": "軽快な",
+    "hiragana": "軽快な",
+    "meaning": "경쾌한",
+    "level": "N1"
+  },
+  {
+    "word": "サイクル",
+    "hiragana": "サイクル",
+    "meaning": "사이클",
+    "level": "N1"
+  },
+  {
+    "word": "仲裁",
+    "hiragana": "仲裁",
+    "meaning": "중재",
+    "level": "N1"
+  },
+  {
+    "word": "しわざ",
+    "hiragana": "しわざ",
+    "meaning": "짓, 소행",
+    "level": "N1"
+  },
+  {
+    "word": "発覚",
+    "hiragana": "発覚",
+    "meaning": "발각",
+    "level": "N1"
+  },
+  {
+    "word": "すべすべ",
+    "hiragana": "すべすべ",
+    "meaning": "(사물, 피부 등)매끈매끈한 모양",
+    "level": "N1"
+  },
+  {
+    "word": "かみ合う",
+    "hiragana": "かみ合う",
+    "meaning": "(내용, 의견, 생각 등이)맞다",
+    "level": "N1"
+  },
+  {
+    "word": "保護",
+    "hiragana": "保護",
+    "meaning": "보호",
+    "level": "N1"
+  },
+  {
+    "word": "忠実に",
+    "hiragana": "忠実に",
+    "meaning": "충실히",
+    "level": "N1"
+  },
+  {
+    "word": "すくう",
+    "hiragana": "すくう",
+    "meaning": "(액체 등을)뜨다",
+    "level": "N1"
+  },
+  {
+    "word": "ピント",
+    "hiragana": "ピント",
+    "meaning": "핀트, 초점",
+    "level": "N1"
+  },
+  {
+    "word": "食い込む",
+    "hiragana": "食い込む",
+    "meaning": "(다른 영역, 범위 등에)파고들다",
+    "level": "N1"
+  },
+  {
+    "word": "てっきり",
+    "hiragana": "てっきり",
+    "meaning": "틀림없이 (~인 줄 알다) 〈잘못된 판단〉",
+    "level": "N1"
+  },
+  {
+    "word": "自立",
+    "hiragana": "自立",
+    "meaning": "자립",
+    "level": "N1"
+  },
+  {
+    "word": "還元",
+    "hiragana": "還元",
+    "meaning": "환원",
+    "level": "N1"
+  },
+  {
+    "word": "どんより(と)",
+    "hiragana": "どんより(と)",
+    "meaning": "날씨가 잔뜩 흐린 모양",
+    "level": "N1"
+  },
+  {
+    "word": "ネック",
+    "hiragana": "ネック",
+    "meaning": "장애물, 걸림돌, 방해물",
+    "level": "N1"
+  },
+  {
+    "word": "発散",
+    "hiragana": "発散",
+    "meaning": "발산",
+    "level": "N1"
+  },
+  {
+    "word": "行き届く",
+    "hiragana": "行き届く",
+    "meaning": "구석구석 빈틈없이 미치다",
+    "level": "N1"
+  },
+  {
+    "word": "快挙",
+    "hiragana": "快挙",
+    "meaning": "쾌거",
+    "level": "N1"
+  },
+  {
+    "word": "助長",
+    "hiragana": "助長",
+    "meaning": "조장",
+    "level": "N1"
+  },
+  {
+    "word": "見返り",
+    "hiragana": "見返り",
+    "meaning": "보답, 보상",
+    "level": "N1"
+  },
+  {
+    "word": "結成",
+    "hiragana": "結成",
+    "meaning": "결성",
+    "level": "N1"
+  },
+  {
+    "word": "手配",
+    "hiragana": "手配",
+    "meaning": "(1) 준비 (2) 수배",
+    "level": "N1"
+  },
+  {
+    "word": "つくづく",
+    "hiragana": "つくづく",
+    "meaning": "절실히, 뼈저리게",
+    "level": "N1"
+  },
+  {
+    "word": "解れる",
+    "hiragana": "解れる",
+    "meaning": "(매듭, 엉킴, 긴장, 기분, 몸 등이)풀리다",
+    "level": "N1"
+  },
+  {
+    "word": "根底",
+    "hiragana": "根底",
+    "meaning": "근저, 근본, 밑바닥",
+    "level": "N1"
+  },
+  {
+    "word": "返上",
+    "hiragana": "返上",
+    "meaning": "반납, 반려",
+    "level": "N1"
+  },
+  {
+    "word": "取り次ぐ",
+    "hiragana": "取り次ぐ",
+    "meaning": "(전화를)연결하다",
+    "level": "N1"
+  },
+  {
+    "word": "交錯する",
+    "hiragana": "交錯する",
+    "meaning": "뒤섞여 엇갈리다, 교차하다",
+    "level": "N1"
+  },
+  {
+    "word": "難航",
+    "hiragana": "難航",
+    "meaning": "난항",
+    "level": "N1"
+  },
+  {
+    "word": "がやがや",
+    "hiragana": "がやがや",
+    "meaning": "여럿이 시끄럽게 떠드는 모양, 왁자지껄",
+    "level": "N1"
+  },
+  {
+    "word": "手足まとい",
+    "hiragana": "手足まとい",
+    "meaning": "방해, 훼방, 걸림돌",
+    "level": "N1"
+  },
+  {
+    "word": "適応",
+    "hiragana": "適応",
+    "meaning": "적응",
+    "level": "N1"
+  },
+  {
+    "word": "掲げる",
+    "hiragana": "掲げる",
+    "meaning": "내걸다",
+    "level": "N1"
+  },
+  {
+    "word": "踏襲",
+    "hiragana": "踏襲",
+    "meaning": "답습",
+    "level": "N1"
+  },
+  {
+    "word": "足止め",
+    "hiragana": "足止め",
+    "meaning": "발이 묶임",
+    "level": "N1"
+  },
+  {
+    "word": "払拭",
+    "hiragana": "払拭",
+    "meaning": "불식",
+    "level": "N1"
+  },
+  {
+    "word": "とっさに",
+    "hiragana": "とっさに",
+    "meaning": "순간적으로",
+    "level": "N1"
+  },
+  {
+    "word": "いやみ",
+    "hiragana": "いやみ",
+    "meaning": "불쾌한 언행",
+    "level": "N1"
+  },
+  {
+    "word": "皮肉",
+    "hiragana": "皮肉",
+    "meaning": "비꼼, 빈정거림",
+    "level": "N1"
+  },
+  {
+    "word": "丹念に",
+    "hiragana": "丹念に",
+    "meaning": "정성껏, 꼼꼼하게",
+    "level": "N1"
+  },
+  {
+    "word": "じっくりと",
+    "hiragana": "じっくりと",
+    "meaning": "정성껏, 곰곰이",
+    "level": "N1"
+  },
+  {
+    "word": "どんよりした天気だ",
+    "hiragana": "どんよりした天気だ",
+    "meaning": "우중충한 날씨다",
+    "level": "N1"
+  },
+  {
+    "word": "曇っていて暗い",
+    "hiragana": "曇っていて暗い",
+    "meaning": "흐리고 어둡다",
+    "level": "N1"
+  },
+  {
+    "word": "なじむ",
+    "hiragana": "なじむ",
+    "meaning": "친숙해지다, 정들다",
+    "level": "N1"
+  },
+  {
+    "word": "慣れる",
+    "hiragana": "慣れる",
+    "meaning": "익숙해지다",
+    "level": "N1"
+  },
+  {
+    "word": "はかどる",
+    "hiragana": "はかどる",
+    "meaning": "진척되다",
+    "level": "N1"
+  },
+  {
+    "word": "順調に進む",
+    "hiragana": "順調に進む",
+    "meaning": "순조롭게 진행되다",
+    "level": "N1"
+  },
+  {
+    "word": "張り合う",
+    "hiragana": "張り合う",
+    "meaning": "겨루다, 경쟁하다",
+    "level": "N1"
+  },
+  {
+    "word": "競争する",
+    "hiragana": "競争する",
+    "meaning": "경쟁하다",
+    "level": "N1"
+  },
+  {
+    "word": "まばらだ",
+    "hiragana": "まばらだ",
+    "meaning": "드문드문 있다, 듬성듬성하다",
+    "level": "N1"
+  },
+  {
+    "word": "少ない",
+    "hiragana": "少ない",
+    "meaning": "적다",
+    "level": "N1"
+  },
+  {
+    "word": "見合わせる",
+    "hiragana": "見合わせる",
+    "meaning": "보류하다",
+    "level": "N1"
+  },
+  {
+    "word": "中止する",
+    "hiragana": "中止する",
+    "meaning": "중지하다",
+    "level": "N1"
+  },
+  {
+    "word": "やむをえず",
+    "hiragana": "やむをえず",
+    "meaning": "어쩔 수 없이",
+    "level": "N1"
+  },
+  {
+    "word": "しかたなく",
+    "hiragana": "しかたなく",
+    "meaning": "어쩔 수 없이",
+    "level": "N1"
+  },
+  {
+    "word": "ルーズな",
+    "hiragana": "ルーズな",
+    "meaning": "느슨한, 단정치 못한",
+    "level": "N1"
+  },
+  {
+    "word": "だらしない",
+    "hiragana": "だらしない",
+    "meaning": "단정하지 못한, 절도가 없는",
+    "level": "N1"
+  },
+  {
+    "word": "朗報",
+    "hiragana": "朗報",
+    "meaning": "낭보, 희소식",
+    "level": "N1"
+  },
+  {
+    "word": "うれしい知らせ",
+    "hiragana": "うれしい知らせ",
+    "meaning": "기쁜 소식",
+    "level": "N1"
+  },
+  {
+    "word": "わずらわしい",
+    "hiragana": "わずらわしい",
+    "meaning": "성가시다, 번거롭다",
+    "level": "N1"
+  },
+  {
+    "word": "面倒だ",
+    "hiragana": "面倒だ",
+    "meaning": "귀찮다, 성가시다",
+    "level": "N1"
+  },
+  {
+    "word": "あっけない",
+    "hiragana": "あっけない",
+    "meaning": "어이없다",
+    "level": "N1"
+  },
+  {
+    "word": "意外につまらない",
+    "hiragana": "意外につまらない",
+    "meaning": "의외로 시시하다",
+    "level": "N1"
+  },
+  {
+    "word": "ありきたりの",
+    "hiragana": "ありきたりの",
+    "meaning": "흔한",
+    "level": "N1"
+  },
+  {
+    "word": "平凡な",
+    "hiragana": "平凡な",
+    "meaning": "평범한",
+    "level": "N1"
+  },
+  {
+    "word": "画期的な",
+    "hiragana": "画期的な",
+    "meaning": "획기적인",
+    "level": "N1"
+  },
+  {
+    "word": "今までになく新しい",
+    "hiragana": "今までになく新しい",
+    "meaning": "지금까지 없이 새로운",
+    "level": "N1"
+  },
+  {
+    "word": "極力",
+    "hiragana": "極力",
+    "meaning": "극력, 힘껏",
+    "level": "N1"
+  },
+  {
+    "word": "できる限り",
+    "hiragana": "できる限り",
+    "meaning": "가능한 한",
+    "level": "N1"
+  },
+  {
+    "word": "コントラスト",
+    "hiragana": "コントラスト",
+    "meaning": "콘트라스트, 대조, 대비",
+    "level": "N1"
+  },
+  {
+    "word": "対比",
+    "hiragana": "対比",
+    "meaning": "대비",
+    "level": "N1"
+  },
+  {
+    "word": "シビアな",
+    "hiragana": "シビアな",
+    "meaning": "엄격한, 어려운",
+    "level": "N1"
+  },
+  {
+    "word": "厳しい",
+    "hiragana": "厳しい",
+    "meaning": "엄격하다",
+    "level": "N1"
+  },
+  {
+    "word": "重宝する",
+    "hiragana": "重宝する",
+    "meaning": "애용하다",
+    "level": "N1"
+  },
+  {
+    "word": "便利で役に立つ",
+    "hiragana": "便利で役に立つ",
+    "meaning": "편리해서 쓸모가 있다",
+    "level": "N1"
+  },
+  {
+    "word": "手がかり",
+    "hiragana": "手がかり",
+    "meaning": "단서, 실마리",
+    "level": "N1"
+  },
+  {
+    "word": "ヒント",
+    "hiragana": "ヒント",
+    "meaning": "힌트",
+    "level": "N1"
+  },
+  {
+    "word": "にわかには",
+    "hiragana": "にわかには",
+    "meaning": "갑자기는",
+    "level": "N1"
+  },
+  {
+    "word": "すぐには",
+    "hiragana": "すぐには",
+    "meaning": "바로는, 당장에는",
+    "level": "N1"
+  },
+  {
+    "word": "もくろむ",
+    "hiragana": "もくろむ",
+    "meaning": "계획하다, 꾀하다",
+    "level": "N1"
+  },
+  {
+    "word": "計画する",
+    "hiragana": "計画する",
+    "meaning": "계획하다",
+    "level": "N1"
+  },
+  {
+    "word": "落胆する",
+    "hiragana": "落胆する",
+    "meaning": "낙담하다",
+    "level": "N1"
+  },
+  {
+    "word": "がっかりする",
+    "hiragana": "がっかりする",
+    "meaning": "낙담하다, 실망하다",
+    "level": "N1"
+  },
+  {
+    "word": "はっきりしている",
+    "hiragana": "はっきりしている",
+    "meaning": "분명하다",
+    "level": "N1"
+  },
+  {
+    "word": "おっくうだ",
+    "hiragana": "おっくうだ",
+    "meaning": "귀찮다",
+    "level": "N1"
+  },
+  {
+    "word": "おのずと",
+    "hiragana": "おのずと",
+    "meaning": "저절로, 자연히",
+    "level": "N1"
+  },
+  {
+    "word": "自然に",
+    "hiragana": "自然に",
+    "meaning": "자연히",
+    "level": "N1"
+  },
+  {
+    "word": "簡素だ",
+    "hiragana": "簡素だ",
+    "meaning": "간소하다",
+    "level": "N1"
+  },
+  {
+    "word": "シンプルだ",
+    "hiragana": "シンプルだ",
+    "meaning": "심플하다",
+    "level": "N1"
+  },
+  {
+    "word": "けなされる",
+    "hiragana": "けなされる",
+    "meaning": "비난을 받다",
+    "level": "N1"
+  },
+  {
+    "word": "悪く言われる",
+    "hiragana": "悪く言われる",
+    "meaning": "나쁜 말을 듣다",
+    "level": "N1"
+  },
+  {
+    "word": "しきりに",
+    "hiragana": "しきりに",
+    "meaning": "자꾸, 연달아",
+    "level": "N1"
+  },
+  {
+    "word": "何度も",
+    "hiragana": "何度も",
+    "meaning": "몇 번이고",
+    "level": "N1"
+  },
+  {
+    "word": "触発される",
+    "hiragana": "触発される",
+    "meaning": "촉발되다",
+    "level": "N1"
+  },
+  {
+    "word": "刺激を受ける",
+    "hiragana": "刺激を受ける",
+    "meaning": "자극을 받다",
+    "level": "N1"
+  },
+  {
+    "word": "すがすがしい",
+    "hiragana": "すがすがしい",
+    "meaning": "상쾌하다, 시원하다",
+    "level": "N1"
+  },
+  {
+    "word": "さわやかだ",
+    "hiragana": "さわやかだ",
+    "meaning": "상쾌하다, 산뜻하다",
+    "level": "N1"
+  },
+  {
+    "word": "スケール",
+    "hiragana": "スケール",
+    "meaning": "스케일",
+    "level": "N1"
+  },
+  {
+    "word": "規模",
+    "hiragana": "規模",
+    "meaning": "규모",
+    "level": "N1"
+  },
+  {
+    "word": "先方",
+    "hiragana": "先方",
+    "meaning": "상대",
+    "level": "N1"
+  },
+  {
+    "word": "相手",
+    "hiragana": "相手",
+    "meaning": "상대",
+    "level": "N1"
+  },
+  {
+    "word": "断念する",
+    "hiragana": "断念する",
+    "meaning": "단념하다",
+    "level": "N1"
+  },
+  {
+    "word": "諦める",
+    "hiragana": "諦める",
+    "meaning": "포기하다",
+    "level": "N1"
+  },
+  {
+    "word": "当面",
+    "hiragana": "当面",
+    "meaning": "당면, 당분간",
+    "level": "N1"
+  },
+  {
+    "word": "しばらく",
+    "hiragana": "しばらく",
+    "meaning": "잠시",
+    "level": "N1"
+  },
+  {
+    "word": "密かに",
+    "hiragana": "密かに",
+    "meaning": "은밀하게",
+    "level": "N1"
+  },
+  {
+    "word": "こっそり",
+    "hiragana": "こっそり",
+    "meaning": "살짝, 몰래",
+    "level": "N1"
+  },
+  {
+    "word": "あらかじめ",
+    "hiragana": "あらかじめ",
+    "meaning": "미리",
+    "level": "N1"
+  },
+  {
+    "word": "事前に",
+    "hiragana": "事前に",
+    "meaning": "사전에",
+    "level": "N1"
+  },
+  {
+    "word": "裏づけ",
+    "hiragana": "裏づけ",
+    "meaning": "뒷받침, 증거",
+    "level": "N1"
+  },
+  {
+    "word": "証拠",
+    "hiragana": "証拠",
+    "meaning": "증거",
+    "level": "N1"
+  },
+  {
+    "word": "おおむね",
+    "hiragana": "おおむね",
+    "meaning": "대체로, 대강",
+    "level": "N1"
+  },
+  {
+    "word": "大体",
+    "hiragana": "大体",
+    "meaning": "대체로",
+    "level": "N1"
+  },
+  {
+    "word": "仰天する",
+    "hiragana": "仰天する",
+    "meaning": "경악하다, 몹시 놀라다",
+    "level": "N1"
+  },
+  {
+    "word": "とても驚く",
+    "hiragana": "とても驚く",
+    "meaning": "매우 놀라다",
+    "level": "N1"
+  },
+  {
+    "word": "ことごとく",
+    "hiragana": "ことごとく",
+    "meaning": "전부",
+    "level": "N1"
+  },
+  {
+    "word": "すべて",
+    "hiragana": "すべて",
+    "meaning": "전부",
+    "level": "N1"
+  },
+  {
+    "word": "雑踏",
+    "hiragana": "雑踏",
+    "meaning": "혼잡",
+    "level": "N1"
+  },
+  {
+    "word": "人込み",
+    "hiragana": "人込み",
+    "meaning": "혼잡, 북새통",
+    "level": "N1"
+  },
+  {
+    "word": "従来の",
+    "hiragana": "従来の",
+    "meaning": "종래의",
+    "level": "N1"
+  },
+  {
+    "word": "これまでの",
+    "hiragana": "これまでの",
+    "meaning": "지금까지의",
+    "level": "N1"
+  },
+  {
+    "word": "すべ",
+    "hiragana": "すべ",
+    "meaning": "방법",
+    "level": "N1"
+  },
+  {
+    "word": "方法",
+    "hiragana": "方法",
+    "meaning": "방법",
+    "level": "N1"
+  },
+  {
+    "word": "せかす",
+    "hiragana": "せかす",
+    "meaning": "재촉하다",
+    "level": "N1"
+  },
+  {
+    "word": "急がせる",
+    "hiragana": "急がせる",
+    "meaning": "서두르게 하다",
+    "level": "N1"
+  },
+  {
+    "word": "バックアップ",
+    "hiragana": "バックアップ",
+    "meaning": "백업, 지원",
+    "level": "N1"
+  },
+  {
+    "word": "支援",
+    "hiragana": "支援",
+    "meaning": "지원",
+    "level": "N1"
+  },
+  {
+    "word": "抜群だ",
+    "hiragana": "抜群だ",
+    "meaning": "발군이다, 뛰어나다",
+    "level": "N1"
+  },
+  {
+    "word": "他と比べて特によい",
+    "hiragana": "他と比べて特によい",
+    "meaning": "다른 것과 비교하여 특히 좋다",
+    "level": "N1"
+  },
+  {
+    "word": "メカニズム",
+    "hiragana": "メカニズム",
+    "meaning": "메커니즘",
+    "level": "N1"
+  },
+  {
+    "word": "仕組み",
+    "hiragana": "仕組み",
+    "meaning": "구조",
+    "level": "N1"
+  },
+  {
+    "word": "案の定",
+    "hiragana": "案の定",
+    "meaning": "역시, 예상대로",
+    "level": "N1"
+  },
+  {
+    "word": "やはり",
+    "hiragana": "やはり",
+    "meaning": "역시",
+    "level": "N1"
+  },
+  {
+    "word": "いたって",
+    "hiragana": "いたって",
+    "meaning": "지극히",
+    "level": "N1"
+  },
+  {
+    "word": "非常に",
+    "hiragana": "非常に",
+    "meaning": "매우, 몹시",
+    "level": "N1"
+  },
+  {
+    "word": "打ち込む",
+    "hiragana": "打ち込む",
+    "meaning": "몰입하다, 몰두하다",
+    "level": "N1"
+  },
+  {
+    "word": "熱心に取り組む",
+    "hiragana": "熱心に取り組む",
+    "meaning": "열심히 몰두하다",
+    "level": "N1"
+  },
+  {
+    "word": "お手上げだ",
+    "hiragana": "お手上げだ",
+    "meaning": "두 손 들었다, 속수무책이다",
+    "level": "N1"
+  },
+  {
+    "word": "どうしようもない",
+    "hiragana": "どうしようもない",
+    "meaning": "어쩔 방법이 없다",
+    "level": "N1"
+  },
+  {
+    "word": "回想する",
+    "hiragana": "回想する",
+    "meaning": "회상하다",
+    "level": "N1"
+  },
+  {
+    "word": "思い返す",
+    "hiragana": "思い返す",
+    "meaning": "돌아보다",
+    "level": "N1"
+  },
+  {
+    "word": "格段に",
+    "hiragana": "格段に",
+    "meaning": "현격하게",
+    "level": "N1"
+  },
+  {
+    "word": "大幅に",
+    "hiragana": "大幅に",
+    "meaning": "대폭적으로",
+    "level": "N1"
+  },
+  {
+    "word": "気掛かり",
+    "hiragana": "気掛かり",
+    "meaning": "걱정, 근심",
+    "level": "N1"
+  },
+  {
+    "word": "心配",
+    "hiragana": "心配",
+    "meaning": "걱정, 근심",
+    "level": "N1"
+  },
+  {
+    "word": "ストレートに",
+    "hiragana": "ストレートに",
+    "meaning": "직설적으로",
+    "level": "N1"
+  },
+  {
+    "word": "率直に",
+    "hiragana": "率直に",
+    "meaning": "솔직하게",
+    "level": "N1"
+  },
+  {
+    "word": "手分けする",
+    "hiragana": "手分けする",
+    "meaning": "분담하다",
+    "level": "N1"
+  },
+  {
+    "word": "分担する",
+    "hiragana": "分担する",
+    "meaning": "분담하다",
+    "level": "N1"
+  },
+  {
+    "word": "不用意な",
+    "hiragana": "不用意な",
+    "meaning": "부주의한",
+    "level": "N1"
+  },
+  {
+    "word": "不注意な",
+    "hiragana": "不注意な",
+    "meaning": "부주의한",
+    "level": "N1"
+  },
+  {
+    "word": "無償",
+    "hiragana": "無償",
+    "meaning": "무상",
+    "level": "N1"
+  },
+  {
+    "word": "ただ",
+    "hiragana": "ただ",
+    "meaning": "공짜, 무료",
+    "level": "N1"
+  },
+  {
+    "word": "厄介な",
+    "hiragana": "厄介な",
+    "meaning": "귀찮은",
+    "level": "N1"
+  },
+  {
+    "word": "面倒な",
+    "hiragana": "面倒な",
+    "meaning": "귀찮은",
+    "level": "N1"
+  },
+  {
+    "word": "ありふれる",
+    "hiragana": "ありふれる",
+    "meaning": "흔하다",
+    "level": "N1"
+  },
+  {
+    "word": "平凡だ",
+    "hiragana": "平凡だ",
+    "meaning": "평범하다",
+    "level": "N1"
+  },
+  {
+    "word": "糸口",
+    "hiragana": "糸口",
+    "meaning": "실마리",
+    "level": "N1"
+  },
+  {
+    "word": "うろたえる",
+    "hiragana": "うろたえる",
+    "meaning": "허둥거리다, 당황하다",
+    "level": "N1"
+  },
+  {
+    "word": "慌てる",
+    "hiragana": "慌てる",
+    "meaning": "당황하다, 허둥지둥하다",
+    "level": "N1"
+  },
+  {
+    "word": "苦情",
+    "hiragana": "苦情",
+    "meaning": "클레임, 불만",
+    "level": "N1"
+  },
+  {
+    "word": "互角だ",
+    "hiragana": "互角だ",
+    "meaning": "호각이다, 백중세다",
+    "level": "N1"
+  },
+  {
+    "word": "大体同じだ",
+    "hiragana": "大体同じだ",
+    "meaning": "대체로 같다",
+    "level": "N1"
+  },
+  {
+    "word": "誇張",
+    "hiragana": "誇張",
+    "meaning": "과장(사실보다 크게 부풀림)",
+    "level": "N1"
+  },
+  {
+    "word": "大げさ",
+    "hiragana": "大げさ",
+    "meaning": "과장, 호들갑",
+    "level": "N1"
+  },
+  {
+    "word": "錯覚する",
+    "hiragana": "錯覚する",
+    "meaning": "착각하다",
+    "level": "N1"
+  },
+  {
+    "word": "勘違いする",
+    "hiragana": "勘違いする",
+    "meaning": "착각하다",
+    "level": "N1"
+  },
+  {
+    "word": "殺到する",
+    "hiragana": "殺到する",
+    "meaning": "쇄도하다",
+    "level": "N1"
+  },
+  {
+    "word": "一度に大勢来る",
+    "hiragana": "一度に大勢来る",
+    "meaning": "한꺼번에 많이 몰려들다",
+    "level": "N1"
+  },
+  {
+    "word": "仕上がる",
+    "hiragana": "仕上がる",
+    "meaning": "마무리되다, 완성되다",
+    "level": "N1"
+  },
+  {
+    "word": "完成する",
+    "hiragana": "完成する",
+    "meaning": "완성되다",
+    "level": "N1"
+  },
+  {
+    "word": "助言",
+    "hiragana": "助言",
+    "meaning": "조언",
+    "level": "N1"
+  },
+  {
+    "word": "アドバイス",
+    "hiragana": "アドバイス",
+    "meaning": "조언, 충고",
+    "level": "N1"
+  },
+  {
+    "word": "不意に",
+    "hiragana": "不意に",
+    "meaning": "갑자기",
+    "level": "N1"
+  },
+  {
+    "word": "突然",
+    "hiragana": "突然",
+    "meaning": "돌연",
+    "level": "N1"
+  },
+  {
+    "word": "弁解する",
+    "hiragana": "弁解する",
+    "meaning": "변명하다",
+    "level": "N1"
+  },
+  {
+    "word": "言い訳する",
+    "hiragana": "言い訳する",
+    "meaning": "변명하다",
+    "level": "N1"
+  },
+  {
+    "word": "安堵する",
+    "hiragana": "安堵する",
+    "meaning": "안도하다",
+    "level": "N1"
+  },
+  {
+    "word": "ほっとする",
+    "hiragana": "ほっとする",
+    "meaning": "안심하다",
+    "level": "N1"
+  },
+  {
+    "word": "意気込み",
+    "hiragana": "意気込み",
+    "meaning": "열의, 패기",
+    "level": "N1"
+  },
+  {
+    "word": "意欲",
+    "hiragana": "意欲",
+    "meaning": "의욕",
+    "level": "N1"
+  },
+  {
+    "word": "おびえる",
+    "hiragana": "おびえる",
+    "meaning": "겁을 내다",
+    "level": "N1"
+  },
+  {
+    "word": "怖がる",
+    "hiragana": "怖がる",
+    "meaning": "무서워하다",
+    "level": "N1"
+  },
+  {
+    "word": "かねがね",
+    "hiragana": "かねがね",
+    "meaning": "전부터",
+    "level": "N1"
+  },
+  {
+    "word": "以前から",
+    "hiragana": "以前から",
+    "meaning": "이전부터",
+    "level": "N1"
+  },
+  {
+    "word": "かろうじて",
+    "hiragana": "かろうじて",
+    "meaning": "겨우, 간신히",
+    "level": "N1"
+  },
+  {
+    "word": "何とか",
+    "hiragana": "何とか",
+    "meaning": "그럭저럭",
+    "level": "N1"
+  },
+  {
+    "word": "故意に",
+    "hiragana": "故意に",
+    "meaning": "고의로",
+    "level": "N1"
+  },
+  {
+    "word": "わざと",
+    "hiragana": "わざと",
+    "meaning": "일부러",
+    "level": "N1"
+  },
+  {
+    "word": "ささいな",
+    "hiragana": "ささいな",
+    "meaning": "사소한",
+    "level": "N1"
+  },
+  {
+    "word": "小さな",
+    "hiragana": "小さな",
+    "meaning": "작은",
+    "level": "N1"
+  },
+  {
+    "word": "自尊心",
+    "hiragana": "自尊心",
+    "meaning": "자존심",
+    "level": "N1"
+  },
+  {
+    "word": "プライド",
+    "hiragana": "プライド",
+    "meaning": "프라이드",
+    "level": "N1"
+  },
+  {
+    "word": "戸惑う",
+    "hiragana": "戸惑う",
+    "meaning": "어리둥절해하다, 당황하다",
+    "level": "N1"
+  },
+  {
+    "word": "困る",
+    "hiragana": "困る",
+    "meaning": "곤란하다",
+    "level": "N1"
+  },
+  {
+    "word": "端的に",
+    "hiragana": "端的に",
+    "meaning": "단적으로",
+    "level": "N1"
+  },
+  {
+    "word": "明白に",
+    "hiragana": "明白に",
+    "meaning": "명백하게",
+    "level": "N1"
+  },
+  {
+    "word": "詫びる",
+    "hiragana": "詫びる",
+    "meaning": "사과하다",
+    "level": "N1"
+  },
+  {
+    "word": "謝る",
+    "hiragana": "謝る",
+    "meaning": "사과하다",
+    "level": "N1"
+  },
+  {
+    "word": "うすうす",
+    "hiragana": "うすうす",
+    "meaning": "희미하게, 어렴풋이",
+    "level": "N1"
+  },
+  {
+    "word": "なんとなく",
+    "hiragana": "なんとなく",
+    "meaning": "왠지 모르게, 어쩐지",
+    "level": "N1"
+  },
+  {
+    "word": "照会する",
+    "hiragana": "照会する",
+    "meaning": "조회하다",
+    "level": "N1"
+  },
+  {
+    "word": "問い合わせる",
+    "hiragana": "問い合わせる",
+    "meaning": "문의하다",
+    "level": "N1"
+  },
+  {
+    "word": "難点",
+    "hiragana": "難点",
+    "meaning": "난점",
+    "level": "N1"
+  },
+  {
+    "word": "不安なところ",
+    "hiragana": "不安なところ",
+    "meaning": "불안한 점",
+    "level": "N1"
+  },
+  {
+    "word": "入念に",
+    "hiragana": "入念に",
+    "meaning": "꼼꼼하게, 정성들여",
+    "level": "N1"
+  },
+  {
+    "word": "細かく丁寧に",
+    "hiragana": "細かく丁寧に",
+    "meaning": "섬세하고 정성껏",
+    "level": "N1"
+  },
+  {
+    "word": "粘り強く",
+    "hiragana": "粘り強く",
+    "meaning": "끈기 있게",
+    "level": "N1"
+  },
+  {
+    "word": "あきらめずに",
+    "hiragana": "あきらめずに",
+    "meaning": "포기하지 않고",
+    "level": "N1"
+  },
+  {
+    "word": "むっとする",
+    "hiragana": "むっとする",
+    "meaning": "부루퉁해지다",
+    "level": "N1"
+  },
+  {
+    "word": "怒ったような顔をする",
+    "hiragana": "怒ったような顔をする",
+    "meaning": "화가 난 듯한 얼굴을 하다",
+    "level": "N1"
+  },
+  {
+    "word": "決意",
+    "hiragana": "決意",
+    "meaning": "결의",
+    "level": "N1"
+  },
+  {
+    "word": "ゆとり",
+    "hiragana": "ゆとり",
+    "meaning": "여유",
+    "level": "N1"
+  },
+  {
+    "word": "余裕",
+    "hiragana": "余裕",
+    "meaning": "여유",
+    "level": "N1"
+  },
+  {
+    "word": "若干",
+    "hiragana": "若干",
+    "meaning": "약간",
+    "level": "N1"
+  },
+  {
+    "word": "わずかに",
+    "hiragana": "わずかに",
+    "meaning": "아주 조금",
+    "level": "N1"
+  },
+  {
+    "word": "撤回する",
+    "hiragana": "撤回する",
+    "meaning": "철회하다",
+    "level": "N1"
+  },
+  {
+    "word": "取り消す",
+    "hiragana": "取り消す",
+    "meaning": "취소하다",
+    "level": "N1"
+  },
+  {
+    "word": "競い合う",
+    "hiragana": "競い合う",
+    "meaning": "경합하다",
+    "level": "N1"
+  },
+  {
+    "word": "かたくなな",
+    "hiragana": "かたくなな",
+    "meaning": "고집이 센",
+    "level": "N1"
+  },
+  {
+    "word": "頑固な",
+    "hiragana": "頑固な",
+    "meaning": "완고한",
+    "level": "N1"
+  },
+  {
+    "word": "すみやかに",
+    "hiragana": "すみやかに",
+    "meaning": "신속히",
+    "level": "N1"
+  },
+  {
+    "word": "できるだけ早く",
+    "hiragana": "できるだけ早く",
+    "meaning": "가능한 한 빨리",
+    "level": "N1"
+  },
+  {
+    "word": "漠然としている",
+    "hiragana": "漠然としている",
+    "meaning": "막연하다",
+    "level": "N1"
+  },
+  {
+    "word": "ぼんやりしている",
+    "hiragana": "ぼんやりしている",
+    "meaning": "분명하지 않다",
+    "level": "N1"
+  },
+  {
+    "word": "妨害する",
+    "hiragana": "妨害する",
+    "meaning": "방해하다",
+    "level": "N1"
+  },
+  {
+    "word": "じゃまする",
+    "hiragana": "じゃまする",
+    "meaning": "방해하다, 훼방 놓다",
+    "level": "N1"
+  },
+  {
+    "word": "エレガントな",
+    "hiragana": "エレガントな",
+    "meaning": "우아한, 고상한",
+    "level": "N1"
+  },
+  {
+    "word": "上品な",
+    "hiragana": "上品な",
+    "meaning": "고상한, 품위 있는",
+    "level": "N1"
+  },
+  {
+    "word": "つかの間の",
+    "hiragana": "つかの間の",
+    "meaning": "짧은, 잠깐 동안의",
+    "level": "N1"
+  },
+  {
+    "word": "短い",
+    "hiragana": "短い",
+    "meaning": "짧은",
+    "level": "N1"
+  },
+  {
+    "word": "しくじる",
+    "hiragana": "しくじる",
+    "meaning": "실수하다, 실패하다",
+    "level": "N1"
+  },
+  {
+    "word": "失敗する",
+    "hiragana": "失敗する",
+    "meaning": "실패하다, 실수하다",
+    "level": "N1"
+  },
+  {
+    "word": "スライスする",
+    "hiragana": "スライスする",
+    "meaning": "얇게 썰다",
+    "level": "N1"
+  },
+  {
+    "word": "薄く切る",
+    "hiragana": "薄く切る",
+    "meaning": "얇게 자르다",
+    "level": "N1"
+  },
+  {
+    "word": "めいめいに",
+    "hiragana": "めいめいに",
+    "meaning": "각각에게, 각자에게",
+    "level": "N1"
+  },
+  {
+    "word": "一人一人に",
+    "hiragana": "一人一人に",
+    "meaning": "한 사람 한 사람에게",
+    "level": "N1"
+  },
+  {
+    "word": "詳しく丁寧に",
+    "hiragana": "詳しく丁寧に",
+    "meaning": "자세하고 꼼꼼하게",
+    "level": "N1"
+  },
+  {
+    "word": "手立て",
+    "hiragana": "手立て",
+    "meaning": "방법, 수단",
+    "level": "N1"
+  },
+  {
+    "word": "ありありと",
+    "hiragana": "ありありと",
+    "meaning": "똑똑히, 뚜렷이",
+    "level": "N1"
+  },
+  {
+    "word": "はっきり",
+    "hiragana": "はっきり",
+    "meaning": "확실히, 분명히",
+    "level": "N1"
+  },
+  {
+    "word": "返事をしぶっている",
+    "hiragana": "返事をしぶっている",
+    "meaning": "대답하기를 꺼리다, 주저하다",
+    "level": "N1"
+  },
+  {
+    "word": "しようとしない",
+    "hiragana": "しようとしない",
+    "meaning": "좀처럼 대답하려고 하지 않다",
+    "level": "N1"
+  },
+  {
+    "word": "コンパクトな",
+    "hiragana": "コンパクトな",
+    "meaning": "콤팩트한",
+    "level": "N1"
+  },
+  {
+    "word": "小型の",
+    "hiragana": "小型の",
+    "meaning": "소형인",
+    "level": "N1"
+  },
+  {
+    "word": "できるだけ",
+    "hiragana": "できるだけ",
+    "meaning": "가능한 한",
+    "level": "N1"
+  },
+  {
+    "word": "つぶやく",
+    "hiragana": "つぶやく",
+    "meaning": "중얼거리다",
+    "level": "N1"
+  },
+  {
+    "word": "小さな声で言う",
+    "hiragana": "小さな声で言う",
+    "meaning": "작은 소리로 말하다",
+    "level": "N1"
+  },
+  {
+    "word": "不審な",
+    "hiragana": "不審な",
+    "meaning": "수상한, 의심스러운, 미심쩍은",
+    "level": "N1"
+  },
+  {
+    "word": "怪しい",
+    "hiragana": "怪しい",
+    "meaning": "수상한, 의심스러운",
+    "level": "N1"
+  },
+  {
+    "word": "ばてる",
+    "hiragana": "ばてる",
+    "meaning": "지치다, 녹초가 되다",
+    "level": "N1"
+  },
+  {
+    "word": "疲れる",
+    "hiragana": "疲れる",
+    "meaning": "피곤하다, 지치다",
+    "level": "N1"
+  },
+  {
+    "word": "まっとうする",
+    "hiragana": "まっとうする",
+    "meaning": "다하다, 완수하다",
+    "level": "N1"
+  },
+  {
+    "word": "完了する",
+    "hiragana": "完了する",
+    "meaning": "완료하다",
+    "level": "N1"
+  },
+  {
+    "word": "異例の",
+    "hiragana": "異例の",
+    "meaning": "이례인",
+    "level": "N1"
+  },
+  {
+    "word": "珍しい",
+    "hiragana": "珍しい",
+    "meaning": "드문, 흔히 없는",
+    "level": "N1"
+  },
+  {
+    "word": "熱中する",
+    "hiragana": "熱中する",
+    "meaning": "열중하다",
+    "level": "N1"
+  },
+  {
+    "word": "つぶさに",
+    "hiragana": "つぶさに",
+    "meaning": "(1) 자세하게, 상세하게",
+    "level": "N1"
+  },
+  {
+    "word": "詳細に",
+    "hiragana": "詳細に",
+    "meaning": "상세하게",
+    "level": "N1"
+  },
+  {
+    "word": "脈絡",
+    "hiragana": "脈絡",
+    "meaning": "맥락, 연관, 관련",
+    "level": "N1"
+  },
+  {
+    "word": "つながり",
+    "hiragana": "つながり",
+    "meaning": "(1) 연계, 관계 (2) 연결",
+    "level": "N1"
+  },
+  {
+    "word": "吟味",
+    "hiragana": "吟味",
+    "meaning": "(1) 음미 (2) 자세히 조사함",
+    "level": "N1"
+  },
+  {
+    "word": "検討",
+    "hiragana": "検討",
+    "meaning": "검토",
+    "level": "N1"
+  },
+  {
+    "word": "エキスパート",
+    "hiragana": "エキスパート",
+    "meaning": "전문가",
+    "level": "N1"
+  },
+  {
+    "word": "専門家",
+    "hiragana": "専門家",
+    "meaning": "전문가",
+    "level": "N1"
+  },
+  {
+    "word": "凝視する",
+    "hiragana": "凝視する",
+    "meaning": "응시하다",
+    "level": "N1"
+  },
+  {
+    "word": "じっと見る",
+    "hiragana": "じっと見る",
+    "meaning": "가만히 보다",
+    "level": "N1"
+  },
+  {
+    "word": "架空",
+    "hiragana": "架空",
+    "meaning": "가공",
+    "level": "N1"
+  },
+  {
+    "word": "想像",
+    "hiragana": "想像",
+    "meaning": "상상",
+    "level": "N1"
+  },
+  {
+    "word": "しばらくは",
+    "hiragana": "しばらくは",
+    "meaning": "당분간은, 한동안은",
+    "level": "N1"
+  },
+  {
+    "word": "ぼやく",
+    "hiragana": "ぼやく",
+    "meaning": "투덜대다",
+    "level": "N1"
+  },
+  {
+    "word": "愚痴を言う",
+    "hiragana": "愚痴を言う",
+    "meaning": "불평하다, 푸념하다",
+    "level": "N1"
+  },
+  {
+    "word": "寡黙な",
+    "hiragana": "寡黙な",
+    "meaning": "과묵한",
+    "level": "N1"
+  },
+  {
+    "word": "口数が少ない",
+    "hiragana": "口数が少ない",
+    "meaning": "말수가 적은",
+    "level": "N1"
+  },
+  {
+    "word": "紛糾する",
+    "hiragana": "紛糾する",
+    "meaning": "분규하다, 분규를 겪다",
+    "level": "N1"
+  },
+  {
+    "word": "混乱する",
+    "hiragana": "混乱する",
+    "meaning": "혼란스럽다",
+    "level": "N1"
+  },
+  {
+    "word": "ずれ込む",
+    "hiragana": "ずれ込む",
+    "meaning": "늦춰지다, 미루어지다",
+    "level": "N1"
+  },
+  {
+    "word": "遅くなる",
+    "hiragana": "遅くなる",
+    "meaning": "늦어지다",
+    "level": "N1"
+  },
+  {
+    "word": "ろくに(～ない)",
+    "hiragana": "ろくに(～ない)",
+    "meaning": "제대로, 변변히(~않다)",
+    "level": "N1"
+  },
+  {
+    "word": "大して(～ない)",
+    "hiragana": "大して(～ない)",
+    "meaning": "그다지, 별로(~않다)",
+    "level": "N1"
+  },
+  {
+    "word": "貢献",
+    "hiragana": "貢献",
+    "meaning": "공헌",
+    "level": "N1"
+  },
+  {
+    "word": "危険",
+    "hiragana": "危険",
+    "meaning": "위험",
+    "level": "N1"
+  },
+  {
+    "word": "絶賛する",
+    "hiragana": "絶賛する",
+    "meaning": "절찬하다, 극구 칭찬하다",
+    "level": "N1"
+  },
+  {
+    "word": "非常に素晴らしいとほめる",
+    "hiragana": "非常に素晴らしいとほめる",
+    "meaning": "매우 훌륭하다고 칭찬하다",
+    "level": "N1"
+  },
+  {
+    "word": "くつろぐ",
+    "hiragana": "くつろぐ",
+    "meaning": "느긋이, 편하게 쉬다",
+    "level": "N1"
+  },
+  {
+    "word": "ゆっくりする",
+    "hiragana": "ゆっくりする",
+    "meaning": "편하게 쉬다, 느긋이 시간을 보내다",
+    "level": "N1"
+  },
+  {
+    "word": "うやむやに",
+    "hiragana": "うやむやに",
+    "meaning": "흐지부지하게, 애매하게",
+    "level": "N1"
+  },
+  {
+    "word": "あいまいに",
+    "hiragana": "あいまいに",
+    "meaning": "애매하게",
+    "level": "N1"
+  },
+  {
+    "word": "出馬する",
+    "hiragana": "出馬する",
+    "meaning": "출마하다",
+    "level": "N1"
+  },
+  {
+    "word": "選挙に出る",
+    "hiragana": "選挙に出る",
+    "meaning": "선거에 나가다",
+    "level": "N1"
+  },
+  {
+    "word": "刺激される",
+    "hiragana": "刺激される",
+    "meaning": "자극받다",
+    "level": "N1"
+  },
+  {
+    "word": "閉口する",
+    "hiragana": "閉口する",
+    "meaning": "난처하다, 기막히다",
+    "level": "N1"
+  },
+  {
+    "word": "気ままな",
+    "hiragana": "気ままな",
+    "meaning": "제 마음대로인",
+    "level": "N1"
+  },
+  {
+    "word": "自由な",
+    "hiragana": "自由な",
+    "meaning": "자유로운",
+    "level": "N1"
+  },
+  {
+    "word": "いくつか",
+    "hiragana": "いくつか",
+    "meaning": "몇 개쯤, 조금",
+    "level": "N1"
+  },
+  {
+    "word": "手分け",
+    "hiragana": "手分け",
+    "meaning": "분담, 나눔",
+    "level": "N1"
+  },
+  {
+    "word": "分担",
+    "hiragana": "分担",
+    "meaning": "분담",
+    "level": "N1"
+  },
+  {
+    "word": "てきぱきと",
+    "hiragana": "てきぱきと",
+    "meaning": "일을 솜씨 좋게 처리하는 모습. 척척",
+    "level": "N1"
+  },
+  {
+    "word": "早く正確に",
+    "hiragana": "早く正確に",
+    "meaning": "빠르고 정확하게",
+    "level": "N1"
+  },
+  {
+    "word": "調達する",
+    "hiragana": "調達する",
+    "meaning": "조달하다",
+    "level": "N1"
+  },
+  {
+    "word": "用意する",
+    "hiragana": "用意する",
+    "meaning": "준비하다",
+    "level": "N1"
+  },
+  {
+    "word": "温和な",
+    "hiragana": "温和な",
+    "meaning": "온화한",
+    "level": "N1"
+  },
+  {
+    "word": "おだやかな",
+    "hiragana": "おだやかな",
+    "meaning": "온화한, 평온한",
+    "level": "N1"
+  },
+  {
+    "word": "スポット",
+    "hiragana": "スポット",
+    "meaning": "스폿, 장소",
+    "level": "N1"
+  },
+  {
+    "word": "場所",
+    "hiragana": "場所",
+    "meaning": "장소",
+    "level": "N1"
+  },
+  {
+    "word": "拮抗する",
+    "hiragana": "拮抗する",
+    "meaning": "팽팽하다, 우열을 가릴 수 없다",
+    "level": "N1"
+  },
+  {
+    "word": "差がない",
+    "hiragana": "差がない",
+    "meaning": "차이가 없다",
+    "level": "N1"
+  },
+  {
+    "word": "風当たり",
+    "hiragana": "風当たり",
+    "meaning": "비난",
+    "level": "N1"
+  },
+  {
+    "word": "批判",
+    "hiragana": "批判",
+    "meaning": "비판",
+    "level": "N1"
+  },
+  {
+    "word": "あどけない",
+    "hiragana": "あどけない",
+    "meaning": "천진난만하다",
+    "level": "N1"
+  },
+  {
+    "word": "無邪気な",
+    "hiragana": "無邪気な",
+    "meaning": "천진난만한, 악의 없는",
+    "level": "N1"
+  },
+  {
+    "word": "懸念する",
+    "hiragana": "懸念する",
+    "meaning": "걱정하다, 우려하다",
+    "level": "N1"
+  },
+  {
+    "word": "心配する",
+    "hiragana": "心配する",
+    "meaning": "걱정하다",
+    "level": "N1"
+  },
+  {
+    "word": "やつれる",
+    "hiragana": "やつれる",
+    "meaning": "여위다, 수척해지다",
+    "level": "N1"
+  },
+  {
+    "word": "やせ衰える",
+    "hiragana": "やせ衰える",
+    "meaning": "야위어 쇠약해지다",
+    "level": "N1"
+  },
+  {
+    "word": "奮闘する",
+    "hiragana": "奮闘する",
+    "meaning": "분투하다",
+    "level": "N1"
+  },
+  {
+    "word": "必死に頑張る",
+    "hiragana": "必死に頑張る",
+    "meaning": "필사적으로 분발하다",
+    "level": "N1"
+  },
+  {
+    "word": "不慮の",
+    "hiragana": "不慮の",
+    "meaning": "뜻밖의, 예상 밖의, 불의의",
+    "level": "N1"
+  },
+  {
+    "word": "思いがけない",
+    "hiragana": "思いがけない",
+    "meaning": "뜻밖이다, 생각지 못하다, 예상 밖이다",
+    "level": "N1"
+  },
+  {
+    "word": "根こそぎ",
+    "hiragana": "根こそぎ",
+    "meaning": "전부, 모조리, 몽땅",
+    "level": "N1"
+  },
+  {
+    "word": "没頭する",
+    "hiragana": "没頭する",
+    "meaning": "몰두하다",
+    "level": "N1"
+  },
+  {
+    "word": "尺度",
+    "hiragana": "尺度",
+    "meaning": "척도, 기준",
+    "level": "N1"
+  },
+  {
+    "word": "基準",
+    "hiragana": "基準",
+    "meaning": "기준",
+    "level": "N1"
+  },
+  {
+    "word": "重要な",
+    "hiragana": "重要な",
+    "meaning": "중요한",
+    "level": "N1"
+  },
+  {
+    "word": "辛抱する",
+    "hiragana": "辛抱する",
+    "meaning": "참다, 견디다",
+    "level": "N1"
+  },
+  {
+    "word": "我慢する",
+    "hiragana": "我慢する",
+    "meaning": "참다",
+    "level": "N1"
+  },
+  {
+    "word": "しきたり",
+    "hiragana": "しきたり",
+    "meaning": "관습, 관례",
+    "level": "N1"
+  },
+  {
+    "word": "慣習",
+    "hiragana": "慣習",
+    "meaning": "관습",
+    "level": "N1"
+  },
+  {
+    "word": "委託する",
+    "hiragana": "委託する",
+    "meaning": "위탁하다",
+    "level": "N1"
+  },
+  {
+    "word": "任せる",
+    "hiragana": "任せる",
+    "meaning": "맡기다, 위임하다",
+    "level": "N1"
+  },
+  {
+    "word": "爽やかな",
+    "hiragana": "爽やかな",
+    "meaning": "상쾌한",
+    "level": "N1"
+  },
+  {
+    "word": "工面する",
+    "hiragana": "工面する",
+    "meaning": "(돈을)마련하다, 준비하다",
+    "level": "N1"
+  },
+  {
+    "word": "ぞんざいな",
+    "hiragana": "ぞんざいな",
+    "meaning": "거친, 난폭한",
+    "level": "N1"
+  },
+  {
+    "word": "雑な",
+    "hiragana": "雑な",
+    "meaning": "거친, 조잡한, 함부로 하는",
+    "level": "N1"
+  },
+  {
+    "word": "うなだれる",
+    "hiragana": "うなだれる",
+    "meaning": "머리를 숙이다. 고개를 떨구다",
+    "level": "N1"
+  },
+  {
+    "word": "下を向く",
+    "hiragana": "下を向く",
+    "meaning": "아래를 향하다, 머리를 숙이다",
+    "level": "N1"
+  },
+  {
+    "word": "打撃",
+    "hiragana": "打撃",
+    "meaning": "타격",
+    "level": "N1"
+  },
+  {
+    "word": "ダメージ",
+    "hiragana": "ダメージ",
+    "meaning": "대미지, 타격",
+    "level": "N1"
+  },
+  {
+    "word": "手腕",
+    "hiragana": "手腕",
+    "meaning": "수완",
+    "level": "N1"
+  },
+  {
+    "word": "能力",
+    "hiragana": "能力",
+    "meaning": "능력",
+    "level": "N1"
+  },
+  {
+    "word": "ロスする",
+    "hiragana": "ロスする",
+    "meaning": "헛되이 쓰다",
+    "level": "N1"
+  },
+  {
+    "word": "無駄にする",
+    "hiragana": "無駄にする",
+    "meaning": "낭비하다",
+    "level": "N1"
+  },
+  {
+    "word": "おろそかに",
+    "hiragana": "おろそかに",
+    "meaning": "소홀하게",
+    "level": "N1"
+  },
+  {
+    "word": "いいかげんに",
+    "hiragana": "いいかげんに",
+    "meaning": "대충",
+    "level": "N1"
+  },
+  {
+    "word": "目下",
+    "hiragana": "目下",
+    "meaning": "목하, 현재",
+    "level": "N1"
+  },
+  {
+    "word": "今",
+    "hiragana": "今",
+    "meaning": "지금",
+    "level": "N1"
+  },
+  {
+    "word": "請け負う",
+    "hiragana": "請け負う",
+    "meaning": "청부 맡다",
+    "level": "N1"
+  },
+  {
+    "word": "引き受ける",
+    "hiragana": "引き受ける",
+    "meaning": "맡다, 인수하다",
+    "level": "N1"
+  },
+  {
+    "word": "進呈する",
+    "hiragana": "進呈する",
+    "meaning": "진정하다, 물건을 자진해서 드리다",
+    "level": "N1"
+  },
+  {
+    "word": "差し上げる",
+    "hiragana": "差し上げる",
+    "meaning": "드리다",
+    "level": "N1"
+  },
+  {
+    "word": "意地(を張る)",
+    "hiragana": "意地(を張る)",
+    "meaning": "고집(을 부리다)",
+    "level": "N1"
+  },
+  {
+    "word": "細心(の注意を払う)",
+    "hiragana": "細心(の注意を払う)",
+    "meaning": "세심한 주의를 기울이다",
+    "level": "N1"
+  },
+  {
+    "word": "調達",
+    "hiragana": "調達",
+    "meaning": "조달",
+    "level": "N1"
+  },
+  {
+    "word": "賑わう",
+    "hiragana": "賑わう",
+    "meaning": "활기차다, 번화하다",
+    "level": "N1"
+  },
+  {
+    "word": "発足",
+    "hiragana": "発足",
+    "meaning": "발족",
+    "level": "N1"
+  },
+  {
+    "word": "満喫する",
+    "hiragana": "満喫する",
+    "meaning": "만끽하다",
+    "level": "N1"
+  },
+  {
+    "word": "見落とす",
+    "hiragana": "見落とす",
+    "meaning": "간과하다",
+    "level": "N1"
+  },
+  {
+    "word": "密集",
+    "hiragana": "密集",
+    "meaning": "밀집",
+    "level": "N1"
+  },
+  {
+    "word": "めきめき(上達する)",
+    "hiragana": "めきめき(上達する)",
+    "meaning": "눈에 띄게 (숙달되다)",
+    "level": "N1"
+  },
+  {
+    "word": "目先(の利益)",
+    "hiragana": "目先(の利益)",
+    "meaning": "눈앞(의 이익)",
+    "level": "N1"
+  },
+  {
+    "word": "(夢が)かなう",
+    "hiragana": "(夢が)かなう",
+    "meaning": "(꿈이) 이루어지다",
+    "level": "N1"
+  },
+  {
+    "word": "質素な",
+    "hiragana": "質素な",
+    "meaning": "검소한, 소탈한",
+    "level": "N1"
+  },
+  {
+    "word": "とっくに",
+    "hiragana": "とっくに",
+    "meaning": "진작에, 훨씬 전에",
+    "level": "N1"
+  },
+  {
+    "word": "配布",
+    "hiragana": "配布",
+    "meaning": "배포",
+    "level": "N1"
+  },
+  {
+    "word": "赴任",
+    "hiragana": "赴任",
+    "meaning": "부임",
+    "level": "N1"
+  },
+  {
+    "word": "不服",
+    "hiragana": "不服",
+    "meaning": "불복",
+    "level": "N1"
+  },
+  {
+    "word": "ほどける",
+    "hiragana": "ほどける",
+    "meaning": "(매듭, 끈이) 풀리다",
+    "level": "N1"
+  },
+  {
+    "word": "見失う",
+    "hiragana": "見失う",
+    "meaning": "(시야에서) 놓치다",
+    "level": "N1"
+  },
+  {
+    "word": "連携",
+    "hiragana": "連携",
+    "meaning": "연계",
+    "level": "N1"
+  },
+  {
+    "word": "広大な",
+    "hiragana": "広大な",
+    "meaning": "광대한",
+    "level": "N1"
+  },
+  {
+    "word": "500人に満たない",
+    "hiragana": "500人に満たない",
+    "meaning": "500명 이하이다, 500명에 못 미치다",
+    "level": "N1"
+  },
+  {
+    "word": "仕業",
+    "hiragana": "仕業",
+    "meaning": "소행",
+    "level": "N1"
+  },
+  {
+    "word": "総じて",
+    "hiragana": "総じて",
+    "meaning": "대체로, 전반적으로",
+    "level": "N1"
+  },
+  {
+    "word": "秘める",
+    "hiragana": "秘める",
+    "meaning": "숨기다",
+    "level": "N1"
+  },
+  {
+    "word": "ブランク",
+    "hiragana": "ブランク",
+    "meaning": "블랭크, 공백",
+    "level": "N1"
+  },
+  {
+    "word": "見込み",
+    "hiragana": "見込み",
+    "meaning": "예상, 전망",
+    "level": "N1"
+  },
+  {
+    "word": "無造作に",
+    "hiragana": "無造作に",
+    "meaning": "대수롭지 않게, 아무렇게나",
+    "level": "N1"
+  },
+  {
+    "word": "免除",
+    "hiragana": "免除",
+    "meaning": "면제",
+    "level": "N1"
+  },
+  {
+    "word": "有数(の小麦生産国)",
+    "hiragana": "有数(の小麦生産国)",
+    "meaning": "유수(의 밀 생산국)",
+    "level": "N1"
+  },
+  {
+    "word": "当てはめる",
+    "hiragana": "当てはめる",
+    "meaning": "적용하다",
+    "level": "N1"
+  },
+  {
+    "word": "円滑だ",
+    "hiragana": "円滑だ",
+    "meaning": "원활하다",
+    "level": "N1"
+  },
+  {
+    "word": "合致",
+    "hiragana": "合致",
+    "meaning": "합치, 일치",
+    "level": "N1"
+  },
+  {
+    "word": "かばう",
+    "hiragana": "かばう",
+    "meaning": "두둔하다, 비호하다",
+    "level": "N1"
+  },
+  {
+    "word": "加味する",
+    "hiragana": "加味する",
+    "meaning": "가미하다",
+    "level": "N1"
+  },
+  {
+    "word": "口出し",
+    "hiragana": "口出し",
+    "meaning": "간섭, 참견",
+    "level": "N1"
+  },
+  {
+    "word": "気配",
+    "hiragana": "気配",
+    "meaning": "기미, 기색",
+    "level": "N1"
+  },
+  {
+    "word": "処置",
+    "hiragana": "処置",
+    "meaning": "처치, 조치",
+    "level": "N1"
+  },
+  {
+    "word": "打開する",
+    "hiragana": "打開する",
+    "meaning": "타개하다",
+    "level": "N1"
+  },
+  {
+    "word": "煩雑な",
+    "hiragana": "煩雑な",
+    "meaning": "번잡한",
+    "level": "N1"
+  },
+  {
+    "word": "拍子",
+    "hiragana": "拍子",
+    "meaning": "박자",
+    "level": "N1"
+  },
+  {
+    "word": "優位(に立つ)",
+    "hiragana": "優位(に立つ)",
+    "meaning": "우위(에 서다)",
+    "level": "N1"
+  },
+  {
+    "word": "一律に",
+    "hiragana": "一律に",
+    "meaning": "일률적으로",
+    "level": "N1"
+  },
+  {
+    "word": "裏腹",
+    "hiragana": "裏腹",
+    "meaning": "정반대, 모순",
+    "level": "N1"
+  },
+  {
+    "word": "抱え込む",
+    "hiragana": "抱え込む",
+    "meaning": "끌어안다, 떠맡다",
+    "level": "N1"
+  },
+  {
+    "word": "工面",
+    "hiragana": "工面",
+    "meaning": "자금 마련",
+    "level": "N1"
+  },
+  {
+    "word": "心構え",
+    "hiragana": "心構え",
+    "meaning": "마음가짐",
+    "level": "N1"
+  },
+  {
+    "word": "しがみつく",
+    "hiragana": "しがみつく",
+    "meaning": "매달리다",
+    "level": "N1"
+  },
+  {
+    "word": "損なう",
+    "hiragana": "損なう",
+    "meaning": "손상시키다",
+    "level": "N1"
+  },
+  {
+    "word": "耐えがたい",
+    "hiragana": "耐えがたい",
+    "meaning": "견디기 힘들다",
+    "level": "N1"
+  },
+  {
+    "word": "携わる",
+    "hiragana": "携わる",
+    "meaning": "종사하다",
+    "level": "N1"
+  },
+  {
+    "word": "剥がす",
+    "hiragana": "剥がす",
+    "meaning": "벗기다, 떼다",
+    "level": "N1"
+  },
+  {
+    "word": "人一倍",
+    "hiragana": "人一倍",
+    "meaning": "남달리, 남보다 갑절",
+    "level": "N1"
+  },
+  {
+    "word": "復旧",
+    "hiragana": "復旧",
+    "meaning": "복구",
+    "level": "N1"
+  },
+  {
+    "word": "安静",
+    "hiragana": "安静",
+    "meaning": "안정(환자의 요양)",
+    "level": "N1"
+  },
+  {
+    "word": "今更",
+    "hiragana": "今更",
+    "meaning": "이제 와서, 새삼스럽게",
+    "level": "N1"
+  },
+  {
+    "word": "帯びる",
+    "hiragana": "帯びる",
+    "meaning": "띠다, 그러한 성질을 지니다",
+    "level": "N1"
+  },
+  {
+    "word": "思い詰める",
+    "hiragana": "思い詰める",
+    "meaning": "골똘히 생각하다",
+    "level": "N1"
+  },
+  {
+    "word": "軌道",
+    "hiragana": "軌道",
+    "meaning": "궤도",
+    "level": "N1"
+  },
+  {
+    "word": "くまなく",
+    "hiragana": "くまなく",
+    "meaning": "구석구석까지, 샅샅이",
+    "level": "N1"
+  },
+  {
+    "word": "辞任",
+    "hiragana": "辞任",
+    "meaning": "사임",
+    "level": "N1"
+  },
+  {
+    "word": "統合",
+    "hiragana": "統合",
+    "meaning": "통합",
+    "level": "N1"
+  },
+  {
+    "word": "はなはだしい",
+    "hiragana": "はなはだしい",
+    "meaning": "심하다",
+    "level": "N1"
+  },
+  {
+    "word": "人手",
+    "hiragana": "人手",
+    "meaning": "일손, 노동력",
+    "level": "N1"
+  },
+  {
+    "word": "もはや",
+    "hiragana": "もはや",
+    "meaning": "이미, 벌써",
+    "level": "N1"
+  },
+  {
+    "word": "内訳",
+    "hiragana": "内訳",
+    "meaning": "내역",
+    "level": "N1"
+  },
+  {
+    "word": "過密",
+    "hiragana": "過密",
+    "meaning": "과밀",
+    "level": "N1"
+  },
+  {
+    "word": "閑静な",
+    "hiragana": "閑静な",
+    "meaning": "한적한, 조용한",
+    "level": "N1"
+  },
+  {
+    "word": "規制",
+    "hiragana": "規制",
+    "meaning": "규제",
+    "level": "N1"
+  },
+  {
+    "word": "食い違う",
+    "hiragana": "食い違う",
+    "meaning": "엇갈리다",
+    "level": "N1"
+  },
+  {
+    "word": "察する",
+    "hiragana": "察する",
+    "meaning": "헤아리다",
+    "level": "N1"
+  },
+  {
+    "word": "退く",
+    "hiragana": "退く",
+    "meaning": "물러나다, 후퇴하다",
+    "level": "N1"
+  },
+  {
+    "word": "素早い",
+    "hiragana": "素早い",
+    "meaning": "재빠르다, 민첩하다",
+    "level": "N1"
+  },
+  {
+    "word": "たやすい",
+    "hiragana": "たやすい",
+    "meaning": "쉽다, 용이하다",
+    "level": "N1"
+  },
+  {
+    "word": "入手",
+    "hiragana": "入手",
+    "meaning": "입수",
+    "level": "N1"
+  },
+  {
+    "word": "昇進",
+    "hiragana": "昇進",
+    "meaning": "승진",
+    "level": "N1"
+  },
+  {
+    "word": "提起",
+    "hiragana": "提起",
+    "meaning": "제기",
+    "level": "N1"
+  },
+  {
+    "word": "滅びる",
+    "hiragana": "滅びる",
+    "meaning": "멸망하다",
+    "level": "N1"
+  },
+  {
+    "word": "重複",
+    "hiragana": "重複",
+    "meaning": "중복",
+    "level": "N1"
+  },
+  {
+    "word": "拠点",
+    "hiragana": "拠点",
+    "meaning": "거점",
+    "level": "N1"
+  },
+  {
+    "word": "真っ先",
+    "hiragana": "真っ先",
+    "meaning": "제일 먼저",
+    "level": "N1"
+  },
+  {
+    "word": "緊密",
+    "hiragana": "緊密",
+    "meaning": "긴밀",
+    "level": "N1"
+  },
+  {
+    "word": "遂げる",
+    "hiragana": "遂げる",
+    "meaning": "완수하다",
+    "level": "N1"
+  },
+  {
+    "word": "巧みだ",
+    "hiragana": "巧みだ",
+    "meaning": "정교하다, 능숙하다",
+    "level": "N1"
+  },
+  {
+    "word": "配属",
+    "hiragana": "配属",
+    "meaning": "배속",
+    "level": "N1"
+  },
+  {
+    "word": "乗り出す",
+    "hiragana": "乗り出す",
+    "meaning": "적극적으로 나서다, 착수하다",
+    "level": "N1"
+  },
+  {
+    "word": "面識",
+    "hiragana": "面識",
+    "meaning": "면식",
+    "level": "N1"
+  },
+  {
+    "word": "心当たり",
+    "hiragana": "心当たり",
+    "meaning": "짐작가는 데, 마음 짚이는 곳",
+    "level": "N1"
+  },
+  {
+    "word": "作動",
+    "hiragana": "作動",
+    "meaning": "작동",
+    "level": "N1"
+  },
+  {
+    "word": "備え付ける",
+    "hiragana": "備え付ける",
+    "meaning": "설치하다",
+    "level": "N1"
+  },
+  {
+    "word": "かさばる",
+    "hiragana": "かさばる",
+    "meaning": "부피가 커지다",
+    "level": "N1"
+  },
+  {
+    "word": "交錯",
+    "hiragana": "交錯",
+    "meaning": "뒤섞여 엇갈림, 교차",
+    "level": "N1"
+  },
+  {
+    "word": "しぶとい",
+    "hiragana": "しぶとい",
+    "meaning": "고집이 세고 주눅들지",
+    "level": "N1"
+  },
+  {
+    "word": "基調",
+    "hiragana": "基調",
+    "meaning": "(1) 그림(장식 등에서 중심이 되는 색상)",
+    "level": "N1"
+  },
+  {
+    "word": "簡素",
+    "hiragana": "簡素",
+    "meaning": "간소",
+    "level": "N1"
+  },
+  {
+    "word": "解明",
+    "hiragana": "解明",
+    "meaning": "해명",
+    "level": "N1"
+  },
+  {
+    "word": "ほほえましい",
+    "hiragana": "ほほえましい",
+    "meaning": "흐뭇하다",
+    "level": "N1"
+  },
+  {
+    "word": "目安",
+    "hiragana": "目安",
+    "meaning": "(1) 목표 (2) 기준",
+    "level": "N1"
+  },
+  {
+    "word": "様相",
+    "hiragana": "様相",
+    "meaning": "양상, 모습, 상태",
+    "level": "N1"
+  },
+  {
+    "word": "交える",
+    "hiragana": "交える",
+    "meaning": "섞다, 끼게 하다",
+    "level": "N1"
+  },
+  {
+    "word": "要望",
+    "hiragana": "要望",
+    "meaning": "요망",
+    "level": "N1"
+  },
+  {
+    "word": "くじける",
+    "hiragana": "くじける",
+    "meaning": "꺾이다, 굴하다, 좌절하다",
+    "level": "N1"
+  },
+  {
+    "word": "ひたむき",
+    "hiragana": "ひたむき",
+    "meaning": "한 가지 일에 전념함, 한결같음, 오로지",
+    "level": "N1"
+  },
+  {
+    "word": "互角",
+    "hiragana": "互角",
+    "meaning": "호각, 비등함",
+    "level": "N1"
+  },
+  {
+    "word": "円滑",
+    "hiragana": "円滑",
+    "meaning": "원활",
+    "level": "N1"
+  },
+  {
+    "word": "失脚",
+    "hiragana": "失脚",
+    "meaning": "실각",
+    "level": "N1"
+  },
+  {
+    "word": "収容",
+    "hiragana": "収容",
+    "meaning": "수용",
+    "level": "N1"
+  },
+  {
+    "word": "実に",
+    "hiragana": "実に",
+    "meaning": "실로",
+    "level": "N1"
+  },
+  {
+    "word": "絶滅",
+    "hiragana": "絶滅",
+    "meaning": "절멸, 멸종",
+    "level": "N1"
+  },
+  {
+    "word": "露骨に",
+    "hiragana": "露骨に",
+    "meaning": "노골적으로",
+    "level": "N1"
+  },
+  {
+    "word": "交付",
+    "hiragana": "交付",
+    "meaning": "교부",
+    "level": "N1"
+  },
+  {
+    "word": "かたくな",
+    "hiragana": "かたくな",
+    "meaning": "완고함, 고집스러움",
+    "level": "N1"
+  },
+  {
+    "word": "なつく",
+    "hiragana": "なつく",
+    "meaning": "친해져서 따르다",
+    "level": "N1"
+  },
+  {
+    "word": "均等",
+    "hiragana": "均等",
+    "meaning": "균등",
+    "level": "N1"
+  },
+  {
+    "word": "リタイア",
+    "hiragana": "リタイア",
+    "meaning": "(1) 기권 (2) 퇴직, 퇴직",
+    "level": "N1"
+  },
+  {
+    "word": "押収",
+    "hiragana": "押収",
+    "meaning": "압수",
+    "level": "N1"
+  },
+  {
+    "word": "望ましい",
+    "hiragana": "望ましい",
+    "meaning": "바람직하다",
+    "level": "N1"
+  },
+  {
+    "word": "本場",
+    "hiragana": "本場",
+    "meaning": "(1) 본고장 (2) 주요 산지",
+    "level": "N1"
+  },
+  {
+    "word": "結末",
+    "hiragana": "結末",
+    "meaning": "결말",
+    "level": "N1"
+  },
+  {
+    "word": "そそる",
+    "hiragana": "そそる",
+    "meaning": "(어떤 행동, 감정 등을)자아내다, 돋우다",
+    "level": "N1"
+  },
+  {
+    "word": "要請",
+    "hiragana": "要請",
+    "meaning": "요청",
+    "level": "N1"
+  },
+  {
+    "word": "ぎこちない",
+    "hiragana": "ぎこちない",
+    "meaning": "어색하다, 부자연스럽다",
+    "level": "N1"
+  },
+  {
+    "word": "断じて",
+    "hiragana": "断じて",
+    "meaning": "결코, 절대 (~하지 않다)",
+    "level": "N1"
+  },
+  {
+    "word": "出荷",
+    "hiragana": "出荷",
+    "meaning": "출하",
+    "level": "N1"
+  },
+  {
+    "word": "譲る",
+    "hiragana": "譲る",
+    "meaning": "(1)양보하다 (2)물려주다 (3)팔아 넘기다",
+    "level": "N1"
+  },
+  {
+    "word": "底力",
+    "hiragana": "底力",
+    "meaning": "저력",
+    "level": "N1"
+  },
+  {
+    "word": "絶大",
+    "hiragana": "絶大",
+    "meaning": "절대, 아주 큼",
+    "level": "N1"
+  },
+  {
+    "word": "手痛い",
+    "hiragana": "手痛い",
+    "meaning": "(비판, 타격, 손해, 실수 등)",
+    "level": "N1"
+  },
+  {
+    "word": "誘致",
+    "hiragana": "誘致",
+    "meaning": "유치",
+    "level": "N1"
+  },
+  {
+    "word": "さえる",
+    "hiragana": "さえる",
+    "meaning": "(1)맑고 깨끗하다",
+    "level": "N1"
+  },
+  {
+    "word": "痛烈",
+    "hiragana": "痛烈",
+    "meaning": "통렬, 호됨",
+    "level": "N1"
+  },
+  {
+    "word": "もろい",
+    "hiragana": "もろい",
+    "meaning": "무르다, 약하다, 깨지기 쉽다",
+    "level": "N1"
+  },
+  {
+    "word": "解約",
+    "hiragana": "解約",
+    "meaning": "해약",
+    "level": "N1"
+  },
+  {
+    "word": "特産",
+    "hiragana": "特産",
+    "meaning": "특산",
+    "level": "N1"
+  },
+  {
+    "word": "問い詰める",
+    "hiragana": "問い詰める",
+    "meaning": "캐묻다, 추궁하다, 따지다",
+    "level": "N1"
+  },
+  {
+    "word": "改修",
+    "hiragana": "改修",
+    "meaning": "개수, 수리, 보수",
+    "level": "N1"
+  },
+  {
+    "word": "手厚い",
+    "hiragana": "手厚い",
+    "meaning": "극진하다, 융숭하다",
+    "level": "N1"
+  },
+  {
+    "word": "デマ",
+    "hiragana": "デマ",
+    "meaning": "헛소문, 유언비어, 가짜 뉴스",
+    "level": "N1"
+  },
+  {
+    "word": "風潮",
+    "hiragana": "風潮",
+    "meaning": "풍조",
+    "level": "N1"
+  },
+  {
+    "word": "もたらす",
+    "hiragana": "もたらす",
+    "meaning": "가져오다, 초래하다",
+    "level": "N1"
+  },
+  {
+    "word": "撤回",
+    "hiragana": "撤回",
+    "meaning": "철회",
+    "level": "N1"
+  },
+  {
+    "word": "補填",
+    "hiragana": "補填",
+    "meaning": "보전(손실, 적자 등 부족한 부분을 채움)",
+    "level": "N1"
+  },
+  {
+    "word": "ずばり",
+    "hiragana": "ずばり",
+    "meaning": "(정곡, 핵심 등을 정확히",
+    "level": "N1"
+  },
+  {
+    "word": "コンスタント",
+    "hiragana": "コンスタント",
+    "meaning": "일정한 모양",
+    "level": "N1"
+  },
+  {
+    "word": "加工",
+    "hiragana": "加工",
+    "meaning": "가공",
+    "level": "N1"
+  },
+  {
+    "word": "養う",
+    "hiragana": "養う",
+    "meaning": "기르다, 양육하다",
+    "level": "N1"
+  },
+  {
+    "word": "資質",
+    "hiragana": "資質",
+    "meaning": "자질",
+    "level": "N1"
+  },
+  {
+    "word": "ありきたり",
+    "hiragana": "ありきたり",
+    "meaning": "흔함, 평범함",
+    "level": "N1"
+  },
+  {
+    "word": "間柄",
+    "hiragana": "間柄",
+    "meaning": "사이, 관계",
+    "level": "N1"
+  },
+  {
+    "word": "正当",
+    "hiragana": "正当",
+    "meaning": "정당",
+    "level": "N1"
+  },
+  {
+    "word": "～なんかでいい",
+    "hiragana": "～なんかでいい",
+    "meaning": "문문장장 완완성성",
+    "level": "N1"
+  }
+]

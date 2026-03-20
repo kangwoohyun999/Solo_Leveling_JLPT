@@ -86,21 +86,46 @@
     <a href="/wordlist/n5" class="card card-hover level-btn n5">
       <div class="lb-left">
         <div class="level-badge">N5</div>
-        <div class="lb-info"><h3>JLPT N5</h3><p>664개 단어 · 입문</p></div>
+        <div class="lb-info"><h3>JLPT N5</h3><p>{{ level_counts.N5 }}개 단어 · 입문</p></div>
       </div>
       <span class="lb-arrow">›</span>
     </a>
 
-    <!-- N4 ~ N1 (Coming Soon) -->
-    {% for lv in ['N4','N3','N2','N1'] %}
-    <div class="card card-hover level-btn {{ lv.lower() }} coming">
+    <!-- N4 -->
+    <a href="/wordlist/n4" class="card card-hover level-btn n4">
       <div class="lb-left">
-        <div class="level-badge">{{ lv }}</div>
-        <div class="lb-info"><h3>JLPT {{ lv }}</h3><p>Coming Soon</p></div>
+        <div class="level-badge">N4</div>
+        <div class="lb-info"><h3>JLPT N4</h3><p>{{ level_counts.N4 }}개 단어 · 초급</p></div>
       </div>
       <span class="lb-arrow">›</span>
-    </div>
-    {% endfor %}
+    </a>
+
+    <!-- N3 -->
+    <a href="/wordlist/n3" class="card card-hover level-btn n3">
+      <div class="lb-left">
+        <div class="level-badge">N3</div>
+        <div class="lb-info"><h3>JLPT N3</h3><p>{{ level_counts.N3 }}개 단어 · 중급</p></div>
+      </div>
+      <span class="lb-arrow">›</span>
+    </a>
+
+    <!-- N2 -->
+    <a href="/wordlist/n2" class="card card-hover level-btn n2">
+      <div class="lb-left">
+        <div class="level-badge">N2</div>
+        <div class="lb-info"><h3>JLPT N2</h3><p>{{ level_counts.N2 }}개 단어 · 중상급</p></div>
+      </div>
+      <span class="lb-arrow">›</span>
+    </a>
+
+    <!-- N1 -->
+    <a href="/wordlist/n1" class="card card-hover level-btn n1">
+      <div class="lb-left">
+        <div class="level-badge">N1</div>
+        <div class="lb-info"><h3>JLPT N1</h3><p>{{ level_counts.N1 }}개 단어 · 고급</p></div>
+      </div>
+      <span class="lb-arrow">›</span>
+    </a>
   </div>
 </div>
 {% endblock %}
