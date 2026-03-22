@@ -45,24 +45,34 @@ def get_db():
 def init_db():
     conn = get_db()
     cur = conn.cursor()
+
+    # users 테이블 생성
     cur.execute("""
         CREATE TABLE IF NOT EXISTS users (
             id       SERIAL PRIMARY KEY,
             username TEXT UNIQUE NOT NULL,
             password TEXT NOT NULL,
-            nickname TEXT UNIQUE NOT NULL
+            nickname TEXT NOT NULL
         )
     """)
+    conn.commit()
+
+    # nickname UNIQUE 제약 — information_schema로 안전하게 확인 후 추가
     cur.execute("""
-        DO $$
-        BEGIN
-            IF NOT EXISTS (
-                SELECT 1 FROM pg_constraint WHERE conname = 'users_nickname_key'
-            ) THEN
-                ALTER TABLE users ADD CONSTRAINT users_nickname_key UNIQUE (nickname);
-            END IF;
-        END$$;
+        SELECT COUNT(*) AS cnt FROM information_schema.table_constraints
+        WHERE table_name='users' AND constraint_name='users_nickname_key'
     """)
+    row = cur.fetchone()
+    if row and int(row['cnt']) == 0:
+        try:
+            cur.execute(
+                "ALTER TABLE users ADD CONSTRAINT users_nickname_key UNIQUE (nickname)"
+            )
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+            print(f'[nickname UNIQUE 추가 스킵] {e}')
+
     cur.execute("""
         CREATE TABLE IF NOT EXISTS wrong_notes (
             id       SERIAL PRIMARY KEY,
