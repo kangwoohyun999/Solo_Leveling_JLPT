@@ -1,138 +1,138 @@
 {% extends "base.html" %}
-{% block title %}랭킹 — {{ level }}{% endblock %}
+{% block title %}{{ level }} 랭킹 — SoloLeveling Word{% endblock %}
 
 {% block extra_style %}
-.rank-body {
-  max-width:560px; margin:0 auto; padding:20px 16px 64px;
+.rank-list {
+  max-width:560px; margin:0 auto;
+  padding:14px 16px 120px;   /* 하단 고정 영역 여유 */
 }
 
-/* 레벨 탭 */
-.level-tabs {
-  display:flex; gap:6px; margin-bottom:24px; overflow-x:auto;
-  padding-bottom:4px;
+/* 랭킹 행 */
+.rank-row {
+  display:grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items:center; gap:12px;
+  padding:14px 16px; margin-bottom:8px;
+  border-radius:var(--radius);
+  transition:border-color .15s;
 }
-.level-tab {
-  padding:8px 18px; border-radius:20px; font-size:13px; font-weight:700;
-  border:1px solid var(--border); color:var(--muted);
-  white-space:nowrap; transition:all .15s;
+.rank-row.me {
+  border-color:var(--accent) !important;
+  background:rgba(108,99,255,.08) !important;
+}
+.rank-row.gold   { border-color:rgba(251,191,36,.5) !important; }
+.rank-row.silver { border-color:rgba(192,192,192,.4) !important; }
+.rank-row.bronze { border-color:rgba(205,127,50,.4) !important; }
+
+/* 등수 */
+.rr-rank {
+  text-align:center; font-weight:700; font-family:var(--mono); font-size:16px;
+}
+.rr-rank .medal { font-size:22px; line-height:1; }
+
+/* 닉네임 */
+.rr-nick { font-size:15px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rr-nick .me-tag {
+  font-size:10px; color:var(--accent2); background:rgba(108,99,255,.15);
+  border-radius:4px; padding:1px 6px; margin-left:6px; font-weight:400;
   font-family:var(--mono);
 }
-.level-tab:hover { border-color:var(--accent); color:var(--text); }
-.level-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
 
-/* 섹션 타이틀 */
-.rank-title {
-  font-size:16px; font-weight:700; margin-bottom:4px;
-  display:flex; align-items:center; gap:8px;
+/* 점수 + 시간 (2행 1열) */
+.rr-score {
+  text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:2px;
 }
-.rank-title .trophy { font-size:20px; }
-.rank-desc { font-size:12px; color:var(--muted); margin-bottom:20px; }
+.rr-correct { font-size:15px; font-weight:700; font-family:var(--mono); color:var(--success); }
+.rr-time    { font-size:12px; color:var(--muted); font-family:var(--mono); }
 
-/* 랭킹 카드 */
-.rank-card {
-  display:grid; grid-template-columns:40px 1fr auto;
-  align-items:center; gap:14px;
-  padding:14px 18px; margin-bottom:8px;
-  border-radius:var(--radius);
-}
-.rank-card.top1 { background:rgba(251,191,36,.1); border:1px solid rgba(251,191,36,.4); }
-.rank-card.top2 { background:rgba(203,213,225,.07); border:1px solid rgba(203,213,225,.25); }
-.rank-card.top3 { background:rgba(205,127,50,.08); border:1px solid rgba(205,127,50,.3); }
-.rank-card.normal { background:var(--surface); border:1px solid var(--border); }
-.rank-card.mine   { border-color:var(--accent) !important; }
-
-.rank-num {
-  font-size:18px; font-weight:700; font-family:var(--mono);
-  text-align:center;
-}
-.rank-card.top1 .rank-num { color:var(--warning); }
-.rank-card.top2 .rank-num { color:#cbd5e1; }
-.rank-card.top3 .rank-num { color:#cd7f32; }
-
-.rank-info .rk-nick { font-size:15px; font-weight:700; }
-.rank-info .rk-date { font-size:11px; color:var(--muted); margin-top:2px; }
-.rank-info .rk-me   { font-size:10px; color:var(--accent2); font-weight:700;
-                       background:rgba(108,99,255,.15); border-radius:4px;
-                       padding:1px 6px; margin-left:6px; }
-
-.rank-time {
-  font-size:18px; font-weight:700; font-family:var(--mono); color:var(--warning);
-  text-align:right;
-}
-.rank-card.top2 .rank-time { color:#cbd5e1; }
-.rank-card.top3 .rank-time { color:#cd7f32; }
-.rank-card.normal .rank-time { color:var(--text); }
-
-.empty-rank { text-align:center; padding:48px 20px; color:var(--muted); }
+/* 빈 상태 */
+.empty-rank { text-align:center; padding:60px 20px; color:var(--muted); }
 .empty-rank .ei { font-size:36px; margin-bottom:10px; }
 
-/* 내 랭킹 없음 안내 */
-.my-rank-banner {
-  background:rgba(108,99,255,.08); border:1px solid var(--border);
-  border-radius:var(--radius); padding:14px 18px; margin-bottom:20px;
-  font-size:13px; color:var(--muted); text-align:center;
-  display:none;
+/* 하단 고정 — 본인 기록 */
+.my-record-bar {
+  position:fixed; bottom:0; left:0; right:0; z-index:80;
+  background:rgba(10,10,15,.97); backdrop-filter:blur(12px);
+  border-top:1px solid var(--accent);
+  padding:12px 20px;
 }
-.my-rank-banner.show { display:block; }
+.my-record-inner {
+  max-width:560px; margin:0 auto;
+  display:grid; grid-template-columns:52px 1fr auto;
+  align-items:center; gap:12px;
+}
+.my-record-label { font-size:10px; color:var(--muted); margin-bottom:2px; }
+.my-no-record {
+  max-width:560px; margin:0 auto; text-align:center;
+  color:var(--muted); font-size:13px;
+}
+.my-no-record a { color:var(--accent2); text-decoration:underline; }
 {% endblock %}
 
 {% block body %}
 <div class="page-header">
-  <a href="/wordlist/{{ level.lower() }}" class="back-btn">‹</a>
-  <span class="page-title">🏆 랭킹</span>
-  <span class="page-sub">만점(20/20) 기준</span>
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title" style="font-family:var(--mono)">{{ level }} 랭킹</span>
+  <span class="page-sub">상위 {{ top100|length }}위</span>
 </div>
 
-<div class="rank-body">
+<div class="rank-list">
+  {% if top100 %}
+    {% for r in top100 %}
+    {% set is_me = (r.username == user.username) %}
+    {% set rank_n = r.rank|int %}
 
-  <!-- 레벨 탭 -->
-  <div class="level-tabs">
-    {% for lv in ['N5','N4','N3','N2','N1'] %}
-    <a href="/ranking?level={{ lv }}"
-       class="level-tab {% if lv == level %}active{% endif %}">{{ lv }}</a>
-    {% endfor %}
-  </div>
+    <div class="card rank-row
+      {% if is_me %} me {% endif %}
+      {% if rank_n == 1 %} gold {% elif rank_n == 2 %} silver {% elif rank_n == 3 %} bronze {% endif %}">
 
-  <div class="rank-title">
-    <span class="trophy">🏆</span>
-    {{ level }} 랭킹
-  </div>
-  <p class="rank-desc">20문제 만점(20/20) 기준 · 최단 시간 순 · 유저별 최고 기록</p>
-
-  {% if rows %}
-    {% for r in rows %}
-    {% set rank = loop.index %}
-    <div class="rank-card
-      {% if rank == 1 %}top1
-      {% elif rank == 2 %}top2
-      {% elif rank == 3 %}top3
-      {% else %}normal{% endif %}
-      {% if r.nickname == user.nickname %}mine{% endif %}
-    ">
-      <div class="rank-num">
-        {% if rank == 1 %}🥇
-        {% elif rank == 2 %}🥈
-        {% elif rank == 3 %}🥉
-        {% else %}{{ rank }}{% endif %}
+      <!-- 등수 -->
+      <div class="rr-rank">
+        {% if rank_n == 1 %}<div class="medal">🥇</div>
+        {% elif rank_n == 2 %}<div class="medal">🥈</div>
+        {% elif rank_n == 3 %}<div class="medal">🥉</div>
+        {% else %}<div>{{ rank_n }}</div>
+        {% endif %}
       </div>
-      <div class="rank-info">
-        <div class="rk-nick">
-          {{ r.nickname }}
-          {% if r.nickname == user.nickname %}
-          <span class="rk-me">나</span>
-          {% endif %}
-        </div>
-        <div class="rk-date">{{ r.created_at }}</div>
+
+      <!-- 닉네임 -->
+      <div class="rr-nick">
+        {{ r.nickname }}
+        {% if is_me %}<span class="me-tag">나</span>{% endif %}
       </div>
-      <div class="rank-time">{{ "%.2f"|format(r.elapsed_ms / 1000) }}s</div>
+
+      <!-- 점수 + 시간 (2행 1열) -->
+      <div class="rr-score">
+        <div class="rr-correct">{{ r.correct }} / 30</div>
+        <div class="rr-time">{{ "%.1f"|format(r.elapsed|float) }}초</div>
+      </div>
     </div>
     {% endfor %}
   {% else %}
     <div class="empty-rank">
-      <div class="ei">🏁</div>
-      <p>아직 기록이 없습니다<br>첫 번째 랭커가 되어보세요!</p>
+      <div class="ei">🏆</div>
+      <p>아직 랭킹 기록이 없습니다.<br>첫 번째 도전자가 되어보세요!</p>
     </div>
   {% endif %}
+</div>
 
+<!-- 하단 고정 본인 기록 -->
+<div class="my-record-bar">
+  {% if my_record %}
+  <div class="my-record-label">내 기록</div>
+  <div class="my-record-inner">
+    <div class="rr-rank" style="font-size:14px">{{ my_record.rank }}위</div>
+    <div class="rr-nick">{{ my_record.nickname }}<span class="me-tag">나</span></div>
+    <div class="rr-score">
+      <div class="rr-correct">{{ my_record.correct }} / 30</div>
+      <div class="rr-time">{{ "%.1f"|format(my_record.elapsed|float) }}초</div>
+    </div>
+  </div>
+  {% else %}
+  <div class="my-no-record">
+    아직 기록이 없습니다.
+    <a href="/ranking_quiz/{{ level.lower() }}">랭킹 모드 도전하기 →</a>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

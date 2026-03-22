@@ -35,16 +35,6 @@
 .n1    .level-badge { background:rgba(255,77,109,.2);   color:var(--danger); }
 
 .coming { opacity:.4; pointer-events:none; }
-
-/* 네비바 랭킹 버튼 */
-.nav-rank-btn {
-  width:36px; height:36px; background:var(--surface);
-  border:1px solid var(--border); border-radius:8px;
-  display:flex; align-items:center; justify-content:center;
-  font-size:17px; text-decoration:none;
-  transition:border-color .15s, background .15s;
-}
-.nav-rank-btn:hover { border-color:var(--warning); background:rgba(251,191,36,.1); }
 {% endblock %}
 
 {% block body %}
@@ -55,7 +45,6 @@
     SoloLeveling Word
   </div>
   <div class="nav-right">
-    <a href="/ranking" class="nav-rank-btn" title="랭킹">🏆</a>
     <button class="menu-btn" onclick="openMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -72,7 +61,7 @@
     </div>
     <a href="/account" class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
     <a href="/wrongnote" class="dropdown-item"><span class="di-icon">📝</span>오답노트</a>
-    <a href="/ranking" class="dropdown-item"><span class="di-icon">🏆</span>랭킹</a>
+    <a href="/ranking_menu" class="dropdown-item"><span class="di-icon">🏆</span>전체 랭킹</a>
     <a href="/logout" class="dropdown-item danger"><span class="di-icon">🚪</span>로그아웃</a>
   </div>
 </div>

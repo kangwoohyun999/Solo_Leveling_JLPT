@@ -2,29 +2,19 @@
 {% block title %}퀴즈 — {{ level }}{% endblock %}
 
 {% block extra_style %}
-/* ── 진행 바 ── */
-.progress-bar  { height:3px; background:var(--border); }
+/* 진행 바 */
+.progress-bar { height:3px; background:var(--border); }
 .progress-fill { height:100%; background:var(--accent); transition:width .3s ease; }
 
-/* ── 퀴즈 헤더 ── */
+/* 퀴즈 헤더 */
 .quiz-header {
-  display:flex; align-items:center; padding:14px 20px; gap:12px;
+  display:flex; align-items:center; padding:14px 20px;
+  gap:12px;
 }
-.quiz-no  { font-size:13px; color:var(--muted); font-family:var(--mono); }
+.quiz-no { font-size:13px; color:var(--muted); font-family:var(--mono); }
 .quit-btn { margin-left:auto; color:var(--muted); font-size:20px; }
 
-/* ── 랭킹 모드 타이머 배지 ── */
-.timer-badge {
-  display:none; align-items:center; gap:6px;
-  background:rgba(251,191,36,.12); border:1px solid var(--warning);
-  border-radius:20px; padding:4px 12px;
-  font-size:13px; font-weight:700; font-family:var(--mono); color:var(--warning);
-}
-.timer-badge.on { display:flex; }
-.timer-dot { width:7px; height:7px; border-radius:50%; background:var(--warning); animation:blink 1s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-
-/* ── 단어 박스 ── */
+/* 단어 박스 */
 .quiz-body { padding:0 20px 24px; display:flex; flex-direction:column; align-items:center; }
 .word-box {
   width:100%; max-width:480px;
@@ -34,18 +24,16 @@
   min-height:190px; display:flex; flex-direction:column;
   align-items:center; justify-content:center;
 }
-.ranking-mode-label {
-  font-size:11px; font-weight:700; letter-spacing:.1em;
-  color:var(--warning); margin-bottom:14px;
-  text-transform:uppercase;
-}
 .qz-word {
   font-family:'Noto Sans JP', sans-serif;
   font-size:52px; font-weight:700; line-height:1; margin-bottom:14px;
 }
-.qz-hira { font-family:'Noto Sans JP', sans-serif; font-size:17px; color:var(--muted); }
+.qz-hira {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:17px; color:var(--muted);
+}
 
-/* ── 선택지 ── */
+/* 선택지 */
 .choices { width:100%; max-width:480px; }
 .choice {
   display:block; width:100%; padding:17px 20px; margin-bottom:9px;
@@ -54,11 +42,11 @@
   text-align:left; transition:all .12s;
 }
 .choice:hover:not(:disabled) { border-color:var(--accent); background:var(--surface2); }
-.choice.correct { border-color:var(--success)!important; background:rgba(34,211,160,.1)!important; color:var(--success)!important; }
-.choice.wrong   { border-color:var(--danger)!important;  background:rgba(255,77,109,.1)!important; color:var(--danger)!important; }
+.choice.correct { border-color:var(--success) !important; background:rgba(34,211,160,.1) !important; color:var(--success) !important; }
+.choice.wrong   { border-color:var(--danger)  !important; background:rgba(255,77,109,.1) !important; color:var(--danger)  !important; }
 .choice:disabled { cursor:default; }
 
-/* ── 결과 화면 ── */
+/* 결과 화면 */
 .result-wrap {
   min-height:100vh; display:none; flex-direction:column;
   align-items:center; justify-content:flex-start; padding:48px 24px 64px;
@@ -69,36 +57,17 @@
 
 .score-ring {
   width:110px; height:110px; border-radius:50%; margin-bottom:20px;
-  background:conic-gradient(var(--accent) var(--angle,0deg), var(--surface) 0);
+  background:conic-gradient(var(--accent) var(--angle, 0deg), var(--surface) 0);
   display:flex; align-items:center; justify-content:center; position:relative;
 }
-.score-ring::before { content:''; position:absolute; inset:10px; background:var(--bg); border-radius:50%; }
+.score-ring::before {
+  content:''; position:absolute; inset:10px;
+  background:var(--bg); border-radius:50%;
+}
 .score-pct { position:relative; font-size:24px; font-weight:700; font-family:var(--mono); }
 
 .result-title { font-size:20px; font-weight:700; margin-bottom:6px; }
-.result-sub   { color:var(--muted); font-size:13px; margin-bottom:12px; }
-
-/* 랭킹 모드 결과 박스 */
-.ranking-result-box {
-  width:100%; max-width:440px; margin-bottom:24px;
-  background:rgba(251,191,36,.06); border:1px solid var(--warning);
-  border-radius:var(--radius); padding:20px 24px; text-align:center;
-}
-.ranking-result-box .rr-time {
-  font-size:36px; font-weight:700; font-family:var(--mono); color:var(--warning);
-  margin-bottom:4px;
-}
-.ranking-result-box .rr-label { font-size:12px; color:var(--muted); }
-.ranking-result-box .rr-saved {
-  font-size:12px; color:var(--success); margin-top:10px;
-  display:none;
-}
-.ranking-result-box .rr-saved.show { display:block; }
-.ranking-result-box .rr-fail {
-  font-size:12px; color:var(--muted); margin-top:10px;
-  display:none;
-}
-.ranking-result-box .rr-fail.show { display:block; }
+.result-sub   { color:var(--muted); font-size:13px; margin-bottom:28px; }
 
 .wrong-list { width:100%; max-width:440px; margin-bottom:24px; text-align:left; }
 .wl-header  { font-size:12px; color:var(--muted); letter-spacing:.06em; margin-bottom:10px; }
@@ -123,20 +92,16 @@
   </div>
   <div class="quiz-header">
     <span class="quiz-no" id="quiz-no">1 / —</span>
-    <!-- 랭킹 모드 타이머 -->
-    <div class="timer-badge" id="timer-badge">
-      <span class="timer-dot"></span>
-      <span id="timer-display">0.0s</span>
-    </div>
     <button class="quit-btn" onclick="confirmQuit()">✕</button>
   </div>
   <div class="quiz-body">
     <div class="word-box">
-      <div class="ranking-mode-label" id="ranking-label" style="display:none">🏆 랭킹 모드</div>
       <div class="qz-word" id="qz-word">...</div>
       <div class="qz-hira" id="qz-hira">...</div>
     </div>
-    <div class="choices" id="choices"></div>
+    <div class="choices" id="choices">
+      <!-- 선택지 JS로 렌더링 -->
+    </div>
   </div>
 </div>
 
@@ -146,21 +111,10 @@
     <span class="score-pct" id="score-pct">0%</span>
   </div>
   <h2 class="result-title" id="result-title">결과</h2>
-  <p class="result-sub"   id="result-sub"></p>
-
-  <!-- 랭킹 모드 전용 시간 표시 -->
-  <div class="ranking-result-box" id="ranking-result-box" style="display:none">
-    <div class="rr-time" id="rr-time">—</div>
-    <div class="rr-label">총 소요 시간</div>
-    <div class="rr-saved" id="rr-saved">✓ 랭킹에 기록되었습니다!</div>
-    <div class="rr-fail"  id="rr-fail">만점(20/20)이어야 랭킹에 등록됩니다</div>
-  </div>
-
-  <div class="wrong-list"  id="wrong-list"></div>
+  <p class="result-sub" id="result-sub"></p>
+  <div class="wrong-list" id="wrong-list"></div>
   <div class="result-btns">
     <button class="btn-primary" onclick="retryQuiz()">다시 풀기</button>
-    <a href="/ranking?level={{ level }}" class="btn-ghost"
-       id="btn-ranking" style="text-align:center;padding:12px;display:none">🏆 랭킹 보기</a>
     <a href="/wordlist/{{ level.lower() }}" class="btn-ghost" style="text-align:center;padding:12px">단어장으로</a>
     <a href="/main" class="btn-ghost" style="text-align:center;padding:12px">메인으로</a>
   </div>
@@ -169,68 +123,36 @@
 
 {% block extra_script %}
 <script>
-const LEVEL      = '{{ level }}';
-const params     = new URLSearchParams(location.search);
-const COUNT      = parseInt(params.get('count') || '10');
-const IS_RANKING = params.get('mode') === 'ranking';
+const LEVEL = '{{ level }}';
+const COUNT = parseInt(new URLSearchParams(location.search).get('count') || '10');
 
-let questions  = [];
-let idx        = 0;
-let wrongList  = [];
-let startTime  = null;   // 랭킹 모드 시작 시각
-let timerRaf   = null;   // requestAnimationFrame handle
+let questions = [];
+let idx = 0;
+let wrongList = [];
 
-// ── 랭킹 모드 UI 초기화 ──────────────────────────────────
-if (IS_RANKING) {
-  document.getElementById('timer-badge').classList.add('on');
-  document.getElementById('ranking-label').style.display = '';
-}
-
-// ── 퀴즈 로드 ────────────────────────────────────────────
+// 퀴즈 로드
 async function loadQuiz() {
-  document.getElementById('quiz-no').textContent = '로딩 중...';
-  stopTimer();
-  const res  = await fetch(`/api/quiz/${LEVEL.toLowerCase()}?count=${COUNT}`);
+  document.getElementById('quiz-no').textContent = `로딩 중...`;
+  const res = await fetch(`/api/quiz/${LEVEL.toLowerCase()}?count=${COUNT}`);
   const data = await res.json();
-  questions  = data.questions || [];
-  idx        = 0;
-  wrongList  = [];
-  if (IS_RANKING) startTimer();
+  questions = data.questions || [];
+  idx = 0; wrongList = [];
   renderQ();
 }
 
-// ── 타이머 ───────────────────────────────────────────────
-function startTimer() {
-  startTime = performance.now();
-  function tick() {
-    const sec = ((performance.now() - startTime) / 1000).toFixed(1);
-    document.getElementById('timer-display').textContent = sec + 's';
-    timerRaf = requestAnimationFrame(tick);
-  }
-  timerRaf = requestAnimationFrame(tick);
-}
-function stopTimer() {
-  if (timerRaf) { cancelAnimationFrame(timerRaf); timerRaf = null; }
-}
-function getElapsedMs() {
-  return startTime ? Math.round(performance.now() - startTime) : 0;
-}
-
-// ── 문제 렌더링 ──────────────────────────────────────────
 function renderQ() {
-  const q   = questions[idx];
+  const q = questions[idx];
   const pct = Math.round(idx / questions.length * 100);
-  document.getElementById('prog').style.width    = pct + '%';
+  document.getElementById('prog').style.width = pct + '%';
   document.getElementById('quiz-no').textContent = `${idx + 1} / ${questions.length}`;
   document.getElementById('qz-word').textContent = q.word;
   document.getElementById('qz-hira').textContent = q.hiragana;
 
   document.getElementById('choices').innerHTML = q.choices.map(c => `
-    <button class="choice" onclick="answer(${JSON.stringify(c)}, this)">${c}</button>
+    <button class="choice" onclick="answer('${c.replace(/'/g,"\\'")}', this)">${c}</button>
   `).join('');
 }
 
-// ── 답 선택 ──────────────────────────────────────────────
 function answer(chosen, btn) {
   const q = questions[idx];
   document.querySelectorAll('.choice').forEach(b => {
@@ -240,10 +162,11 @@ function answer(chosen, btn) {
   if (chosen !== q.answer) {
     btn.classList.add('wrong');
     wrongList.push(q);
+    // 오답노트 자동 저장
     fetch('/api/wrongnote', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({word:q.word, hiragana:q.hiragana, meaning:q.answer, level:LEVEL})
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ word: q.word, hiragana: q.hiragana, meaning: q.answer, level: LEVEL })
     }).catch(() => {});
   }
   setTimeout(() => {
@@ -253,79 +176,44 @@ function answer(chosen, btn) {
   }, 850);
 }
 
-// ── 결과 화면 ────────────────────────────────────────────
-async function showResult() {
-  stopTimer();
+function showResult() {
   document.getElementById('prog').style.width = '100%';
-
   const total   = questions.length;
   const correct = total - wrongList.length;
   const pct     = Math.round(correct / total * 100);
-  const elapsed = getElapsedMs();
 
-  document.getElementById('score-ring').style.setProperty('--angle', (pct/100*360)+'deg');
+  document.getElementById('score-ring').style.setProperty('--angle', (pct / 100 * 360) + 'deg');
   document.getElementById('score-pct').textContent   = pct + '%';
   document.getElementById('result-title').textContent =
-    pct===100 ? '완벽해요! 🎉' : pct>=80 ? '훌륭해요! 👏' : pct>=60 ? '잘 했어요! 💪' : '더 연습해봐요 📚';
+    pct === 100 ? '완벽해요! 🎉' : pct >= 80 ? '훌륭해요! 👏' : pct >= 60 ? '잘 했어요! 💪' : '더 연습해봐요 📚';
   document.getElementById('result-sub').textContent  = `${total}문제 중 ${correct}개 정답`;
 
-  // 오답 목록
   const wl = document.getElementById('wrong-list');
-  wl.innerHTML = wrongList.length
-    ? `<p class="wl-header">틀린 단어 ${wrongList.length}개 — 오답노트에 자동 저장됨</p>`
-      + wrongList.map(w => `
+  if (wrongList.length) {
+    wl.innerHTML = `<p class="wl-header">틀린 단어 ${wrongList.length}개 — 오답노트에 자동 저장됨</p>` +
+      wrongList.map(w => `
         <div class="wl-row">
           <div class="wl-word">${w.word}</div>
           <div class="wl-hira">${w.hiragana}</div>
           <div class="wl-meaning">${w.answer}</div>
-        </div>`).join('')
-    : '';
-
-  // 랭킹 모드 전용 처리
-  if (IS_RANKING) {
-    const box = document.getElementById('ranking-result-box');
-    box.style.display = '';
-    document.getElementById('btn-ranking').style.display = '';
-
-    const sec = (elapsed / 1000).toFixed(2);
-    document.getElementById('rr-time').textContent = sec + 's';
-
-    if (correct === 20) {
-      // 만점일 때만 랭킹 저장
-      try {
-        const res  = await fetch('/api/ranking', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({level: LEVEL, elapsed_ms: elapsed, score: correct})
-        });
-        const data = await res.json();
-        if (data.ok) document.getElementById('rr-saved').classList.add('show');
-        else         document.getElementById('rr-fail').classList.add('show');
-      } catch {
-        document.getElementById('rr-fail').classList.add('show');
-      }
-    } else {
-      document.getElementById('rr-fail').classList.add('show');
-    }
+        </div>
+      `).join('');
+  } else {
+    wl.innerHTML = '';
   }
 
-  document.getElementById('quiz-area').style.display = 'none';
+  document.getElementById('quiz-area').style.display  = 'none';
   document.getElementById('result-wrap').classList.add('show');
 }
 
-// ── 다시 풀기 ────────────────────────────────────────────
 function retryQuiz() {
-  document.getElementById('quiz-area').style.display = '';
+  document.getElementById('quiz-area').style.display  = '';
   document.getElementById('result-wrap').classList.remove('show');
-  document.getElementById('ranking-result-box').style.display = 'none';
-  document.getElementById('rr-saved').classList.remove('show');
-  document.getElementById('rr-fail').classList.remove('show');
   loadQuiz();
 }
 
 function confirmQuit() {
   if (confirm('퀴즈를 종료할까요?')) {
-    stopTimer();
     location.href = `/wordlist/${LEVEL.toLowerCase()}`;
   }
 }
