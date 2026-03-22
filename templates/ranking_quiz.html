@@ -279,6 +279,9 @@ async function showResult() {
 
   document.getElementById('quiz-area').style.display = 'none';
   document.getElementById('result-wrap').classList.add('show');
+
+  // 결과 화면에서 브라우저 뒤로가기 → 랭킹 페이지로 이동
+  history.pushState({result: true}, '', window.location.href);
 }
 
 function retryQuiz() {
@@ -296,5 +299,12 @@ function confirmQuit() {
 }
 
 loadQuiz();
+
+// 결과 화면에서 브라우저 뒤로가기 → 랭킹 페이지로 이동
+window.addEventListener('popstate', function() {
+  if (document.getElementById('result-wrap').classList.contains('show')) {
+    location.href = `/ranking/${LEVEL.toLowerCase()}`;
+  }
+});
 </script>
 {% endblock %}
