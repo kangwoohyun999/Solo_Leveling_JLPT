@@ -2,7 +2,6 @@
 {% block title %}히라가나 퀴즈 — SoloLeveling Word{% endblock %}
 
 {% block extra_style %}
-/* 상단 고정 헤더 */
 .quiz-header {
   position:sticky; top:0; z-index:10;
   background:rgba(10,10,15,.97); backdrop-filter:blur(12px);
@@ -17,31 +16,34 @@
   font-size:12px; cursor:pointer; transition:border-color .15s;
 }
 .quit-btn:hover { border-color:var(--danger); color:var(--danger); }
-
-/* 진행바 */
 .progress-bar  { height:3px; background:var(--border); }
 .progress-fill { height:100%; background:var(--success); transition:width .3s ease; }
 
-/* 퀴즈 영역 */
-.quiz-body {
-  max-width:500px; margin:0 auto; padding:32px 20px 40px;
+/* 문제 수 선택 */
+.select-screen { max-width:480px; margin:0 auto; padding:48px 20px 60px; text-align:center; }
+.select-title  { font-size:20px; font-weight:700; margin-bottom:8px; }
+.select-sub    { font-size:13px; color:var(--muted); margin-bottom:36px; }
+.count-grid    { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.count-btn {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:14px; padding:24px 16px;
+  cursor:pointer; transition:border-color .15s, background .15s;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
 }
-.q-count { font-size:12px; color:var(--muted); margin-bottom:20px; text-align:center; }
+.count-btn:hover { border-color:var(--accent); background:var(--surface2); }
+.count-num   { font-size:32px; font-weight:700; color:var(--accent2); font-family:var(--mono); }
+.count-label { font-size:12px; color:var(--muted); }
 
-/* 문제 카드 */
+/* 퀴즈 */
+.quiz-body { max-width:500px; margin:0 auto; padding:28px 20px 40px; }
+.q-count   { font-size:12px; color:var(--muted); margin-bottom:18px; text-align:center; }
 .q-card {
   background:var(--surface); border:1px solid var(--border);
-  border-radius:16px; padding:36px 20px;
-  text-align:center; margin-bottom:28px;
+  border-radius:16px; padding:36px 20px; text-align:center; margin-bottom:24px;
 }
-.q-label  { font-size:12px; color:var(--muted); margin-bottom:12px; }
-.q-char   {
-  font-size:72px; font-family:'Noto Sans JP', sans-serif;
-  font-weight:400; color:var(--text); line-height:1.1;
-}
-.q-char.small { font-size:48px; }  /* 요음(2글자) */
-
-/* 선택지 */
+.q-label { font-size:12px; color:var(--muted); margin-bottom:12px; }
+.q-char  { font-size:72px; font-family:'Noto Sans JP',sans-serif; font-weight:400; color:var(--text); line-height:1.1; }
+.q-char.small { font-size:48px; }
 .choices { display:flex; flex-direction:column; gap:10px; }
 .choice {
   background:var(--surface); border:1px solid var(--border);
@@ -54,49 +56,20 @@
 .choice.wrong   { border-color:var(--danger)!important;  background:rgba(255,77,109,.1)!important;  color:var(--danger)!important; }
 .choice:disabled { cursor:default; }
 
-/* 다음 버튼 */
-.next-btn {
-  width:100%; margin-top:16px; padding:16px;
-  background:var(--accent); color:#fff; border:none;
-  border-radius:12px; font-size:15px; font-weight:700;
-  cursor:pointer; display:none; transition:opacity .15s;
-}
-.next-btn:hover { opacity:.88; }
-.next-btn.show  { display:block; }
-
-/* 결과 화면 */
-.result-wrap {
-  display:none; max-width:500px; margin:0 auto;
-  padding:40px 20px 60px; text-align:center;
-}
+/* 결과 */
+.result-wrap { display:none; max-width:500px; margin:0 auto; padding:40px 20px 60px; text-align:center; }
 .result-wrap.show { display:block; }
 .result-trophy { font-size:56px; margin-bottom:16px; }
 .result-score  { font-size:36px; font-weight:700; margin-bottom:6px; }
 .result-label  { font-size:13px; color:var(--muted); margin-bottom:32px; }
 .result-btns   { display:flex; flex-direction:column; gap:10px; }
-.btn-primary {
-  background:var(--accent); color:#fff; border:none;
-  border-radius:12px; padding:16px; font-size:15px; font-weight:700;
-  cursor:pointer; transition:opacity .15s;
-}
+.btn-primary { background:var(--accent); color:#fff; border:none; border-radius:12px; padding:16px; font-size:15px; font-weight:700; cursor:pointer; transition:opacity .15s; }
 .btn-primary:hover { opacity:.88; }
-.btn-ghost {
-  background:var(--surface); border:1px solid var(--border);
-  color:var(--text); border-radius:12px; padding:14px;
-  font-size:14px; font-weight:600; cursor:pointer;
-  transition:border-color .15s; text-decoration:none; display:block;
-  text-align:center;
-}
+.btn-ghost { background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:12px; padding:14px; font-size:14px; font-weight:600; cursor:pointer; transition:border-color .15s; text-decoration:none; display:block; text-align:center; }
 .btn-ghost:hover { border-color:var(--accent); }
-
-/* 오답 목록 */
 .wrong-list { margin-top:28px; text-align:left; }
 .wl-header  { font-size:12px; color:var(--muted); margin-bottom:10px; }
-.wl-row {
-  display:flex; align-items:center; gap:12px;
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:10px; padding:12px 14px; margin-bottom:6px;
-}
+.wl-row { display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:6px; }
 .wl-char    { font-size:22px; font-family:'Noto Sans JP'; width:36px; flex-shrink:0; }
 .wl-reading { font-size:13px; color:var(--success); font-weight:600; flex:1; }
 .wl-wrong   { font-size:12px; color:var(--danger); }
@@ -104,23 +77,40 @@
 
 {% block body %}
 <div class="quiz-header">
-  <a href="/hiragana" class="back-btn">‹</a>
-  <span class="page-title">히라가나 퀴즈</span>
-  <button class="quit-btn" onclick="confirmQuit()">종료</button>
+  <a href="/hiragana" class="back-btn" id="back-btn">‹</a>
+  <span class="page-title" id="header-title">히라가나 퀴즈</span>
+  <button class="quit-btn" id="quit-btn" onclick="confirmQuit()" style="display:none">종료</button>
 </div>
-<div class="progress-bar">
-  <div class="progress-fill" id="prog" style="width:0%"></div>
+<div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+
+<!-- 문제 수 선택 -->
+<div class="select-screen" id="select-screen">
+  <div class="select-title">문제 수 선택</div>
+  <div class="select-sub">히라가나 104자 중 랜덤 출제 · 랭킹 미반영</div>
+  <div class="count-grid">
+    <button class="count-btn" onclick="startQuiz(10)">
+      <span class="count-num">10</span><span class="count-label">문제</span>
+    </button>
+    <button class="count-btn" onclick="startQuiz(15)">
+      <span class="count-num">15</span><span class="count-label">문제</span>
+    </button>
+    <button class="count-btn" onclick="startQuiz(20)">
+      <span class="count-num">20</span><span class="count-label">문제</span>
+    </button>
+    <button class="count-btn" onclick="startQuiz(30)">
+      <span class="count-num">30</span><span class="count-label">문제</span>
+    </button>
+  </div>
 </div>
 
 <!-- 퀴즈 영역 -->
-<div class="quiz-body" id="quiz-area">
+<div class="quiz-body" id="quiz-area" style="display:none">
   <div class="q-count" id="q-count"></div>
   <div class="q-card">
-    <div class="q-label" id="q-label">다음 히라가나의 발음은?</div>
+    <div class="q-label">다음 히라가나의 발음은?</div>
     <div class="q-char" id="q-char"></div>
   </div>
   <div class="choices" id="choices"></div>
-  <button class="next-btn" id="next-btn" onclick="nextQ()">다음 →</button>
 </div>
 
 <!-- 결과 화면 -->
@@ -129,7 +119,7 @@
   <div class="result-score"  id="result-score"></div>
   <div class="result-label">랭킹 미반영 · 연습 퀴즈</div>
   <div class="result-btns">
-    <button class="btn-primary" onclick="retryQuiz()">다시 도전</button>
+    <button class="btn-primary" onclick="goSelect()">다시 도전</button>
     <a href="/hiragana" class="btn-ghost">히라가나 표로 돌아가기</a>
     <a href="/main"     class="btn-ghost">메인으로</a>
   </div>
@@ -138,84 +128,84 @@
 
 <script>
 const ALL_DATA = {{ hiragana_json|safe }};
-
 let questions = [], idx = 0, wrongList = [];
 
-// ── 문제 생성 ───────────────────────────────────────────
 function shuffle(arr) {
-  for (let i = arr.length-1; i > 0; i--) {
+  const a = [...arr];
+  for (let i=a.length-1; i>0; i--) {
     const j = Math.floor(Math.random()*(i+1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [a[i],a[j]] = [a[j],a[i]];
   }
-  return arr;
+  return a;
 }
 
 function buildChoices(correct) {
-  // 정답 + 오답 3개 (같은 카테고리 우선)
-  const pool = ALL_DATA.filter(d => d.char !== correct.char);
-  shuffle(pool);
-  const wrong3 = pool.slice(0, 3);
-  return shuffle([correct, ...wrong3]);
+  const pool = shuffle(ALL_DATA.filter(d => d.char !== correct.char));
+  return shuffle([correct, ...pool.slice(0,3)]);
 }
 
-function loadQuiz() {
-  questions = shuffle([...ALL_DATA]).slice(0, 30); // 30문제
-  idx = 0; wrongList = [];
-  renderQ();
+function showSelectScreen() {
+  document.getElementById('select-screen').style.display = '';
+  document.getElementById('quiz-area').style.display     = 'none';
   document.getElementById('result-wrap').classList.remove('show');
-  document.getElementById('quiz-area').style.display = '';
+  document.getElementById('quit-btn').style.display      = 'none';
+  document.getElementById('header-title').textContent    = '히라가나 퀴즈';
+  document.getElementById('prog').style.width = '0%';
 }
+
+function startQuiz(count) {
+  questions = shuffle(ALL_DATA).slice(0, count);
+  idx = 0; wrongList = [];
+  document.getElementById('select-screen').style.display = 'none';
+  document.getElementById('quiz-area').style.display     = '';
+  document.getElementById('result-wrap').classList.remove('show');
+  document.getElementById('quit-btn').style.display      = '';
+  renderQ();
+}
+
+function goSelect() { showSelectScreen(); }
 
 function renderQ() {
   const q   = questions[idx];
   const pct = Math.round(idx / questions.length * 100);
-
-  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('prog').style.width    = pct + '%';
   document.getElementById('q-count').textContent = `${idx+1} / ${questions.length}`;
+  document.getElementById('header-title').textContent = `히라가나 퀴즈 · ${idx+1}/${questions.length}`;
 
   const charEl = document.getElementById('q-char');
   charEl.textContent = q.char;
   charEl.className   = 'q-char' + (q.char.length > 1 ? ' small' : '');
 
-  const choices = buildChoices(q);
   const box = document.getElementById('choices');
   box.innerHTML = '';
-  choices.forEach(c => {
+  buildChoices(q).forEach(c => {
     const btn = document.createElement('button');
-    btn.className = 'choice';
+    btn.className   = 'choice';
     btn.textContent = `${c.reading}  (${c.roman})`;
     btn.onclick = () => selectAnswer(btn, c.char === q.char, q, c);
     box.appendChild(btn);
   });
-
-  const nb = document.getElementById('next-btn');
-  nb.classList.remove('show');
-  nb.textContent = idx+1 < questions.length ? '다음 →' : '결과 보기';
 }
 
 function selectAnswer(btn, isCorrect, q, chosen) {
-  // 모든 버튼 비활성화
   document.querySelectorAll('.choice').forEach(b => b.disabled = true);
 
   if (isCorrect) {
     btn.classList.add('correct');
+    setTimeout(nextQ, 500);           // 정답: 0.5초 후 자동 이동
   } else {
     btn.classList.add('wrong');
-    // 정답 표시
     document.querySelectorAll('.choice').forEach(b => {
-      const text = b.textContent.trim().split(' ')[0];
-      if (text === q.reading) b.classList.add('correct');
+      if (b.textContent.trim().startsWith(q.reading)) b.classList.add('correct');
     });
-    wrongList.push({ char: q.char, reading: q.reading, roman: q.roman, chosen: chosen.reading });
+    wrongList.push({ char:q.char, reading:q.reading, roman:q.roman, chosen:chosen.reading });
+    setTimeout(nextQ, 900);           // 오답: 0.9초 후 자동 이동
   }
-  document.getElementById('next-btn').classList.add('show');
 }
 
 function nextQ() {
   idx++;
-  if (idx >= questions.length) {
-    showResult(); return;
-  }
+  if (idx >= questions.length) { showResult(); return; }
   renderQ();
 }
 
@@ -223,47 +213,36 @@ function showResult() {
   document.getElementById('prog').style.width = '100%';
   const total   = questions.length;
   const correct = total - wrongList.length;
-  const pct     = Math.round(correct/total*100);
+  const pct     = Math.round(correct / total * 100);
+  const trophy  = pct===100 ? '🏆' : pct>=80 ? '🌟' : pct>=60 ? '👍' : '📚';
 
-  const trophy = pct === 100 ? '🏆' : pct >= 80 ? '🌟' : pct >= 60 ? '👍' : '📚';
   document.getElementById('result-trophy').textContent = trophy;
   document.getElementById('result-score').textContent  = `${correct} / ${total}`;
 
-  // 오답 목록
   const wl = document.getElementById('wrong-list');
-  if (wrongList.length) {
-    wl.innerHTML = `<p class="wl-header">틀린 글자 ${wrongList.length}개</p>` +
-      wrongList.map(w => `
+  wl.innerHTML = wrongList.length
+    ? `<p class="wl-header">틀린 글자 ${wrongList.length}개</p>` +
+      wrongList.map(w=>`
         <div class="wl-row">
           <div class="wl-char">${w.char}</div>
           <div class="wl-reading">${w.reading} (${w.roman})</div>
           <div class="wl-wrong">선택: ${w.chosen}</div>
-        </div>`).join('');
-  } else {
-    wl.innerHTML = '<p class="wl-header" style="color:var(--success)">🎉 전부 맞혔습니다!</p>';
-  }
+        </div>`).join('')
+    : '<p class="wl-header" style="color:var(--success)">🎉 전부 맞혔습니다!</p>';
 
   document.getElementById('quiz-area').style.display = 'none';
+  document.getElementById('quit-btn').style.display  = 'none';
   document.getElementById('result-wrap').classList.add('show');
-
-  // 뒤로가기 → 히라가나 페이지
   history.pushState({result:true}, '', window.location.href);
 }
 
-function retryQuiz() {
-  loadQuiz();
-}
-
 function confirmQuit() {
-  if (confirm('퀴즈를 종료할까요?')) location.href = '/hiragana';
+  if (confirm('퀴즈를 종료할까요?')) showSelectScreen();
 }
 
 window.addEventListener('popstate', function() {
-  if (document.getElementById('result-wrap').classList.contains('show')) {
+  if (document.getElementById('result-wrap').classList.contains('show'))
     location.href = '/hiragana';
-  }
 });
-
-loadQuiz();
 </script>
 {% endblock %}
