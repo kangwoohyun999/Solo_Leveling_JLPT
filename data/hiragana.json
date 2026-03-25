@@ -1,0 +1,626 @@
+[
+  {
+    "char": "あ",
+    "reading": "아",
+    "roman": "a",
+    "row": "あ행"
+  },
+  {
+    "char": "い",
+    "reading": "이",
+    "roman": "i",
+    "row": "あ행"
+  },
+  {
+    "char": "う",
+    "reading": "우",
+    "roman": "u",
+    "row": "あ행"
+  },
+  {
+    "char": "え",
+    "reading": "에",
+    "roman": "e",
+    "row": "あ행"
+  },
+  {
+    "char": "お",
+    "reading": "오",
+    "roman": "o",
+    "row": "あ행"
+  },
+  {
+    "char": "か",
+    "reading": "카",
+    "roman": "ka",
+    "row": "か행"
+  },
+  {
+    "char": "き",
+    "reading": "키",
+    "roman": "ki",
+    "row": "か행"
+  },
+  {
+    "char": "く",
+    "reading": "쿠",
+    "roman": "ku",
+    "row": "か행"
+  },
+  {
+    "char": "け",
+    "reading": "케",
+    "roman": "ke",
+    "row": "か행"
+  },
+  {
+    "char": "こ",
+    "reading": "코",
+    "roman": "ko",
+    "row": "か행"
+  },
+  {
+    "char": "さ",
+    "reading": "사",
+    "roman": "sa",
+    "row": "さ행"
+  },
+  {
+    "char": "し",
+    "reading": "시",
+    "roman": "shi",
+    "row": "さ행"
+  },
+  {
+    "char": "す",
+    "reading": "스",
+    "roman": "su",
+    "row": "さ행"
+  },
+  {
+    "char": "せ",
+    "reading": "세",
+    "roman": "se",
+    "row": "さ행"
+  },
+  {
+    "char": "そ",
+    "reading": "소",
+    "roman": "so",
+    "row": "さ행"
+  },
+  {
+    "char": "た",
+    "reading": "타",
+    "roman": "ta",
+    "row": "た행"
+  },
+  {
+    "char": "ち",
+    "reading": "치",
+    "roman": "chi",
+    "row": "た행"
+  },
+  {
+    "char": "つ",
+    "reading": "츠",
+    "roman": "tsu",
+    "row": "た행"
+  },
+  {
+    "char": "て",
+    "reading": "테",
+    "roman": "te",
+    "row": "た행"
+  },
+  {
+    "char": "と",
+    "reading": "토",
+    "roman": "to",
+    "row": "た행"
+  },
+  {
+    "char": "な",
+    "reading": "나",
+    "roman": "na",
+    "row": "な행"
+  },
+  {
+    "char": "に",
+    "reading": "니",
+    "roman": "ni",
+    "row": "な행"
+  },
+  {
+    "char": "ぬ",
+    "reading": "누",
+    "roman": "nu",
+    "row": "な행"
+  },
+  {
+    "char": "ね",
+    "reading": "네",
+    "roman": "ne",
+    "row": "な행"
+  },
+  {
+    "char": "の",
+    "reading": "노",
+    "roman": "no",
+    "row": "な행"
+  },
+  {
+    "char": "は",
+    "reading": "하",
+    "roman": "ha",
+    "row": "は행"
+  },
+  {
+    "char": "ひ",
+    "reading": "히",
+    "roman": "hi",
+    "row": "は행"
+  },
+  {
+    "char": "ふ",
+    "reading": "후",
+    "roman": "fu",
+    "row": "は행"
+  },
+  {
+    "char": "へ",
+    "reading": "헤",
+    "roman": "he",
+    "row": "は행"
+  },
+  {
+    "char": "ほ",
+    "reading": "호",
+    "roman": "ho",
+    "row": "は행"
+  },
+  {
+    "char": "ま",
+    "reading": "마",
+    "roman": "ma",
+    "row": "ま행"
+  },
+  {
+    "char": "み",
+    "reading": "미",
+    "roman": "mi",
+    "row": "ま행"
+  },
+  {
+    "char": "む",
+    "reading": "무",
+    "roman": "mu",
+    "row": "ま행"
+  },
+  {
+    "char": "め",
+    "reading": "메",
+    "roman": "me",
+    "row": "ま행"
+  },
+  {
+    "char": "も",
+    "reading": "모",
+    "roman": "mo",
+    "row": "ま행"
+  },
+  {
+    "char": "や",
+    "reading": "야",
+    "roman": "ya",
+    "row": "や행"
+  },
+  {
+    "char": "ゆ",
+    "reading": "유",
+    "roman": "yu",
+    "row": "や행"
+  },
+  {
+    "char": "よ",
+    "reading": "요",
+    "roman": "yo",
+    "row": "や행"
+  },
+  {
+    "char": "ら",
+    "reading": "라",
+    "roman": "ra",
+    "row": "ら행"
+  },
+  {
+    "char": "り",
+    "reading": "리",
+    "roman": "ri",
+    "row": "ら행"
+  },
+  {
+    "char": "る",
+    "reading": "루",
+    "roman": "ru",
+    "row": "ら행"
+  },
+  {
+    "char": "れ",
+    "reading": "레",
+    "roman": "re",
+    "row": "ら행"
+  },
+  {
+    "char": "ろ",
+    "reading": "로",
+    "roman": "ro",
+    "row": "ら행"
+  },
+  {
+    "char": "わ",
+    "reading": "와",
+    "roman": "wa",
+    "row": "わ행"
+  },
+  {
+    "char": "を",
+    "reading": "오",
+    "roman": "wo",
+    "row": "わ행"
+  },
+  {
+    "char": "ん",
+    "reading": "ん",
+    "roman": "n",
+    "row": "わ행"
+  },
+  {
+    "char": "が",
+    "reading": "가",
+    "roman": "ga",
+    "row": "が행"
+  },
+  {
+    "char": "ぎ",
+    "reading": "기",
+    "roman": "gi",
+    "row": "が행"
+  },
+  {
+    "char": "ぐ",
+    "reading": "구",
+    "roman": "gu",
+    "row": "が행"
+  },
+  {
+    "char": "げ",
+    "reading": "게",
+    "roman": "ge",
+    "row": "が행"
+  },
+  {
+    "char": "ご",
+    "reading": "고",
+    "roman": "go",
+    "row": "が행"
+  },
+  {
+    "char": "ざ",
+    "reading": "자",
+    "roman": "za",
+    "row": "ざ행"
+  },
+  {
+    "char": "じ",
+    "reading": "지",
+    "roman": "ji",
+    "row": "ざ행"
+  },
+  {
+    "char": "ず",
+    "reading": "즈",
+    "roman": "zu",
+    "row": "ざ행"
+  },
+  {
+    "char": "ぜ",
+    "reading": "제",
+    "roman": "ze",
+    "row": "ざ행"
+  },
+  {
+    "char": "ぞ",
+    "reading": "조",
+    "roman": "zo",
+    "row": "ざ행"
+  },
+  {
+    "char": "だ",
+    "reading": "다",
+    "roman": "da",
+    "row": "だ행"
+  },
+  {
+    "char": "ぢ",
+    "reading": "지",
+    "roman": "di",
+    "row": "だ행"
+  },
+  {
+    "char": "づ",
+    "reading": "즈",
+    "roman": "du",
+    "row": "だ행"
+  },
+  {
+    "char": "で",
+    "reading": "데",
+    "roman": "de",
+    "row": "だ행"
+  },
+  {
+    "char": "ど",
+    "reading": "도",
+    "roman": "do",
+    "row": "だ행"
+  },
+  {
+    "char": "ば",
+    "reading": "바",
+    "roman": "ba",
+    "row": "ば행"
+  },
+  {
+    "char": "び",
+    "reading": "비",
+    "roman": "bi",
+    "row": "ば행"
+  },
+  {
+    "char": "ぶ",
+    "reading": "부",
+    "roman": "bu",
+    "row": "ば행"
+  },
+  {
+    "char": "べ",
+    "reading": "베",
+    "roman": "be",
+    "row": "ば행"
+  },
+  {
+    "char": "ぼ",
+    "reading": "보",
+    "roman": "bo",
+    "row": "ば행"
+  },
+  {
+    "char": "ぱ",
+    "reading": "파",
+    "roman": "pa",
+    "row": "ぱ행"
+  },
+  {
+    "char": "ぴ",
+    "reading": "피",
+    "roman": "pi",
+    "row": "ぱ행"
+  },
+  {
+    "char": "ぷ",
+    "reading": "푸",
+    "roman": "pu",
+    "row": "ぱ행"
+  },
+  {
+    "char": "ぺ",
+    "reading": "페",
+    "roman": "pe",
+    "row": "ぱ행"
+  },
+  {
+    "char": "ぽ",
+    "reading": "포",
+    "roman": "po",
+    "row": "ぱ행"
+  },
+  {
+    "char": "きゃ",
+    "reading": "캬",
+    "roman": "kya",
+    "row": "요음"
+  },
+  {
+    "char": "きゅ",
+    "reading": "큐",
+    "roman": "kyu",
+    "row": "요음"
+  },
+  {
+    "char": "きょ",
+    "reading": "쿄",
+    "roman": "kyo",
+    "row": "요음"
+  },
+  {
+    "char": "しゃ",
+    "reading": "샤",
+    "roman": "sha",
+    "row": "요음"
+  },
+  {
+    "char": "しゅ",
+    "reading": "슈",
+    "roman": "shu",
+    "row": "요음"
+  },
+  {
+    "char": "しょ",
+    "reading": "쇼",
+    "roman": "sho",
+    "row": "요음"
+  },
+  {
+    "char": "ちゃ",
+    "reading": "차",
+    "roman": "cha",
+    "row": "요음"
+  },
+  {
+    "char": "ちゅ",
+    "reading": "츄",
+    "roman": "chu",
+    "row": "요음"
+  },
+  {
+    "char": "ちょ",
+    "reading": "초",
+    "roman": "cho",
+    "row": "요음"
+  },
+  {
+    "char": "にゃ",
+    "reading": "냐",
+    "roman": "nya",
+    "row": "요음"
+  },
+  {
+    "char": "にゅ",
+    "reading": "뉴",
+    "roman": "nyu",
+    "row": "요음"
+  },
+  {
+    "char": "にょ",
+    "reading": "뇨",
+    "roman": "nyo",
+    "row": "요음"
+  },
+  {
+    "char": "ひゃ",
+    "reading": "햐",
+    "roman": "hya",
+    "row": "요음"
+  },
+  {
+    "char": "ひゅ",
+    "reading": "휴",
+    "roman": "hyu",
+    "row": "요음"
+  },
+  {
+    "char": "ひょ",
+    "reading": "효",
+    "roman": "hyo",
+    "row": "요음"
+  },
+  {
+    "char": "みゃ",
+    "reading": "먀",
+    "roman": "mya",
+    "row": "요음"
+  },
+  {
+    "char": "みゅ",
+    "reading": "뮤",
+    "roman": "myu",
+    "row": "요음"
+  },
+  {
+    "char": "みょ",
+    "reading": "묘",
+    "roman": "myo",
+    "row": "요음"
+  },
+  {
+    "char": "りゃ",
+    "reading": "랴",
+    "roman": "rya",
+    "row": "요음"
+  },
+  {
+    "char": "りゅ",
+    "reading": "류",
+    "roman": "ryu",
+    "row": "요음"
+  },
+  {
+    "char": "りょ",
+    "reading": "료",
+    "roman": "ryo",
+    "row": "요음"
+  },
+  {
+    "char": "ぎゃ",
+    "reading": "갸",
+    "roman": "gya",
+    "row": "요음"
+  },
+  {
+    "char": "ぎゅ",
+    "reading": "규",
+    "roman": "gyu",
+    "row": "요음"
+  },
+  {
+    "char": "ぎょ",
+    "reading": "교",
+    "roman": "gyo",
+    "row": "요음"
+  },
+  {
+    "char": "じゃ",
+    "reading": "자",
+    "roman": "ja",
+    "row": "요음"
+  },
+  {
+    "char": "じゅ",
+    "reading": "주",
+    "roman": "ju",
+    "row": "요음"
+  },
+  {
+    "char": "じょ",
+    "reading": "조",
+    "roman": "jo",
+    "row": "요음"
+  },
+  {
+    "char": "びゃ",
+    "reading": "뱌",
+    "roman": "bya",
+    "row": "요음"
+  },
+  {
+    "char": "びゅ",
+    "reading": "뷰",
+    "roman": "byu",
+    "row": "요음"
+  },
+  {
+    "char": "びょ",
+    "reading": "뵤",
+    "roman": "byo",
+    "row": "요음"
+  },
+  {
+    "char": "ぴゃ",
+    "reading": "퍄",
+    "roman": "pya",
+    "row": "요음"
+  },
+  {
+    "char": "ぴゅ",
+    "reading": "퓨",
+    "roman": "pyu",
+    "row": "요음"
+  },
+  {
+    "char": "ぴょ",
+    "reading": "표",
+    "roman": "pyo",
+    "row": "요음"
+  }
+]

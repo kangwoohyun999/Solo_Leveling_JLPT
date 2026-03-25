@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Solo Leveling JLPT - Main{% endblock %}
+{% block title %}메인 — SoloLeveling Word{% endblock %}
 
 {% block extra_style %}
 .main-content {
@@ -27,14 +27,41 @@
 .lb-arrow   { color:var(--muted); font-size:18px; }
 
 /* 레벨별 색상 */
-.renke .level-badge { background:rgba(251,191,36,.12); color:var(--warning); }
-.n5    .level-badge { background:rgba(34,211,160,.12); color:var(--success); }
-.n4    .level-badge { background:rgba(108,99,255,.12); color:var(--accent2); }
-.n3    .level-badge { background:rgba(167,139,250,.12); color:var(--accent2); }
-.n2    .level-badge { background:rgba(255,77,109,.12);  color:var(--danger); }
-.n1    .level-badge { background:rgba(255,77,109,.2);   color:var(--danger); }
-
+.renke .level-badge  { background:rgba(251,191,36,.12);  color:var(--warning); }
+.hira  .level-badge  { background:rgba(34,211,160,.12);  color:var(--success); }
+.jlpt  .level-badge  { background:rgba(108,99,255,.15);  color:var(--accent2); }
+.n5    .level-badge  { background:rgba(34,211,160,.12);  color:var(--success); }
+.n4    .level-badge  { background:rgba(108,99,255,.12);  color:var(--accent2); }
+.n3    .level-badge  { background:rgba(167,139,250,.12); color:var(--accent2); }
+.n2    .level-badge  { background:rgba(255,77,109,.12);  color:var(--danger); }
+.n1    .level-badge  { background:rgba(255,77,109,.2);   color:var(--danger); }
 .coming { opacity:.4; pointer-events:none; }
+
+/* JLPT 접기/펼치기 */
+.jlpt-toggle {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px; width:100%; cursor:pointer;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); color:var(--text);
+  transition:border-color .2s, background .2s;
+}
+.jlpt-toggle:hover { border-color:var(--accent); background:var(--surface2); }
+.jlpt-toggle .lb-left { display:flex; align-items:center; gap:16px; }
+.jlpt-arrow {
+  color:var(--muted); font-size:18px;
+  transition:transform .25s ease;
+}
+.jlpt-arrow.open { transform:rotate(90deg); }
+
+.jlpt-sub {
+  display:none; flex-direction:column; gap:6px;
+  padding:6px 0 0 16px;
+}
+.jlpt-sub.open { display:flex; }
+.jlpt-sub .level-btn {
+  padding:14px 16px;
+  border-radius:8px;
+}
 {% endblock %}
 
 {% block body %}
@@ -42,7 +69,7 @@
 <nav class="top-nav">
   <div class="nav-logo">
     <div class="logo-icon">📝</div>
-    Solo Leveling JLPT
+    SoloLeveling Word
   </div>
   <div class="nav-right">
     <button class="menu-btn" onclick="openMenu()">
@@ -59,10 +86,10 @@
       <div class="du-nick">{{ user.nickname }}</div>
       <div class="du-id">{{ user.username }}</div>
     </div>
-    <a href="/account" class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
-    <a href="/wrongnote" class="dropdown-item"><span class="di-icon">📝</span>오답노트</a>
+    <a href="/account"      class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
+    <a href="/wrongnote"    class="dropdown-item"><span class="di-icon">📝</span>오답노트</a>
     <a href="/ranking_menu" class="dropdown-item"><span class="di-icon">🏆</span>전체 랭킹</a>
-    <a href="/logout" class="dropdown-item danger"><span class="di-icon">🚪</span>로그아웃</a>
+    <a href="/logout"       class="dropdown-item danger"><span class="di-icon">🚪</span>로그아웃</a>
   </div>
 </div>
 
@@ -74,59 +101,89 @@
   </div>
 
   <div class="level-list">
-    <!-- 연계 (Coming Soon) -->
+
+    <!-- 히라가나 -->
+    <a href="/hiragana" class="card card-hover level-btn hira">
+      <div class="lb-left">
+        <div class="level-badge">あ</div>
+        <div class="lb-info">
+          <h3>히라가나</h3>
+          <p>오십음도 · 104자 · 발음 학습</p>
+        </div>
+      </div>
+      <span class="lb-arrow">›</span>
+    </a>
+
+    <!-- JLPT 묶음 -->
+    <div>
+      <button class="jlpt-toggle" onclick="toggleJLPT(this)">
+        <div class="lb-left">
+          <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:11px;">JLPT</div>
+          <div class="lb-info">
+            <h3>JLPT 단어</h3>
+            <p>N5 ~ N1 · {{ total_words }}개 단어</p>
+          </div>
+        </div>
+        <span class="jlpt-arrow lb-arrow">›</span>
+      </button>
+
+      <div class="jlpt-sub" id="jlpt-sub">
+        <a href="/wordlist/n5" class="card card-hover level-btn n5">
+          <div class="lb-left">
+            <div class="level-badge">N5</div>
+            <div class="lb-info"><h3>JLPT N5</h3><p>{{ level_counts.N5 }}개 · 입문</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+        <a href="/wordlist/n4" class="card card-hover level-btn n4">
+          <div class="lb-left">
+            <div class="level-badge">N4</div>
+            <div class="lb-info"><h3>JLPT N4</h3><p>{{ level_counts.N4 }}개 · 초급</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+        <a href="/wordlist/n3" class="card card-hover level-btn n3">
+          <div class="lb-left">
+            <div class="level-badge">N3</div>
+            <div class="lb-info"><h3>JLPT N3</h3><p>{{ level_counts.N3 }}개 · 중급</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+        <a href="/wordlist/n2" class="card card-hover level-btn n2">
+          <div class="lb-left">
+            <div class="level-badge">N2</div>
+            <div class="lb-info"><h3>JLPT N2</h3><p>{{ level_counts.N2 }}개 · 중상급</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+        <a href="/wordlist/n1" class="card card-hover level-btn n1">
+          <div class="lb-left">
+            <div class="level-badge">N1</div>
+            <div class="lb-info"><h3>JLPT N1</h3><p>{{ level_counts.N1 }}개 · 고급</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 연계 Coming Soon -->
     <div class="card card-hover level-btn renke coming">
       <div class="lb-left">
         <div class="level-badge">連</div>
-        <div class="lb-info"><h3>준비중</h3><p>Coming Soon</p></div>
+        <div class="lb-info"><h3>연계</h3><p>Coming Soon</p></div>
       </div>
       <span class="lb-arrow">›</span>
     </div>
 
-    <!-- N5 -->
-    <a href="/wordlist/n5" class="card card-hover level-btn n5">
-      <div class="lb-left">
-        <div class="level-badge">N5</div>
-        <div class="lb-info"><h3>JLPT N5</h3><p>{{ level_counts.N5 }}개 단어 · 입문</p></div>
-      </div>
-      <span class="lb-arrow">›</span>
-    </a>
-
-    <!-- N4 -->
-    <a href="/wordlist/n4" class="card card-hover level-btn n4">
-      <div class="lb-left">
-        <div class="level-badge">N4</div>
-        <div class="lb-info"><h3>JLPT N4</h3><p>{{ level_counts.N4 }}개 단어 · 초급</p></div>
-      </div>
-      <span class="lb-arrow">›</span>
-    </a>
-
-    <!-- N3 -->
-    <a href="/wordlist/n3" class="card card-hover level-btn n3">
-      <div class="lb-left">
-        <div class="level-badge">N3</div>
-        <div class="lb-info"><h3>JLPT N3</h3><p>{{ level_counts.N3 }}개 단어 · 중급</p></div>
-      </div>
-      <span class="lb-arrow">›</span>
-    </a>
-
-    <!-- N2 -->
-    <a href="/wordlist/n2" class="card card-hover level-btn n2">
-      <div class="lb-left">
-        <div class="level-badge">N2</div>
-        <div class="lb-info"><h3>JLPT N2</h3><p>{{ level_counts.N2 }}개 단어 · 중상급</p></div>
-      </div>
-      <span class="lb-arrow">›</span>
-    </a>
-
-    <!-- N1 -->
-    <a href="/wordlist/n1" class="card card-hover level-btn n1">
-      <div class="lb-left">
-        <div class="level-badge">N1</div>
-        <div class="lb-info"><h3>JLPT N1</h3><p>{{ level_counts.N1 }}개 단어 · 고급</p></div>
-      </div>
-      <span class="lb-arrow">›</span>
-    </a>
   </div>
 </div>
+
+<script>
+function toggleJLPT(btn) {
+  const sub   = document.getElementById('jlpt-sub');
+  const arrow = btn.querySelector('.jlpt-arrow');
+  const open  = sub.classList.toggle('open');
+  arrow.classList.toggle('open', open);
+}
+</script>
 {% endblock %}

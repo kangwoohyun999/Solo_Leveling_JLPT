@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}히라가나 — SoloLeveling Word{% endblock %}
+
+{% block extra_style %}
+.page-header {
+  display:flex; align-items:center; gap:12px;
+  padding:16px 20px; position:sticky; top:0; z-index:10;
+  background:rgba(10,10,15,.97); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.page-title { font-size:16px; font-weight:700; }
+.page-sub   { font-size:12px; color:var(--muted); margin-left:auto; }
+
+.hira-content { max-width:560px; margin:0 auto; padding:20px 16px 80px; }
+
+/* 행 섹션 */
+.row-section { margin-bottom:28px; }
+.row-label {
+  font-size:11px; font-family:var(--mono); color:var(--muted);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin-bottom:10px; padding-left:2px;
+}
+
+/* 3열 그리드 */
+.hira-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+}
+
+/* 카드 한 칸 */
+.hira-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:16px 8px 14px;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  cursor:default; transition:border-color .15s, background .15s;
+  user-select:none;
+}
+.hira-card:hover {
+  border-color:var(--accent); background:var(--surface2);
+}
+.hira-char {
+  font-size:28px; font-family:'Noto Sans JP', sans-serif;
+  font-weight:400; color:var(--text); line-height:1.1;
+}
+.hira-reading {
+  font-size:13px; color:var(--success); font-weight:600;
+  font-family:var(--mono);
+}
+.hira-roman {
+  font-size:10px; color:var(--muted); font-family:var(--mono);
+}
+
+/* 퀴즈 버튼 */
+.quiz-fab {
+  position:fixed; bottom:24px; right:20px; left:20px;
+  max-width:520px; margin:0 auto;
+  background:var(--accent); color:#fff; border:none;
+  border-radius:14px; padding:16px; font-size:15px; font-weight:700;
+  cursor:pointer; transition:opacity .15s;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  text-decoration:none;
+}
+.quiz-fab:hover { opacity:.88; }
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title" style="font-family:var(--mono)">히라가나</span>
+  <span class="page-sub">{{ total }}자</span>
+</div>
+
+<div class="hira-content">
+  {% for row_name, chars in rows.items() %}
+  <div class="row-section">
+    <div class="row-label">{{ row_name }}</div>
+    <div class="hira-grid">
+      {% for c in chars %}
+      <div class="hira-card">
+        <div class="hira-char">{{ c.char }}</div>
+        <div class="hira-reading">{{ c.reading }}</div>
+        <div class="hira-roman">{{ c.roman }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<a href="/hiragana_quiz" class="quiz-fab">
+  ✏️ 히라가나 퀴즈 시작
+</a>
+{% endblock %}
