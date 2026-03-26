@@ -4,7 +4,7 @@
 {% block extra_style %}
 .note-list {
   max-width:560px; margin:0 auto;
-  padding:14px 16px 64px;
+  padding:14px 16px 100px;
 }
 
 .note-card {
@@ -21,10 +21,30 @@
 
 .level-tag {
   display:inline-block; padding:2px 7px;
-  background:rgba(108,99,255,.12); color:var(--accent2);
+  background:rgba(34,197,94,.12); color:var(--accent2);
   border-radius:4px; font-size:10px; font-family:var(--mono);
   margin-left:6px; vertical-align:middle;
 }
+
+/* 전체 삭제 FAB */
+.fab-delete-all {
+  position:fixed; bottom:28px; right:24px;
+  width:52px; height:52px; border-radius:50%;
+  background:var(--danger); color:#fff;
+  font-size:20px; border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 16px rgba(255,77,109,.4);
+  transition:transform .15s, box-shadow .15s;
+  z-index:50;
+}
+.fab-delete-all:hover {
+  transform:scale(1.08);
+  box-shadow:0 6px 20px rgba(255,77,109,.55);
+}
+.fab-delete-all:active { transform:scale(.96); }
+
+/* 비어있을 때 FAB 숨김 */
+.fab-delete-all.hidden { display:none; }
 {% endblock %}
 
 {% block body %}
@@ -54,6 +74,14 @@
     </div>
   {% endif %}
 </div>
+
+<!-- 전체 삭제 FAB (노트 있을 때만 표시) -->
+<button class="fab-delete-all {% if not notes %}hidden{% endif %}"
+        id="fab-del-all"
+        onclick="deleteAll()"
+        title="전체 삭제">
+  🗑
+</button>
 {% endblock %}
 
 {% block extra_script %}
@@ -63,12 +91,29 @@ async function deleteNote(id) {
   if (!res.ok) { toast('삭제 실패', 'err'); return; }
 
   document.getElementById('note-' + id)?.remove();
+  updateCount();
+}
 
+async function deleteAll() {
+  if (!confirm('오답노트를 전부 삭제할까요?')) return;
+
+  const res = await fetch('/api/wrongnote/all', { method: 'DELETE' });
+  if (!res.ok) { toast('삭제 실패', 'err'); return; }
+
+  document.getElementById('note-list').innerHTML =
+    '<div class="empty-state" id="empty-msg"><div class="ei">✨</div><p>오답노트가 비어있어요!</p></div>';
+  document.getElementById('note-count').textContent = '0개';
+  document.getElementById('fab-del-all').classList.add('hidden');
+  toast('전체 삭제 완료', 'ok');
+}
+
+function updateCount() {
   const remaining = document.querySelectorAll('.note-card').length;
   document.getElementById('note-count').textContent = remaining + '개';
   if (remaining === 0) {
     document.getElementById('note-list').innerHTML =
       '<div class="empty-state"><div class="ei">✨</div><p>오답노트가 비어있어요!</p></div>';
+    document.getElementById('fab-del-all').classList.add('hidden');
   }
 }
 </script>

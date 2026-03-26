@@ -451,6 +451,20 @@ def api_add_wrongnote():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/wrongnote/all', methods=['DELETE'])
+def api_delete_all_wrongnote():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        conn = get_db()
+        cur  = conn.cursor()
+        cur.execute('DELETE FROM wrong_notes WHERE username=%s', (session['username'],))
+        conn.commit()
+        cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/api/wrongnote/<int:note_id>', methods=['DELETE'])
 def api_delete_wrongnote(note_id):
     if 'username' not in session:

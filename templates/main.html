@@ -86,6 +86,16 @@
       <div class="du-nick">{{ user.nickname }}</div>
       <div class="du-id">{{ user.username }}</div>
     </div>
+    <!-- 다크모드 토글 -->
+    <div class="dropdown-theme">
+      <div class="dropdown-theme-label">
+        <span class="di-icon">🌙</span>다크모드
+      </div>
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle" onchange="toggleTheme(this)">
+        <span class="theme-slider"></span>
+      </label>
+    </div>
     <a href="/account"      class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
     <a href="/wrongnote"    class="dropdown-item"><span class="di-icon">📝</span>오답노트</a>
     <a href="/ranking_menu" class="dropdown-item"><span class="di-icon">🏆</span>전체 랭킹</a>
