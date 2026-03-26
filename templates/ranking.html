@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ level }} 랭킹 — Solo Leveling JLPT{% endblock %}
+{% block title %}{{ level }} 랭킹 — SoloLeveling Word{% endblock %}
 
 {% block extra_style %}
 .rank-list {
@@ -52,7 +52,7 @@
 /* 하단 고정 — 본인 기록 */
 .my-record-bar {
   position:fixed; bottom:0; left:0; right:0; z-index:80;
-  background:rgba(10,10,15,.97); backdrop-filter:blur(12px);
+  background:var(--nav-bg); backdrop-filter:blur(12px);
   border-top:1px solid var(--accent);
   padding:12px 20px;
 }
@@ -71,7 +71,7 @@
 
 {% block body %}
 <div class="page-header">
-  <a href="/ranking_menu" class="back-btn">‹</a>
+  <a href="/main" class="back-btn">‹</a>
   <span class="page-title" style="font-family:var(--mono)">{{ level }} 랭킹</span>
   <span class="page-sub">상위 {{ top100|length }}위</span>
 </div>
