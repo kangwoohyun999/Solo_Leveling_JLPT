@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Solo Leveling JLPT{% endblock %}
+{% block title %}메인 — SoloLeveling Word{% endblock %}
 
 {% block extra_style %}
 .main-content {
@@ -72,6 +72,11 @@
     SoloLeveling Word
   </div>
   <div class="nav-right">
+    <!-- 다크모드 토글 -->
+    <label class="theme-toggle" title="다크모드 전환">
+      <input type="checkbox" id="theme-chk" onchange="toggleTheme(this.checked)">
+      <span class="theme-slider"></span>
+    </label>
     <button class="menu-btn" onclick="openMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -85,16 +90,6 @@
     <div class="dropdown-user">
       <div class="du-nick">{{ user.nickname }}</div>
       <div class="du-id">{{ user.username }}</div>
-    </div>
-    <!-- 다크모드 토글 -->
-    <div class="dropdown-theme">
-      <div class="dropdown-theme-label">
-        <span class="di-icon">🌙</span>다크모드
-      </div>
-      <label class="theme-switch">
-        <input type="checkbox" id="theme-toggle" onchange="toggleTheme(this)">
-        <span class="theme-slider"></span>
-      </label>
     </div>
     <a href="/account"      class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
     <a href="/wrongnote"    class="dropdown-item"><span class="di-icon">📝</span>오답노트</a>
@@ -189,6 +184,12 @@
 </div>
 
 <script>
+// 토글 초기 상태 동기화
+document.addEventListener('DOMContentLoaded', () => {
+  const chk = document.getElementById('theme-chk');
+  if (chk) chk.checked = (localStorage.getItem('theme') === 'dark');
+});
+
 function toggleJLPT(btn) {
   const sub   = document.getElementById('jlpt-sub');
   const arrow = btn.querySelector('.jlpt-arrow');
