@@ -36,6 +36,7 @@
 .n2    .level-badge  { background:rgba(255,77,109,.12);  color:var(--danger); }
 .n1    .level-badge  { background:rgba(255,77,109,.2);   color:var(--danger); }
 .coming { opacity:.4; pointer-events:none; }
+.kanji  .level-badge  { background:rgba(251,191,36,.15);  color:var(--warning); }
 
 /* JLPT 접기/펼치기 */
 .jlpt-toggle {
@@ -175,6 +176,18 @@
         <div class="lb-info">
           <h3>히라가나</h3>
           <p>오십음도 · 104자 · 발음 학습</p>
+        </div>
+      </div>
+      <span class="lb-arrow">›</span>
+    </a>
+
+    <!-- 한자 단어장 -->
+    <a href="/kanji" class="card card-hover level-btn kanji">
+      <div class="lb-left">
+        <div class="level-badge">漢</div>
+        <div class="lb-info">
+          <h3>한자 단어장</h3>
+          <p>N5~N1 · {{ kanji_count }}개 단어 · 히라가나·뜻</p>
         </div>
       </div>
       <span class="lb-arrow">›</span>

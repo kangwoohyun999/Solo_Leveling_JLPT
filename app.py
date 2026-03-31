@@ -39,6 +39,15 @@ try:
 except FileNotFoundError:
     pass
 
+# 한자 단어장 데이터 로드
+KANJI_WORDS = []
+try:
+    with open(os.path.join(BASE_DIR, 'data', 'kanji_words.json'), encoding='utf-8') as f:
+        KANJI_WORDS = json.load(f)
+    print(f'[한자로드] {len(KANJI_WORDS)}개')
+except FileNotFoundError:
+    pass
+
 def get_db_url():
     url = os.environ.get('DATABASE_URL', '')
     if url.startswith('postgres://'):
@@ -213,7 +222,8 @@ def main():
         return redirect(url_for('login'))
     level_counts = {lv: len(WORDS.get(lv, [])) for lv in LEVEL_INFO}
     total_words = sum(level_counts.values())
-    return render_template('main.html', user=user, level_counts=level_counts, total_words=total_words)
+    return render_template('main.html', user=user, level_counts=level_counts,
+                           total_words=total_words, kanji_count=len(KANJI_WORDS))
 
 @app.route('/wordlist/<level>')
 def wordlist(level):
@@ -270,6 +280,15 @@ def hiragana_quiz():
     import json as _json
     return render_template('hiragana_quiz.html',
                            hiragana_json=_json.dumps(HIRAGANA, ensure_ascii=False))
+
+@app.route('/kanji')
+def kanji():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    import json as _json
+    return render_template('kanji.html',
+                           words_json=_json.dumps(KANJI_WORDS, ensure_ascii=False),
+                           total=len(KANJI_WORDS))
 
 @app.route('/ranking_menu')
 def ranking_menu():
