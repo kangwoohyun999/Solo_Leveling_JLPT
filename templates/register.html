@@ -4,7 +4,6 @@
 {% block extra_style %}
 .auth-wrap {
   min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background:radial-gradient(ellipse at 50% 0%, #1a1040 0%, var(--bg) 70%);
   padding:24px;
 }
 .auth-box { width:100%; max-width:380px; }
@@ -32,7 +31,7 @@
 <div class="auth-wrap">
   <div class="auth-box">
     <div class="auth-logo">
-      <div class="logo-lg">📝</div>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="SoloLeveling Word" class="logo-lg">
       <h1>Solo Leveling JLPT</h1>
       <p>일본어 단어 정복 플랫폼</p>
     </div>
