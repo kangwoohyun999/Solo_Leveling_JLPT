@@ -2,29 +2,91 @@
 {% block title %}오답노트 — SoloLeveling Word{% endblock %}
 
 {% block extra_style %}
+/* ─── 3열 그리드 ─── */
 .note-list {
   max-width:560px; margin:0 auto;
-  padding:14px 16px 64px;
+  padding:10px 16px 20px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
 }
 
+/* 카드 */
 .note-card {
-  display:grid;
-  grid-template-columns: 1fr 1.3fr 1fr auto;
-  align-items:center; gap:10px;
-  padding:13px 14px; margin-bottom:8px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px 8px 10px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  transition:border-color .15s, background .15s;
+  text-align:center; position:relative;
 }
-.nc-word    { font-family:'Noto Sans JP', sans-serif; font-size:16px; font-weight:700; }
-.nc-hira    { font-family:'Noto Sans JP', sans-serif; font-size:12px; color:var(--muted); text-align:center; }
-.nc-meaning { font-size:13px; text-align:right; color:var(--accent2); }
-.nc-del     { color:var(--muted); font-size:15px; padding:4px 6px; transition:color .15s; }
+.note-card:hover { border-color:var(--accent); background:var(--surface2); }
+
+.nc-word {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:17px; font-weight:700; color:var(--text);
+  line-height:1.2; word-break:break-all;
+}
+.nc-word.long { font-size:13px; }
+
+.nc-hira {
+  font-size:11px; color:var(--accent2);
+  font-family:'Noto Sans JP', sans-serif;
+  line-height:1.3;
+}
+.nc-meaning {
+  font-size:11px; color:var(--muted);
+  line-height:1.3; overflow:hidden;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+}
+.level-tag {
+  font-size:9px; font-family:var(--mono);
+  padding:1px 5px; border-radius:3px;
+  background:var(--surface2); color:var(--muted);
+  margin-top:2px;
+}
+
+/* 삭제 버튼 — 카드 우상단 */
+.nc-del {
+  position:absolute; top:6px; right:6px;
+  color:var(--muted); font-size:12px; padding:2px 4px;
+  transition:color .15s; background:none; border:none; cursor:pointer;
+  line-height:1;
+}
 .nc-del:hover { color:var(--danger); }
 
-.level-tag {
-  display:inline-block; padding:2px 7px;
-  background:rgba(108,99,255,.12); color:var(--accent2);
-  border-radius:4px; font-size:10px; font-family:var(--mono);
-  margin-left:6px; vertical-align:middle;
+/* 빈 상태 */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align:center; padding:60px 20px; color:var(--muted);
 }
+.empty-state .ei { font-size:36px; margin-bottom:10px; }
+
+/* ─── 페이지네이션 ─── */
+.pagination {
+  max-width:560px; margin:0 auto;
+  padding:4px 16px 88px;
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  flex-wrap:wrap;
+}
+.pagination.hidden { display:none; }
+
+.pg-btn {
+  min-width:34px; height:34px; padding:0 8px;
+  border-radius:8px; font-size:13px; font-weight:600; font-family:var(--mono);
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--text); transition:all .15s; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.pg-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+.pg-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.pg-btn:disabled { opacity:.35; cursor:default; }
+.pg-ellipsis {
+  min-width:34px; height:34px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; color:var(--muted);
+}
+
+/* 전체 삭제 FAB */
 .fab-delete-all {
   position:fixed; bottom:28px; right:24px; z-index:100;
   width:52px; height:52px; border-radius:50%;
@@ -46,61 +108,120 @@
   <span class="page-sub" id="note-count">{{ notes|length }}개</span>
 </div>
 
-<div class="note-list" id="note-list">
-  {% if notes %}
-    {% for n in notes %}
-    <div class="card note-card" id="note-{{ n.id }}">
-      <div class="nc-word">
-        {{ n.word }}
-        <span class="level-tag">{{ n.level }}</span>
-      </div>
-      <div class="nc-hira">{{ n.hiragana }}</div>
-      <div class="nc-meaning">{{ n.meaning }}</div>
-      <button class="nc-del" onclick="deleteNote({{ n.id }})">🗑</button>
-    </div>
-    {% endfor %}
-  {% else %}
-    <div class="empty-state" id="empty-msg">
-      <div class="ei">✨</div>
-      <p>오답노트가 비어있어요!</p>
-    </div>
-  {% endif %}
-</div>
+<div class="note-list" id="note-list"></div>
+<div class="pagination" id="pagination"></div>
 
-<!-- 전체 삭제 FAB -->
 <button class="fab-delete-all" onclick="deleteAll()" title="전체 삭제" id="fab-del">🗑</button>
-
 {% endblock %}
 
 {% block extra_script %}
 <script>
+const ALL_NOTES = {{ notes | tojson }};
+const ROWS_PER_PAGE = 5;
+const COLS = 3;
+const PAGE_SIZE = ROWS_PER_PAGE * COLS; // 15
+
+let notes = ALL_NOTES.slice(); // 삭제 반영용 복사본
+let currentPage = 1;
+
+function render() {
+  var totalPages = Math.max(1, Math.ceil(notes.length / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  var start = (currentPage - 1) * PAGE_SIZE;
+  var slice = notes.slice(start, start + PAGE_SIZE);
+
+  var listEl = document.getElementById('note-list');
+  if (notes.length === 0) {
+    listEl.innerHTML = '<div class="empty-state"><div class="ei">✨</div><p>오답노트가 비어있어요!</p></div>';
+    document.getElementById('fab-del').style.display = 'none';
+  } else {
+    listEl.innerHTML = slice.map(function(n) {
+      var isLong = n.word.length > 5;
+      return '<div class="note-card" id="note-' + n.id + '">' +
+        '<button class="nc-del" onclick="deleteNote(' + n.id + ')">✕</button>' +
+        '<div class="nc-word' + (isLong ? ' long' : '') + '">' + escHtml(n.word) + '</div>' +
+        '<div class="nc-hira">'    + escHtml(n.hiragana) + '</div>' +
+        '<div class="nc-meaning">' + escHtml(n.meaning)  + '</div>' +
+        '<div class="level-tag">'  + escHtml(n.level)    + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  document.getElementById('note-count').textContent = notes.length + '개';
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  var pg = document.getElementById('pagination');
+  if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
+  pg.className = 'pagination';
+
+  var pages = getPageNumbers(currentPage, totalPages);
+  var html = '<button class="pg-btn" onclick="goPage(' + (currentPage - 1) + ')"' +
+    (currentPage === 1 ? ' disabled' : '') + '>‹</button>';
+
+  pages.forEach(function(p) {
+    if (p === '…') {
+      html += '<span class="pg-ellipsis">…</span>';
+    } else {
+      html += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
+        '" onclick="goPage(' + p + ')">' + p + '</button>';
+    }
+  });
+
+  html += '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
+    (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
+  pg.innerHTML = html;
+}
+
+function getPageNumbers(cur, total) {
+  if (total <= 7) {
+    var arr = [];
+    for (var i = 1; i <= total; i++) arr.push(i);
+    return arr;
+  }
+  var pages = [1];
+  if (cur > 3) pages.push('…');
+  for (var i = Math.max(2, cur - 1); i <= Math.min(total - 1, cur + 1); i++) pages.push(i);
+  if (cur < total - 2) pages.push('…');
+  pages.push(total);
+  return pages;
+}
+
+function goPage(n) {
+  var totalPages = Math.ceil(notes.length / PAGE_SIZE);
+  if (n < 1 || n > totalPages) return;
+  currentPage = n;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function escHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
 async function deleteNote(id) {
-  const res = await fetch(`/api/wrongnote/${id}`, { method: 'DELETE' });
+  const res = await fetch('/api/wrongnote/' + id, { method: 'DELETE' });
   if (!res.ok) { toast('삭제 실패', 'err'); return; }
 
-  document.getElementById('note-' + id)?.remove();
-
-  const remaining = document.querySelectorAll('.note-card').length;
-  document.getElementById('note-count').textContent = remaining + '개';
-  if (remaining === 0) {
-    document.getElementById('note-list').innerHTML =
-      '<div class="empty-state"><div class="ei">✨</div><p>오답노트가 비어있어요!</p></div>';
-  }
+  notes = notes.filter(function(n) { return n.id !== id; });
+  render();
+  toast('삭제했습니다', 'ok');
 }
 
 async function deleteAll() {
-  const cards = document.querySelectorAll('.note-card');
-  if (cards.length === 0) { toast('삭제할 항목이 없어요', 'err'); return; }
-  if (!confirm(`오답노트 ${cards.length}개를 전부 삭제할까요?`)) return;
+  if (notes.length === 0) { toast('삭제할 항목이 없어요', 'err'); return; }
+  if (!confirm('오답노트 ' + notes.length + '개를 전부 삭제할까요?')) return;
 
   const res = await fetch('/api/wrongnote/all', { method: 'DELETE' });
   if (!res.ok) { toast('삭제 실패', 'err'); return; }
 
-  document.getElementById('note-list').innerHTML =
-    '<div class="empty-state"><div class="ei">✨</div><p>오답노트가 비어있어요!</p></div>';
-  document.getElementById('note-count').textContent = '0개';
-  document.getElementById('fab-del').style.display = 'none';
+  notes = [];
+  render();
   toast('전체 삭제 완료', 'ok');
 }
+
+render();
 </script>
 {% endblock %}
