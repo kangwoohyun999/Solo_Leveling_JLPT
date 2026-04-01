@@ -2,24 +2,22 @@
 {% block title %}오답노트{% endblock %}
 
 {% block extra_style %}
-/* ─── 2행 3열 그리드 ─── */
+/* ─── 3열 그리드 ─── */
 .note-list {
   max-width:560px; margin:0 auto;
   padding:10px 16px 20px;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap:10px;
+  gap:8px;
 }
 
 /* 카드 */
 .note-card {
   background:var(--surface); border:1px solid var(--border);
-  border-radius:12px; padding:18px 10px 14px;
-  display:flex; flex-direction:column; align-items:center; gap:6px;
+  border-radius:12px; padding:14px 8px 10px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
   transition:border-color .15s, background .15s;
   text-align:center; position:relative;
-  min-height:120px; justify-content:center;
 }
 .note-card:hover { border-color:var(--accent); background:var(--surface2); }
 
@@ -72,14 +70,6 @@
 }
 .pagination.hidden { display:none; }
 
-/* 쪽수 표시 */
-.pg-info {
-  font-size:12px; color:var(--muted); font-family:var(--mono);
-  padding:0 8px; white-space:nowrap;
-  display:flex; align-items:center;
-}
-.pg-info strong { color:var(--text); font-weight:700; }
-
 .pg-btn {
   min-width:34px; height:34px; padding:0 8px;
   border-radius:8px; font-size:13px; font-weight:600; font-family:var(--mono);
@@ -127,9 +117,9 @@
 {% block extra_script %}
 <script>
 const ALL_NOTES = {{ notes | tojson }};
-const ROWS_PER_PAGE = 2;
+const ROWS_PER_PAGE = 5;
 const COLS = 3;
-const PAGE_SIZE = ROWS_PER_PAGE * COLS; // 6
+const PAGE_SIZE = ROWS_PER_PAGE * COLS; // 15
 
 let notes = ALL_NOTES.slice(); // 삭제 반영용 복사본
 let currentPage = 1;
@@ -182,10 +172,6 @@ function renderPagination(totalPages) {
 
   html += '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
     (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
-
-  // 쪽수 표시
-  html += '<span class="pg-info"><strong>' + currentPage + '</strong>&nbsp;/&nbsp;' + totalPages + '</span>';
-
   pg.innerHTML = html;
 }
 
