@@ -69,19 +69,49 @@
 .result-title { font-size:20px; font-weight:700; margin-bottom:6px; }
 .result-sub   { color:var(--muted); font-size:13px; margin-bottom:28px; }
 
-.wrong-list { width:100%; max-width:440px; margin-bottom:24px; text-align:left; }
-.wl-header  { font-size:12px; color:var(--muted); letter-spacing:.06em; margin-bottom:10px; }
-.wl-row {
-  display:grid; grid-template-columns:1fr 1.3fr 1fr;
-  gap:8px; padding:11px 14px;
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:8px; margin-bottom:6px; font-size:13px;
-}
-.wl-word    { font-family:'Noto Sans JP', sans-serif; font-weight:700; }
-.wl-hira    { font-family:'Noto Sans JP', sans-serif; color:var(--muted); text-align:center; }
-.wl-meaning { text-align:right; color:var(--accent2); }
+.wrong-list { width:100%; max-width:520px; margin-bottom:24px; }
+.wl-header  { font-size:12px; color:var(--muted); letter-spacing:.06em; margin-bottom:12px; text-align:left; }
 
-.result-btns { width:100%; max-width:440px; display:flex; flex-direction:column; gap:8px; }
+/* 2행 3열 카드 그리드 */
+.wl-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+  margin-bottom:14px;
+}
+.wl-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:10px; padding:14px 8px;
+  text-align:center; display:flex; flex-direction:column;
+  align-items:center; gap:5px;
+  min-height:90px; justify-content:center;
+}
+.wl-card .wl-word {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:20px; font-weight:700; line-height:1.1; color:var(--text);
+}
+.wl-card .wl-hira {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:11px; color:var(--muted);
+}
+.wl-card .wl-meaning {
+  font-size:12px; color:var(--accent2); margin-top:2px;
+}
+
+/* 페이지네이션 */
+.wl-pagination {
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.wl-page-btn {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:6px; padding:5px 10px;
+  color:var(--text); font-size:13px; cursor:pointer; transition:all .12s;
+}
+.wl-page-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+.wl-page-btn:disabled { opacity:.35; cursor:default; }
+.wl-page-btn.active { border-color:var(--accent); color:var(--accent); background:rgba(99,179,237,.1); }
+
+.result-btns { width:100%; max-width:520px; display:flex; flex-direction:column; gap:8px; }
 {% endblock %}
 
 {% block body %}
@@ -190,20 +220,47 @@ function showResult() {
 
   const wl = document.getElementById('wrong-list');
   if (wrongList.length) {
-    wl.innerHTML = `<p class="wl-header">틀린 단어 ${wrongList.length}개 — 오답노트에 자동 저장됨</p>` +
-      wrongList.map(w => `
-        <div class="wl-row">
-          <div class="wl-word">${w.word}</div>
-          <div class="wl-hira">${w.hiragana}</div>
-          <div class="wl-meaning">${w.answer}</div>
-        </div>
-      `).join('');
+    renderWrongCards(0);
   } else {
     wl.innerHTML = '';
   }
 
   document.getElementById('quiz-area').style.display  = 'none';
   document.getElementById('result-wrap').classList.add('show');
+}
+
+const WL_PER_PAGE = 6; // 2행 × 3열
+let wlPage = 0;
+
+function renderWrongCards(page) {
+  wlPage = page;
+  const total = wrongList.length;
+  const totalPages = Math.ceil(total / WL_PER_PAGE);
+  const slice = wrongList.slice(page * WL_PER_PAGE, (page + 1) * WL_PER_PAGE);
+
+  const cards = slice.map(w => `
+    <div class="wl-card">
+      <div class="wl-word">${w.word}</div>
+      <div class="wl-hira">${w.hiragana}</div>
+      <div class="wl-meaning">${w.answer}</div>
+    </div>`).join('');
+
+  let pagination = '';
+  if (totalPages > 1) {
+    const btns = Array.from({length: totalPages}, (_, i) =>
+      `<button class="wl-page-btn${i === page ? ' active' : ''}" onclick="renderWrongCards(${i})">${i + 1}</button>`
+    ).join('');
+    pagination = `<div class="wl-pagination">
+      <button class="wl-page-btn" onclick="renderWrongCards(${page - 1})" ${page === 0 ? 'disabled' : ''}>‹</button>
+      ${btns}
+      <button class="wl-page-btn" onclick="renderWrongCards(${page + 1})" ${page >= totalPages - 1 ? 'disabled' : ''}>›</button>
+    </div>`;
+  }
+
+  document.getElementById('wrong-list').innerHTML =
+    `<p class="wl-header">틀린 단어 ${total}개</p>` +
+    `<div class="wl-grid">${cards}</div>` +
+    pagination;
 }
 
 function retryQuiz() {
