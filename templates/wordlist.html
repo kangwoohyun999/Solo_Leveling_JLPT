@@ -35,29 +35,49 @@
   min-height:20px;
 }
 
-/* ─── 단어 목록 ─── */
+/* ─── 3열 그리드 ─── */
 .word-list {
   max-width:560px; margin:0 auto;
   padding:10px 16px 20px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
 }
 
+/* 카드 */
 .word-card {
-  display:grid;
-  grid-template-columns: 1fr 1.3fr 1fr;
-  align-items:center; gap:10px;
-  padding:13px 16px; margin-bottom:8px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px 8px 12px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  transition:border-color .15s, background .15s;
+  cursor:default; user-select:none; text-align:center;
 }
+.word-card:hover { border-color:var(--accent); background:var(--surface2); }
+
 .wc-word {
   font-family:'Noto Sans JP', sans-serif;
-  font-size:17px; font-weight:700;
+  font-size:17px; font-weight:700; color:var(--text);
+  line-height:1.2; word-break:break-all;
 }
+.wc-word.long { font-size:13px; }
+
 .wc-hira {
+  font-size:11px; color:var(--accent2);
   font-family:'Noto Sans JP', sans-serif;
-  font-size:12px; color:var(--muted); text-align:center;
+  line-height:1.3;
 }
 .wc-meaning {
-  font-size:13px; text-align:right; color:var(--accent2);
+  font-size:11px; color:var(--muted);
+  line-height:1.3; overflow:hidden;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
 }
+
+/* 빈 상태 — 그리드 전체 너비 */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align:center; padding:60px 20px; color:var(--muted);
+}
+.empty-state .ei { font-size:36px; margin-bottom:10px; }
 
 mark {
   background:rgba(34,211,160,.25); color:inherit;
@@ -103,7 +123,7 @@ mark {
   box-shadow:0 6px 28px rgba(108,99,255,.7);
 }
 
-/* 퀴즈 개수 모달 */
+/* 퀴즈 모달 */
 .modal-bg {
   display:none; position:fixed; inset:0; z-index:300;
   background:rgba(0,0,0,.6); backdrop-filter:blur(6px);
@@ -206,7 +226,9 @@ mark {
 <script>
 const LEVEL = '{{ level }}';
 const ALL_WORDS = {{ words | tojson }};
-const PAGE_SIZE = 10;
+const ROWS_PER_PAGE = 5;
+const COLS = 3;
+const PAGE_SIZE = ROWS_PER_PAGE * COLS; // 15
 
 let filtered = ALL_WORDS;
 let currentPage = 1;
@@ -215,8 +237,8 @@ const searchInput = document.getElementById('search-input');
 const searchClear = document.getElementById('search-clear');
 const resultInfo  = document.getElementById('result-info');
 
-searchInput.addEventListener('input', () => {
-  const q = searchInput.value.trim();
+searchInput.addEventListener('input', function() {
+  var q = searchInput.value.trim();
   searchClear.classList.toggle('visible', q.length > 0);
   applyFilter(q);
 });
@@ -233,12 +255,12 @@ function applyFilter(q) {
     filtered = ALL_WORDS;
     resultInfo.textContent = '';
   } else {
-    const kw = q.toLowerCase();
-    filtered = ALL_WORDS.filter(w =>
-      w.word.includes(kw) ||
-      (w.hiragana && w.hiragana.includes(kw)) ||
-      (w.meaning  && w.meaning.toLowerCase().includes(kw))
-    );
+    var kw = q.toLowerCase();
+    filtered = ALL_WORDS.filter(function(w) {
+      return w.word.includes(kw) ||
+             (w.hiragana && w.hiragana.includes(kw)) ||
+             (w.meaning  && w.meaning.toLowerCase().includes(kw));
+    });
     resultInfo.textContent = '검색 결과 ' + filtered.length + '개';
   }
   currentPage = 1;
@@ -249,59 +271,59 @@ function escHtml(s) {
   return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 function highlight(text, q) {
-  const safe = escHtml(text);
+  var safe = escHtml(text);
   if (!q) return safe;
-  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return safe.replace(new RegExp(escaped, 'gi'), m => '<mark>' + m + '</mark>');
+  var escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return safe.replace(new RegExp(escaped, 'gi'), function(m) { return '<mark>' + m + '</mark>'; });
 }
 
 function render() {
-  const q = searchInput.value.trim();
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  var q = searchInput.value.trim();
+  var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   if (currentPage > totalPages) currentPage = totalPages;
 
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const slice = filtered.slice(start, start + PAGE_SIZE);
+  var start = (currentPage - 1) * PAGE_SIZE;
+  var slice = filtered.slice(start, start + PAGE_SIZE);
 
-  const listEl = document.getElementById('word-list');
+  var listEl = document.getElementById('word-list');
   if (slice.length === 0) {
     listEl.innerHTML = '<div class="empty-state"><div class="ei">🔍</div><p>검색 결과가 없습니다.</p></div>';
   } else {
-    listEl.innerHTML = slice.map(w =>
-      '<div class="card word-card">' +
-        '<div class="wc-word">'    + highlight(w.word,     q) + '</div>' +
+    listEl.innerHTML = slice.map(function(w) {
+      var isLong = w.word.length > 5;
+      return '<div class="word-card">' +
+        '<div class="wc-word' + (isLong ? ' long' : '') + '">' + highlight(w.word, q) + '</div>' +
         '<div class="wc-hira">'    + highlight(w.hiragana, q) + '</div>' +
         '<div class="wc-meaning">' + highlight(w.meaning,  q) + '</div>' +
-      '</div>'
-    ).join('');
+      '</div>';
+    }).join('');
   }
 
   renderPagination(totalPages);
-
   document.getElementById('total-count').textContent =
     q ? (filtered.length + '개') : (ALL_WORDS.length + '개');
 }
 
 function renderPagination(totalPages) {
-  const pg = document.getElementById('pagination');
+  var pg = document.getElementById('pagination');
   if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
   pg.className = 'pagination';
 
-  const pages = getPageNumbers(currentPage, totalPages);
-  let html = '<button class="pg-btn" onclick="goPage(' + (currentPage-1) + ')"' +
-    (currentPage===1 ? ' disabled' : '') + '>‹</button>';
+  var pages = getPageNumbers(currentPage, totalPages);
+  var html = '<button class="pg-btn" onclick="goPage(' + (currentPage - 1) + ')"' +
+    (currentPage === 1 ? ' disabled' : '') + '>‹</button>';
 
   pages.forEach(function(p) {
     if (p === '…') {
       html += '<span class="pg-ellipsis">…</span>';
     } else {
-      html += '<button class="pg-btn' + (p===currentPage ? ' active' : '') +
+      html += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
         '" onclick="goPage(' + p + ')">' + p + '</button>';
     }
   });
 
-  html += '<button class="pg-btn" onclick="goPage(' + (currentPage+1) + ')"' +
-    (currentPage===totalPages ? ' disabled' : '') + '>›</button>';
+  html += '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
+    (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
   pg.innerHTML = html;
 }
 
@@ -313,8 +335,8 @@ function getPageNumbers(cur, total) {
   }
   var pages = [1];
   if (cur > 3) pages.push('…');
-  for (var i = Math.max(2, cur-1); i <= Math.min(total-1, cur+1); i++) pages.push(i);
-  if (cur < total-2) pages.push('…');
+  for (var i = Math.max(2, cur - 1); i <= Math.min(total - 1, cur + 1); i++) pages.push(i);
+  if (cur < total - 2) pages.push('…');
   pages.push(total);
   return pages;
 }
@@ -324,7 +346,7 @@ function goPage(n) {
   if (n < 1 || n > totalPages) return;
   currentPage = n;
   render();
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function openQuizModal()  { document.getElementById('quiz-modal').classList.add('open'); }
