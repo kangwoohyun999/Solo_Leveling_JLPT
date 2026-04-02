@@ -1,10 +1,13 @@
 # 📘 Solo Leveling WORD
 
-JLPT 학습을 위한 Solo Leveling.JLPT(@sololeveling.jlpt) 기반 콘텐츠 사이트 입니다.
+JLPT 학습을 위한 Solo Leveling.JLPT(@sololeveling.jlpt) 기반 콘텐츠 API입니다.
 문장, 단어, 문제 등을 제공하여 일본어 학습을 보다 재미있게 할 수 있도록 설계되었습니다.
 
+
 ## 🛠️ URL
-https://sololevelingjlpt.up.railway.app/
+https://sololevelingjlpt-production.up.railway.app/
+
+
 
 ## test URL
 https://sololevelingjlpt-test.up.railway.app/

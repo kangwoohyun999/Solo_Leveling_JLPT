@@ -61,7 +61,7 @@
   },
   {
     "word": "大きい",
-    "hiragana": "おお",
+    "hiragana": "おおきい",
     "meaning": "크다",
     "level": "N5"
   },
@@ -73,13 +73,13 @@
   },
   {
     "word": "男の子",
-    "hiragana": "おとここ",
+    "hiragana": "おとこのこ",
     "meaning": "남자아이",
     "level": "N5"
   },
   {
     "word": "女の子",
-    "hiragana": "おんなこ",
+    "hiragana": "おんなのこ",
     "meaning": "여자아이",
     "level": "N5"
   },
@@ -103,7 +103,7 @@
   },
   {
     "word": "火よう日",
-    "hiragana": "かび",
+    "hiragana": "かようび",
     "meaning": "화요일",
     "level": "N5"
   },
@@ -511,7 +511,7 @@
   },
   {
     "word": "多い",
-    "hiragana": "おお",
+    "hiragana": "おおい",
     "meaning": "많다",
     "level": "N5"
   },
@@ -541,7 +541,7 @@
   },
   {
     "word": "子ども",
-    "hiragana": "ども",
+    "hiragana": "こども",
     "meaning": "아이, 어린이",
     "level": "N5"
   },
@@ -1705,7 +1705,7 @@
   },
   {
     "word": "午前も午後も",
-    "hiragana": "もも",
+    "hiragana": "ごぜんもごごも",
     "meaning": "오전도 오후도",
     "level": "N5"
   },
@@ -1783,7 +1783,7 @@
   },
   {
     "word": "天気がいい",
-    "hiragana": "がいい",
+    "hiragana": "てんきがいい",
     "meaning": "날씨가 좋다",
     "level": "N5"
   },
@@ -1909,7 +1909,7 @@
   },
   {
     "word": "～が好きだ",
-    "hiragana": "がきだ",
+    "hiragana": "がすきだ",
     "meaning": "~을 좋아하다",
     "level": "N5"
   },
@@ -2065,13 +2065,13 @@
   },
   {
     "word": "～に会う",
-    "hiragana": "にう",
+    "hiragana": "にあう",
     "meaning": "~을(를) 만나다",
     "level": "N5"
   },
   {
     "word": "～に乗る",
-    "hiragana": "にる",
+    "hiragana": "にのる",
     "meaning": "~을(를) 타다(승차하다)",
     "level": "N5"
   },

@@ -43,7 +43,7 @@
   },
   {
     "word": "遅れる",
-    "hiragana": "れる",
+    "hiragana": "おくれる",
     "meaning": "늦다",
     "level": "N3"
   },
@@ -85,7 +85,7 @@
   },
   {
     "word": "表す",
-    "hiragana": "あらわ",
+    "hiragana": "あらわす",
     "meaning": "나타내다",
     "level": "N3"
   },
@@ -97,7 +97,7 @@
   },
   {
     "word": "包む",
-    "hiragana": "つつ",
+    "hiragana": "つつむ",
     "meaning": "포장하다",
     "level": "N3"
   },
@@ -235,7 +235,7 @@
   },
   {
     "word": "生える",
-    "hiragana": "える",
+    "hiragana": "はえる",
     "meaning": "나다, 돋아나다",
     "level": "N3"
   },
@@ -343,7 +343,7 @@
   },
   {
     "word": "覚える",
-    "hiragana": "える",
+    "hiragana": "おぼえる",
     "meaning": "외우다, 기억하다",
     "level": "N3"
   },
@@ -391,7 +391,7 @@
   },
   {
     "word": "割れる",
-    "hiragana": "れる",
+    "hiragana": "われる",
     "meaning": "깨지다, 나누어지다",
     "level": "N3"
   },
@@ -439,7 +439,7 @@
   },
   {
     "word": "替える",
-    "hiragana": "える",
+    "hiragana": "かえる",
     "meaning": "교체하다",
     "level": "N3"
   },
@@ -457,7 +457,7 @@
   },
   {
     "word": "支給する",
-    "hiragana": "する",
+    "hiragana": "しきゅうする",
     "meaning": "지급하다",
     "level": "N3"
   },
@@ -541,7 +541,7 @@
   },
   {
     "word": "折れる",
-    "hiragana": "れる",
+    "hiragana": "おれる",
     "meaning": "부러지다, 꺾이다",
     "level": "N3"
   },
@@ -703,7 +703,7 @@
   },
   {
     "word": "過ごす",
-    "hiragana": "ごす",
+    "hiragana": "すごす",
     "meaning": "지내다, 보내다",
     "level": "N3"
   },
@@ -865,7 +865,7 @@
   },
   {
     "word": "逃げる",
-    "hiragana": "げる",
+    "hiragana": "にげる",
     "meaning": "달아나다, 도망치다",
     "level": "N3"
   },
@@ -1033,7 +1033,7 @@
   },
   {
     "word": "投げる",
-    "hiragana": "げる",
+    "hiragana": "なげる",
     "meaning": "던지다",
     "level": "N3"
   },
@@ -1711,13 +1711,13 @@
   },
   {
     "word": "覚める",
-    "hiragana": "める",
+    "hiragana": "さめる",
     "meaning": "(잠) 깨다, 정신 들다",
     "level": "N3"
   },
   {
     "word": "追いつく",
-    "hiragana": "いつく",
+    "hiragana": "おいつく",
     "meaning": "따라잡다",
     "level": "N3"
   },
@@ -1777,7 +1777,7 @@
   },
   {
     "word": "自慢する",
-    "hiragana": "する",
+    "hiragana": "じまんする",
     "meaning": "자랑하다",
     "level": "N3"
   },
@@ -1789,7 +1789,7 @@
   },
   {
     "word": "分ける",
-    "hiragana": "ける",
+    "hiragana": "わける",
     "meaning": "나누다, 구분하다",
     "level": "N3"
   },
@@ -1897,7 +1897,7 @@
   },
   {
     "word": "惜しい",
-    "hiragana": "しい",
+    "hiragana": "おしい",
     "meaning": "아깝다, 아쉽다",
     "level": "N3"
   },
@@ -2011,7 +2011,7 @@
   },
   {
     "word": "確かめる",
-    "hiragana": "かめる",
+    "hiragana": "たしかめる",
     "meaning": "확인하다",
     "level": "N3"
   },
@@ -2101,7 +2101,7 @@
   },
   {
     "word": "明ける",
-    "hiragana": "ける",
+    "hiragana": "あける",
     "meaning": "날이 새다, 끝나다",
     "level": "N3"
   },
@@ -2251,7 +2251,7 @@
   },
   {
     "word": "通勤する",
-    "hiragana": "する",
+    "hiragana": "つうきんする",
     "meaning": "통근하다",
     "level": "N3"
   },
@@ -2293,7 +2293,7 @@
   },
   {
     "word": "整理する",
-    "hiragana": "する",
+    "hiragana": "せいりする",
     "meaning": "정리하다",
     "level": "N3"
   },
@@ -2629,7 +2629,7 @@
   },
   {
     "word": "やり方",
-    "hiragana": "やり",
+    "hiragana": "やりかた",
     "meaning": "방식",
     "level": "N3"
   },
@@ -2851,7 +2851,7 @@
   },
   {
     "word": "植える",
-    "hiragana": "える",
+    "hiragana": "うえる",
     "meaning": "심다",
     "level": "N3"
   },
@@ -3055,7 +3055,7 @@
   },
   {
     "word": "混ぜる",
-    "hiragana": "ぜる",
+    "hiragana": "まぜる",
     "meaning": "섞다",
     "level": "N3"
   },
@@ -3079,7 +3079,7 @@
   },
   {
     "word": "締め切り",
-    "hiragana": "めり",
+    "hiragana": "しめきり",
     "meaning": "마감",
     "level": "N3"
   },
@@ -4681,7 +4681,7 @@
   },
   {
     "word": "気がする",
-    "hiragana": "がする",
+    "hiragana": "きがする",
     "meaning": "느낌이 들다",
     "level": "N3"
   },

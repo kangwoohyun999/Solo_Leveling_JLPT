@@ -30,6 +30,24 @@ for lv in ['N5', 'N4', 'N3', 'N2', 'N1']:
     except FileNotFoundError:
         WORDS[lv] = []
 
+# 히라가나 데이터 로드
+HIRAGANA = []
+try:
+    with open(os.path.join(BASE_DIR, 'data', 'hiragana.json'), encoding='utf-8') as f:
+        HIRAGANA = json.load(f)
+    print(f'[히라가나로드] {len(HIRAGANA)}개')
+except FileNotFoundError:
+    pass
+
+# 한자 단어장 데이터 로드
+KANJI_WORDS = []
+try:
+    with open(os.path.join(BASE_DIR, 'data', 'kanji_words.json'), encoding='utf-8') as f:
+        KANJI_WORDS = json.load(f)
+    print(f'[한자로드] {len(KANJI_WORDS)}개')
+except FileNotFoundError:
+    pass
+
 def get_db_url():
     url = os.environ.get('DATABASE_URL', '')
     if url.startswith('postgres://'):
@@ -203,7 +221,9 @@ def main():
         session.pop('username', None)
         return redirect(url_for('login'))
     level_counts = {lv: len(WORDS.get(lv, [])) for lv in LEVEL_INFO}
-    return render_template('main.html', user=user, level_counts=level_counts)
+    total_words = sum(level_counts.values())
+    return render_template('main.html', user=user, level_counts=level_counts,
+                           total_words=total_words, kanji_count=len(KANJI_WORDS))
 
 @app.route('/wordlist/<level>')
 def wordlist(level):
@@ -237,6 +257,38 @@ def ranking_quiz(level):
     level = level.upper()
     total = len(WORDS.get(level, []))
     return render_template('ranking_quiz.html', user=user, level=level, total=total)
+
+@app.route('/hiragana')
+def hiragana():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    from collections import OrderedDict
+    rows = OrderedDict()
+    for item in HIRAGANA:
+        row = item['row']
+        if row not in rows:
+            rows[row] = []
+        rows[row].append(item)
+    return render_template('hiragana.html',
+                           rows=rows,
+                           total=len(HIRAGANA))
+
+@app.route('/hiragana_quiz')
+def hiragana_quiz():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    import json as _json
+    return render_template('hiragana_quiz.html',
+                           hiragana_json=_json.dumps(HIRAGANA, ensure_ascii=False))
+
+@app.route('/kanji')
+def kanji():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    import json as _json
+    return render_template('kanji.html',
+                           words_json=_json.dumps(KANJI_WORDS, ensure_ascii=False),
+                           total=len(KANJI_WORDS))
 
 @app.route('/ranking_menu')
 def ranking_menu():
@@ -416,6 +468,22 @@ def api_add_wrongnote():
         conn.commit(); cur.close(); conn.close()
         return jsonify({'ok': True})
     except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/wrongnote/all', methods=['DELETE'])
+def api_delete_all_wrongnote():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    username = session['username']
+    try:
+        conn = get_db()
+        cur  = conn.cursor()
+        cur.execute('DELETE FROM wrong_notes WHERE username=%s', (username,))
+        conn.commit()
+        cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        print(f'[wrongnote/all 오류] {e}')
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/wrongnote/<int:note_id>', methods=['DELETE'])

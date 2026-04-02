@@ -13,7 +13,7 @@
   },
   {
     "word": "頭",
-    "hiragana": "ねんとう",
+    "hiragana": "あたま",
     "meaning": "머리",
     "level": "N4"
   },
@@ -55,7 +55,7 @@
   },
   {
     "word": "急ぐ",
-    "hiragana": "いそ",
+    "hiragana": "いそぐ",
     "meaning": "서두르다",
     "level": "N4"
   },
@@ -67,7 +67,7 @@
   },
   {
     "word": "色",
-    "hiragana": "いしょく",
+    "hiragana": "いろ",
     "meaning": "색",
     "level": "N4"
   },
@@ -97,25 +97,25 @@
   },
   {
     "word": "多い",
-    "hiragana": "おお",
+    "hiragana": "おおい",
     "meaning": "많다",
     "level": "N4"
   },
   {
     "word": "送る",
-    "hiragana": "おく",
+    "hiragana": "おくる",
     "meaning": "보내다",
     "level": "N4"
   },
   {
     "word": "重い",
-    "hiragana": "おも",
+    "hiragana": "おもい",
     "meaning": "무겁다",
     "level": "N4"
   },
   {
     "word": "終わる",
-    "hiragana": "わる",
+    "hiragana": "おわる",
     "meaning": "끝나다",
     "level": "N4"
   },
@@ -433,7 +433,7 @@
   },
   {
     "word": "足りる",
-    "hiragana": "りる",
+    "hiragana": "たりる",
     "meaning": "족하다, 충분하다",
     "level": "N4"
   },
@@ -853,7 +853,7 @@
   },
   {
     "word": "建てる",
-    "hiragana": "てる",
+    "hiragana": "たてる",
     "meaning": "(건물을) 세우다, 짓다",
     "level": "N4"
   },
@@ -973,7 +973,7 @@
   },
   {
     "word": "植える",
-    "hiragana": "える",
+    "hiragana": "うえる",
     "meaning": "(나무를) 심다",
     "level": "N4"
   },
@@ -1003,7 +1003,7 @@
   },
   {
     "word": "お釣り",
-    "hiragana": "おり",
+    "hiragana": "おつり",
     "meaning": "거스름돈",
     "level": "N4"
   },
@@ -1027,7 +1027,7 @@
   },
   {
     "word": "折れる",
-    "hiragana": "れる",
+    "hiragana": "おれる",
     "meaning": "꺾이다, 접히다",
     "level": "N4"
   },
@@ -1045,7 +1045,7 @@
   },
   {
     "word": "傘をさす",
-    "hiragana": "をさす",
+    "hiragana": "かさをさす",
     "meaning": "우산을 쓰다",
     "level": "N4"
   },
@@ -1399,7 +1399,7 @@
   },
   {
     "word": "見つかる",
-    "hiragana": "つかる",
+    "hiragana": "みつかる",
     "meaning": "발견되다",
     "level": "N4"
   },
@@ -1843,7 +1843,7 @@
   },
   {
     "word": "捨てる",
-    "hiragana": "てる",
+    "hiragana": "すてる",
     "meaning": "버리다",
     "level": "N4"
   },
@@ -1945,7 +1945,7 @@
   },
   {
     "word": "沸かす",
-    "hiragana": "かす",
+    "hiragana": "わかす",
     "meaning": "(물을) 끓이다",
     "level": "N4"
   },
@@ -2053,7 +2053,7 @@
   },
   {
     "word": "～たら道で近",
-    "hiragana": "たらで",
+    "hiragana": "たらみちで",
     "meaning": "~하면(가정) •",
     "level": "N4"
   },

@@ -1,19 +1,18 @@
 {% extends "base.html" %}
-{% block title %}Solo Leveling JLPT - Login{% endblock %}
+{% block title %}Solo Leveling JLPT - 로그인{% endblock %}
 
 {% block extra_style %}
 .auth-wrap {
   min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background:radial-gradient(ellipse at 50% 0%, #1a1040 0%, var(--bg) 70%);
   padding:24px;
 }
 .auth-box { width:100%; max-width:380px; }
 .auth-logo { text-align:center; margin-bottom:36px; }
 .auth-logo .logo-lg {
-  width:54px; height:54px; background:var(--accent); border-radius:14px;
-  display:inline-flex; align-items:center; justify-content:center;
-  font-size:26px; margin-bottom:12px;
-  box-shadow:0 0 30px rgba(108,99,255,.4);
+  width:54px; height:54px; border-radius:14px;
+  display:inline-block; margin-bottom:12px;
+  object-fit:contain;
+  box-shadow:0 0 30px #2d9e65;
 }
 .auth-logo h1 { font-size:20px; font-weight:700; letter-spacing:.06em; }
 .auth-logo p  { color:var(--muted); font-size:13px; margin-top:4px; }
@@ -34,7 +33,7 @@
 <div class="auth-wrap">
   <div class="auth-box">
     <div class="auth-logo">
-      <div class="logo-lg">📝</div>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="SoloLeveling Word" class="logo-lg">
       <h1>Solo Leveling JLPT</h1>
       <p>일본어 단어 정복 플랫폼</p>
     </div>

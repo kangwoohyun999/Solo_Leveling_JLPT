@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+{% block title %}한자 단어장{% endblock %}
+
+{% block extra_style %}
+.kanji-content { max-width:560px; margin:0 auto; padding:16px 16px 0; }
+
+/* 레벨 필터 탭 */
+.level-tabs {
+  display:flex; gap:6px; margin-bottom:20px;
+  overflow-x:auto; padding-bottom:4px;
+  scrollbar-width:none;
+}
+.level-tabs::-webkit-scrollbar { display:none; }
+.level-tab {
+  flex-shrink:0; padding:6px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:20px; font-size:12px; font-weight:600;
+  cursor:pointer; transition:border-color .15s, background .15s, color .15s;
+  color:var(--muted); font-family:var(--mono);
+}
+.level-tab.active {
+  background:var(--accent); border-color:var(--accent);
+  color:#fff;
+}
+.level-tab:hover:not(.active) { border-color:var(--accent); color:var(--text); }
+
+/* 검색 */
+.search-wrap {
+  position:relative; margin-bottom:16px;
+}
+.search-input {
+  width:100%; padding:11px 14px 11px 38px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:10px; color:var(--text); font-size:14px;
+  transition:border-color .2s;
+}
+.search-input:focus { outline:none; border-color:var(--accent); }
+.search-icon {
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  color:var(--muted); font-size:14px; pointer-events:none;
+}
+.result-count { font-size:12px; color:var(--muted); margin-bottom:12px; }
+
+/* 3열 그리드 — 행(row)당 3칸, PAGE_SIZE=5행=15칸 */
+.kanji-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+}
+
+/* 카드 */
+.kanji-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px 8px 12px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  transition:border-color .15s, background .15s;
+  cursor:default; user-select:none; text-align:center;
+}
+.kanji-card:hover { border-color:var(--accent); background:var(--surface2); }
+
+.kc-word {
+  font-size:17px; font-family:'Noto Sans JP', sans-serif;
+  font-weight:700; color:var(--text); line-height:1.2;
+  word-break:break-all;
+}
+.kc-word.long { font-size:13px; }
+
+.kc-hira {
+  font-size:11px; color:var(--accent2); font-family:'Noto Sans JP', sans-serif;
+  line-height:1.3;
+}
+.kc-meaning {
+  font-size:11px; color:var(--muted);
+  line-height:1.3; overflow:hidden;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+}
+.kc-lv {
+  font-size:9px; font-family:var(--mono);
+  padding:1px 5px; border-radius:3px;
+  background:var(--surface2); color:var(--muted);
+  margin-top:2px;
+}
+
+.empty-filter { text-align:center; padding:40px 20px; color:var(--muted); font-size:14px; }
+
+/* ─── 페이지네이션 ─── */
+.pagination {
+  max-width:560px; margin:0 auto;
+  padding:16px 16px 80px;
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  flex-wrap:wrap;
+}
+.pagination.hidden { display:none; }
+
+.pg-btn {
+  min-width:34px; height:34px; padding:0 8px;
+  border-radius:8px; font-size:13px; font-weight:600; font-family:var(--mono);
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--text); transition:all .15s; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.pg-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+.pg-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.pg-btn:disabled { opacity:.35; cursor:default; }
+.pg-ellipsis {
+  min-width:34px; height:34px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; color:var(--muted);
+}
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title" style="font-family:var(--mono)">한자 단어장</span>
+  <span class="page-sub" id="total-count">{{ total }}개</span>
+</div>
+
+<div class="kanji-content">
+
+  <!-- 레벨 탭 -->
+  <div class="level-tabs">
+    <button class="level-tab active" onclick="filterLevel('ALL', this)">전체</button>
+    <button class="level-tab" onclick="filterLevel('N5', this)">N5</button>
+    <button class="level-tab" onclick="filterLevel('N4', this)">N4</button>
+    <button class="level-tab" onclick="filterLevel('N3', this)">N3</button>
+    <button class="level-tab" onclick="filterLevel('N2', this)">N2</button>
+    <button class="level-tab" onclick="filterLevel('N1', this)">N1</button>
+  </div>
+
+  <!-- 검색 -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="search-input"
+           placeholder="단어, 히라가나, 뜻으로 검색..."
+           oninput="onSearch()">
+  </div>
+
+  <div class="result-count" id="result-count"></div>
+
+  <!-- 그리드 -->
+  <div class="kanji-grid" id="kanji-grid"></div>
+
+</div>
+
+<!-- 페이지네이션 -->
+<div class="pagination" id="pagination"></div>
+
+<script>
+const ALL_WORDS = {{ words_json|safe }};
+// 3열 그리드 × 5행 = 한 페이지 15칸
+const ROWS_PER_PAGE = 5;
+const COLS = 3;
+const PAGE_SIZE = ROWS_PER_PAGE * COLS; // 15
+
+let currentLevel = 'ALL';
+let currentQuery = '';
+let filtered = ALL_WORDS;
+let currentPage = 1;
+
+function filterLevel(lv, btn) {
+  currentLevel = lv;
+  document.querySelectorAll('.level-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentPage = 1;
+  applyFilter();
+}
+
+function onSearch() {
+  currentQuery = document.getElementById('search-input').value.trim().toLowerCase();
+  currentPage = 1;
+  applyFilter();
+}
+
+function applyFilter() {
+  filtered = ALL_WORDS;
+  if (currentLevel !== 'ALL') {
+    filtered = filtered.filter(function(w) { return w.level === currentLevel; });
+  }
+  if (currentQuery) {
+    filtered = filtered.filter(function(w) {
+      return w.word.includes(currentQuery) ||
+             w.hiragana.includes(currentQuery) ||
+             w.meaning.toLowerCase().includes(currentQuery);
+    });
+  }
+  render();
+}
+
+function render() {
+  var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  var start = (currentPage - 1) * PAGE_SIZE;
+  var slice = filtered.slice(start, start + PAGE_SIZE);
+
+  // 결과 수 / 헤더 카운트
+  document.getElementById('result-count').textContent =
+    (currentQuery || currentLevel !== 'ALL') ? (filtered.length + '개 표시 중') : '';
+  document.getElementById('total-count').textContent = filtered.length + '개';
+
+  // 그리드
+  var grid = document.getElementById('kanji-grid');
+  if (slice.length === 0) {
+    grid.innerHTML = '<div class="empty-filter" style="grid-column:1/-1">검색 결과가 없어요 🔍</div>';
+  } else {
+    grid.innerHTML = slice.map(function(w) {
+      var isLong = w.word.length > 5;
+      return '<div class="kanji-card">' +
+        '<div class="kc-word' + (isLong ? ' long' : '') + '">' + w.word + '</div>' +
+        '<div class="kc-hira">'    + w.hiragana + '</div>' +
+        '<div class="kc-meaning">' + w.meaning  + '</div>' +
+        '<div class="kc-lv">'      + w.level    + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  var pg = document.getElementById('pagination');
+  if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
+  pg.className = 'pagination';
+
+  var pages = getPageNumbers(currentPage, totalPages);
+  var html = '<button class="pg-btn" onclick="goPage(' + (currentPage - 1) + ')"' +
+    (currentPage === 1 ? ' disabled' : '') + '>‹</button>';
+
+  pages.forEach(function(p) {
+    if (p === '…') {
+      html += '<span class="pg-ellipsis">…</span>';
+    } else {
+      html += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
+        '" onclick="goPage(' + p + ')">' + p + '</button>';
+    }
+  });
+
+  html += '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
+    (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
+  pg.innerHTML = html;
+}
+
+function getPageNumbers(cur, total) {
+  if (total <= 7) {
+    var arr = [];
+    for (var i = 1; i <= total; i++) arr.push(i);
+    return arr;
+  }
+  var pages = [1];
+  if (cur > 3) pages.push('…');
+  for (var i = Math.max(2, cur - 1); i <= Math.min(total - 1, cur + 1); i++) pages.push(i);
+  if (cur < total - 2) pages.push('…');
+  pages.push(total);
+  return pages;
+}
+
+function goPage(n) {
+  var totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+  if (n < 1 || n > totalPages) return;
+  currentPage = n;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+applyFilter();
+</script>
+{% endblock %}
