@@ -5,9 +5,12 @@ JLPT 학습을 위한 Solo Leveling.JLPT(@sololeveling.jlpt) 기반 콘텐츠 AP
 
 
 ## 🛠️ URL
-https://sololevelingjlpt-production.up.railway.app/
+https://sololevelingjlpt.up.railway.app/
 
 
+
+## test URL
+https://sololevelingjlpt-test.up.railway.app/
 
 ## 🚀 Overview
 
