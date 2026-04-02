@@ -452,23 +452,6 @@ def api_save_ranking():
         print(f'[api_save_ranking 오류] {e}')
         return jsonify({'error': str(e)}), 500
 
-@app.route('/api/wrongnote', methods=['GET'])
-def api_get_wrongnote():
-    if 'username' not in session:
-        return jsonify({'error': '로그인 필요'}), 401
-    try:
-        conn = get_db(); cur = conn.cursor()
-        cur.execute(
-            'SELECT * FROM wrong_notes WHERE username=%s ORDER BY level, id DESC',
-            (session['username'],)
-        )
-        notes = [dict(r) for r in cur.fetchall()]
-        cur.close(); conn.close()
-        return jsonify({'notes': notes})
-    except Exception as e:
-        print(f'[api_get_wrongnote 오류] {e}')
-        return jsonify({'notes': []})
-
 @app.route('/api/wrongnote', methods=['POST'])
 def api_add_wrongnote():
     if 'username' not in session:
