@@ -38,6 +38,89 @@
 .coming { opacity:.4; pointer-events:none; }
 .kanji  .level-badge  { background:rgba(251,191,36,.15);  color:var(--warning); }
 
+/* ─── 연계(오답노트) 인라인 패널 ─── */
+.renke-toggle {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px; width:100%; text-align:left; cursor:pointer;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); color:var(--text);
+  transition:border-color .2s, background .2s;
+}
+.renke-toggle:hover { border-color:var(--accent); background:var(--surface2); }
+.renke-arrow {
+  color:var(--muted); font-size:18px;
+  transition:transform .25s ease;
+}
+.renke-arrow.open { transform:rotate(90deg); }
+
+.renke-panel {
+  display:none; flex-direction:column; gap:0;
+  padding:10px 0 0 0;
+}
+.renke-panel.open { display:flex; }
+
+/* 레벨 탭 */
+.rn-tabs {
+  display:flex; gap:6px; flex-wrap:wrap;
+  padding:4px 4px 8px;
+}
+.rn-tab {
+  padding:5px 14px; border-radius:20px; font-size:12px; font-weight:600;
+  font-family:var(--mono); cursor:pointer; transition:all .15s;
+  background:var(--surface); border:1px solid var(--border); color:var(--muted);
+}
+.rn-tab:hover { border-color:var(--accent); color:var(--accent); }
+.rn-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+
+/* 3열 그리드 */
+.rn-list {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+  padding:4px 0 8px;
+}
+
+/* 카드 */
+.rn-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px 8px 10px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  transition:border-color .15s, background .15s;
+  text-align:center; position:relative;
+}
+.rn-card:hover { border-color:var(--accent); background:var(--surface2); }
+.rn-word {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:17px; font-weight:700; color:var(--text);
+  line-height:1.2; word-break:break-all;
+}
+.rn-word.long { font-size:13px; }
+.rn-hira { font-size:11px; color:var(--accent2); font-family:'Noto Sans JP', sans-serif; line-height:1.3; }
+.rn-meaning { font-size:11px; color:var(--muted); line-height:1.3; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+.rn-level-tag { font-size:9px; font-family:var(--mono); padding:1px 5px; border-radius:3px; background:var(--surface2); color:var(--muted); margin-top:2px; }
+.rn-del { position:absolute; top:6px; right:6px; color:var(--muted); font-size:12px; padding:2px 4px; transition:color .15s; background:none; border:none; cursor:pointer; line-height:1; }
+.rn-del:hover { color:var(--danger); }
+
+/* 빈 상태 */
+.rn-empty { grid-column:1/-1; text-align:center; padding:40px 20px; color:var(--muted); }
+.rn-empty .ei { font-size:32px; margin-bottom:8px; }
+
+/* 페이지네이션 */
+.rn-pagination { display:flex; align-items:center; justify-content:center; gap:4px; flex-wrap:wrap; padding:6px 0 8px; }
+.rn-pagination.hidden { display:none; }
+.rn-pg-btn { min-width:34px; height:34px; padding:0 8px; border-radius:8px; font-size:13px; font-weight:600; font-family:var(--mono); background:var(--surface); border:1px solid var(--border); color:var(--text); transition:all .15s; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.rn-pg-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+.rn-pg-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.rn-pg-btn:disabled { opacity:.35; cursor:default; }
+.rn-pg-ellipsis { min-width:34px; height:34px; display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); }
+
+/* 하단 바 (삭제 전체 + 오답노트 페이지 링크) */
+.rn-footer { display:flex; justify-content:space-between; align-items:center; padding:8px 2px 4px; }
+.rn-del-all { font-size:12px; color:var(--danger); background:none; border:none; cursor:pointer; padding:4px 8px; border-radius:6px; transition:background .15s; }
+.rn-del-all:hover { background:rgba(255,77,109,.1); }
+.rn-link { font-size:12px; color:var(--accent); text-decoration:none; }
+.rn-link:hover { text-decoration:underline; }
+
 /* JLPT 접기/펼치기 */
 .jlpt-toggle {
   display:flex; align-items:center; justify-content:space-between;
@@ -108,13 +191,35 @@
 
   <div class="level-list">
 
-    <!-- 연계 Coming Soon -->
-    <div class="card card-hover level-btn renke coming">
-      <div class="lb-left">
-        <div class="level-badge">連</div>
-        <div class="lb-info"><h3>연계</h3><p>Coming Soon</p></div>
+    <!-- 연계 (오답노트 인라인) -->
+    <div>
+      <button class="renke-toggle" onclick="toggleRenke(this)">
+        <div class="lb-left">
+          <div class="level-badge" style="background:rgba(251,191,36,.12);color:var(--warning);">連</div>
+          <div class="lb-info">
+            <h3>연계</h3>
+            <p>오답노트 · <span id="rn-count-badge">로딩중...</span></p>
+          </div>
+        </div>
+        <span class="renke-arrow lb-arrow">›</span>
+      </button>
+
+      <div class="renke-panel" id="renke-panel">
+        <div class="rn-tabs" id="rn-tabs">
+          <button class="rn-tab active" onclick="rnSetLevel('ALL')">전체</button>
+          <button class="rn-tab" onclick="rnSetLevel('N5')">N5</button>
+          <button class="rn-tab" onclick="rnSetLevel('N4')">N4</button>
+          <button class="rn-tab" onclick="rnSetLevel('N3')">N3</button>
+          <button class="rn-tab" onclick="rnSetLevel('N2')">N2</button>
+          <button class="rn-tab" onclick="rnSetLevel('N1')">N1</button>
+        </div>
+        <div class="rn-list" id="rn-list"></div>
+        <div class="rn-pagination" id="rn-pagination"></div>
+        <div class="rn-footer">
+          <button class="rn-del-all" onclick="rnDeleteAll()">🗑 전체 삭제</button>
+          <a href="/wrongnote" class="rn-link">전체 보기 ›</a>
+        </div>
       </div>
-      <span class="lb-arrow">›</span>
     </div>
 
     <!-- JLPT 묶음 -->
@@ -208,6 +313,134 @@ function toggleJLPT(btn) {
   const arrow = btn.querySelector('.jlpt-arrow');
   const open  = sub.classList.toggle('open');
   arrow.classList.toggle('open', open);
+}
+
+/* ─── 연계(오답노트) 인라인 ─── */
+let RN_NOTES = null; // 첫 오픈 시 fetch
+let rnAllNotes = [];
+let rnCurrentPage = 1;
+let rnCurrentLevel = 'ALL';
+const RN_PAGE_SIZE = 15; // 3열 × 5행
+
+function toggleRenke(btn) {
+  const panel = document.getElementById('renke-panel');
+  const arrow = btn.querySelector('.renke-arrow');
+  const open  = panel.classList.toggle('open');
+  arrow.classList.toggle('open', open);
+  if (open && RN_NOTES === null) rnLoad();
+}
+
+async function rnLoad() {
+  try {
+    const res  = await fetch('/api/wrongnote');
+    const data = await res.json();
+    RN_NOTES = data.notes || data || [];
+    rnAllNotes = RN_NOTES.slice();
+    document.getElementById('rn-count-badge').textContent = rnAllNotes.length + '개';
+    rnRender();
+  } catch(e) {
+    document.getElementById('rn-list').innerHTML =
+      '<div class="rn-empty"><p>불러오기 실패</p></div>';
+  }
+}
+
+function rnSetLevel(level) {
+  rnCurrentLevel = level;
+  rnCurrentPage  = 1;
+  document.querySelectorAll('.rn-tab').forEach(function(btn) {
+    btn.classList.toggle('active', btn.textContent === (level === 'ALL' ? '전체' : level));
+  });
+  rnRender();
+}
+
+function rnFiltered() {
+  if (rnCurrentLevel === 'ALL') return rnAllNotes;
+  return rnAllNotes.filter(function(n) { return (n.level || '').toUpperCase() === rnCurrentLevel; });
+}
+
+function rnRender() {
+  var filtered   = rnFiltered();
+  var totalPages = Math.max(1, Math.ceil(filtered.length / RN_PAGE_SIZE));
+  if (rnCurrentPage > totalPages) rnCurrentPage = totalPages;
+  var start = (rnCurrentPage - 1) * RN_PAGE_SIZE;
+  var slice = filtered.slice(start, start + RN_PAGE_SIZE);
+
+  var listEl = document.getElementById('rn-list');
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div class="rn-empty"><div class="ei">✨</div><p>' +
+      (rnCurrentLevel === 'ALL' ? '오답노트가 비어있어요!' : rnCurrentLevel + ' 오답이 없어요!') + '</p></div>';
+  } else {
+    listEl.innerHTML = slice.map(function(n) {
+      var isLong = n.word.length > 5;
+      return '<div class="rn-card" id="rnc-' + n.id + '">' +
+        '<button class="rn-del" onclick="rnDeleteNote(' + n.id + ')">✕</button>' +
+        '<div class="rn-word' + (isLong ? ' long' : '') + '">' + rnEsc(n.word) + '</div>' +
+        '<div class="rn-hira">'    + rnEsc(n.hiragana) + '</div>' +
+        '<div class="rn-meaning">' + rnEsc(n.meaning)  + '</div>' +
+        '<div class="rn-level-tag">' + rnEsc(n.level)  + '</div>' +
+      '</div>';
+    }).join('');
+  }
+  document.getElementById('rn-count-badge').textContent =
+    (rnCurrentLevel === 'ALL' ? rnAllNotes.length : filtered.length) + '개';
+  rnRenderPagination(totalPages);
+}
+
+function rnRenderPagination(totalPages) {
+  var pg = document.getElementById('rn-pagination');
+  if (totalPages <= 1) { pg.className = 'rn-pagination hidden'; return; }
+  pg.className = 'rn-pagination';
+  var pages = rnPageNumbers(rnCurrentPage, totalPages);
+  var html = '<button class="rn-pg-btn" onclick="rnGoPage(' + (rnCurrentPage-1) + ')"' +
+    (rnCurrentPage===1 ? ' disabled' : '') + '>‹</button>';
+  pages.forEach(function(p) {
+    if (p === '…') { html += '<span class="rn-pg-ellipsis">…</span>'; }
+    else { html += '<button class="rn-pg-btn' + (p===rnCurrentPage?' active':'') +
+      '" onclick="rnGoPage('+p+')">' + p + '</button>'; }
+  });
+  html += '<button class="rn-pg-btn" onclick="rnGoPage(' + (rnCurrentPage+1) + ')"' +
+    (rnCurrentPage===totalPages ? ' disabled' : '') + '>›</button>';
+  pg.innerHTML = html;
+}
+
+function rnPageNumbers(cur, total) {
+  if (total <= 7) { var a=[]; for(var i=1;i<=total;i++) a.push(i); return a; }
+  var pages = [1];
+  if (cur > 3) pages.push('…');
+  for (var i=Math.max(2,cur-1); i<=Math.min(total-1,cur+1); i++) pages.push(i);
+  if (cur < total-2) pages.push('…');
+  pages.push(total);
+  return pages;
+}
+
+function rnGoPage(n) {
+  var total = Math.ceil(rnFiltered().length / RN_PAGE_SIZE);
+  if (n < 1 || n > total) return;
+  rnCurrentPage = n;
+  rnRender();
+}
+
+function rnEsc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function rnDeleteNote(id) {
+  const res = await fetch('/api/wrongnote/' + id, { method: 'DELETE' });
+  if (!res.ok) { if(typeof toast!=='undefined') toast('삭제 실패','err'); return; }
+  rnAllNotes = rnAllNotes.filter(function(n){ return n.id !== id; });
+  RN_NOTES   = rnAllNotes;
+  rnRender();
+  if(typeof toast!=='undefined') toast('삭제했습니다','ok');
+}
+
+async function rnDeleteAll() {
+  if (rnAllNotes.length === 0) { if(typeof toast!=='undefined') toast('삭제할 항목이 없어요','err'); return; }
+  if (!confirm('오답노트 ' + rnAllNotes.length + '개를 전부 삭제할까요?')) return;
+  const res = await fetch('/api/wrongnote/all', { method: 'DELETE' });
+  if (!res.ok) { if(typeof toast!=='undefined') toast('삭제 실패','err'); return; }
+  rnAllNotes = []; RN_NOTES = [];
+  rnRender();
+  if(typeof toast!=='undefined') toast('전체 삭제 완료','ok');
 }
 </script>
 {% endblock %}
