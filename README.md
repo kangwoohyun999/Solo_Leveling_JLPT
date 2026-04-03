@@ -1,27 +1,29 @@
-# 📘 Solo Leveling WORD
+# 📘 Solo Leveling JLPT
 
-JLPT 학습을 위한 Solo Leveling.JLPT(@sololeveling.jlpt) 기반 콘텐츠 API입니다.
+JLPT 학습을 위한 Solo Leveling JLPT 기반 콘텐츠 API입니다.
 문장, 단어, 문제 등을 제공하여 일본어 학습을 보다 재미있게 할 수 있도록 설계되었습니다.
+### Instagram
+```
+@sololeveling.jlpt
+```
 
 
-## 🛠️ URL
+## Main Server URL
 https://sololevelingjlpt.up.railway.app/
 
-
-
-## test URL
+## Test Server URL
 https://sololevelingjlpt-test.up.railway.app/
 
 ## 🚀 Overview
 
 이 프로젝트는 Solo Leveling 세계관을 활용하여 JLPT 학습 데이터를 제공합니다.
 
-* 📖 문장 기반 학습
-* 🧠 단어 & 문제 제공
-* 🎯 JLPT 레벨별 콘텐츠 지원
-* ⚡ API 기반 빠른 호출
+* 문장 기반 학습
+* 단어 & 문제 제공
+* JLPT 레벨별 콘텐츠 지원
+* 랭킹 모드로 승부욕 자극
 
-## 💰 Pricing
+## 💰 사용 가격
 
 | 기능         | 가격   |
 | ---------- | ---- |
@@ -31,12 +33,11 @@ https://sololevelingjlpt-test.up.railway.app/
 | Sentence   | Free |
 | Daily      | Free |
 
-## 🎮 Use Cases
+## 🎮 활용
 
 * 일본어 학습 앱
 * JLPT 대비 서비스
 * 게임형 학습 플랫폼
-* Solo Leveling 팬 기반 학습 콘텐츠
 
 ---
 
@@ -50,5 +51,8 @@ https://sololevelingjlpt-test.up.railway.app/
 
 ## 📬 Contact
 
-문의 또는 개선 제안은 언제든 환영합니다. (cookong1010@naver.com, )
-
+문의 또는 개선 제안은 언제든 환영합니다.
+### Email :
+```
+cookong1010@naver.com
+```
