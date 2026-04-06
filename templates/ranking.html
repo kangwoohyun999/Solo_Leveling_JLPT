@@ -18,7 +18,7 @@
 }
 .rank-row.me {
   border-color:var(--accent) !important;
-  background: #2d9e65 !important;
+  background: rgba(108,99,255,.18) !important;
 }
 .rank-row.gold   { border-color:rgba(251,191,36,.5) !important; }
 .rank-row.silver { border-color:rgba(192,192,192,.4) !important; }
@@ -52,8 +52,8 @@
 /* 하단 고정 — 본인 기록 */
 .my-record-bar {
   position:fixed; bottom:0; left:0; right:0; z-index:80;
-  background: #90EE90; backdrop-filter:blur(12px);
-  border-top:1px solid var(--accent);
+  background: var(--surface); backdrop-filter:blur(12px);
+  border-top:2px solid var(--accent);
   padding:12px 20px;
 }
 .my-record-inner {
@@ -61,7 +61,7 @@
   display:grid; grid-template-columns:52px 1fr auto;
   align-items:center; gap:12px;
 }
-.my-record-label { font-size:10px; color:var(--muted); margin-bottom:2px; }
+.my-record-label { font-size:10px; color:var(--accent2); font-weight:700; margin-bottom:4px; letter-spacing:.06em; }
 .my-no-record {
   max-width:560px; margin:0 auto; text-align:center;
   color:var(--muted); font-size:13px;

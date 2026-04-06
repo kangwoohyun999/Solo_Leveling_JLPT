@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% block title %}한자 오답노트{% endblock %}
+
+{% block extra_style %}
+.level-tabs {
+  max-width:560px; margin:0 auto; padding:12px 16px 4px;
+  display:flex; gap:6px; flex-wrap:wrap;
+}
+.level-tab {
+  padding:5px 14px; border-radius:20px; font-size:12px; font-weight:600;
+  font-family:var(--mono); cursor:pointer; transition:all .15s;
+  background:var(--surface); border:1px solid var(--border); color:var(--muted);
+}
+.level-tab:hover { border-color:var(--accent); color:var(--accent); }
+.level-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.note-list {
+  max-width:560px; margin:0 auto; padding:10px 16px 20px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+}
+.note-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px 8px 10px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  transition:border-color .15s; text-align:center; position:relative;
+}
+.note-card:hover { border-color:var(--accent); background:var(--surface2); }
+.nc-word { font-family:'Noto Sans JP',sans-serif; font-size:17px; font-weight:700; color:var(--text); line-height:1.2; word-break:break-all; }
+.nc-word.long { font-size:13px; }
+.nc-hira { font-size:11px; color:var(--accent2); font-family:'Noto Sans JP',sans-serif; }
+.nc-meaning { font-size:11px; color:var(--muted); line-height:1.3; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+.level-tag { font-size:9px; font-family:var(--mono); padding:1px 5px; border-radius:3px; background:var(--surface2); color:var(--muted); margin-top:2px; }
+.nc-del { position:absolute; top:6px; right:6px; color:var(--muted); font-size:12px; padding:2px 4px; background:none; border:none; cursor:pointer; line-height:1; }
+.nc-del:hover { color:var(--danger); }
+.empty-state { grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted); }
+.empty-state .ei { font-size:36px; margin-bottom:10px; }
+.pagination { max-width:560px; margin:0 auto; padding:4px 16px 100px; display:flex; align-items:center; justify-content:center; gap:4px; flex-wrap:wrap; }
+.pagination.hidden { display:none; }
+.pg-btn { min-width:34px; height:34px; padding:0 8px; border-radius:8px; font-size:13px; font-weight:600; font-family:var(--mono); background:var(--surface); border:1px solid var(--border); color:var(--text); transition:all .15s; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.pg-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+.pg-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.pg-btn:disabled { opacity:.35; cursor:default; }
+.pg-ellipsis { min-width:34px; height:34px; display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); }
+.del-all-btn { margin-left:auto; background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:5px 10px; font-size:12px; cursor:pointer; transition:all .15s; }
+.del-all-btn:hover { border-color:var(--danger); color:var(--danger); }
+.retry-fab {
+  position:fixed; bottom:26px; right:26px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--accent); color:#fff; font-size:18px; font-weight:700;
+  box-shadow:0 4px 20px rgba(108,99,255,.5);
+  transition:transform .2s; border:none; cursor:pointer;
+}
+.retry-fab:hover { transform:scale(1.1); }
+/* 모달 */
+.modal-bg { display:none; position:fixed; inset:0; z-index:300; background:rgba(0,0,0,.6); backdrop-filter:blur(6px); align-items:center; justify-content:center; padding:24px; }
+.modal-bg.open { display:flex; }
+.modal-box { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px 24px; width:100%; max-width:340px; }
+.modal-box h3 { font-size:17px; font-weight:700; margin-bottom:6px; }
+.modal-box p  { font-size:13px; color:var(--muted); margin-bottom:22px; }
+.count-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
+.count-opt { padding:18px; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius); text-align:center; font-size:20px; font-weight:700; font-family:var(--mono); color:var(--text); transition:all .15s; cursor:pointer; }
+.count-opt small { display:block; font-size:11px; color:var(--muted); font-weight:400; margin-top:2px; }
+.count-opt:hover { border-color:var(--accent); background:rgba(108,99,255,.08); }
+.btn-ghost-modal { width:100%; margin-top:10px; background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:12px; padding:13px; font-size:14px; font-weight:600; cursor:pointer; transition:border-color .15s; }
+.btn-ghost-modal:hover { border-color:var(--accent); }
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/kanji" class="back-btn">‹</a>
+  <span class="page-title">한자 오답노트</span>
+  <span class="page-sub" id="note-count">{{ notes|length }}개</span>
+  <button class="del-all-btn" onclick="deleteAll()">🗑 전체삭제</button>
+</div>
+<div class="level-tabs" id="level-tabs">
+  <button class="level-tab active" onclick="setLevel('ALL')">전체</button>
+  <button class="level-tab" onclick="setLevel('N5')">N5</button>
+  <button class="level-tab" onclick="setLevel('N4')">N4</button>
+  <button class="level-tab" onclick="setLevel('N3')">N3</button>
+  <button class="level-tab" onclick="setLevel('N2')">N2</button>
+  <button class="level-tab" onclick="setLevel('N1')">N1</button>
+</div>
+<div class="note-list" id="note-list"></div>
+<div class="pagination" id="pagination"></div>
+<button class="retry-fab" id="retry-fab" onclick="openRetryModal()" title="오답 재시험">✎</button>
+<div class="modal-bg" id="retry-modal" onclick="if(event.target===this)closeRetryModal()">
+  <div class="modal-box">
+    <h3>오답 재시험</h3>
+    <p id="retry-sub">한자 오답으로 시험을 봅니다</p>
+    <div class="count-grid" id="retry-grid"></div>
+    <button class="btn-ghost-modal" onclick="closeRetryModal()">취소</button>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+const ALL_NOTES = {{ notes | tojson }};
+const PAGE_SIZE = 15;
+let notes = ALL_NOTES.slice();
+let currentPage = 1;
+let currentLevel = 'ALL';
+
+function setLevel(level) {
+  currentLevel = level; currentPage = 1;
+  document.querySelectorAll('.level-tab').forEach(function(b){
+    b.classList.toggle('active', b.textContent===(level==='ALL'?'전체':level));
+  }); render();
+}
+function filteredNotes() {
+  if (currentLevel==='ALL') return notes;
+  return notes.filter(function(n){ return (n.level||'').toUpperCase()===currentLevel; });
+}
+function render() {
+  var filtered = filteredNotes();
+  var totalPages = Math.max(1, Math.ceil(filtered.length/PAGE_SIZE));
+  if (currentPage>totalPages) currentPage=totalPages;
+  var start=(currentPage-1)*PAGE_SIZE, slice=filtered.slice(start,start+PAGE_SIZE);
+  var listEl=document.getElementById('note-list');
+  if (filtered.length===0) {
+    listEl.innerHTML='<div class="empty-state"><div class="ei">✨</div><p>'+(currentLevel==='ALL'?'한자 오답이 없어요!':currentLevel+' 오답이 없어요!')+'</p></div>';
+    document.getElementById('retry-fab').style.display='none';
+  } else {
+    listEl.innerHTML=slice.map(function(n){
+      var isLong=n.word.length>5;
+      return '<div class="note-card" id="note-'+n.id+'">' +
+        '<button class="nc-del" onclick="deleteNote('+n.id+')">✕</button>' +
+        '<div class="nc-word'+(isLong?' long':'')+'">'+escHtml(n.word)+'</div>' +
+        '<div class="nc-hira">'+escHtml(n.hiragana)+'</div>' +
+        '<div class="nc-meaning">'+escHtml(n.meaning)+'</div>' +
+        '<div class="level-tag">'+escHtml(n.level)+'</div>' +
+      '</div>';
+    }).join('');
+    document.getElementById('retry-fab').style.display='';
+  }
+  document.getElementById('note-count').textContent=(currentLevel==='ALL'?notes.length:filtered.length)+'개';
+  renderPagination(totalPages);
+}
+function renderPagination(totalPages) {
+  var pg=document.getElementById('pagination');
+  if(totalPages<=1){pg.className='pagination hidden';return;} pg.className='pagination';
+  var pages=getPageNumbers(currentPage,totalPages);
+  var html='<button class="pg-btn" onclick="goPage('+(currentPage-1)+')"'+(currentPage===1?' disabled':'')+'>‹</button>';
+  pages.forEach(function(p){
+    if(p==='…') html+='<span class="pg-ellipsis">…</span>';
+    else html+='<button class="pg-btn'+(p===currentPage?' active':'')+'" onclick="goPage('+p+')">'+p+'</button>';
+  });
+  html+='<button class="pg-btn" onclick="goPage('+(currentPage+1)+')"'+(currentPage===totalPages?' disabled':'')+'>›</button>';
+  pg.innerHTML=html;
+}
+function getPageNumbers(cur,total){
+  if(total<=7){var a=[];for(var i=1;i<=total;i++)a.push(i);return a;}
+  var p=[1];if(cur>3)p.push('…');
+  for(var i=Math.max(2,cur-1);i<=Math.min(total-1,cur+1);i++)p.push(i);
+  if(cur<total-2)p.push('…');p.push(total);return p;
+}
+function goPage(n){
+  var t=Math.ceil(filteredNotes().length/PAGE_SIZE);
+  if(n<1||n>t)return;currentPage=n;render();window.scrollTo({top:0,behavior:'smooth'});
+}
+function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+async function deleteNote(id){
+  var res=await fetch('/api/kanji_wrongnote/'+id,{method:'DELETE'});
+  if(!res.ok){toast('삭제 실패','err');return;}
+  notes=notes.filter(function(n){return n.id!==id;});render();toast('삭제했습니다','ok');
+}
+async function deleteAll(){
+  var filtered=filteredNotes();
+  if(filtered.length===0){toast('삭제할 항목이 없어요','err');return;}
+  if(currentLevel==='ALL'){
+    if(!confirm('한자 오답노트 '+notes.length+'개를 전부 삭제할까요?'))return;
+    var res=await fetch('/api/kanji_wrongnote/all',{method:'DELETE'});
+    if(!res.ok){toast('삭제 실패','err');return;}
+    notes=[];render();toast('전체 삭제 완료','ok');
+  } else {
+    if(!confirm(currentLevel+' 오답 '+filtered.length+'개를 삭제할까요?'))return;
+    for(var n of filtered) await fetch('/api/kanji_wrongnote/'+n.id,{method:'DELETE'});
+    var ids=filtered.map(function(n){return n.id;});
+    notes=notes.filter(function(n){return !ids.includes(n.id);});
+    render();toast(currentLevel+' 삭제 완료','ok');
+  }
+}
+function openRetryModal(){
+  var filtered=filteredNotes();
+  if(filtered.length===0){toast('오답이 없어요','err');return;}
+  document.getElementById('retry-sub').textContent=(currentLevel==='ALL'?'전체 오답 ':currentLevel+' 오답 ')+filtered.length+'개로 시험을 봅니다';
+  var max=filtered.length, grid=document.getElementById('retry-grid'), btns='';
+  [10,20,30].forEach(function(n){if(n<=max)btns+='<button class="count-opt" onclick="startRetry('+n+')">'+n+'<small>문제</small></button>';});
+  if(max>0&&![10,20,30].includes(max)) btns+='<button class="count-opt" onclick="startRetry('+max+')">'+max+'<small>전체</small></button>';
+  else if(max<=10) btns='<button class="count-opt" onclick="startRetry('+max+')">'+max+'<small>전체</small></button>';
+  grid.innerHTML=btns;
+  document.getElementById('retry-modal').classList.add('open');
+}
+function closeRetryModal(){document.getElementById('retry-modal').classList.remove('open');}
+function startRetry(count){
+  closeRetryModal();
+  var filtered=filteredNotes();
+  var pool=filtered.slice();
+  for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+  sessionStorage.setItem('wrongnote_retry',JSON.stringify(pool.slice(0,count)));
+  location.href='/wrongnote_quiz';
+}
+render();
+</script>
+{% endblock %}

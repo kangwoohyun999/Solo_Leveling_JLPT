@@ -103,6 +103,27 @@ def init_db():
         )
     """)
     cur.execute("""
+        CREATE TABLE IF NOT EXISTS hiragana_wrong_notes (
+            id       SERIAL PRIMARY KEY,
+            username TEXT NOT NULL REFERENCES users(username) ON DELETE CASCADE,
+            char     TEXT NOT NULL,
+            reading  TEXT NOT NULL,
+            roman    TEXT NOT NULL,
+            UNIQUE (username, char)
+        )
+    """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS kanji_wrong_notes (
+            id       SERIAL PRIMARY KEY,
+            username TEXT NOT NULL REFERENCES users(username) ON DELETE CASCADE,
+            word     TEXT NOT NULL,
+            hiragana TEXT NOT NULL,
+            meaning  TEXT NOT NULL,
+            level    TEXT NOT NULL DEFAULT 'N5',
+            UNIQUE (username, word)
+        )
+    """)
+    cur.execute("""
         CREATE TABLE IF NOT EXISTS rankings (
             id         SERIAL PRIMARY KEY,
             username   TEXT NOT NULL REFERENCES users(username) ON DELETE CASCADE,
@@ -289,6 +310,67 @@ def kanji():
     return render_template('kanji.html',
                            words_json=_json.dumps(KANJI_WORDS, ensure_ascii=False),
                            total=len(KANJI_WORDS))
+
+@app.route('/kanji_quiz')
+def kanji_quiz():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    import json as _json
+    return render_template('kanji_quiz.html',
+                           words_json=_json.dumps(KANJI_WORDS, ensure_ascii=False),
+                           total=len(KANJI_WORDS))
+
+@app.route('/hiragana_wrongnote')
+def hiragana_wrongnote():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('SELECT * FROM hiragana_wrong_notes WHERE username=%s ORDER BY id DESC', (session['username'],))
+        notes = [dict(r) for r in cur.fetchall()]
+        cur.close(); conn.close()
+    except Exception as e:
+        print(f'[hiragana_wrongnote 오류] {e}')
+        notes = []
+    return render_template('hiragana_wrongnote.html', user=user, notes=notes)
+
+@app.route('/kanji_wrongnote')
+def kanji_wrongnote():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('SELECT * FROM kanji_wrong_notes WHERE username=%s ORDER BY level, id DESC', (session['username'],))
+        notes = [dict(r) for r in cur.fetchall()]
+        cur.close(); conn.close()
+    except Exception as e:
+        print(f'[kanji_wrongnote 오류] {e}')
+        notes = []
+    return render_template('kanji_wrongnote.html', user=user, notes=notes)
+
+@app.route('/wrongnote_quiz')
+def wrongnote_quiz():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    return render_template('wrongnote_quiz.html', user=user)
+
+@app.route('/hiragana_wrongnote_quiz')
+def hiragana_wrongnote_quiz():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    return render_template('hiragana_wrongnote_quiz.html', user=user)
 
 @app.route('/ranking_menu')
 def ranking_menu():
@@ -498,6 +580,119 @@ def api_delete_wrongnote(note_id):
         return jsonify({'ok': True})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+# ── 히라가나 오답노트 API ──
+@app.route('/api/hiragana_wrongnote', methods=['POST'])
+def api_add_hiragana_wrongnote():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        body = request.get_json()
+        conn = get_db(); cur = conn.cursor()
+        cur.execute("""
+            INSERT INTO hiragana_wrong_notes (username, char, reading, roman)
+            VALUES (%s, %s, %s, %s)
+            ON CONFLICT (username, char) DO NOTHING
+        """, (session['username'], body.get('char'), body.get('reading'), body.get('roman')))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/hiragana_wrongnote/all', methods=['DELETE'])
+def api_delete_all_hiragana_wrongnote():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('DELETE FROM hiragana_wrong_notes WHERE username=%s', (session['username'],))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/hiragana_wrongnote/<int:note_id>', methods=['DELETE'])
+def api_delete_hiragana_wrongnote(note_id):
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('DELETE FROM hiragana_wrong_notes WHERE id=%s AND username=%s',
+                    (note_id, session['username']))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# ── 한자 오답노트 API ──
+@app.route('/api/kanji_wrongnote', methods=['POST'])
+def api_add_kanji_wrongnote():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        body = request.get_json()
+        conn = get_db(); cur = conn.cursor()
+        cur.execute("""
+            INSERT INTO kanji_wrong_notes (username, word, hiragana, meaning, level)
+            VALUES (%s, %s, %s, %s, %s)
+            ON CONFLICT (username, word) DO NOTHING
+        """, (session['username'], body.get('word'), body.get('hiragana'),
+               body.get('meaning'), body.get('level', 'N5')))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/kanji_wrongnote/all', methods=['DELETE'])
+def api_delete_all_kanji_wrongnote():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('DELETE FROM kanji_wrong_notes WHERE username=%s', (session['username'],))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/kanji_wrongnote/<int:note_id>', methods=['DELETE'])
+def api_delete_kanji_wrongnote(note_id):
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('DELETE FROM kanji_wrong_notes WHERE id=%s AND username=%s',
+                    (note_id, session['username']))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# ── 한자 퀴즈 API ──
+@app.route('/api/kanji_quiz')
+def api_kanji_quiz():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        count = int(request.args.get('count', 10))
+    except ValueError:
+        count = 10
+    pool = KANJI_WORDS
+    if not pool:
+        return jsonify({'questions': [], 'error': '한자 단어 데이터가 없습니다.'}), 404
+    count = min(count, len(pool))
+    selected = random.sample(pool, count)
+    all_meanings = [w['meaning'] for w in pool]
+    questions = []
+    for w in selected:
+        other = [m for m in all_meanings if m != w['meaning']]
+        wrong = random.sample(other, min(2, len(other)))
+        choices = wrong + [w['meaning']]
+        random.shuffle(choices)
+        questions.append({'word': w['word'], 'hiragana': w['hiragana'],
+                          'answer': w['meaning'], 'choices': choices,
+                          'level': w.get('level', 'N5')})
+    return jsonify({'questions': questions, 'total': len(pool)})
 
 @app.route('/api/account', methods=['POST'])
 def api_update_account():

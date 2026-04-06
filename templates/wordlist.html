@@ -165,7 +165,7 @@ mark {
 }
 
 .ranking-mode-btn {
-  width:100%; margin-top:4px;
+  width:100%; margin-top:10px;
   background:linear-gradient(135deg, rgba(251,191,36,.15), rgba(251,191,36,.05));
   border-color:rgba(251,191,36,.4) !important;
   color:var(--warning) !important;
@@ -177,6 +177,7 @@ mark {
   color:var(--warning) !important;
 }
 .ranking-mode-btn small { color:rgba(251,191,36,.7) !important; }
+.modal-cancel-btn { margin-top:10px; width:100%; }
 {% endblock %}
 
 {% block body %}
@@ -217,7 +218,7 @@ mark {
     <button class="count-opt ranking-mode-btn" onclick="startRankingQuiz()">
       🏆 랭킹 모드<small>30문제 · 점수+시간 경쟁</small>
     </button>
-    <button class="btn-ghost" onclick="closeQuizModal()">취소</button>
+    <button class="btn-ghost modal-cancel-btn" onclick="closeQuizModal()">취소</button>
   </div>
 </div>
 {% endblock %}

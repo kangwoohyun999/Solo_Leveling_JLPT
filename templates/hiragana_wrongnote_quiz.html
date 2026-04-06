@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}히라가나 오답 재시험{% endblock %}
+
+{% block extra_style %}
+.progress-bar  { height:3px; background:var(--border); }
+.progress-fill { height:100%; background:var(--success); transition:width .3s ease; }
+.quiz-header {
+  position:sticky; top:0; z-index:10;
+  background:rgba(10,10,15,.97); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:12px 20px; display:flex; align-items:center; gap:12px;
+}
+.quiz-header .page-title { font-size:15px; font-weight:700; font-family:var(--mono); }
+.quit-btn { margin-left:auto; background:none; border:1px solid var(--border); color:var(--muted); border-radius:8px; padding:6px 12px; font-size:12px; cursor:pointer; transition:border-color .15s; }
+.quit-btn:hover { border-color:var(--danger); color:var(--danger); }
+.quiz-body { max-width:500px; margin:0 auto; padding:28px 20px 60px; }
+.q-count   { font-size:12px; color:var(--muted); margin-bottom:18px; text-align:center; }
+.q-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:36px 20px; text-align:center; margin-bottom:24px; }
+.q-label { font-size:12px; color:var(--muted); margin-bottom:12px; }
+.q-char  { font-size:72px; font-family:'Noto Sans JP',sans-serif; font-weight:400; color:var(--text); line-height:1.1; }
+.q-char.small { font-size:48px; }
+.choices { display:flex; flex-direction:column; gap:10px; }
+.choice { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; font-size:15px; font-weight:600; cursor:pointer; transition:border-color .15s, background .15s; color:var(--text); text-align:center; }
+.choice:hover:not(:disabled) { border-color:var(--accent2); background:var(--surface2); }
+.choice.correct { border-color:var(--success)!important; background:rgba(34,211,160,.1)!important; color:var(--success)!important; }
+.choice.wrong   { border-color:var(--danger)!important;  background:rgba(255,77,109,.1)!important;  color:var(--danger)!important; }
+.choice:disabled { cursor:default; }
+.result-wrap { display:none; max-width:500px; margin:0 auto; padding:40px 20px 60px; text-align:center; }
+.result-wrap.show { display:block; }
+.result-trophy { font-size:56px; margin-bottom:16px; }
+.result-score  { font-size:36px; font-weight:700; margin-bottom:6px; }
+.result-label  { font-size:13px; color:var(--muted); margin-bottom:32px; }
+.result-btns   { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+.btn-ghost { background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:12px; padding:14px; font-size:14px; font-weight:600; cursor:pointer; transition:border-color .15s; text-decoration:none; display:block; text-align:center; }
+.btn-ghost:hover { border-color:var(--accent); }
+.wrong-list { text-align:left; }
+.wl-header  { font-size:12px; color:var(--muted); margin-bottom:10px; }
+.wl-row { display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:6px; }
+.wl-char    { font-size:22px; font-family:'Noto Sans JP'; width:36px; flex-shrink:0; }
+.wl-reading { font-size:13px; color:var(--success); font-weight:600; flex:1; }
+.wl-wrong   { font-size:12px; color:var(--danger); }
+{% endblock %}
+
+{% block body %}
+<div id="select-header" class="page-header">
+  <a href="/hiragana_wrongnote" class="back-btn">‹</a>
+  <span class="page-title">히라가나 오답 재시험</span>
+</div>
+<div class="quiz-header" id="quiz-header" style="display:none">
+  <span class="page-title" id="header-title">히라가나 오답 재시험</span>
+  <button class="quit-btn" onclick="confirmQuit()">종료</button>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+
+<div class="quiz-body" id="quiz-area" style="display:none">
+  <div class="q-count" id="q-count"></div>
+  <div class="q-card">
+    <div class="q-label">다음 히라가나의 발음은?</div>
+    <div class="q-char" id="q-char"></div>
+  </div>
+  <div class="choices" id="choices"></div>
+</div>
+
+<div class="result-wrap" id="result-wrap">
+  <div class="result-trophy" id="result-trophy"></div>
+  <div class="result-score"  id="result-score"></div>
+  <div class="result-label">오답 재시험 결과</div>
+  <div class="result-btns">
+    <a href="/hiragana_wrongnote" class="btn-ghost">📒 오답노트로</a>
+    <a href="/hiragana_quiz" class="btn-ghost">히라가나 퀴즈로</a>
+    <a href="/main" class="btn-ghost">메인으로</a>
+  </div>
+  <div class="wrong-list" id="wrong-list"></div>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+var retryData = [];
+try { retryData = JSON.parse(sessionStorage.getItem('hiragana_retry') || '[]'); } catch(e){}
+if (retryData.length === 0) { location.href = '/hiragana_wrongnote'; }
+
+// 전체 히라가나 데이터에서 선택지 구성을 위해 오답 목록 활용
+// 최소 4개 선택지 보장
+var questions = [];
+var idx = 0, wrongList = [];
+
+function shuffle(arr) {
+  var a=[...arr];
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+
+function buildQuestions() {
+  questions = retryData.map(function(q) {
+    var others = retryData.filter(function(x){ return x.char !== q.char; });
+    var wrongs = shuffle(others).slice(0,3).map(function(x){ return x; });
+    var choices = shuffle(wrongs.concat([q]));
+    return { char: q.char, reading: q.reading, roman: q.roman, choices: choices };
+  });
+  questions = shuffle(questions);
+  idx = 0; wrongList = [];
+  document.getElementById('select-header').style.display = 'none';
+  document.getElementById('quiz-header').style.display   = '';
+  document.getElementById('quiz-area').style.display     = '';
+  renderQ();
+}
+
+function renderQ() {
+  var q = questions[idx];
+  var pct = Math.round(idx / questions.length * 100);
+  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('q-count').textContent = (idx+1) + ' / ' + questions.length;
+  document.getElementById('header-title').textContent = '히라가나 오답 · ' + (idx+1) + '/' + questions.length;
+  var charEl = document.getElementById('q-char');
+  charEl.textContent = q.char;
+  charEl.className = 'q-char' + (q.char.length > 1 ? ' small' : '');
+  var box = document.getElementById('choices');
+  box.innerHTML = '';
+  q.choices.forEach(function(c) {
+    var btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = c.reading + '  (' + c.roman + ')';
+    btn.onclick = function(){ selectAnswer(btn, c.char === q.char, q, c); };
+    box.appendChild(btn);
+  });
+}
+
+function selectAnswer(btn, isCorrect, q, chosen) {
+  document.querySelectorAll('.choice').forEach(function(b){ b.disabled = true; });
+  if (isCorrect) {
+    btn.classList.add('correct');
+    setTimeout(nextQ, 500);
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.choice').forEach(function(b){
+      if (b.textContent.trim().startsWith(q.reading)) b.classList.add('correct');
+    });
+    wrongList.push({ char:q.char, reading:q.reading, roman:q.roman, chosen:chosen.reading });
+    setTimeout(nextQ, 900);
+  }
+}
+
+function nextQ() {
+  idx++;
+  if (idx >= questions.length) { showResult(); return; }
+  renderQ();
+}
+
+function showResult() {
+  document.getElementById('prog').style.width = '100%';
+  var total = questions.length, correct = total - wrongList.length;
+  var pct = Math.round(correct / total * 100);
+  var trophy = pct===100?'🏆':pct>=80?'🌟':pct>=60?'👍':'📚';
+  document.getElementById('result-trophy').textContent = trophy;
+  document.getElementById('result-score').textContent  = correct + ' / ' + total;
+  var wl = document.getElementById('wrong-list');
+  wl.innerHTML = wrongList.length
+    ? '<p class="wl-header">틀린 글자 '+wrongList.length+'개</p>' +
+      wrongList.map(function(w){
+        return '<div class="wl-row"><div class="wl-char">'+w.char+'</div><div class="wl-reading">'+w.reading+' ('+w.roman+')</div><div class="wl-wrong">선택: '+w.chosen+'</div></div>';
+      }).join('')
+    : '<p class="wl-header" style="color:var(--success)">🎉 전부 맞혔습니다!</p>';
+  document.getElementById('quiz-header').style.display  = 'none';
+  document.getElementById('quiz-area').style.display    = 'none';
+  document.getElementById('result-wrap').classList.add('show');
+  document.getElementById('select-header').style.display = '';
+}
+
+function confirmQuit() {
+  if (confirm('퀴즈를 종료할까요?')) location.href = '/hiragana_wrongnote';
+}
+
+buildQuestions();
+</script>
+{% endblock %}
