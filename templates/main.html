@@ -79,7 +79,7 @@
 
 /* 랭킹 도전 레벨 서브 */
 .rank-level-sub {
-  display:none; flex-direction:column; gap:6px;
+  display:flex; flex-direction:column; gap:6px;
   padding:6px 0 0 16px;
 }
 .rank-level-sub.open { display:flex; }
@@ -192,7 +192,7 @@
         <div>
           <button class="rank-level-btn card card-hover" onclick="toggleRankLevel(this)">
             <div class="lb-left">
-              <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:16px;">⚔️</div>
+              <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:16px;">🏆</div>
               <div class="lb-info"><h3>랭킹 도전</h3><p>레벨 선택 후 시작</p></div>
             </div>
             <span class="toggle-arrow lb-arrow">›</span>
