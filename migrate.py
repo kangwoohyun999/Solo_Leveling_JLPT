@@ -34,8 +34,8 @@ def migrate_table(old_conn, new_conn, table_name, columns, conflict_clause=""):
 
 # ====================== 실행 ======================
 if __name__ == "__main__":
-    OLD_URL = os.environ.get("OLD_DATABASE_URL")      # Railway URL
-    NEW_URL = os.environ.get("NEW_DATABASE_URL")      # Supabase URL
+    OLD_URL = os.environ.get("postgresql://postgres:GbrRpFECRjTAjAPDEqhQqRZxVLiThRig@postgres.railway.internal:5432/railway")      # Railway URL
+    NEW_URL = os.environ.get("postgresql://postgres.vmteuoubyznoipqkvcxa:sololevelingjlpt@aws-1-ap-northeast-2.pooler.supabase.com:6543/postgres")      # Supabase URL
     
     if not OLD_URL or not NEW_URL:
         print("❌ OLD_DATABASE_URL와 NEW_DATABASE_URL 환경변수를 설정해주세요!")
