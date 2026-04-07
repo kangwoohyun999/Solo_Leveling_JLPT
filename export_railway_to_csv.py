@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     # 테이블별 컬럼 (id는 제외 → Supabase가 새로 생성)
     export_config = {
-        "users": ["username", "password", "nickname"],
+        "users": ["id", "username", "password", "nickname"],
         "wrong_notes": ["username", "word", "hiragana", "meaning", "level"],
         "rankings": ["username", "level", "correct", "elapsed", "created_at"]
     }
