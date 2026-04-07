@@ -8,11 +8,14 @@ JLPT 학습을 위한 Solo Leveling JLPT 기반 콘텐츠 API입니다.
 ```
 
 
-## Main Server URL
+## Railway version URL
 https://sololevelingjlpt.up.railway.app/
 
-## Test Server URL
+## Railway Test Server URL
 https://sololevelingjlpt-test.up.railway.app/
+
+## Vercel version URL
+https://sololevelingjlpt.vercel.app/
 
 ## Render version URL
 https://solo-leveling-jlpt.onrender.com
