@@ -294,6 +294,14 @@ function confirmQuit() {
   if (confirm('퀴즈를 종료할까요?')) location.href = '/kanji';
 }
 
-window.addEventListener('load', openModal);
+window.addEventListener('load', function() {
+  var params = new URLSearchParams(window.location.search);
+  var cnt = parseInt(params.get('count'));
+  if (cnt && cnt > 0) {
+    startQuiz(cnt);
+  } else {
+    openModal();
+  }
+});
 </script>
 {% endblock %}

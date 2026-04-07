@@ -27,6 +27,17 @@
   transition:all .2s;
 }
 .auth-tab.active { background:var(--accent); color:#fff; }
+
+/* 비밀번호 토글 */
+.pw-wrap { position:relative; }
+.pw-wrap input { padding-right:44px; width:100%; box-sizing:border-box; }
+.pw-eye {
+  position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  background:none; border:none; cursor:pointer; color:var(--muted);
+  font-size:17px; padding:4px; line-height:1;
+  transition:color .15s;
+}
+.pw-eye:hover { color:var(--text); }
 {% endblock %}
 
 {% block body %}
@@ -50,7 +61,10 @@
       </div>
       <div class="field-group">
         <label>비밀번호</label>
-        <input type="password" name="password" placeholder="비밀번호 입력" autocomplete="current-password" required>
+        <div class="pw-wrap">
+          <input type="password" id="login-pw" name="password" placeholder="비밀번호 입력" autocomplete="current-password" required>
+          <button type="button" class="pw-eye" onclick="togglePw('login-pw', this)" title="비밀번호 표시">👁</button>
+        </div>
       </div>
       <button type="submit" class="btn-primary">로그인</button>
     </form>
@@ -59,4 +73,17 @@
     {% endif %}
   </div>
 </div>
+
+<script>
+function togglePw(id, btn) {
+  const inp = document.getElementById(id);
+  if (inp.type === 'password') {
+    inp.type = 'text';
+    btn.textContent = '🙈';
+  } else {
+    inp.type = 'password';
+    btn.textContent = '👁';
+  }
+}
+</script>
 {% endblock %}

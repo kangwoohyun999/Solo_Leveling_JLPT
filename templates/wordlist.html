@@ -367,5 +367,15 @@ function startRankingQuiz() {
 }
 
 render();
+
+// 메인에서 랭킹 도전 클릭 시 바로 랭킹 모달 열기
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('ranking') === '1') {
+    setTimeout(function() {
+      openQuizModal();
+    }, 200);
+  }
+})();
 </script>
 {% endblock %}
