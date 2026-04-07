@@ -1,5 +1,4 @@
 # migrate.py
-import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
@@ -7,7 +6,6 @@ def migrate_table(old_conn, new_conn, table_name, columns, conflict_clause=""):
     old_cur = old_conn.cursor(cursor_factory=RealDictCursor)
     new_cur = new_conn.cursor()
 
-    # id 컬럼 제외하고 데이터만 가져옴 (SERIAL은 Supabase에서 새로 생성)
     select_cols = ", ".join([c for c in columns if c != "id"])
     old_cur.execute(f"SELECT {select_cols} FROM {table_name}")
     rows = old_cur.fetchall()
@@ -34,19 +32,23 @@ def migrate_table(old_conn, new_conn, table_name, columns, conflict_clause=""):
 
 # ====================== 실행 ======================
 if __name__ == "__main__":
-    OLD_URL = os.environ.get("postgresql://postgres:GbrRpFECRjTAjAPDEqhQqRZxVLiThRig@postgres.railway.internal:5432/railway")      # Railway URL
-    NEW_URL = os.environ.get("postgresql://postgres.vmteuoubyznoipqkvcxa:sololevelingjlpt@aws-1-ap-northeast-2.pooler.supabase.com:6543/postgres")      # Supabase URL
+    print("🚀 Railway → Supabase 데이터 마이그레이션")
+    print("=" * 50)
+    
+    OLD_URL = input("1️⃣ Railway OLD_DATABASE_URL을 붙여넣기 하세요: ").strip()
+    NEW_URL = input("2️⃣ Supabase NEW_DATABASE_URL을 붙여넣기 하세요: ").strip()
     
     if not OLD_URL or not NEW_URL:
-        print("❌ OLD_DATABASE_URL와 NEW_DATABASE_URL 환경변수를 설정해주세요!")
+        print("❌ URL을 입력해야 합니다!")
         exit(1)
 
+    print("\n🔗 연결 중...")
     old_conn = psycopg2.connect(OLD_URL)
     new_conn = psycopg2.connect(NEW_URL)
 
-    print("🚀 Railway → Supabase 데이터 마이그레이션 시작...")
+    print("🚀 마이그레이션 시작...")
 
-    # 1. users (가장 먼저!)
+    # 1. users
     migrate_table(
         old_conn, new_conn, "users",
         ["id", "username", "password", "nickname"],
@@ -72,4 +74,5 @@ if __name__ == "__main__":
 
     old_conn.close()
     new_conn.close()
-    print("🎉 모든 데이터 마이그레이션 완료!")
+    print("\n🎉 모든 데이터 마이그레이션 완료!")
+    print("✅ 이제 Vercel에서 DATABASE_URL을 Supabase 것으로 바꾸고 Redeploy 하세요!")
