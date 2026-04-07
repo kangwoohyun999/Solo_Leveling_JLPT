@@ -85,7 +85,7 @@
 .rank-level-sub.open { display:flex; }
 .rank-level-btn {
   display:flex; align-items:center; justify-content:space-between;
-  padding:13px 16px; text-align:left; border-radius:8px; width:100%; cursor:pointer;
+  padding:13px 16px; border-radius:8px; width:100%; cursor:pointer;
   background:var(--surface); border:1px solid var(--border);
   color:var(--text); transition:border-color .15s, background .15s;
 }
@@ -192,7 +192,7 @@
         <div>
           <button class="rank-level-btn card card-hover" onclick="toggleRankLevel(this)">
             <div class="lb-left">
-              <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:16px;">🏆</div>
+              <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:16px;">⚔️</div>
               <div class="lb-info"><h3>랭킹 도전</h3><p>레벨 선택 후 시작</p></div>
             </div>
             <span class="toggle-arrow lb-arrow">›</span>
@@ -374,11 +374,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chk) chk.checked = (localStorage.getItem('theme') === 'dark');
 });
 
+// 최상위 토글 ID 목록
+const TOP_TOGGLES = ['ranking-sub', 'wrongnote-sub', 'jlpt-sub'];
+
 function toggleSection(subId, btn) {
-  const sub   = document.getElementById(subId);
-  const arrow = btn.querySelector('.toggle-arrow');
-  const open  = sub.classList.toggle('open');
-  if (arrow) arrow.classList.toggle('open', open);
+  const isOpen = document.getElementById(subId).classList.contains('open');
+
+  // 모든 최상위 토글 닫기 (자식 rank-level-sub 포함)
+  TOP_TOGGLES.forEach(function(id) {
+    const sub = document.getElementById(id);
+    sub.classList.remove('open');
+    const parentBtn = sub.previousElementSibling;
+    if (parentBtn) {
+      const arrow = parentBtn.querySelector('.toggle-arrow');
+      if (arrow) arrow.classList.remove('open');
+    }
+  });
+  // rank-level-sub도 닫기
+  const rankLvl = document.getElementById('rank-level-sub');
+  if (rankLvl) {
+    rankLvl.classList.remove('open');
+    const rlBtn = rankLvl.previousElementSibling;
+    if (rlBtn) { const a = rlBtn.querySelector('.toggle-arrow'); if (a) a.classList.remove('open'); }
+  }
+
+  // 이미 열려있던 거면 닫기만, 아니면 해당 토글 열기
+  if (!isOpen) {
+    const sub   = document.getElementById(subId);
+    const arrow = btn.querySelector('.toggle-arrow');
+    sub.classList.add('open');
+    if (arrow) arrow.classList.add('open');
+  }
 }
 
 function toggleRankLevel(btn) {
