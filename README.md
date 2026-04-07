@@ -14,6 +14,13 @@ https://sololevelingjlpt.up.railway.app/
 ## Test Server URL
 https://sololevelingjlpt-test.up.railway.app/
 
+## Render version URL
+https://solo-leveling-jlpt.onrender.com
+
+## 백엔드 사이트
+http://cron-job.org/
+https://supabase.com/
+
 ## 🚀 Overview
 
 이 프로젝트는 Solo Leveling 세계관을 활용하여 JLPT 학습 데이터를 제공합니다.
