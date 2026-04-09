@@ -17,7 +17,7 @@ https://sololevelingjlpt-test.up.railway.app/
 ## Vercel version URL
 https://sololevelingjlpt.vercel.app/
 
-## Render version URL
+## Render version URL (15분동안 아무도 접속하지 않으면 첫 접속자는 로딩시간 필요)
 https://solo-leveling-jlpt.onrender.com
 
 ## 백엔드 사이트
