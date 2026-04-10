@@ -1,6 +1,6 @@
 # 📘 Solo Leveling JLPT
 
-JLPT 학습을 위한 Solo Leveling JLPT 기반 콘텐츠 API입니다.
+JLPT 학습을 위한 Solo Leveling JLPT 기반 콘텐츠입니다.
 문장, 단어, 문제 등을 제공하여 일본어 학습을 보다 재미있게 할 수 있도록 설계되었습니다.
 ### Instagram
 ```
@@ -8,11 +8,22 @@ JLPT 학습을 위한 Solo Leveling JLPT 기반 콘텐츠 API입니다.
 ```
 
 
-## Main Server URL
+## Railway version URL
 https://sololevelingjlpt.up.railway.app/
 
-## Test Server URL
+## Railway Test Server URL
 https://sololevelingjlpt-test.up.railway.app/
+
+## Vercel version URL
+https://sololevelingjlpt.vercel.app/
+
+## Render version URL (15분동안 아무도 접속하지 않으면 첫 접속자는 로딩시간 필요)
+https://solo-leveling-jlpt.onrender.com
+
+## 백엔드 사이트
+http://cron-job.org/
+
+https://supabase.com/
 
 ## 🚀 Overview
 
