@@ -7,7 +7,7 @@
   },
   {
     "word": "赤い",
-    "hiragana": "あか",
+    "hiragana": "あかい",
     "meaning": "빨갛다, 붉다",
     "level": "N5"
   },
@@ -37,7 +37,7 @@
   },
   {
     "word": "入り口",
-    "hiragana": "いぐち",
+    "hiragana": "いりぐち",
     "meaning": "입구",
     "level": "N5"
   },
@@ -67,7 +67,7 @@
   },
   {
     "word": "お金",
-    "hiragana": "かね",
+    "hiragana": "おかね",
     "meaning": "돈",
     "level": "N5"
   },
@@ -139,7 +139,7 @@
   },
   {
     "word": "金よう日",
-    "hiragana": "きんび",
+    "hiragana": "きんようび",
     "meaning": "금요일",
     "level": "N5"
   },
@@ -199,7 +199,7 @@
   },
   {
     "word": "白い",
-    "hiragana": "しろ",
+    "hiragana": "しろい",
     "meaning": "희다, 하얗다",
     "level": "N5"
   },
@@ -223,7 +223,7 @@
   },
   {
     "word": "空",
-    "hiragana": "から",
+    "hiragana": "そら",
     "meaning": "하늘",
     "level": "N5"
   },
@@ -235,7 +235,7 @@
   },
   {
     "word": "高い",
-    "hiragana": "たか",
+    "hiragana": "たかい",
     "meaning": "비싸다, 높다, (키가) 크다",
     "level": "N5"
   },
@@ -253,7 +253,7 @@
   },
   {
     "word": "小さい",
-    "hiragana": "ちい",
+    "hiragana": "ちいさい",
     "meaning": "(크기가) 작다",
     "level": "N5"
   },
@@ -307,25 +307,25 @@
   },
   {
     "word": "友だち",
-    "hiragana": "とも",
+    "hiragana": "ともだち",
     "meaning": "친구",
     "level": "N5"
   },
   {
     "word": "土よう日",
-    "hiragana": "どび",
+    "hiragana": "どようび",
     "meaning": "토요일",
     "level": "N5"
   },
   {
     "word": "中",
-    "hiragana": "ちゅうし",
+    "hiragana": "なか",
     "meaning": "안, 속",
     "level": "N5"
   },
   {
     "word": "長い",
-    "hiragana": "なが",
+    "hiragana": "ながい",
     "meaning": "길다",
     "level": "N5"
   },
@@ -349,7 +349,7 @@
   },
   {
     "word": "入る",
-    "hiragana": "はい",
+    "hiragana": "はいる",
     "meaning": "들어가(오)다",
     "level": "N5"
   },
@@ -385,7 +385,7 @@
   },
   {
     "word": "古い",
-    "hiragana": "ふる",
+    "hiragana": "ふるい",
     "meaning": "오래되다, 낡다",
     "level": "N5"
   },
@@ -451,19 +451,19 @@
   },
   {
     "word": "木よう日",
-    "hiragana": "もくび",
+    "hiragana": "もくようび",
     "meaning": "목요일",
     "level": "N5"
   },
   {
     "word": "安い",
-    "hiragana": "やす",
+    "hiragana": "やすい",
     "meaning": "(값이) 싸다",
     "level": "N5"
   },
   {
     "word": "休む",
-    "hiragana": "やす",
+    "hiragana": "やすむ",
     "meaning": "쉬다",
     "level": "N5"
   },
@@ -493,19 +493,19 @@
   },
   {
     "word": "足",
-    "hiragana": "ほっそく",
+    "hiragana": "あし",
     "meaning": "발, 다리",
     "level": "N5"
   },
   {
     "word": "新しい",
-    "hiragana": "あたら",
+    "hiragana": "あたらしい",
     "meaning": "새롭다",
     "level": "N5"
   },
   {
     "word": "行く",
-    "hiragana": "ゆく",
+    "hiragana": "いく",
     "meaning": "가다",
     "level": "N5"
   },
