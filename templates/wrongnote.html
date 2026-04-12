@@ -233,7 +233,7 @@ function render() {
   document.getElementById('retry-fab').style.display = filtered.length > 0 ? '' : 'none';
 }
 
-function renderPagination(totalPages) {
+function renderPagination(totalPages, filteredLen) {
   var pg = document.getElementById('pagination');
   if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
   pg.className = 'pagination';
