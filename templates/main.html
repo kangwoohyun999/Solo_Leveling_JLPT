@@ -154,7 +154,7 @@
   <div class="greeting">
     <div class="greeting-text">
       <h2>{{ user.nickname }}님, 안녕하세요!</h2>
-      <p>오늘도 단어 정복을 시작해볼까요?</p>
+      <p>오늘도 JLPT 단어 정복할 준비 되셨나요?</p>
     </div>
     <button class="guide-btn" onclick="openGuide()">❓ 사용 안내</button>
   </div>
@@ -324,6 +324,9 @@
 <div class="modal-bg" id="guide-modal" onclick="if(event.target===this)closeGuide()">
   <div class="modal-box">
     <h3>📖 사용 안내</h3>
+    <div class="guide-section">
+      <h4>메인의 버튼 중 〉 표시가 되어있으면 토글로 열립니다!</h4>
+    </div>
     <div class="guide-section">
       <h4>🏆 랭킹 모드</h4>
       <p>레벨별 단어 퀴즈를 30문제 풀고 점수와 시간으로 순위를 경쟁합니다. 전체 랭킹에서 다른 사용자와 비교해보세요!</p>
