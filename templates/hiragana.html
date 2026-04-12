@@ -44,17 +44,57 @@
   font-size:10px; color:var(--muted); font-family:var(--mono);
 }
 
-/* 퀴즈 버튼 */
-.quiz-fab {
-  position:fixed; bottom:24px; right:20px; left:20px;
-  max-width:520px; margin:0 auto;
-  background:var(--accent); color:#fff; border:none;
-  border-radius:14px; padding:16px; font-size:15px; font-weight:700;
-  cursor:pointer; transition:opacity .15s;
-  display:flex; align-items:center; justify-content:center; gap:8px;
-  text-decoration:none;
+/* Q FAB 버튼 */
+.q-fab {
+  position:fixed; bottom:26px; right:26px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--accent); color:#fff;
+  font-size:17px; font-weight:700; font-family:var(--mono);
+  box-shadow:0 4px 20px rgba(108,99,255,.5);
+  transition:transform .2s, box-shadow .2s; border:none; cursor:pointer;
 }
-.quiz-fab:hover { opacity:.88; }
+.q-fab:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(108,99,255,.7); }
+
+/* 모달 */
+.modal-bg {
+  display:none; position:fixed; inset:0; z-index:300;
+  background:rgba(0,0,0,.6); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:24px;
+}
+.modal-bg.open { display:flex; }
+.modal-box {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; padding:28px 24px; width:100%; max-width:340px;
+}
+.modal-box h3 { font-size:17px; font-weight:700; margin-bottom:6px; }
+.modal-box p  { font-size:13px; color:var(--muted); margin-bottom:22px; }
+.count-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
+.count-opt {
+  padding:18px; background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius); text-align:center;
+  font-size:20px; font-weight:700; font-family:var(--mono); color:var(--text);
+  transition:all .15s; cursor:pointer;
+}
+.count-opt small { display:block; font-size:11px; color:var(--muted); font-weight:400; margin-top:2px; }
+.count-opt:hover { border-color:var(--accent); background:rgba(108,99,255,.08); }
+.custom-row {
+  display:flex; gap:8px; margin-bottom:12px;
+}
+.custom-row input {
+  flex:1; background:var(--surface2); border:1px solid var(--border);
+  border-radius:8px; padding:10px 12px; color:var(--text); font-size:14px;
+}
+.custom-row input:focus { outline:none; border-color:var(--accent); }
+.custom-row button {
+  background:var(--accent); color:#fff; border:none; border-radius:8px;
+  padding:10px 14px; font-size:14px; font-weight:600; cursor:pointer;
+}
+.btn-ghost-modal {
+  width:100%; margin-top:4px; background:var(--surface); border:1px solid var(--border);
+  color:var(--text); border-radius:12px; padding:13px; font-size:14px;
+  font-weight:600; cursor:pointer; transition:border-color .15s;
+}
+.btn-ghost-modal:hover { border-color:var(--accent); }
 {% endblock %}
 
 {% block body %}
@@ -81,7 +121,33 @@
   {% endfor %}
 </div>
 
-<a href="/hiragana_quiz" class="quiz-fab">
-  ✏️ 히라가나 퀴즈 시작
-</a>
+<!-- Q FAB 버튼 -->
+<button class="q-fab" onclick="document.getElementById('quiz-modal').classList.add('open')">Q</button>
+
+<!-- 문제 수 선택 모달 -->
+<div class="modal-bg" id="quiz-modal" onclick="if(event.target===this)document.getElementById('quiz-modal').classList.remove('open')">
+  <div class="modal-box">
+    <h3>문제 수 선택</h3>
+    <p>히라가나 {{ total }}자 중 랜덤 출제 · 랭킹 미반영</p>
+    <div class="count-grid">
+      <button class="count-opt" onclick="goQuiz(10)">10<small>입문</small></button>
+      <button class="count-opt" onclick="goQuiz(15)">15<small>기본</small></button>
+      <button class="count-opt" onclick="goQuiz(20)">20<small>도전</small></button>
+      <button class="count-opt" onclick="goQuiz(30)">30<small>전체</small></button>
+    </div>
+    <div class="custom-row">
+      <input type="number" id="custom-cnt" placeholder="직접 입력" min="1" max="{{ total }}">
+      <button onclick="goQuizCustom()">시작</button>
+    </div>
+    <button class="btn-ghost-modal" onclick="document.getElementById('quiz-modal').classList.remove('open')">취소</button>
+  </div>
+</div>
+
+<script>
+function goQuiz(n) { location.href = '/hiragana_quiz?count=' + n; }
+function goQuizCustom() {
+  const v = parseInt(document.getElementById('custom-cnt').value);
+  if (v > 0) goQuiz(v);
+}
+</script>
 {% endblock %}

@@ -19,13 +19,13 @@
   },
   {
     "word": "暑い",
-    "hiragana": "あつ",
+    "hiragana": "あつい",
     "meaning": "덥다",
     "level": "N4"
   },
   {
     "word": "歩く",
-    "hiragana": "ある",
+    "hiragana": "あるく",
     "meaning": "걷다",
     "level": "N4"
   },
@@ -127,13 +127,13 @@
   },
   {
     "word": "返す",
-    "hiragana": "かえ",
+    "hiragana": "かえす",
     "meaning": "돌려주다",
     "level": "N4"
   },
   {
     "word": "帰る",
-    "hiragana": "かえ",
+    "hiragana": "かえる",
     "meaning": "돌아가(오)다",
     "level": "N4"
   },
@@ -157,7 +157,7 @@
   },
   {
     "word": "通う",
-    "hiragana": "かよ",
+    "hiragana": "かよう",
     "meaning": "다니다, 통학하다",
     "level": "N4"
   },
@@ -175,7 +175,7 @@
   },
   {
     "word": "考える",
-    "hiragana": "かんが",
+    "hiragana": "かんがえる",
     "meaning": "생각하다",
     "level": "N4"
   },
@@ -193,7 +193,7 @@
   },
   {
     "word": "急に",
-    "hiragana": "きゅう",
+    "hiragana": "きゅうに",
     "meaning": "갑자기",
     "level": "N4"
   },
@@ -229,7 +229,7 @@
   },
   {
     "word": "黒い",
-    "hiragana": "くろ",
+    "hiragana": "くろい",
     "meaning": "검다",
     "level": "N4"
   },
@@ -367,7 +367,7 @@
   },
   {
     "word": "進む",
-    "hiragana": "すす",
+    "hiragana": "すすむ",
     "meaning": "나아가다, 진보하다",
     "level": "N4"
   },
@@ -409,7 +409,7 @@
   },
   {
     "word": "空",
-    "hiragana": "から",
+    "hiragana": "そら",
     "meaning": "하늘",
     "level": "N4"
   },
@@ -427,7 +427,7 @@
   },
   {
     "word": "楽しい",
-    "hiragana": "たの",
+    "hiragana": "たのしい",
     "meaning": "즐겁다",
     "level": "N4"
   },
@@ -439,7 +439,7 @@
   },
   {
     "word": "力",
-    "hiragana": "きょくりょく",
+    "hiragana": "ちから",
     "meaning": "힘",
     "level": "N4"
   },
@@ -463,7 +463,7 @@
   },
   {
     "word": "使う",
-    "hiragana": "つか",
+    "hiragana": "つかう",
     "meaning": "사용하다",
     "level": "N4"
   },
@@ -475,7 +475,7 @@
   },
   {
     "word": "強い",
-    "hiragana": "つよ",
+    "hiragana": "つよい",
     "meaning": "강하다, 세다",
     "level": "N4"
   },
@@ -487,13 +487,13 @@
   },
   {
     "word": "通る",
-    "hiragana": "とお",
+    "hiragana": "とおる",
     "meaning": "통과하다, 지나다",
     "level": "N4"
   },
   {
     "word": "特に",
-    "hiragana": "とく",
+    "hiragana": "とくに",
     "meaning": "특히",
     "level": "N4"
   },
@@ -529,31 +529,31 @@
   },
   {
     "word": "運ぶ",
-    "hiragana": "はこ",
+    "hiragana": "はこぶ",
     "meaning": "옮기다",
     "level": "N4"
   },
   {
     "word": "走る",
-    "hiragana": "はし",
+    "hiragana": "はしる",
     "meaning": "달리다",
     "level": "N4"
   },
   {
     "word": "働く",
-    "hiragana": "はたら",
+    "hiragana": "はたらく",
     "meaning": "일하다",
     "level": "N4"
   },
   {
     "word": "早い",
-    "hiragana": "はや",
+    "hiragana": "はやい",
     "meaning": "이르다, 빠르다",
     "level": "N4"
   },
   {
     "word": "早く",
-    "hiragana": "はや",
+    "hiragana": "はやく",
     "meaning": "일찍, 빨리",
     "level": "N4"
   },
@@ -571,13 +571,13 @@
   },
   {
     "word": "広い",
-    "hiragana": "ひろ",
+    "hiragana": "ひろい",
     "meaning": "넓다",
     "level": "N4"
   },
   {
     "word": "服",
-    "hiragana": "ふふく",
+    "hiragana": "ふく",
     "meaning": "옷",
     "level": "N4"
   },
@@ -589,7 +589,7 @@
   },
   {
     "word": "古い",
-    "hiragana": "ふる",
+    "hiragana": "ふるい",
     "meaning": "오래되다, 낡다",
     "level": "N4"
   },
@@ -631,7 +631,7 @@
   },
   {
     "word": "安い",
-    "hiragana": "やす",
+    "hiragana": "やすい",
     "meaning": "싸다",
     "level": "N4"
   },
@@ -667,7 +667,7 @@
   },
   {
     "word": "弱い",
-    "hiragana": "よわ",
+    "hiragana": "よわい",
     "meaning": "약하다",
     "level": "N4"
   },
@@ -691,7 +691,7 @@
   },
   {
     "word": "悪い",
-    "hiragana": "わる",
+    "hiragana": "わるい",
     "meaning": "나쁘다, 안 좋다",
     "level": "N4"
   },
@@ -703,19 +703,19 @@
   },
   {
     "word": "青い",
-    "hiragana": "あお",
+    "hiragana": "あおい",
     "meaning": "파랗다",
     "level": "N4"
   },
   {
     "word": "赤い",
-    "hiragana": "あか",
+    "hiragana": "あかい",
     "meaning": "빨갛다, 붉다",
     "level": "N4"
   },
   {
     "word": "明るい",
-    "hiragana": "あか",
+    "hiragana": "あかるい",
     "meaning": "밝다",
     "level": "N4"
   },
@@ -727,13 +727,13 @@
   },
   {
     "word": "新しい",
-    "hiragana": "あたら",
+    "hiragana": "あたらしい",
     "meaning": "새롭다",
     "level": "N4"
   },
   {
     "word": "集まる",
-    "hiragana": "あつ",
+    "hiragana": "あつまる",
     "meaning": "모이다",
     "level": "N4"
   },
@@ -745,7 +745,7 @@
   },
   {
     "word": "洗う",
-    "hiragana": "あら",
+    "hiragana": "あらう",
     "meaning": "씻다",
     "level": "N4"
   },
@@ -781,7 +781,7 @@
   },
   {
     "word": "教える",
-    "hiragana": "おし",
+    "hiragana": "おしえる",
     "meaning": "가르치다",
     "level": "N4"
   },
@@ -793,13 +793,13 @@
   },
   {
     "word": "同じ",
-    "hiragana": "ところが",
+    "hiragana": "おなじ",
     "meaning": "같음, 동일함",
     "level": "N4"
   },
   {
     "word": "思い出す",
-    "hiragana": "おもだ",
+    "hiragana": "おもいだす",
     "meaning": "생각해내다",
     "level": "N4"
   },
@@ -817,13 +817,13 @@
   },
   {
     "word": "暗い",
-    "hiragana": "くら",
+    "hiragana": "くらい",
     "meaning": "어둡다",
     "level": "N4"
   },
   {
     "word": "答える",
-    "hiragana": "こた",
+    "hiragana": "こたえる",
     "meaning": "대답하다",
     "level": "N4"
   },
@@ -847,7 +847,7 @@
   },
   {
     "word": "正しい",
-    "hiragana": "ただ",
+    "hiragana": "ただしい",
     "meaning": "바르다, 옳다",
     "level": "N4"
   },
@@ -865,7 +865,7 @@
   },
   {
     "word": "作る",
-    "hiragana": "つく",
+    "hiragana": "つくる",
     "meaning": "만들다",
     "level": "N4"
   },
@@ -877,7 +877,7 @@
   },
   {
     "word": "習う",
-    "hiragana": "なら",
+    "hiragana": "ならう",
     "meaning": "익히다, 배우다",
     "level": "N4"
   },
@@ -889,13 +889,13 @@
   },
   {
     "word": "始まる",
-    "hiragana": "はじ",
+    "hiragana": "はじまる",
     "meaning": "시작되다",
     "level": "N4"
   },
   {
     "word": "間に合う",
-    "hiragana": "まあ",
+    "hiragana": "まにあう",
     "meaning": "제시간에 맞추다",
     "level": "N4"
   },
@@ -919,7 +919,7 @@
   },
   {
     "word": "別れる",
-    "hiragana": "わか",
+    "hiragana": "わかれる",
     "meaning": "헤어지다",
     "level": "N4"
   },

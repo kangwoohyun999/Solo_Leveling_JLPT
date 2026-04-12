@@ -139,7 +139,7 @@
   },
   {
     "word": "深い",
-    "hiragana": "ふか",
+    "hiragana": "ふかい",
     "meaning": "깊다",
     "level": "N3"
   },
@@ -151,13 +151,13 @@
   },
   {
     "word": "返す",
-    "hiragana": "かえ",
+    "hiragana": "かえす",
     "meaning": "돌려주다",
     "level": "N3"
   },
   {
     "word": "移す",
-    "hiragana": "うつ",
+    "hiragana": "うつす",
     "meaning": "옮기다",
     "level": "N3"
   },
@@ -217,7 +217,7 @@
   },
   {
     "word": "困る",
-    "hiragana": "こま",
+    "hiragana": "こまる",
     "meaning": "곤란하다",
     "level": "N3"
   },
@@ -253,7 +253,7 @@
   },
   {
     "word": "固い",
-    "hiragana": "かた",
+    "hiragana": "かたい",
     "meaning": "딱딱하다",
     "level": "N3"
   },
@@ -265,7 +265,7 @@
   },
   {
     "word": "短い",
-    "hiragana": "みじか",
+    "hiragana": "みじかい",
     "meaning": "짧다",
     "level": "N3"
   },
@@ -283,13 +283,13 @@
   },
   {
     "word": "浅い",
-    "hiragana": "あさ",
+    "hiragana": "あさい",
     "meaning": "얕다",
     "level": "N3"
   },
   {
     "word": "示す",
-    "hiragana": "しめ",
+    "hiragana": "しめす",
     "meaning": "나타내다",
     "level": "N3"
   },
@@ -319,7 +319,7 @@
   },
   {
     "word": "笑う",
-    "hiragana": "わら",
+    "hiragana": "わらう",
     "meaning": "웃다",
     "level": "N3"
   },
@@ -361,7 +361,7 @@
   },
   {
     "word": "苦しい",
-    "hiragana": "くる",
+    "hiragana": "くるしい",
     "meaning": "괴롭다",
     "level": "N3"
   },
@@ -463,13 +463,13 @@
   },
   {
     "word": "一般的な",
-    "hiragana": "いっぱんてき",
+    "hiragana": "いっぱんてきな",
     "meaning": "일반적인",
     "level": "N3"
   },
   {
     "word": "丸い",
-    "hiragana": "まる",
+    "hiragana": "まるい",
     "meaning": "둥글다",
     "level": "N3"
   },
@@ -505,13 +505,13 @@
   },
   {
     "word": "申し込み",
-    "hiragana": "もうこ",
+    "hiragana": "もうしこみ",
     "meaning": "신청",
     "level": "N3"
   },
   {
     "word": "美しい",
-    "hiragana": "うつく",
+    "hiragana": "うつくしい",
     "meaning": "아름답다",
     "level": "N3"
   },
@@ -529,13 +529,13 @@
   },
   {
     "word": "独立",
-    "hiragana": "はかる",
+    "hiragana": "どくりつ",
     "meaning": "독립",
     "level": "N3"
   },
   {
     "word": "汚れる",
-    "hiragana": "よご",
+    "hiragana": "よごれる",
     "meaning": "더러워지다",
     "level": "N3"
   },
@@ -583,7 +583,7 @@
   },
   {
     "word": "加える",
-    "hiragana": "くわ",
+    "hiragana": "くわえる",
     "meaning": "추가하다",
     "level": "N3"
   },
@@ -637,7 +637,7 @@
   },
   {
     "word": "伝える",
-    "hiragana": "つた",
+    "hiragana": "つたえる",
     "meaning": "전달하다",
     "level": "N3"
   },
@@ -745,7 +745,7 @@
   },
   {
     "word": "痛い",
-    "hiragana": "いた",
+    "hiragana": "いたい",
     "meaning": "아프다",
     "level": "N3"
   },
@@ -817,7 +817,7 @@
   },
   {
     "word": "守る",
-    "hiragana": "まも",
+    "hiragana": "まもる",
     "meaning": "지키다",
     "level": "N3"
   },
@@ -859,7 +859,7 @@
   },
   {
     "word": "温める",
-    "hiragana": "あたた",
+    "hiragana": "あたためる",
     "meaning": "따뜻하게 하다",
     "level": "N3"
   },
@@ -895,13 +895,13 @@
   },
   {
     "word": "育てる",
-    "hiragana": "そだ",
+    "hiragana": "そだてる",
     "meaning": "키우다, 기르다",
     "level": "N3"
   },
   {
     "word": "細かい",
-    "hiragana": "こま",
+    "hiragana": "こまかい",
     "meaning": "자세하다, 작다",
     "level": "N3"
   },
@@ -931,7 +931,7 @@
   },
   {
     "word": "結ぶ",
-    "hiragana": "むす",
+    "hiragana": "むすぶ",
     "meaning": "연결하다, 묶다",
     "level": "N3"
   },
@@ -961,13 +961,13 @@
   },
   {
     "word": "移る",
-    "hiragana": "うつ",
+    "hiragana": "うつる",
     "meaning": "옮기다",
     "level": "N3"
   },
   {
     "word": "遅い",
-    "hiragana": "おそ",
+    "hiragana": "おそい",
     "meaning": "느리다, 늦다",
     "level": "N3"
   },
@@ -991,25 +991,25 @@
   },
   {
     "word": "疲れる",
-    "hiragana": "つか",
+    "hiragana": "つかれる",
     "meaning": "피로하다",
     "level": "N3"
   },
   {
     "word": "恋しい",
-    "hiragana": "こい",
+    "hiragana": "こいしい",
     "meaning": "그립다",
     "level": "N3"
   },
   {
     "word": "重ねる",
-    "hiragana": "かさ",
+    "hiragana": "かさねる",
     "meaning": "거듭하다",
     "level": "N3"
   },
   {
     "word": "仮定する",
-    "hiragana": "かてい",
+    "hiragana": "かていする",
     "meaning": "가정하다",
     "level": "N3"
   },
@@ -1039,7 +1039,7 @@
   },
   {
     "word": "眠る",
-    "hiragana": "ねむ",
+    "hiragana": "ねむる",
     "meaning": "자다, 잠들다",
     "level": "N3"
   },
@@ -1093,7 +1093,7 @@
   },
   {
     "word": "預ける",
-    "hiragana": "あず",
+    "hiragana": "あずける",
     "meaning": "맡기다, 위임하다",
     "level": "N3"
   },
@@ -1141,13 +1141,13 @@
   },
   {
     "word": "回す",
-    "hiragana": "まわ",
+    "hiragana": "まわす",
     "meaning": "돌리다",
     "level": "N3"
   },
   {
     "word": "違う",
-    "hiragana": "ちが",
+    "hiragana": "ちがう",
     "meaning": "다르다, 틀리다",
     "level": "N3"
   },
@@ -1177,7 +1177,7 @@
   },
   {
     "word": "速い",
-    "hiragana": "はや",
+    "hiragana": "はやい",
     "meaning": "빠르다",
     "level": "N3"
   },

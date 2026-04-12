@@ -6,9 +6,21 @@
   max-width:560px; margin:0 auto;
   padding:32px 20px 64px;
 }
-.greeting { margin-bottom:32px; }
-.greeting h2 { font-size:20px; font-weight:700; }
-.greeting p  { color:var(--muted); font-size:13px; margin-top:4px; }
+
+/* 인사 영역 */
+.greeting { margin-bottom:32px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.greeting-text h2 { font-size:20px; font-weight:700; }
+.greeting-text p  { color:var(--muted); font-size:13px; margin-top:4px; }
+
+/* 사용 안내 버튼 */
+.guide-btn {
+  flex-shrink:0;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:10px; padding:8px 12px;
+  font-size:12px; color:var(--muted); cursor:pointer;
+  transition:border-color .15s, color .15s; white-space:nowrap;
+}
+.guide-btn:hover { border-color:var(--accent); color:var(--accent); }
 
 /* 레벨 버튼 */
 .level-list { display:flex; flex-direction:column; gap:10px; }
@@ -27,42 +39,81 @@
 .lb-arrow   { color:var(--muted); font-size:18px; }
 
 /* 레벨별 색상 */
-.renke .level-badge  { background:rgba(251,191,36,.12);  color:var(--warning); }
-.hira  .level-badge  { background:rgba(34,211,160,.12);  color:var(--success); }
-.jlpt  .level-badge  { background:rgba(108,99,255,.15);  color:var(--accent2); }
-.n5    .level-badge  { background:rgba(34,211,160,.12);  color:var(--success); }
-.n4    .level-badge  { background:rgba(108,99,255,.12);  color:var(--accent2); }
-.n3    .level-badge  { background:rgba(167,139,250,.12); color:var(--accent2); }
-.n2    .level-badge  { background:rgba(255,77,109,.12);  color:var(--danger); }
-.n1    .level-badge  { background:rgba(255,77,109,.2);   color:var(--danger); }
+.renke  .level-badge { background:rgba(251,191,36,.12);  color:var(--warning); }
+.hira   .level-badge { background:rgba(34,211,160,.12);  color:var(--success); }
+.jlpt   .level-badge { background:rgba(108,99,255,.15);  color:var(--accent2); }
+.n5     .level-badge { background:rgba(34,211,160,.12);  color:var(--success); }
+.n4     .level-badge { background:rgba(108,99,255,.12);  color:var(--accent2); }
+.n3     .level-badge { background:rgba(167,139,250,.12); color:var(--accent2); }
+.n2     .level-badge { background:rgba(255,77,109,.12);  color:var(--danger); }
+.n1     .level-badge { background:rgba(255,77,109,.2);   color:var(--danger); }
+.kanji  .level-badge { background:rgba(251,191,36,.15);  color:var(--warning); }
+.rank   .level-badge { background:rgba(255,193,7,.15);   color:#f59e0b; }
 .coming { opacity:.4; pointer-events:none; }
-.kanji  .level-badge  { background:rgba(251,191,36,.15);  color:var(--warning); }
 
-/* JLPT 접기/펼치기 */
-.jlpt-toggle {
+/* 공통 토글 버튼 */
+.toggle-btn {
   display:flex; align-items:center; justify-content:space-between;
   padding:20px; width:100%; text-align:left; cursor:pointer;
   background:var(--surface); border:1px solid var(--border);
   border-radius:var(--radius); color:var(--text);
   transition:border-color .2s, background .2s;
 }
-.jlpt-toggle:hover { border-color:var(--accent); background:var(--surface2); }
-.jlpt-toggle .lb-left { display:flex; align-items:center; gap:16px; }
-.jlpt-arrow {
+.toggle-btn:hover { border-color:var(--accent); background:var(--surface2); }
+.toggle-btn .lb-left { display:flex; align-items:center; gap:16px; }
+.toggle-arrow {
   color:var(--muted); font-size:18px;
   transition:transform .25s ease;
 }
-.jlpt-arrow.open { transform:rotate(90deg); }
+.toggle-arrow.open { transform:rotate(90deg); }
 
-.jlpt-sub {
+.toggle-sub {
   display:none; flex-direction:column; gap:6px;
   padding:6px 0 0 16px;
 }
-.jlpt-sub.open { display:flex; }
-.jlpt-sub .level-btn {
+.toggle-sub.open { display:flex; }
+.toggle-sub .level-btn {
   padding:14px 16px;
   border-radius:8px;
 }
+
+/* 랭킹 도전 레벨 서브 */
+.rank-level-sub {
+  display:none; flex-direction:column; gap:6px;
+  padding:6px 0 0 16px;
+}
+.rank-level-sub.open { display:flex; }
+.rank-level-btn {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:13px 16px; text-align:left; border-radius:8px; width:100%; cursor:pointer;
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--text); transition:border-color .15s, background .15s;
+}
+.rank-level-btn:hover { border-color:var(--accent); background:var(--surface2); }
+.rank-level-btn .lb-left { display:flex; align-items:center; gap:12px; }
+
+/* 사용 안내 모달 */
+.modal-bg {
+  display:none; position:fixed; inset:0; z-index:400;
+  background:rgba(0,0,0,.65); backdrop-filter:blur(8px);
+  align-items:center; justify-content:center; padding:24px;
+}
+.modal-bg.open { display:flex; }
+.modal-box {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:20px; padding:28px 24px; width:100%; max-width:380px;
+  max-height:80vh; overflow-y:auto;
+}
+.modal-box h3 { font-size:18px; font-weight:700; margin-bottom:16px; }
+.guide-section { margin-bottom:16px; }
+.guide-section h4 { font-size:13px; font-weight:700; color:var(--accent); margin-bottom:5px; }
+.guide-section p  { font-size:13px; color:var(--muted); line-height:1.65; }
+.modal-close-btn {
+  width:100%; margin-top:8px; background:var(--surface2); border:1px solid var(--border);
+  color:var(--text); border-radius:12px; padding:13px; font-size:14px;
+  font-weight:600; cursor:pointer; transition:border-color .15s;
+}
+.modal-close-btn:hover { border-color:var(--accent); }
 {% endblock %}
 
 {% block body %}
@@ -73,7 +124,6 @@
     Solo Leveling JLPT
   </div>
   <div class="nav-right">
-    <!-- 다크모드 토글 -->
     <label class="theme-toggle" title="다크모드 전환">
       <input type="checkbox" id="theme-chk" onchange="toggleTheme(this.checked)">
       <span class="theme-slider"></span>
@@ -92,34 +142,128 @@
       <div class="du-nick">{{ user.nickname }}</div>
       <div class="du-id">{{ user.username }}</div>
     </div>
-    <a href="/account"      class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
-    <a href="/wrongnote"    class="dropdown-item"><span class="di-icon">📝</span>오답노트</a>
-    <a href="/ranking_menu" class="dropdown-item"><span class="di-icon">🏆</span>전체 랭킹</a>
-    <a href="/logout"       class="dropdown-item danger"><span class="di-icon">🚪</span>로그아웃</a>
+    <a href="/account"            class="dropdown-item"><span class="di-icon">👤</span>계정 정보</a>
+    <a href="/wrongnote"          class="dropdown-item"><span class="di-icon">📝</span>오답노트 - JLPT</a>
+    <a href="/hiragana_wrongnote" class="dropdown-item"><span class="di-icon">📝</span>오답노트 - 히라가나</a>
+    <a href="/kanji_wrongnote"    class="dropdown-item"><span class="di-icon">📝</span>오답노트 - 한자</a>
+    <a href="/ranking_menu"       class="dropdown-item"><span class="di-icon">🏆</span>전체 랭킹</a>
+    <a href="/logout"             class="dropdown-item danger"><span class="di-icon">🚪</span>로그아웃</a>
   </div>
 </div>
 
 <!-- 메인 컨텐츠 -->
 <div class="main-content">
+
+  <!-- 인사 + 사용 안내 -->
   <div class="greeting">
-    <h2>{{ user.nickname }}님, 안녕하세요!</h2>
-    <p>오늘도 단어 정복을 시작해볼까요?</p>
+    <div class="greeting-text">
+      <h2>{{ user.nickname }}님, 안녕하세요!</h2>
+      <p>오늘도 단어 정복을 시작해볼까요?</p>
+    </div>
+    <button class="guide-btn" onclick="openGuide()">❓ 사용 안내</button>
   </div>
 
   <div class="level-list">
 
-    <!-- 오답노트 -->
-    <a href="/wrongnote" class="card card-hover level-btn renke">
-      <div class="lb-left">
-        <div class="level-badge">📝</div>
-        <div class="lb-info"><h3>오답노트</h3><p>틀린 단어 모아보기</p></div>
-      </div>
-      <span class="lb-arrow">›</span>
-    </a>
-
-    <!-- JLPT 묶음 -->
+    <!-- ① 랭킹 모드 토글 -->
     <div>
-      <button class="jlpt-toggle" onclick="toggleJLPT(this)">
+      <button class="toggle-btn" onclick="toggleSection('ranking-sub', this)">
+        <div class="lb-left">
+          <div class="level-badge" style="background:rgba(255,193,7,.15);color:#f59e0b;font-size:20px;">🏆</div>
+          <div class="lb-info">
+            <h3>랭킹 모드</h3>
+            <p>전체 랭킹 · 레벨별 도전</p>
+          </div>
+        </div>
+        <span class="toggle-arrow lb-arrow">›</span>
+      </button>
+
+      <div class="toggle-sub" id="ranking-sub">
+        <!-- 전체 랭킹 -->
+        <a href="/ranking_menu" class="card card-hover level-btn" style="padding:14px 16px;border-radius:8px;">
+          <div class="lb-left">
+            <div class="level-badge" style="background:rgba(255,193,7,.12);color:#f59e0b;font-size:16px;">📊</div>
+            <div class="lb-info"><h3>전체 랭킹</h3><p>모든 레벨 종합 순위</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+
+        <!-- 랭킹 도전 (레벨 토글) -->
+        <div>
+          <button class="rank-level-btn card card-hover" onclick="toggleRankLevel(this)">
+            <div class="lb-left">
+              <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:16px;">🏆</div>
+              <div class="lb-info"><h3>랭킹 도전</h3><p>레벨 선택 후 시작</p></div>
+            </div>
+            <span class="toggle-arrow lb-arrow">›</span>
+          </button>
+          <div class="rank-level-sub" id="rank-level-sub">
+            <a href="/wordlist/n5?ranking=1" class="card card-hover level-btn n5" style="padding:12px 14px;border-radius:8px;">
+              <div class="lb-left"><div class="level-badge">N5</div><div class="lb-info"><h3>N5 랭킹</h3><p>입문</p></div></div>
+              <span class="lb-arrow">›</span>
+            </a>
+            <a href="/wordlist/n4?ranking=1" class="card card-hover level-btn n4" style="padding:12px 14px;border-radius:8px;">
+              <div class="lb-left"><div class="level-badge">N4</div><div class="lb-info"><h3>N4 랭킹</h3><p>초급</p></div></div>
+              <span class="lb-arrow">›</span>
+            </a>
+            <a href="/wordlist/n3?ranking=1" class="card card-hover level-btn n3" style="padding:12px 14px;border-radius:8px;">
+              <div class="lb-left"><div class="level-badge">N3</div><div class="lb-info"><h3>N3 랭킹</h3><p>중급</p></div></div>
+              <span class="lb-arrow">›</span>
+            </a>
+            <a href="/wordlist/n2?ranking=1" class="card card-hover level-btn n2" style="padding:12px 14px;border-radius:8px;">
+              <div class="lb-left"><div class="level-badge">N2</div><div class="lb-info"><h3>N2 랭킹</h3><p>중상급</p></div></div>
+              <span class="lb-arrow">›</span>
+            </a>
+            <a href="/wordlist/n1?ranking=1" class="card card-hover level-btn n1" style="padding:12px 14px;border-radius:8px;">
+              <div class="lb-left"><div class="level-badge">N1</div><div class="lb-info"><h3>N1 랭킹</h3><p>고급</p></div></div>
+              <span class="lb-arrow">›</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 오답노트 토글 -->
+    <div>
+      <button class="toggle-btn" onclick="toggleSection('wrongnote-sub', this)">
+        <div class="lb-left">
+          <div class="level-badge" style="background:rgba(251,191,36,.12);color:var(--warning);font-size:20px;">📝</div>
+          <div class="lb-info">
+            <h3>오답노트</h3>
+            <p>틀린 단어 모아보기</p>
+          </div>
+        </div>
+        <span class="toggle-arrow lb-arrow">›</span>
+      </button>
+
+      <div class="toggle-sub" id="wrongnote-sub">
+        <a href="/wrongnote" class="card card-hover level-btn jlpt" style="padding:14px 16px;border-radius:8px;">
+          <div class="lb-left">
+            <div class="level-badge" style="font-size:11px;">JLPT</div>
+            <div class="lb-info"><h3>JLPT 오답노트</h3><p>N5~N1 틀린 단어</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+        <a href="/hiragana_wrongnote" class="card card-hover level-btn hira" style="padding:14px 16px;border-radius:8px;">
+          <div class="lb-left">
+            <div class="level-badge">あ</div>
+            <div class="lb-info"><h3>히라가나 오답노트</h3><p>틀린 히라가나</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+        <a href="/kanji_wrongnote" class="card card-hover level-btn kanji" style="padding:14px 16px;border-radius:8px;">
+          <div class="lb-left">
+            <div class="level-badge">漢</div>
+            <div class="lb-info"><h3>한자 오답노트</h3><p>틀린 한자 단어</p></div>
+          </div>
+          <span class="lb-arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ③ JLPT 단어 토글 -->
+    <div>
+      <button class="toggle-btn" onclick="toggleSection('jlpt-sub', this)">
         <div class="lb-left">
           <div class="level-badge" style="background:rgba(108,99,255,.15);color:var(--accent2);font-size:11px;">JLPT</div>
           <div class="lb-info">
@@ -127,10 +271,10 @@
             <p>N5 ~ N1 · {{ total_words }}개 단어</p>
           </div>
         </div>
-        <span class="jlpt-arrow lb-arrow">›</span>
+        <span class="toggle-arrow lb-arrow">›</span>
       </button>
 
-      <div class="jlpt-sub" id="jlpt-sub">
+      <div class="toggle-sub" id="jlpt-sub">
         <a href="/wordlist/n5" class="card card-hover level-btn n5">
           <div class="lb-left">
             <div class="level-badge">N5</div>
@@ -169,7 +313,7 @@
       </div>
     </div>
 
-    <!-- 히라가나 -->
+    <!-- ④ 히라가나 -->
     <a href="/hiragana" class="card card-hover level-btn hira">
       <div class="lb-left">
         <div class="level-badge">あ</div>
@@ -181,7 +325,7 @@
       <span class="lb-arrow">›</span>
     </a>
 
-    <!-- 한자 단어장 -->
+    <!-- ⑤ 한자 단어장 -->
     <a href="/kanji" class="card card-hover level-btn kanji">
       <div class="lb-left">
         <div class="level-badge">漢</div>
@@ -196,18 +340,81 @@
   </div>
 </div>
 
+<!-- 사용 안내 모달 -->
+<div class="modal-bg" id="guide-modal" onclick="if(event.target===this)closeGuide()">
+  <div class="modal-box">
+    <h3>📖 사용 안내</h3>
+    <div class="guide-section">
+      <h4>🏆 랭킹 모드</h4>
+      <p>레벨별 단어 퀴즈를 30문제 풀고 점수와 시간으로 순위를 경쟁합니다. 전체 랭킹에서 다른 사용자와 비교해보세요!</p>
+    </div>
+    <div class="guide-section">
+      <h4>📝 오답노트</h4>
+      <p>퀴즈에서 틀린 단어가 자동으로 저장됩니다. JLPT·히라가나·한자별로 구분되어 있으며, 오답노트에서 다시 풀어볼 수 있습니다.</p>
+    </div>
+    <div class="guide-section">
+      <h4>📚 JLPT 단어장</h4>
+      <p>N5(입문)부터 N1(고급)까지 수준별 단어를 학습할 수 있습니다. 단어장 오른쪽 하단의 Q 버튼으로 퀴즈를 시작하세요.</p>
+    </div>
+    <div class="guide-section">
+      <h4>あ 히라가나</h4>
+      <p>오십음도 전체 104자를 확인하고, Q 버튼으로 발음 퀴즈를 풀 수 있습니다.</p>
+    </div>
+    <div class="guide-section">
+      <h4>漢 한자 단어장</h4>
+      <p>N5~N1 수준의 한자 단어를 히라가나·뜻과 함께 학습합니다. Q 버튼으로 한자 퀴즈를 시작하세요.</p>
+    </div>
+    <button class="modal-close-btn" onclick="closeGuide()">닫기</button>
+  </div>
+</div>
+
 <script>
-// 토글 초기 상태 동기화
 document.addEventListener('DOMContentLoaded', () => {
   const chk = document.getElementById('theme-chk');
   if (chk) chk.checked = (localStorage.getItem('theme') === 'dark');
 });
 
-function toggleJLPT(btn) {
-  const sub   = document.getElementById('jlpt-sub');
-  const arrow = btn.querySelector('.jlpt-arrow');
-  const open  = sub.classList.toggle('open');
-  arrow.classList.toggle('open', open);
+// 최상위 토글 ID 목록
+const TOP_TOGGLES = ['ranking-sub', 'wrongnote-sub', 'jlpt-sub'];
+
+function toggleSection(subId, btn) {
+  const isOpen = document.getElementById(subId).classList.contains('open');
+
+  // 모든 최상위 토글 닫기 (자식 rank-level-sub 포함)
+  TOP_TOGGLES.forEach(function(id) {
+    const sub = document.getElementById(id);
+    sub.classList.remove('open');
+    const parentBtn = sub.previousElementSibling;
+    if (parentBtn) {
+      const arrow = parentBtn.querySelector('.toggle-arrow');
+      if (arrow) arrow.classList.remove('open');
+    }
+  });
+  // rank-level-sub도 닫기
+  const rankLvl = document.getElementById('rank-level-sub');
+  if (rankLvl) {
+    rankLvl.classList.remove('open');
+    const rlBtn = rankLvl.previousElementSibling;
+    if (rlBtn) { const a = rlBtn.querySelector('.toggle-arrow'); if (a) a.classList.remove('open'); }
+  }
+
+  // 이미 열려있던 거면 닫기만, 아니면 해당 토글 열기
+  if (!isOpen) {
+    const sub   = document.getElementById(subId);
+    const arrow = btn.querySelector('.toggle-arrow');
+    sub.classList.add('open');
+    if (arrow) arrow.classList.add('open');
+  }
 }
+
+function toggleRankLevel(btn) {
+  const sub   = document.getElementById('rank-level-sub');
+  const arrow = btn.querySelector('.toggle-arrow');
+  const open  = sub.classList.toggle('open');
+  if (arrow) arrow.classList.toggle('open', open);
+}
+
+function openGuide()  { document.getElementById('guide-modal').classList.add('open'); }
+function closeGuide() { document.getElementById('guide-modal').classList.remove('open'); }
 </script>
 {% endblock %}

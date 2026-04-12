@@ -2,6 +2,9 @@
 {% block title %}히라가나 퀴즈{% endblock %}
 
 {% block extra_style %}
+.progress-bar  { height:3px; background:var(--border); }
+.progress-fill { height:100%; background:var(--success); transition:width .3s ease; }
+
 .quiz-header {
   position:sticky; top:0; z-index:10;
   background:rgba(10,10,15,.97); backdrop-filter:blur(12px);
@@ -16,26 +19,8 @@
   font-size:12px; cursor:pointer; transition:border-color .15s;
 }
 .quit-btn:hover { border-color:var(--danger); color:var(--danger); }
-.progress-bar  { height:3px; background:var(--border); }
-.progress-fill { height:100%; background:var(--success); transition:width .3s ease; }
 
-/* 문제 수 선택 */
-.select-screen { max-width:480px; margin:0 auto; padding:48px 20px 60px; text-align:center; }
-.select-title  { font-size:20px; font-weight:700; margin-bottom:8px; }
-.select-sub    { font-size:13px; color:var(--muted); margin-bottom:36px; }
-.count-grid    { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.count-btn {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:14px; padding:24px 16px;
-  cursor:pointer; transition:border-color .15s, background .15s;
-  display:flex; flex-direction:column; align-items:center; gap:6px;
-}
-.count-btn:hover { border-color:var(--accent); background:var(--surface2); }
-.count-num   { font-size:32px; font-weight:700; color:var(--accent2); font-family:var(--mono); }
-.count-label { font-size:12px; color:var(--muted); }
-
-/* 퀴즈 */
-.quiz-body { max-width:500px; margin:0 auto; padding:28px 20px 40px; }
+.quiz-body { max-width:500px; margin:0 auto; padding:28px 20px 100px; }
 .q-count   { font-size:12px; color:var(--muted); margin-bottom:18px; text-align:center; }
 .q-card {
   background:var(--surface); border:1px solid var(--border);
@@ -56,52 +41,78 @@
 .choice.wrong   { border-color:var(--danger)!important;  background:rgba(255,77,109,.1)!important;  color:var(--danger)!important; }
 .choice:disabled { cursor:default; }
 
-/* 결과 */
-.result-wrap { display:none; max-width:500px; margin:0 auto; padding:40px 20px 60px; text-align:center; }
+.result-wrap { display:none; max-width:500px; margin:0 auto; padding:40px 20px 100px; text-align:center; }
 .result-wrap.show { display:block; }
 .result-trophy { font-size:56px; margin-bottom:16px; }
 .result-score  { font-size:36px; font-weight:700; margin-bottom:6px; }
 .result-label  { font-size:13px; color:var(--muted); margin-bottom:32px; }
-.result-btns   { display:flex; flex-direction:column; gap:10px; }
-.btn-primary { background:var(--accent); color:#fff; border:none; border-radius:12px; padding:16px; font-size:15px; font-weight:700; cursor:pointer; transition:opacity .15s; }
-.btn-primary:hover { opacity:.88; }
+.result-btns   { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
 .btn-ghost { background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:12px; padding:14px; font-size:14px; font-weight:600; cursor:pointer; transition:border-color .15s; text-decoration:none; display:block; text-align:center; }
 .btn-ghost:hover { border-color:var(--accent); }
-.wrong-list { margin-top:28px; text-align:left; }
+.wrong-list { text-align:left; }
 .wl-header  { font-size:12px; color:var(--muted); margin-bottom:10px; }
 .wl-row { display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:6px; }
 .wl-char    { font-size:22px; font-family:'Noto Sans JP'; width:36px; flex-shrink:0; }
 .wl-reading { font-size:13px; color:var(--success); font-weight:600; flex:1; }
 .wl-wrong   { font-size:12px; color:var(--danger); }
+
+/* FAB */
+.q-fab {
+  position:fixed; bottom:26px; right:26px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--accent); color:#fff;
+  font-size:17px; font-weight:700; font-family:var(--mono);
+  box-shadow:0 4px 20px rgba(108,99,255,.5);
+  transition:transform .2s, box-shadow .2s; border:none; cursor:pointer;
+}
+.q-fab:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(108,99,255,.7); }
+.wn-fab {
+  position:fixed; bottom:26px; right:26px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--danger); color:#fff;
+  font-size:20px;
+  box-shadow:0 4px 20px rgba(255,77,109,.5);
+  transition:transform .2s; border:none; cursor:pointer; display:none;
+}
+.wn-fab:hover { transform:scale(1.1); }
+
+/* 모달 */
+.modal-bg {
+  display:none; position:fixed; inset:0; z-index:300;
+  background:rgba(0,0,0,.6); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:24px;
+}
+.modal-bg.open { display:flex; }
+.modal-box {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; padding:28px 24px; width:100%; max-width:340px;
+}
+.modal-box h3 { font-size:17px; font-weight:700; margin-bottom:6px; }
+.modal-box p  { font-size:13px; color:var(--muted); margin-bottom:22px; }
+.count-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
+.count-opt {
+  padding:18px; background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius); text-align:center;
+  font-size:20px; font-weight:700; font-family:var(--mono); color:var(--text);
+  transition:all .15s; cursor:pointer;
+}
+.count-opt small { display:block; font-size:11px; color:var(--muted); font-weight:400; margin-top:2px; }
+.count-opt:hover { border-color:var(--accent); background:rgba(108,99,255,.08); }
 {% endblock %}
 
 {% block body %}
-<div class="quiz-header">
-  <a href="/hiragana" class="back-btn" id="back-btn">‹</a>
+<!-- 선택/결과 헤더 -->
+<div id="select-header" class="page-header">
+  <a href="/hiragana" class="back-btn">‹</a>
+  <span class="page-title">히라가나 퀴즈</span>
+</div>
+
+<!-- 퀴즈 진행 헤더 -->
+<div class="quiz-header" id="quiz-header" style="display:none">
   <span class="page-title" id="header-title">히라가나 퀴즈</span>
-  <button class="quit-btn" id="quit-btn" onclick="confirmQuit()" style="display:none">종료</button>
+  <button class="quit-btn" onclick="confirmQuit()">종료</button>
 </div>
 <div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
-
-<!-- 문제 수 선택 -->
-<div class="select-screen" id="select-screen">
-  <div class="select-title">문제 수 선택</div>
-  <div class="select-sub">히라가나 104자 중 랜덤 출제 · 랭킹 미반영</div>
-  <div class="count-grid">
-    <button class="count-btn" onclick="startQuiz(10)">
-      <span class="count-num">10</span><span class="count-label">문제</span>
-    </button>
-    <button class="count-btn" onclick="startQuiz(15)">
-      <span class="count-num">15</span><span class="count-label">문제</span>
-    </button>
-    <button class="count-btn" onclick="startQuiz(20)">
-      <span class="count-num">20</span><span class="count-label">문제</span>
-    </button>
-    <button class="count-btn" onclick="startQuiz(30)">
-      <span class="count-num">30</span><span class="count-label">문제</span>
-    </button>
-  </div>
-</div>
 
 <!-- 퀴즈 영역 -->
 <div class="quiz-body" id="quiz-area" style="display:none">
@@ -119,12 +130,31 @@
   <div class="result-score"  id="result-score"></div>
   <div class="result-label">랭킹 미반영 · 연습 퀴즈</div>
   <div class="result-btns">
-    <button class="btn-primary" onclick="goSelect()">다시 도전</button>
+    <a href="/hiragana_wrongnote" class="btn-ghost">📒 오답노트 보기</a>
     <a href="/hiragana" class="btn-ghost">히라가나 표로 돌아가기</a>
     <a href="/main"     class="btn-ghost">메인으로</a>
   </div>
   <div class="wrong-list" id="wrong-list"></div>
 </div>
+
+<!-- 문제 수 선택 모달 -->
+<div class="modal-bg" id="quiz-modal">
+  <div class="modal-box">
+    <h3>문제 수 선택</h3>
+    <p>히라가나 104자 중 랜덤 출제 · 랭킹 미반영</p>
+    <div class="count-grid">
+      <button class="count-opt" onclick="startQuiz(10)">10<small>입문</small></button>
+      <button class="count-opt" onclick="startQuiz(15)">15<small>기본</small></button>
+      <button class="count-opt" onclick="startQuiz(20)">20<small>도전</small></button>
+      <button class="count-opt" onclick="startQuiz(30)">30<small>전체</small></button>
+    </div>
+    <a href="/hiragana" class="btn-ghost" style="margin-top:4px">취소</a>
+  </div>
+</div>
+
+<!-- FAB 버튼 -->
+<button class="q-fab" id="q-fab" onclick="openModal()">Q</button>
+<button class="wn-fab" id="wn-fab" onclick="location.href='/hiragana_wrongnote'" title="오답노트">📒</button>
 
 <script>
 const ALL_DATA = {{ hiragana_json|safe }};
@@ -144,26 +174,22 @@ function buildChoices(correct) {
   return shuffle([correct, ...pool.slice(0,3)]);
 }
 
-function showSelectScreen() {
-  document.getElementById('select-screen').style.display = '';
-  document.getElementById('quiz-area').style.display     = 'none';
-  document.getElementById('result-wrap').classList.remove('show');
-  document.getElementById('quit-btn').style.display      = 'none';
-  document.getElementById('header-title').textContent    = '히라가나 퀴즈';
-  document.getElementById('prog').style.width = '0%';
+function openModal() {
+  document.getElementById('quiz-modal').classList.add('open');
 }
 
 function startQuiz(count) {
+  document.getElementById('quiz-modal').classList.remove('open');
   questions = shuffle(ALL_DATA).slice(0, count);
   idx = 0; wrongList = [];
-  document.getElementById('select-screen').style.display = 'none';
+  document.getElementById('select-header').style.display = 'none';
+  document.getElementById('quiz-header').style.display   = '';
   document.getElementById('quiz-area').style.display     = '';
   document.getElementById('result-wrap').classList.remove('show');
-  document.getElementById('quit-btn').style.display      = '';
+  document.getElementById('q-fab').style.display  = 'none';
+  document.getElementById('wn-fab').style.display = 'none';
   renderQ();
 }
-
-function goSelect() { showSelectScreen(); }
 
 function renderQ() {
   const q   = questions[idx];
@@ -171,11 +197,9 @@ function renderQ() {
   document.getElementById('prog').style.width    = pct + '%';
   document.getElementById('q-count').textContent = `${idx+1} / ${questions.length}`;
   document.getElementById('header-title').textContent = `히라가나 퀴즈 · ${idx+1}/${questions.length}`;
-
   const charEl = document.getElementById('q-char');
   charEl.textContent = q.char;
   charEl.className   = 'q-char' + (q.char.length > 1 ? ' small' : '');
-
   const box = document.getElementById('choices');
   box.innerHTML = '';
   buildChoices(q).forEach(c => {
@@ -189,17 +213,20 @@ function renderQ() {
 
 function selectAnswer(btn, isCorrect, q, chosen) {
   document.querySelectorAll('.choice').forEach(b => b.disabled = true);
-
   if (isCorrect) {
     btn.classList.add('correct');
-    setTimeout(nextQ, 500);           // 정답: 0.5초 후 자동 이동
+    setTimeout(nextQ, 500);
   } else {
     btn.classList.add('wrong');
     document.querySelectorAll('.choice').forEach(b => {
       if (b.textContent.trim().startsWith(q.reading)) b.classList.add('correct');
     });
     wrongList.push({ char:q.char, reading:q.reading, roman:q.roman, chosen:chosen.reading });
-    setTimeout(nextQ, 900);           // 오답: 0.9초 후 자동 이동
+    fetch('/api/hiragana_wrongnote', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ char: q.char, reading: q.reading, roman: q.roman })
+    }).catch(() => {});
+    setTimeout(nextQ, 900);
   }
 }
 
@@ -215,10 +242,8 @@ function showResult() {
   const correct = total - wrongList.length;
   const pct     = Math.round(correct / total * 100);
   const trophy  = pct===100 ? '🏆' : pct>=80 ? '🌟' : pct>=60 ? '👍' : '📚';
-
   document.getElementById('result-trophy').textContent = trophy;
   document.getElementById('result-score').textContent  = `${correct} / ${total}`;
-
   const wl = document.getElementById('wrong-list');
   wl.innerHTML = wrongList.length
     ? `<p class="wl-header">틀린 글자 ${wrongList.length}개</p>` +
@@ -229,17 +254,36 @@ function showResult() {
           <div class="wl-wrong">선택: ${w.chosen}</div>
         </div>`).join('')
     : '<p class="wl-header" style="color:var(--success)">🎉 전부 맞혔습니다!</p>';
-
-  document.getElementById('quiz-area').style.display = 'none';
-  document.getElementById('quit-btn').style.display  = 'none';
+  document.getElementById('quiz-header').style.display  = 'none';
+  document.getElementById('quiz-area').style.display    = 'none';
   document.getElementById('result-wrap').classList.add('show');
+  document.getElementById('select-header').style.display = '';
+  document.getElementById('q-fab').style.display  = 'none';
+  document.getElementById('wn-fab').style.display = wrongList.length ? '' : 'none';
   history.pushState({result:true}, '', window.location.href);
 }
 
 function confirmQuit() {
-  if (confirm('퀴즈를 종료할까요?')) showSelectScreen();
+  if (confirm('퀴즈를 종료할까요?')) {
+    document.getElementById('quiz-header').style.display  = 'none';
+    document.getElementById('quiz-area').style.display    = 'none';
+    document.getElementById('result-wrap').classList.remove('show');
+    document.getElementById('select-header').style.display = '';
+    document.getElementById('q-fab').style.display  = '';
+    document.getElementById('wn-fab').style.display = 'none';
+    document.getElementById('prog').style.width = '0%';
+  }
 }
 
+window.addEventListener('load', function() {
+  const params = new URLSearchParams(window.location.search);
+  const cnt = parseInt(params.get('count'));
+  if (cnt && cnt > 0) {
+    startQuiz(cnt);
+  } else {
+    openModal();
+  }
+});
 window.addEventListener('popstate', function() {
   if (document.getElementById('result-wrap').classList.contains('show'))
     location.href = '/hiragana';
