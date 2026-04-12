@@ -73,7 +73,7 @@
 .pagination {
   width:340px; max-width:100%; margin:0 auto;
   padding:4px 0 100px;
-  display:flex; align-items:center; justify-content:center; gap:4px; flex-wrap:nowrap;
+  display:flex; align-items:center; justify-content:space-between; gap:4px; flex-wrap:nowrap;
 }
 .pagination.hidden { display:none; }
 .pg-btn {
@@ -237,30 +237,43 @@ function renderPagination(totalPages, filteredLen) {
   var pg = document.getElementById('pagination');
   if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
   pg.className = 'pagination';
-  var pages = getPageNumbers(currentPage, totalPages);
-  var SLOTS = 7;
-  while (pages.length < SLOTS) pages.push('__ghost__');
-  var html = '<button class="pg-btn" onclick="goPage(' + (currentPage - 1) + ')"' +
+
+  var prev = '<button class="pg-btn" onclick="goPage(' + (currentPage - 1) + ')"' +
     (currentPage === 1 ? ' disabled' : '') + '>‹</button>';
-  pages.forEach(function(p) {
+  var next = '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
+    (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
+
+  var mid = getMiddlePages(currentPage, totalPages);
+  var midHtml = '';
+  mid.forEach(function(p) {
     if (p === '…') {
-      html += '<span class="pg-ellipsis">…</span>';
-    } else if (p === '__ghost__') {
-      html += '<span class="pg-ghost"></span>';
+      midHtml += '<span class="pg-ellipsis">…</span>';
     } else {
-      html += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
+      midHtml += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
         '" onclick="goPage(' + p + ')">' + p + '</button>';
     }
   });
-  html += '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
-    (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
-  pg.innerHTML = html;
+
+  var firstBtn = '<button class="pg-btn' + (currentPage === 1 ? ' active' : '') +
+    '" onclick="goPage(1)">1</button>';
+  var lastBtn = totalPages > 1
+    ? '<button class="pg-btn' + (currentPage === totalPages ? ' active' : '') +
+      '" onclick="goPage(' + totalPages + ')">' + totalPages + '</button>'
+    : '';
+
+  pg.innerHTML = prev + firstBtn + midHtml + lastBtn + next;
 }
 
-function getPageNumbers(cur, total) {
-  if (total <= 7) {
-    var arr = []; for (var i = 1; i <= total; i++) arr.push(i); return arr;
-  }
+function getMiddlePages(cur, total) {
+  if (total <= 2) return [];
+  var lo = Math.max(2, cur - 1);
+  var hi = Math.min(total - 1, cur + 1);
+  var pages = [];
+  if (lo > 2) pages.push('…');
+  for (var i = lo; i <= hi; i++) pages.push(i);
+  if (hi < total - 1) pages.push('…');
+  return pages;
+}
   var pages = [1];
   if (cur > 3) pages.push('…');
   for (var i = Math.max(2, cur - 1); i <= Math.min(total - 1, cur + 1); i++) pages.push(i);
