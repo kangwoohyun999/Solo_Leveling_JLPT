@@ -85,7 +85,7 @@
 
 /* ─── 페이지네이션 ─── */
 .pagination {
-  width:340px; max-width:70%; margin:0 auto;
+  width:340px; max-width:100%; margin:0 auto;
   padding:16px 0 80px;
   display:flex; align-items:center; justify-content:space-between; gap:4px;
   flex-wrap:nowrap;
@@ -300,36 +300,17 @@ function renderPagination(totalPages) {
   var next = '<button class="pg-btn" onclick="goPage(' + (currentPage + 1) + ')"' +
     (currentPage === totalPages ? ' disabled' : '') + '>›</button>';
 
-  var mid = getMiddlePages(currentPage, totalPages);
-  var midHtml = '';
-  mid.forEach(function(p) {
-    if (p === '…') {
-      midHtml += '<span class="pg-ellipsis">…</span>';
-    } else {
-      midHtml += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
-        '" onclick="goPage(' + p + ')">' + p + '</button>';
-    }
-  });
-
   var firstBtn = '<button class="pg-btn' + (currentPage === 1 ? ' active' : '') +
     '" onclick="goPage(1)">1</button>';
-  var lastBtn = totalPages > 1
-    ? '<button class="pg-btn' + (currentPage === totalPages ? ' active' : '') +
-      '" onclick="goPage(' + totalPages + ')">' + totalPages + '</button>'
-    : '';
+  var curBtn = (currentPage !== 1 && currentPage !== totalPages)
+    ? '<span class="pg-ellipsis">…</span>' +
+      '<button class="pg-btn active" onclick="goPage(' + currentPage + ')">' + currentPage + '</button>' +
+      '<span class="pg-ellipsis">…</span>'
+    : (currentPage === 1 ? '<span class="pg-ellipsis">…</span>' : '<span class="pg-ellipsis">…</span>');
+  var lastBtn = '<button class="pg-btn' + (currentPage === totalPages ? ' active' : '') +
+    '" onclick="goPage(' + totalPages + ')">' + totalPages + '</button>';
 
-  pg.innerHTML = prev + firstBtn + midHtml + lastBtn + next;
-}
-
-function getMiddlePages(cur, total) {
-  if (total <= 2) return [];
-  var lo = Math.max(2, cur - 1);
-  var hi = Math.min(total - 1, cur + 1);
-  var pages = [];
-  if (lo > 2) pages.push('…');
-  for (var i = lo; i <= hi; i++) pages.push(i);
-  if (hi < total - 1) pages.push('…');
-  return pages;
+  pg.innerHTML = prev + firstBtn + curBtn + lastBtn + next;
 }
 
 function goPage(n) {
