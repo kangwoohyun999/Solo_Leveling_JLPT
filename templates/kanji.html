@@ -85,10 +85,10 @@
 
 /* ─── 페이지네이션 ─── */
 .pagination {
-  max-width:560px; margin:0 auto;
-  padding:16px 16px 80px;
+  width:340px; max-width:100%; margin:0 auto;
+  padding:16px 0 80px;
   display:flex; align-items:center; justify-content:center; gap:4px;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
 }
 .pagination.hidden { display:none; }
 
@@ -106,6 +106,9 @@
   min-width:34px; height:34px;
   display:flex; align-items:center; justify-content:center;
   font-size:12px; color:var(--muted);
+}
+.pg-ghost {
+  min-width:34px; height:34px; visibility:hidden;
 }
 .q-fab {
   position:fixed; bottom:26px; right:26px; z-index:60;
@@ -293,12 +296,17 @@ function renderPagination(totalPages) {
   pg.className = 'pagination';
 
   var pages = getPageNumbers(currentPage, totalPages);
+  var SLOTS = 7;
+  while (pages.length < SLOTS) pages.push('__ghost__');
+
   var html = '<button class="pg-btn" onclick="goPage(' + (currentPage - 1) + ')"' +
     (currentPage === 1 ? ' disabled' : '') + '>‹</button>';
 
   pages.forEach(function(p) {
     if (p === '…') {
       html += '<span class="pg-ellipsis">…</span>';
+    } else if (p === '__ghost__') {
+      html += '<span class="pg-ghost"></span>';
     } else {
       html += '<button class="pg-btn' + (p === currentPage ? ' active' : '') +
         '" onclick="goPage(' + p + ')">' + p + '</button>';

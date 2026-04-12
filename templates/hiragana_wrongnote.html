@@ -26,8 +26,8 @@
 .empty-state { grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted); }
 .empty-state .ei { font-size:36px; margin-bottom:10px; }
 .pagination {
-  max-width:560px; margin:0 auto; padding:4px 16px 100px;
-  display:flex; align-items:center; justify-content:center; gap:4px; flex-wrap:wrap;
+  width:340px; max-width:100%; margin:0 auto; padding:4px 0 100px;
+  display:flex; align-items:center; justify-content:center; gap:4px; flex-wrap:nowrap;
 }
 .pagination.hidden { display:none; }
 .pg-btn {
@@ -41,6 +41,7 @@
 .pg-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
 .pg-btn:disabled { opacity:.35; cursor:default; }
 .pg-ellipsis { min-width:34px; height:34px; display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); }
+.pg-ghost { min-width:34px; height:34px; visibility:hidden; }
 .del-all-btn {
   margin-left:auto; background:none; border:1px solid var(--border);
   color:var(--muted); border-radius:8px; padding:5px 10px;
@@ -108,9 +109,11 @@ function renderPagination(totalPages) {
   if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
   pg.className = 'pagination';
   var pages = getPageNumbers(currentPage, totalPages);
+  var SLOTS = 7; while (pages.length < SLOTS) pages.push('__ghost__');
   var html = '<button class="pg-btn" onclick="goPage('+(currentPage-1)+')"'+(currentPage===1?' disabled':'')+'>‹</button>';
   pages.forEach(function(p) {
     if (p==='…') html += '<span class="pg-ellipsis">…</span>';
+    else if (p==='__ghost__') html += '<span class="pg-ghost"></span>';
     else html += '<button class="pg-btn'+(p===currentPage?' active':'')+'" onclick="goPage('+p+')">'+p+'</button>';
   });
   html += '<button class="pg-btn" onclick="goPage('+(currentPage+1)+')"'+(currentPage===totalPages?' disabled':'')+'>›</button>';
