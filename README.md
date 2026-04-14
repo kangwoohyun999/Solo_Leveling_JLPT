@@ -7,22 +7,10 @@ JLPT 학습을 위한 Solo Leveling JLPT 기반 콘텐츠입니다.
 @sololeveling.jlpt
 ```
 
-
-## Railway version URL
-https://sololevelingjlpt.up.railway.app/
-
-## Railway Test Server URL
-https://sololevelingjlpt-test.up.railway.app/
-
 ## Vercel version URL
 https://sololevelingjlpt.vercel.app/
 
-## Render version URL (15분동안 아무도 접속하지 않으면 첫 접속자는 로딩시간 필요)
-https://solo-leveling-jlpt.onrender.com
-
-## 백엔드 사이트
-http://cron-job.org/
-
+## DataBase
 https://supabase.com/
 
 ## 🚀 Overview
