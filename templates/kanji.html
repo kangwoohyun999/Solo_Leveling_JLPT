@@ -187,6 +187,33 @@
   font-weight:600; cursor:pointer; transition:border-color .15s;
 }
 .btn-ghost-modal:hover { border-color:var(--accent); }
+
+/* ─── 암기 모드 버튼 ─── */
+.memorize-btn {
+  margin-left:auto;
+  display:flex; align-items:center; gap:5px;
+  padding:7px 13px;
+  background:linear-gradient(135deg, rgba(34,211,160,.12), rgba(34,211,160,.05));
+  border:1px solid rgba(34,211,160,.4);
+  border-radius:8px; color:var(--accent2);
+  font-size:12px; font-weight:700; font-family:var(--mono);
+  cursor:pointer; white-space:nowrap;
+  transition:all .18s;
+}
+.memorize-btn:hover {
+  background:rgba(34,211,160,.2);
+  border-color:var(--accent2);
+  transform:translateY(-1px);
+}
+[data-theme="light"] .memorize-btn {
+  background:linear-gradient(135deg, rgba(30,110,69,.1), rgba(30,110,69,.04));
+  border-color:rgba(30,110,69,.35);
+  color:var(--accent);
+}
+[data-theme="light"] .memorize-btn:hover {
+  background:rgba(30,110,69,.18);
+  border-color:var(--accent);
+}
 {% endblock %}
 
 {% block body %}
@@ -226,6 +253,7 @@
            onkeydown="if(event.key==='Enter')jumpToPage()">
     <button class="page-jump-btn" onclick="jumpToPage()">이동</button>
     <span class="page-jump-info" id="page-jump-info"></span>
+    <button class="memorize-btn" id="memorize-btn" onclick="goMemorize()">📖 암기 모드</button>
   </div>
 
   <!-- 그리드 -->
@@ -386,6 +414,11 @@ function goKanjiQuiz(n) { location.href = '/kanji_quiz?count=' + n; }
 function goKanjiQuizCustom() {
   var v = parseInt(document.getElementById('kanji-custom-cnt').value);
   if (v > 0) goKanjiQuiz(v);
+}
+function goMemorize() {
+  var url = '/memorize/kanji';
+  if (currentLevel !== 'ALL') url += '?level=' + currentLevel;
+  location.href = url;
 }
 </script>
 {% endblock %}

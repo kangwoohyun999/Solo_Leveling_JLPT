@@ -257,6 +257,22 @@ def wordlist(level):
     words = WORDS.get(level, [])
     return render_template('wordlist.html', user=user, level=level, words=words)
 
+@app.route('/memorize/kanji')
+def memorize_kanji():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    level_filter = request.args.get('level', 'ALL').upper()
+    if level_filter != 'ALL':
+        words = [w for w in KANJI_WORDS if w.get('level') == level_filter]
+        title = f'한자 단어장 ({level_filter})'
+    else:
+        words = KANJI_WORDS
+        title = '한자 단어장'
+    return render_template('memorize.html', user=user, level=title, words=words, back_url='/kanji')
+
 @app.route('/memorize/<level>')
 def memorize(level):
     if 'username' not in session:
@@ -266,7 +282,7 @@ def memorize(level):
         return redirect(url_for('login'))
     level = level.upper()
     words = WORDS.get(level, [])
-    return render_template('memorize.html', user=user, level=level, words=words)
+    return render_template('memorize.html', user=user, level=level, words=words, back_url='/wordlist/'+level)
 
 @app.route('/quiz/<level>')
 def quiz(level):
