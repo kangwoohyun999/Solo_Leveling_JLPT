@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+{% block title %}{{ level }} 암기 모드{% endblock %}
+
+{% block extra_style %}
+/* ─── 전체 레이아웃 ─── */
+.mem-wrap {
+  display:flex; flex-direction:column; align-items:center;
+  min-height:calc(100vh - 56px);
+  padding:16px 20px 32px;
+  gap:14px;
+}
+
+/* ─── 진행 상태 바 ─── */
+.mem-progress-row {
+  width:100%; max-width:480px;
+  display:flex; align-items:center; gap:10px;
+}
+.mem-progress-bar {
+  flex:1; height:6px; border-radius:3px;
+  background:var(--border); overflow:hidden;
+}
+.mem-progress-fill {
+  height:100%; border-radius:3px;
+  background:var(--accent);
+  transition:width .35s ease;
+}
+.mem-progress-label {
+  font-size:12px; color:var(--muted);
+  font-family:var(--mono); white-space:nowrap;
+}
+
+/* ─── 토글 버튼 행 ─── */
+.toggle-row {
+  display:flex; gap:10px;
+}
+.toggle-item {
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+}
+.toggle-label {
+  font-size:11px; color:var(--muted);
+  font-family:var(--mono); letter-spacing:.04em;
+}
+.toggle-btn {
+  width:72px; height:32px; border-radius:20px;
+  border:1.5px solid var(--border);
+  background:var(--surface);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:all .18s;
+  position:relative; overflow:hidden;
+}
+.toggle-btn.on {
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.toggle-btn .tb-dot {
+  width:20px; height:20px; border-radius:50%;
+  background:var(--border);
+  position:absolute; left:6px;
+  transition:transform .2s, background .2s;
+}
+.toggle-btn.on .tb-dot {
+  transform:translateX(38px);
+  background:rgba(255,255,255,.9);
+}
+.toggle-btn .tb-eye {
+  font-size:14px; position:relative; z-index:1;
+  transition:opacity .15s;
+}
+.toggle-btn.on .tb-eye { opacity:0; }
+
+/* 토글 버튼 대신 심플하게 */
+.tog-pill {
+  width:76px; height:34px; border-radius:17px;
+  border:1.5px solid var(--border);
+  background:var(--surface2);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:all .2s;
+  font-size:11px; font-weight:700; font-family:var(--mono);
+  color:var(--muted); letter-spacing:.03em;
+  user-select:none;
+}
+.tog-pill.active {
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+}
+[data-theme="light"] .tog-pill.active {
+  color:#fff;
+}
+
+/* ─── 카드 영역 ─── */
+.card-stage {
+  width:100%; max-width:480px;
+  flex:1;
+  display:flex; align-items:center; justify-content:center;
+  min-height:320px;
+  perspective:1200px;
+  touch-action:pan-y;
+}
+
+.mem-card {
+  width:100%;
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  border-radius:20px;
+  padding:40px 28px 36px;
+  display:flex; flex-direction:column; align-items:center;
+  gap:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,.08);
+  transition:transform .3s ease, opacity .3s ease;
+  user-select:none;
+}
+
+/* ─── 카드 내 각 레이어 ─── */
+.card-kanji {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:52px; font-weight:700;
+  color:var(--text); line-height:1.15;
+  text-align:center; word-break:break-all;
+  transition:opacity .2s, filter .2s;
+}
+.card-kanji.long { font-size:34px; }
+
+.card-hira {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:22px; color:var(--accent2);
+  text-align:center; line-height:1.4;
+  transition:opacity .2s, filter .2s;
+}
+
+.card-meaning {
+  font-family:'Noto Sans KR', sans-serif;
+  font-size:18px; color:var(--muted);
+  text-align:center; line-height:1.5;
+  transition:opacity .2s, filter .2s;
+}
+
+/* 가려진 상태 */
+.blurred {
+  opacity:0;
+  filter:blur(8px);
+  pointer-events:none;
+}
+
+/* 구분선 */
+.card-divider {
+  width:48px; height:2px;
+  background:var(--border); border-radius:1px;
+}
+
+/* ─── 네비 버튼 ─── */
+.nav-row {
+  width:100%; max-width:480px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+}
+.nav-arrow {
+  width:56px; height:56px; border-radius:50%;
+  background:var(--surface); border:1.5px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; color:var(--text);
+  cursor:pointer; transition:all .18s;
+  flex-shrink:0;
+}
+.nav-arrow:hover:not(:disabled) {
+  border-color:var(--accent); color:var(--accent);
+  background:var(--surface2);
+}
+.nav-arrow:disabled { opacity:.3; cursor:default; }
+
+.nav-center {
+  flex:1; display:flex; flex-direction:column;
+  align-items:center; gap:4px;
+}
+.nav-index {
+  font-size:15px; font-weight:700; font-family:var(--mono);
+  color:var(--text);
+}
+.nav-hint {
+  font-size:10px; color:var(--muted); font-family:var(--mono);
+}
+
+/* ─── 슬라이드 애니메이션 ─── */
+@keyframes slideOutLeft {
+  from { transform:translateX(0); opacity:1; }
+  to   { transform:translateX(-60px); opacity:0; }
+}
+@keyframes slideOutRight {
+  from { transform:translateX(0); opacity:1; }
+  to   { transform:translateX(60px); opacity:0; }
+}
+@keyframes slideInRight {
+  from { transform:translateX(60px); opacity:0; }
+  to   { transform:translateX(0); opacity:1; }
+}
+@keyframes slideInLeft {
+  from { transform:translateX(-60px); opacity:0; }
+  to   { transform:translateX(0); opacity:1; }
+}
+.slide-out-left  { animation:slideOutLeft  .22s ease forwards; }
+.slide-out-right { animation:slideOutRight .22s ease forwards; }
+.slide-in-right  { animation:slideInRight  .22s ease forwards; }
+.slide-in-left   { animation:slideInLeft   .22s ease forwards; }
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/wordlist/{{ level }}" class="back-btn">‹</a>
+  <span class="page-title">{{ level }} 암기 모드</span>
+  <span class="page-sub" id="total-cnt">{{ words|length }}개</span>
+</div>
+
+<div class="mem-wrap">
+
+  <!-- 진행 바 -->
+  <div class="mem-progress-row">
+    <div class="mem-progress-bar">
+      <div class="mem-progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <span class="mem-progress-label" id="progress-label">1 / {{ words|length }}</span>
+  </div>
+
+  <!-- 토글 버튼 -->
+  <div class="toggle-row">
+    <div class="toggle-item">
+      <span class="toggle-label">한자</span>
+      <button class="tog-pill active" id="tog-kanji" onclick="toggleField('kanji')">SHOW</button>
+    </div>
+    <div class="toggle-item">
+      <span class="toggle-label">히라가나</span>
+      <button class="tog-pill active" id="tog-hira" onclick="toggleField('hira')">SHOW</button>
+    </div>
+    <div class="toggle-item">
+      <span class="toggle-label">뜻</span>
+      <button class="tog-pill active" id="tog-meaning" onclick="toggleField('meaning')">SHOW</button>
+    </div>
+  </div>
+
+  <!-- 카드 -->
+  <div class="card-stage" id="card-stage">
+    <div class="mem-card" id="mem-card">
+      <div class="card-kanji" id="card-kanji"></div>
+      <div class="card-divider"></div>
+      <div class="card-hira" id="card-hira"></div>
+      <div class="card-divider"></div>
+      <div class="card-meaning" id="card-meaning"></div>
+    </div>
+  </div>
+
+  <!-- 네비 -->
+  <div class="nav-row">
+    <button class="nav-arrow" id="btn-prev" onclick="navigate(-1)">‹</button>
+    <div class="nav-center">
+      <span class="nav-index" id="nav-index">1</span>
+      <span class="nav-hint">← → 또는 스와이프</span>
+    </div>
+    <button class="nav-arrow" id="btn-next" onclick="navigate(1)">›</button>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+const WORDS = {{ words | tojson }};
+let idx = 0;
+const visible = { kanji: true, hira: true, meaning: true };
+let isAnimating = false;
+
+// ── 렌더 ──
+function render() {
+  const w = WORDS[idx];
+  const kEl = document.getElementById('card-kanji');
+  const hEl = document.getElementById('card-hira');
+  const mEl = document.getElementById('card-meaning');
+
+  kEl.textContent = w.word || '';
+  kEl.className = 'card-kanji' + (w.word && w.word.length > 5 ? ' long' : '');
+  hEl.textContent = w.hiragana || '';
+  mEl.textContent = w.meaning || '';
+
+  applyVisibility();
+  updateProgress();
+  updateNav();
+}
+
+function applyVisibility() {
+  toggleBlur('card-kanji',   !visible.kanji);
+  toggleBlur('card-hira',    !visible.hira);
+  toggleBlur('card-meaning', !visible.meaning);
+}
+
+function toggleBlur(id, blur) {
+  var el = document.getElementById(id);
+  if (blur) el.classList.add('blurred');
+  else       el.classList.remove('blurred');
+}
+
+function updateProgress() {
+  var pct = ((idx + 1) / WORDS.length * 100).toFixed(1);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = (idx+1) + ' / ' + WORDS.length;
+  document.getElementById('nav-index').textContent = idx + 1;
+}
+
+function updateNav() {
+  document.getElementById('btn-prev').disabled = idx === 0;
+  document.getElementById('btn-next').disabled = idx === WORDS.length - 1;
+}
+
+// ── 토글 ──
+function toggleField(field) {
+  visible[field] = !visible[field];
+  var map = { kanji:'tog-kanji', hira:'tog-hira', meaning:'tog-meaning' };
+  var btn = document.getElementById(map[field]);
+  if (visible[field]) {
+    btn.classList.add('active');
+    btn.textContent = 'SHOW';
+  } else {
+    btn.classList.remove('active');
+    btn.textContent = 'HIDE';
+  }
+  applyVisibility();
+}
+
+// ── 이동 ──
+function navigate(dir) {
+  if (isAnimating) return;
+  var next = idx + dir;
+  if (next < 0 || next >= WORDS.length) return;
+
+  isAnimating = true;
+  var card = document.getElementById('mem-card');
+
+  // 나가는 방향
+  var outClass = dir > 0 ? 'slide-out-left' : 'slide-out-right';
+  var inClass  = dir > 0 ? 'slide-in-right' : 'slide-in-left';
+
+  card.classList.add(outClass);
+  card.addEventListener('animationend', function onOut() {
+    card.removeEventListener('animationend', onOut);
+    card.classList.remove(outClass);
+    idx = next;
+    render();
+    card.classList.add(inClass);
+    card.addEventListener('animationend', function onIn() {
+      card.removeEventListener('animationend', onIn);
+      card.classList.remove(inClass);
+      isAnimating = false;
+    });
+  });
+}
+
+// ── 키보드 ──
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') navigate(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   navigate(-1);
+});
+
+// ── 터치 스와이프 ──
+(function() {
+  var stage = document.getElementById('card-stage');
+  var startX = 0, startY = 0;
+  stage.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive:true });
+  stage.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - startX;
+    var dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < 40 || Math.abs(dy) > Math.abs(dx)) return; // 수직 스크롤 무시
+    // 오른쪽→왼쪽(dx<0) = 다음 단어, 왼쪽→오른쪽(dx>0) = 이전 단어
+    navigate(dx < 0 ? 1 : -1);
+  }, { passive:true });
+})();
+
+render();
+</script>
+{% endblock %}

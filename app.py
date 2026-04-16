@@ -257,6 +257,17 @@ def wordlist(level):
     words = WORDS.get(level, [])
     return render_template('wordlist.html', user=user, level=level, words=words)
 
+@app.route('/memorize/<level>')
+def memorize(level):
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    level = level.upper()
+    words = WORDS.get(level, [])
+    return render_template('memorize.html', user=user, level=level, words=words)
+
 @app.route('/quiz/<level>')
 def quiz(level):
     if 'username' not in session:
