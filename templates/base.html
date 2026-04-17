@@ -3,7 +3,10 @@
 <head>
 <meta name="naver-site-verification" content="4d7db240d088bb206d3e0d0c3f54cf40f87ca16a" />
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>{% block title %}Solo Leveling JLPT{% endblock %}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,12 +75,29 @@
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior:smooth;
+  height: 100%;
+  height: -webkit-fill-available;
+}
 body {
   background:var(--bg); color:var(--text);
   font-family:'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', sans-serif;
   min-height:100vh;
+  min-height: -webkit-fill-available;
   transition: background .25s, color .25s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── 모바일: 주소창/하단 네비바 숨김 영역 확보 ── */
+@media screen and (max-width: 768px) {
+  html, body {
+    height: 100%;
+    height: -webkit-fill-available;
+    overflow-x: hidden;
+  }
 }
 a { color:inherit; text-decoration:none; }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
@@ -303,6 +323,19 @@ function toggleTheme(checked) {
   // 모든 토글 동기화 (혹시 여러 페이지에 있을 경우 대비)
   document.querySelectorAll('.theme-toggle input').forEach(el => el.checked = checked);
 }
+
+/* ── 모바일: 주소창/하단 네비바 숨김 ── */
+(function() {
+  // iOS Safari / Android Chrome에서 스크롤로 주소창 숨김
+  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+    // 페이지 로드 직후 살짝 스크롤하여 주소창 숨김
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        window.scrollTo(0, 1);
+      }, 100);
+    });
+  }
+})();
 </script>
 
 {% block extra_script %}{% endblock %}
