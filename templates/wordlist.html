@@ -47,7 +47,7 @@
   border-radius:12px; padding:14px 8px 12px;
   display:flex; flex-direction:column; align-items:center; gap:5px;
   transition:border-color .15s, background .15s;
-  cursor:default; user-select:none; text-align:center;
+  cursor:default; user-select:none; text-align:center; position:relative;
 }
 .word-card:hover { border-color:var(--accent); background:var(--surface2); }
 
@@ -206,6 +206,16 @@ mark {
   white-space:nowrap;
 }
 
+/* ─── 즐겨찾기 버튼 ─── */
+.fav-btn {
+  position:absolute; top:5px; left:6px;
+  font-size:13px; color:var(--border);
+  background:none; border:none; cursor:pointer; padding:0; line-height:1;
+  transition:color .15s, transform .15s;
+}
+.fav-btn:hover { color:#fbbf24; transform:scale(1.2); }
+.fav-btn.active { color:#fbbf24; }
+
 /* ─── 암기 모드 버튼 ─── */
 .memorize-btn {
   margin-left:auto;
@@ -300,6 +310,19 @@ const PAGE_SIZE = ROWS_PER_PAGE * COLS; // 15
 
 let filtered = ALL_WORDS;
 let currentPage = 1;
+let favSet = new Set();
+
+// 즐겨찾기 목록 로드
+(async function loadFavs() {
+  try {
+    var res = await fetch('/api/favorites/check?source=jlpt');
+    if (res.ok) {
+      var data = await res.json();
+      favSet = new Set(data.words || []);
+      render();
+    }
+  } catch(e) {}
+})();
 
 const searchInput = document.getElementById('search-input');
 const searchClear = document.getElementById('search-clear');
@@ -336,7 +359,7 @@ function applyFilter(q) {
 }
 
 function escHtml(s) {
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&#39;');
 }
 function highlight(text, q) {
   var safe = escHtml(text);
@@ -359,7 +382,9 @@ function render() {
   } else {
     listEl.innerHTML = slice.map(function(w) {
       var isLong = w.word.length > 5;
+      var isFav = favSet.has(w.word);
       return '<div class="word-card">' +
+        '<button class="fav-btn' + (isFav ? ' active' : '') + '" onclick="toggleFav(this,\'' + escHtml(w.word) + '\',\'' + escHtml(w.hiragana) + '\',\'' + escHtml(w.meaning) + '\')">★</button>' +
         '<div class="wc-word' + (isLong ? ' long' : '') + '">' + highlight(w.word, q) + '</div>' +
         '<div class="wc-hira">'    + highlight(w.hiragana, q) + '</div>' +
         '<div class="wc-meaning">' + highlight(w.meaning,  q) + '</div>' +
@@ -436,6 +461,20 @@ function startQuizCustom() {
 function startRankingQuiz() {
   closeQuizModal();
   location.href = '/ranking_quiz/' + LEVEL.toLowerCase();
+}
+
+async function toggleFav(btn, word, hiragana, meaning) {
+  var isFav = btn.classList.contains('active');
+  if (isFav) {
+    var res = await fetch('/api/favorites/' + encodeURIComponent(word) + '?source=jlpt', {method:'DELETE'});
+    if (res.ok) { btn.classList.remove('active'); favSet.delete(word); toast('즐겨찾기 해제', 'ok'); }
+  } else {
+    var res = await fetch('/api/favorites', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({word:word, hiragana:hiragana, meaning:meaning, level:LEVEL, source:'jlpt'})
+    });
+    if (res.ok) { btn.classList.add('active'); favSet.add(word); toast('즐겨찾기 추가 ★', 'ok'); }
+  }
 }
 
 render();

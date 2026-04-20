@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+{% block title %}오답노트 암기모드{% endblock %}
+
+{% block extra_style %}
+.mem-wrap {
+  display:flex; flex-direction:column; align-items:center;
+  min-height:calc(100vh - 170px);
+  padding:16px 20px 32px;
+  gap:14px;
+}
+.mem-progress-row {
+  width:100%; max-width:480px;
+  display:flex; align-items:center; gap:10px;
+}
+.mem-progress-bar {
+  flex:1; height:6px; border-radius:3px;
+  background:var(--border); overflow:hidden;
+}
+.mem-progress-fill {
+  height:100%; border-radius:3px;
+  background:var(--accent);
+  transition:width .35s ease;
+}
+.mem-progress-label {
+  font-size:12px; color:var(--muted);
+  font-family:var(--mono); white-space:nowrap;
+}
+.toggle-row { display:flex; gap:10px; }
+.toggle-item { display:flex; flex-direction:column; align-items:center; gap:5px; }
+.toggle-label { font-size:11px; color:var(--muted); font-family:var(--mono); letter-spacing:.04em; }
+.tog-pill {
+  width:76px; height:34px; border-radius:17px;
+  border:1.5px solid var(--border);
+  background:var(--surface2);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:all .2s;
+  font-size:13px; font-weight:700; font-family:var(--mono);
+  color:var(--muted); letter-spacing:.03em;
+  user-select:none;
+}
+.tog-pill.active {
+  background:var(--accent); border-color:var(--accent); color:#fff;
+}
+.card-stage {
+  width:100%; max-width:480px;
+  flex:1;
+  display:flex; align-items:center; justify-content:center;
+  min-height:320px;
+  perspective:1200px;
+  touch-action:pan-y;
+}
+.mem-card {
+  width:90%;
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  border-radius:20px;
+  padding:40px 28px 36px;
+  display:flex; flex-direction:column; align-items:center;
+  gap:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,.08);
+  transition:transform .3s ease, opacity .3s ease;
+  user-select:none;
+}
+.card-kanji {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:52px; font-weight:700;
+  color:var(--text); line-height:1.15;
+  text-align:center; word-break:break-all;
+  transition:opacity .2s, filter .2s;
+}
+.card-kanji.long { font-size:34px; }
+.card-hira {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:22px; color:var(--accent2);
+  text-align:center; line-height:1.4;
+  transition:opacity .2s, filter .2s;
+}
+.card-meaning {
+  font-family:'Noto Sans KR', sans-serif;
+  font-size:18px; color:var(--muted);
+  text-align:center; line-height:1.5;
+  transition:opacity .2s, filter .2s;
+}
+
+/* 히라가나 모드 */
+.card-char {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:72px; font-weight:700;
+  color:var(--text); line-height:1.1;
+  text-align:center;
+  transition:opacity .2s, filter .2s;
+}
+.card-reading {
+  font-size:24px; color:var(--success);
+  font-weight:700; text-align:center;
+  transition:opacity .2s, filter .2s;
+}
+.card-roman {
+  font-size:16px; color:var(--muted);
+  font-family:var(--mono); text-align:center;
+  transition:opacity .2s, filter .2s;
+}
+
+.blurred { opacity:0; filter:blur(8px); pointer-events:none; }
+.card-divider { width:48px; height:2px; background:var(--border); border-radius:1px; }
+.nav-row {
+  width:100%; max-width:250px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin-bottom:30px;
+}
+.nav-arrow {
+  width:56px; height:56px; border-radius:50%;
+  background:var(--surface); border:1.5px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px; color:var(--text);
+  cursor:pointer; transition:all .18s; flex-shrink:0;
+}
+.nav-arrow:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); background:var(--surface2); }
+.nav-arrow:disabled { opacity:.3; cursor:default; }
+.nav-center { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; }
+.nav-index { font-size:15px; font-weight:700; font-family:var(--mono); color:var(--text); }
+.nav-hint { font-size:10px; color:var(--muted); font-family:var(--mono); }
+
+@keyframes slideOutLeft  { from{transform:translateX(0);opacity:1;} to{transform:translateX(-60px);opacity:0;} }
+@keyframes slideOutRight { from{transform:translateX(0);opacity:1;} to{transform:translateX(60px);opacity:0;} }
+@keyframes slideInRight  { from{transform:translateX(60px);opacity:0;} to{transform:translateX(0);opacity:1;} }
+@keyframes slideInLeft   { from{transform:translateX(-60px);opacity:0;} to{transform:translateX(0);opacity:1;} }
+.slide-out-left  { animation:slideOutLeft  .22s ease forwards; }
+.slide-out-right { animation:slideOutRight .22s ease forwards; }
+.slide-in-right  { animation:slideInRight  .22s ease forwards; }
+.slide-in-left   { animation:slideInLeft   .22s ease forwards; }
+
+/* 빈 상태 */
+.empty-wrap {
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; min-height:300px;
+  gap:16px; color:var(--muted);
+}
+.empty-wrap .ei { font-size:48px; }
+.empty-wrap p { font-size:16px; }
+.empty-wrap a {
+  padding:12px 24px; background:var(--accent); color:#fff;
+  border-radius:12px; font-size:14px; font-weight:700;
+  text-decoration:none;
+}
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="#" class="back-btn" id="back-btn">‹</a>
+  <span class="page-title" id="page-title">암기 모드</span>
+  <span class="page-sub" id="total-cnt">0개</span>
+</div>
+
+<div class="mem-wrap" id="mem-wrap">
+  <!-- JS로 채워짐 -->
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+var MODE = '{{ mode if mode is defined else "" }}';
+var SRC_PARAM = new URLSearchParams(window.location.search).get('src') || '';
+
+// 데이터 소스 결정
+var WORDS = [];
+var backUrl = '/wrongnote';
+var pageTitle = '오답 암기 모드';
+
+if (SRC_PARAM === 'favorites') {
+  WORDS = JSON.parse(sessionStorage.getItem('favorites_memorize') || '[]');
+  backUrl = '/favorites';
+  pageTitle = '즐겨찾기 암기 모드';
+} else if (MODE === 'kanji') {
+  WORDS = JSON.parse(sessionStorage.getItem('kanji_wrongnote_memorize') || '[]');
+  backUrl = '/kanji_wrongnote';
+  pageTitle = '한자 오답 암기 모드';
+} else if (MODE === 'hiragana') {
+  WORDS = JSON.parse(sessionStorage.getItem('hiragana_wrongnote_memorize') || '[]');
+  backUrl = '/hiragana_wrongnote';
+  pageTitle = '히라가나 오답 암기 모드';
+} else {
+  WORDS = JSON.parse(sessionStorage.getItem('wrongnote_memorize') || '[]');
+  backUrl = '/wrongnote';
+  pageTitle = '오답 암기 모드';
+}
+
+document.getElementById('back-btn').href = backUrl;
+document.getElementById('page-title').textContent = pageTitle;
+document.getElementById('total-cnt').textContent = WORDS.length + '개';
+
+var wrap = document.getElementById('mem-wrap');
+
+if (WORDS.length === 0) {
+  wrap.innerHTML = '<div class="empty-wrap">' +
+    '<div class="ei">📭</div>' +
+    '<p>암기할 단어가 없어요</p>' +
+    '<a href="'+backUrl+'">돌아가기</a>' +
+  '</div>';
+} else {
+  // 히라가나 모드 여부
+  var isHiragana = MODE === 'hiragana';
+
+  // 토글 초기 상태
+  var visible = isHiragana
+    ? { char: true, reading: true, roman: true }
+    : { kanji: true, hira: true, meaning: true };
+
+  var toggleHtml = '';
+  if (isHiragana) {
+    toggleHtml = `
+      <div class="toggle-row">
+        <div class="toggle-item">
+          <span class="toggle-label">히라가나</span>
+          <button class="tog-pill active" id="tog-char" onclick="toggleField('char')">SHOW</button>
+        </div>
+        <div class="toggle-item">
+          <span class="toggle-label">읽기</span>
+          <button class="tog-pill active" id="tog-reading" onclick="toggleField('reading')">SHOW</button>
+        </div>
+        <div class="toggle-item">
+          <span class="toggle-label">로마자</span>
+          <button class="tog-pill active" id="tog-roman" onclick="toggleField('roman')">SHOW</button>
+        </div>
+      </div>`;
+  } else {
+    toggleHtml = `
+      <div class="toggle-row">
+        <div class="toggle-item">
+          <span class="toggle-label">단어</span>
+          <button class="tog-pill active" id="tog-kanji" onclick="toggleField('kanji')">SHOW</button>
+        </div>
+        <div class="toggle-item">
+          <span class="toggle-label">히라가나</span>
+          <button class="tog-pill active" id="tog-hira" onclick="toggleField('hira')">SHOW</button>
+        </div>
+        <div class="toggle-item">
+          <span class="toggle-label">뜻</span>
+          <button class="tog-pill active" id="tog-meaning" onclick="toggleField('meaning')">SHOW</button>
+        </div>
+      </div>`;
+  }
+
+  var cardHtml = isHiragana
+    ? `<div class="card-char" id="card-char"></div>
+       <div class="card-divider"></div>
+       <div class="card-reading" id="card-reading"></div>
+       <div class="card-divider"></div>
+       <div class="card-roman" id="card-roman"></div>`
+    : `<div class="card-kanji" id="card-kanji"></div>
+       <div class="card-divider"></div>
+       <div class="card-hira" id="card-hira"></div>
+       <div class="card-divider"></div>
+       <div class="card-meaning" id="card-meaning"></div>`;
+
+  wrap.innerHTML = `
+    <div class="mem-progress-row">
+      <div class="mem-progress-bar">
+        <div class="mem-progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <span class="mem-progress-label" id="progress-label">1 / ${WORDS.length}</span>
+    </div>
+    ${toggleHtml}
+    <div class="card-stage" id="card-stage">
+      <div class="mem-card" id="mem-card">
+        ${cardHtml}
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="nav-arrow" id="btn-prev" onclick="navigate(-1)">‹</button>
+      <div class="nav-center">
+        <span class="nav-index" id="nav-index">1</span>
+        <span class="nav-hint">← → 또는 스와이프</span>
+      </div>
+      <button class="nav-arrow" id="btn-next" onclick="navigate(1)">›</button>
+    </div>`;
+
+  var idx = 0;
+  var isAnimating = false;
+
+  function render() {
+    var w = WORDS[idx];
+    if (isHiragana) {
+      document.getElementById('card-char').textContent = w.char || '';
+      document.getElementById('card-reading').textContent = w.reading || '';
+      document.getElementById('card-roman').textContent = w.roman || '';
+    } else {
+      var kEl = document.getElementById('card-kanji');
+      kEl.textContent = w.word || w.char || '';
+      kEl.className = 'card-kanji' + ((w.word||'').length > 5 ? ' long' : '');
+      document.getElementById('card-hira').textContent = w.hiragana || w.reading || '';
+      document.getElementById('card-meaning').textContent = w.meaning || '';
+    }
+    applyVisibility();
+    var pct = ((idx+1)/WORDS.length*100).toFixed(1);
+    document.getElementById('progress-fill').style.width = pct+'%';
+    document.getElementById('progress-label').textContent = (idx+1)+' / '+WORDS.length;
+    document.getElementById('nav-index').textContent = idx+1;
+    document.getElementById('btn-prev').disabled = idx===0;
+    document.getElementById('btn-next').disabled = idx===WORDS.length-1;
+  }
+
+  function applyVisibility() {
+    Object.keys(visible).forEach(function(field) {
+      var id = isHiragana ? 'card-'+field : (field==='kanji'?'card-kanji':field==='hira'?'card-hira':'card-meaning');
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (!visible[field]) el.classList.add('blurred');
+      else el.classList.remove('blurred');
+    });
+  }
+
+  window.toggleField = function(field) {
+    visible[field] = !visible[field];
+    var pilId = 'tog-'+field;
+    var pill = document.getElementById(pilId);
+    if (!pill) return;
+    if (visible[field]) { pill.classList.add('active'); pill.textContent='SHOW'; }
+    else { pill.classList.remove('active'); pill.textContent='HIDE'; }
+    applyVisibility();
+  };
+
+  window.navigate = function(dir) {
+    if (isAnimating) return;
+    var next = idx + dir;
+    if (next < 0 || next >= WORDS.length) return;
+    isAnimating = true;
+    var card = document.getElementById('mem-card');
+    var outClass = dir > 0 ? 'slide-out-left' : 'slide-out-right';
+    var inClass  = dir > 0 ? 'slide-in-right' : 'slide-in-left';
+    card.classList.add(outClass);
+    card.addEventListener('animationend', function onOut() {
+      card.removeEventListener('animationend', onOut);
+      card.classList.remove(outClass);
+      idx = next;
+      render();
+      card.classList.add(inClass);
+      card.addEventListener('animationend', function onIn() {
+        card.removeEventListener('animationend', onIn);
+        card.classList.remove(inClass);
+        isAnimating = false;
+      });
+    });
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key==='ArrowRight'||e.key==='ArrowDown') navigate(1);
+    if (e.key==='ArrowLeft' ||e.key==='ArrowUp')   navigate(-1);
+  });
+
+  (function() {
+    var stage = document.getElementById('card-stage');
+    var startX=0, startY=0;
+    stage.addEventListener('touchstart', function(e){startX=e.touches[0].clientX;startY=e.touches[0].clientY;},{passive:true});
+    stage.addEventListener('touchend', function(e){
+      var dx=e.changedTouches[0].clientX-startX;
+      var dy=e.changedTouches[0].clientY-startY;
+      if(Math.abs(dx)<40||Math.abs(dy)>Math.abs(dx)) return;
+      navigate(dx<0?1:-1);
+    },{passive:true});
+  })();
+
+  render();
+}
+</script>
+{% endblock %}

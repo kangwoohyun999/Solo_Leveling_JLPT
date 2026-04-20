@@ -56,6 +56,16 @@
   transition:transform .2s; border:none; cursor:pointer;
 }
 .retry-fab:hover { transform:scale(1.1); }
+/* 암기 모드 FAB */
+.mem-fab {
+  position:fixed; bottom:26px; right:86px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--surface2); border:2px solid var(--accent);
+  color:var(--accent2); font-size:18px;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);
+  transition:transform .2s; cursor:pointer;
+}
+.mem-fab:hover { transform:scale(1.1); }
 {% endblock %}
 
 {% block body %}
@@ -70,6 +80,7 @@
 <div class="pagination" id="pagination"></div>
 
 <button class="retry-fab" id="retry-fab" onclick="startRetry()" title="오답 재시험">✎</button>
+<button class="mem-fab" id="mem-fab" onclick="startMemorize()" title="암기 모드">📖</button>
 {% endblock %}
 
 {% block extra_script %}
@@ -88,6 +99,7 @@ function render() {
   if (notes.length === 0) {
     listEl.innerHTML = '<div class="empty-state"><div class="ei">✨</div><p>히라가나 오답이 없어요!</p></div>';
     document.getElementById('retry-fab').style.display = 'none';
+    document.getElementById('mem-fab').style.display = 'none';
   } else {
     listEl.innerHTML = slice.map(function(n) {
       return '<div class="note-card" id="note-'+n.id+'">' +
@@ -98,6 +110,7 @@ function render() {
       '</div>';
     }).join('');
     document.getElementById('retry-fab').style.display = '';
+    document.getElementById('mem-fab').style.display = '';
   }
   document.getElementById('note-count').textContent = notes.length + '개';
   renderPagination(totalPages);
@@ -149,6 +162,12 @@ function startRetry() {
   if (notes.length === 0) { toast('오답이 없어요','err'); return; }
   sessionStorage.setItem('hiragana_retry', JSON.stringify(notes));
   location.href = '/hiragana_wrongnote_quiz';
+}
+
+function startMemorize() {
+  if (notes.length === 0) { toast('암기할 항목이 없어요','err'); return; }
+  sessionStorage.setItem('hiragana_wrongnote_memorize', JSON.stringify(notes));
+  location.href = '/hiragana_wrongnote_memorize';
 }
 
 render();

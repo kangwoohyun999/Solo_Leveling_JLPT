@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% block title %}즐겨찾기{% endblock %}
+
+{% block extra_style %}
+/* ─── 소스 탭 ─── */
+.source-tabs {
+  max-width:560px; margin:0 auto;
+  padding:12px 16px 4px;
+  display:flex; gap:6px; flex-wrap:wrap;
+}
+.source-tab {
+  padding:5px 14px; border-radius:20px; font-size:12px; font-weight:600;
+  font-family:var(--mono); cursor:pointer; transition:all .15s;
+  background:var(--surface); border:1px solid var(--border); color:var(--muted);
+}
+.source-tab:hover { border-color:var(--accent); color:var(--accent); }
+.source-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+
+/* ─── 3열 그리드 ─── */
+.fav-list {
+  max-width:560px; margin:0 auto;
+  padding:10px 16px 20px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+}
+.fav-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:12px; padding:14px 8px 10px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  transition:border-color .15s, background .15s;
+  text-align:center; position:relative;
+}
+.fav-card:hover { border-color:var(--accent); background:var(--surface2); }
+.fc-word {
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:17px; font-weight:700; color:var(--text);
+  line-height:1.2; word-break:break-all;
+}
+.fc-word.long { font-size:13px; }
+.fc-hira { font-size:11px; color:var(--accent2); font-family:'Noto Sans JP',sans-serif; line-height:1.3; }
+.fc-meaning { font-size:11px; color:var(--muted); line-height:1.3; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+.fc-tag {
+  font-size:9px; font-family:var(--mono);
+  padding:1px 5px; border-radius:3px;
+  background:var(--surface2); color:var(--muted); margin-top:2px;
+}
+.fc-del {
+  position:absolute; top:6px; right:6px;
+  color:#000; font-size:14px; padding:2px 4px;
+  background:none; border:none; cursor:pointer; line-height:1;
+}
+.fc-del:hover { color:#fbbf24; }
+
+.empty-state {
+  grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted);
+}
+.empty-state .ei { font-size:36px; margin-bottom:10px; }
+
+/* ─── 페이지네이션 ─── */
+.pagination {
+  width:280px; max-width:100%; margin:0 auto;
+  padding:4px 0 100px;
+  display:flex; align-items:center; justify-content:space-between; gap:4px; flex-wrap:nowrap;
+}
+.pagination.hidden { display:none; }
+.pg-btn {
+  min-width:34px; height:34px; padding:0 8px;
+  border-radius:8px; font-size:13px; font-weight:600; font-family:var(--mono);
+  background:var(--surface); border:1px solid var(--border);
+  color:var(--text); transition:all .15s; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.pg-btn:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+.pg-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.pg-btn:disabled { opacity:.35; cursor:default; }
+.pg-ellipsis { min-width:34px; height:34px; display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--muted); }
+
+/* 전체 삭제 */
+.del-all-btn {
+  margin-left:auto;
+  background:#ff0000; border:1px solid var(--border);
+  color:#fff; border-radius:8px; padding:5px 10px;
+  font-size:12px; cursor:pointer; transition:all .15s;
+}
+.del-all-btn:hover { border-color:#000; color:#000; }
+
+/* 암기 FAB */
+.mem-fab {
+  position:fixed; bottom:26px; right:26px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--accent); color:#fff;
+  font-size:18px; font-weight:700;
+  box-shadow:0 4px 20px rgba(108,99,255,.5);
+  transition:transform .2s, box-shadow .2s; border:none; cursor:pointer;
+}
+.mem-fab:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(108,99,255,.7); }
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <a href="/main" class="back-btn">‹</a>
+  <span class="page-title">즐겨찾기</span>
+  <span class="page-sub" id="fav-count">{{ favs|length }}개</span>
+  <button class="del-all-btn" onclick="deleteAll()">🗑 전체삭제</button>
+</div>
+
+<div class="source-tabs" id="source-tabs">
+  <button class="source-tab active" onclick="setSource('ALL')">전체</button>
+  <button class="source-tab" onclick="setSource('jlpt')">JLPT</button>
+  <button class="source-tab" onclick="setSource('kanji')">한자</button>
+</div>
+
+<div class="fav-list" id="fav-list"></div>
+<div class="pagination" id="pagination"></div>
+
+<button class="mem-fab" id="mem-fab" onclick="startMemorize()" title="암기 모드">📖</button>
+{% endblock %}
+
+{% block extra_script %}
+<script>
+const ALL_FAVS = {{ favs | tojson }};
+const PAGE_SIZE = 15;
+let favs = ALL_FAVS.slice();
+let currentPage = 1;
+let currentSource = 'ALL';
+
+function setSource(src) {
+  currentSource = src;
+  currentPage = 1;
+  document.querySelectorAll('.source-tab').forEach(function(btn) {
+    var label = btn.textContent.trim();
+    var match = src === 'ALL' ? label === '전체' : label.toUpperCase() === src.toUpperCase() || (src === 'jlpt' && label === 'JLPT') || (src === 'kanji' && label === '한자');
+    btn.classList.toggle('active', match);
+  });
+  render();
+}
+
+function filtered() {
+  if (currentSource === 'ALL') return favs;
+  return favs.filter(function(f) { return f.source === currentSource; });
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function render() {
+  var list = filtered();
+  var totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+  var start = (currentPage-1)*PAGE_SIZE;
+  var slice = list.slice(start, start+PAGE_SIZE);
+  var el = document.getElementById('fav-list');
+  if (list.length === 0) {
+    el.innerHTML = '<div class="empty-state"><div class="ei">⭐</div><p>즐겨찾기가 없어요!</p></div>';
+  } else {
+    el.innerHTML = slice.map(function(f) {
+      var isLong = f.word.length > 5;
+      var tag = f.source === 'kanji' ? '한자' : f.level;
+      return '<div class="fav-card" id="fav-'+f.id+'">' +
+        '<button class="fc-del" onclick="deleteFav('+f.id+',\''+escHtml(f.word)+'\',\''+f.source+'\')">★</button>' +
+        '<div class="fc-word'+(isLong?' long':'')+'">'+escHtml(f.word)+'</div>' +
+        '<div class="fc-hira">'+escHtml(f.hiragana)+'</div>' +
+        '<div class="fc-meaning">'+escHtml(f.meaning)+'</div>' +
+        '<div class="fc-tag">'+escHtml(tag)+'</div>' +
+      '</div>';
+    }).join('');
+  }
+  document.getElementById('fav-count').textContent = (currentSource === 'ALL' ? favs.length : list.length) + '개';
+  document.getElementById('mem-fab').style.display = list.length > 0 ? '' : 'none';
+  renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+  var pg = document.getElementById('pagination');
+  if (totalPages <= 1) { pg.className = 'pagination hidden'; return; }
+  pg.className = 'pagination';
+  var prev = '<button class="pg-btn" onclick="goPage('+(currentPage-1)+')"'+(currentPage===1?' disabled':'')+'>‹</button>';
+  var next = '<button class="pg-btn" onclick="goPage('+(currentPage+1)+')"'+(currentPage===totalPages?' disabled':'')+'>›</button>';
+  var first = '<button class="pg-btn'+(currentPage===1?' active':'')+'\" onclick="goPage(1)">1</button>';
+  var mid = (currentPage!==1&&currentPage!==totalPages)
+    ? '<span class="pg-ellipsis">…</span><button class="pg-btn active" onclick="goPage('+currentPage+')">'+currentPage+'</button><span class="pg-ellipsis">…</span>'
+    : '<span class="pg-ellipsis">…</span>';
+  var last = '<button class="pg-btn'+(currentPage===totalPages?' active':'')+'\" onclick="goPage('+totalPages+')">'+totalPages+'</button>';
+  pg.innerHTML = prev+first+mid+last+next;
+}
+
+function goPage(n) {
+  var t = Math.ceil(filtered().length/PAGE_SIZE);
+  if(n<1||n>t) return; currentPage=n; render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+async function deleteFav(id, word, source) {
+  var encoded = encodeURIComponent(word);
+  var res = await fetch('/api/favorites/'+encoded+'?source='+source, {method:'DELETE'});
+  if (!res.ok) { toast('삭제 실패','err'); return; }
+  favs = favs.filter(function(f){return f.id!==id;});
+  render(); toast('즐겨찾기 해제','ok');
+}
+
+async function deleteAll() {
+  var list = filtered();
+  if (list.length===0) { toast('삭제할 항목이 없어요','err'); return; }
+  var label = currentSource==='ALL' ? '전체' : (currentSource==='kanji' ? '한자' : 'JLPT');
+  if (!confirm(label+' 즐겨찾기 '+list.length+'개를 삭제할까요?')) return;
+  var src = currentSource === 'ALL' ? '' : '?source='+currentSource;
+  var res = await fetch('/api/favorites/all'+src, {method:'DELETE'});
+  if (!res.ok) { toast('삭제 실패','err'); return; }
+  if (currentSource === 'ALL') { favs=[]; }
+  else { favs = favs.filter(function(f){return f.source!==currentSource;}); }
+  render(); toast('삭제 완료','ok');
+}
+
+function startMemorize() {
+  var list = filtered();
+  if (list.length===0) { toast('즐겨찾기가 없어요','err'); return; }
+  sessionStorage.setItem('favorites_memorize', JSON.stringify(list));
+  location.href = '/wrongnote_memorize?src=favorites';
+}
+
+render();
+</script>
+{% endblock %}

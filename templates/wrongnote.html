@@ -144,6 +144,16 @@
   cursor:pointer; transition:border-color .15s;
 }
 .btn-ghost-modal:hover { border-color:var(--accent); }
+/* 암기 모드 FAB — retry 왼쪽 */
+.mem-fab {
+  position:fixed; bottom:26px; right:86px; z-index:60;
+  width:50px; height:50px; border-radius:50%;
+  background:var(--surface2); border:2px solid var(--accent);
+  color:var(--accent2); font-size:18px;
+  box-shadow:0 4px 16px rgba(0,0,0,.2);
+  transition:transform .2s; cursor:pointer;
+}
+.mem-fab:hover { transform:scale(1.1); }
 {% endblock %}
 
 {% block body %}
@@ -167,6 +177,9 @@
 
 <!-- 재시험 FAB -->
 <button class="retry-fab" id="retry-fab" onclick="openRetryModal()" title="오답 재시험">✎</button>
+
+<!-- 암기 모드 FAB -->
+<button class="mem-fab" id="mem-fab" onclick="startMemorize()" title="암기 모드">📖</button>
 
 <!-- 재시험 모달 -->
 <div class="modal-bg" id="retry-modal" onclick="if(event.target===this)closeRetryModal()">
@@ -231,6 +244,7 @@ function render() {
   renderPagination(totalPages, filtered.length);
   // 재시험 FAB 표시 여부
   document.getElementById('retry-fab').style.display = filtered.length > 0 ? '' : 'none';
+  document.getElementById('mem-fab').style.display = filtered.length > 0 ? '' : 'none';
 }
 
 function renderPagination(totalPages, filteredLen) {
@@ -330,9 +344,7 @@ function closeRetryModal() {
 function startRetry(count) {
   closeRetryModal();
   var filtered = filteredNotes();
-  // 필터된 오답을 세션 스토리지에 저장하고 퀴즈 페이지로 이동
   var pool = filtered.slice();
-  // 셔플
   for (var i = pool.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
@@ -340,6 +352,13 @@ function startRetry(count) {
   var selected = pool.slice(0, count);
   sessionStorage.setItem('wrongnote_retry', JSON.stringify(selected));
   location.href = '/wrongnote_quiz';
+}
+
+function startMemorize() {
+  var list = filteredNotes();
+  if (list.length === 0) { toast('암기할 단어가 없어요', 'err'); return; }
+  sessionStorage.setItem('wrongnote_memorize', JSON.stringify(list));
+  location.href = '/wrongnote_memorize';
 }
 
 render();

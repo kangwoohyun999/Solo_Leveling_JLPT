@@ -134,6 +134,18 @@ def init_db():
             UNIQUE (username, level)
         )
     """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS favorites (
+            id         SERIAL PRIMARY KEY,
+            username   TEXT NOT NULL REFERENCES users(username) ON DELETE CASCADE,
+            word       TEXT NOT NULL,
+            hiragana   TEXT NOT NULL,
+            meaning    TEXT NOT NULL,
+            level      TEXT NOT NULL DEFAULT 'N5',
+            source     TEXT NOT NULL DEFAULT 'jlpt',
+            UNIQUE (username, word, source)
+        )
+    """)
     conn.commit()
     cur.close()
     conn.close()
@@ -756,6 +768,113 @@ def api_update_account():
         return jsonify({'ok': True})
     except Exception as e:
         print(f'[api_update_account 오류] {e}')
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/wrongnote_memorize')
+def wrongnote_memorize():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    return render_template('wrongnote_memorize.html', user=user)
+
+@app.route('/kanji_wrongnote_memorize')
+def kanji_wrongnote_memorize():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    return render_template('wrongnote_memorize.html', user=user, mode='kanji')
+
+@app.route('/hiragana_wrongnote_memorize')
+def hiragana_wrongnote_memorize():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    return render_template('wrongnote_memorize.html', user=user, mode='hiragana')
+
+@app.route('/favorites')
+def favorites():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    user = get_user(session['username'])
+    if not user:
+        return redirect(url_for('login'))
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('SELECT * FROM favorites WHERE username=%s ORDER BY source, level, id DESC', (session['username'],))
+        favs = [dict(r) for r in cur.fetchall()]
+        cur.close(); conn.close()
+    except Exception as e:
+        print(f'[favorites 오류] {e}')
+        favs = []
+    return render_template('favorites.html', user=user, favs=favs)
+
+@app.route('/api/favorites', methods=['POST'])
+def api_add_favorite():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    try:
+        body = request.get_json()
+        conn = get_db(); cur = conn.cursor()
+        cur.execute("""
+            INSERT INTO favorites (username, word, hiragana, meaning, level, source)
+            VALUES (%s, %s, %s, %s, %s, %s)
+            ON CONFLICT (username, word, source) DO NOTHING
+        """, (session['username'], body.get('word'), body.get('hiragana'),
+               body.get('meaning'), body.get('level', 'N5'), body.get('source', 'jlpt')))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/favorites/<path:word>', methods=['DELETE'])
+def api_delete_favorite(word):
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    source = request.args.get('source', 'jlpt')
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('DELETE FROM favorites WHERE username=%s AND word=%s AND source=%s',
+                    (session['username'], word, source))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/favorites/check')
+def api_check_favorites():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    source = request.args.get('source', 'jlpt')
+    try:
+        conn = get_db(); cur = conn.cursor()
+        cur.execute('SELECT word FROM favorites WHERE username=%s AND source=%s',
+                    (session['username'], source))
+        words = [r['word'] for r in cur.fetchall()]
+        cur.close(); conn.close()
+        return jsonify({'words': words})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/favorites/all', methods=['DELETE'])
+def api_delete_all_favorites():
+    if 'username' not in session:
+        return jsonify({'error': 'unauthorized'}), 401
+    source = request.args.get('source', None)
+    try:
+        conn = get_db(); cur = conn.cursor()
+        if source:
+            cur.execute('DELETE FROM favorites WHERE username=%s AND source=%s', (session['username'], source))
+        else:
+            cur.execute('DELETE FROM favorites WHERE username=%s', (session['username'],))
+        conn.commit(); cur.close(); conn.close()
+        return jsonify({'ok': True})
+    except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 @app.route('/health')
