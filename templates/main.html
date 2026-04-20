@@ -250,19 +250,7 @@
       </div>
     </div>
 
-    <!-- ② 즐겨찾기 -->
-    <a href="/favorites" class="card card-hover level-btn" style="background:linear-gradient(135deg,rgba(251,191,36,.1),rgba(251,191,36,.03));border-color:rgba(251,191,36,.3);">
-      <div class="lb-left">
-        <div class="level-badge" style="background:rgba(251,191,36,.15);color:var(--warning);font-size:20px;">⭐</div>
-        <div class="lb-info">
-          <h3 style="color:var(--warning);">즐겨찾기</h3>
-          <p>단어장에서 별표로 저장한 단어</p>
-        </div>
-      </div>
-      <span style="color:var(--warning);font-size:18px;">›</span>
-    </a>
-
-    <!-- ③ 오답노트 토글 -->
+    <!-- ② 오답노트 토글 -->
     <div>
       <button class="toggle-btn" onclick="toggleSection('wrongnote-sub', this)">
         <div class="lb-left">
@@ -297,7 +285,19 @@
       </div>
     </div>
 
-    <!-- ③ JLPT 단어 토글 -->
+    <!-- ③ 즐겨찾기 -->
+    <a href="/favorites" class="card card-hover level-btn" style="background:linear-gradient(135deg,rgba(251,191,36,.1),rgba(251,191,36,.03));border-color:rgba(251,191,36,.3);">
+      <div class="lb-left">
+        <div class="level-badge" style="background:rgba(251,191,36,.15);color:var(--warning);font-size:20px;">⭐</div>
+        <div class="lb-info">
+          <h3 style="color:var(--warning);">즐겨찾기</h3>
+          <p>단어장에서 별표로 저장한 단어</p>
+        </div>
+      </div>
+      <span style="color:var(--warning);font-size:18px;">›</span>
+    </a>
+
+    <!-- ④ JLPT 단어 토글 -->
     <div>
       <button class="toggle-btn" onclick="toggleSection('jlpt-sub', this)">
         <div class="lb-left">
@@ -344,17 +344,6 @@
       </div>
     </div>
 
-    <!-- ④ 히라가나 -->
-    <a href="/hiragana" class="card card-hover level-btn hira">
-      <div class="lb-left">
-        <div class="level-badge">あ</div>
-        <div class="lb-info">
-          <h3>히라가나</h3>
-          <p>오십음도 · 104자 · 발음 학습</p>
-        </div>
-      </div>
-    </a>
-
     <!-- ⑤ 한자 단어장 -->
     <a href="/kanji" class="card card-hover level-btn kanji">
       <div class="lb-left">
@@ -362,6 +351,17 @@
         <div class="lb-info">
           <h3>한자 단어장</h3>
           <p>N5~N1 · {{ kanji_count }}개 단어 · 히라가나·뜻</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- ⑥ 히라가나 -->
+    <a href="/hiragana" class="card card-hover level-btn hira">
+      <div class="lb-left">
+        <div class="level-badge">あ</div>
+        <div class="lb-info">
+          <h3>히라가나</h3>
+          <p>오십음도 · 104자 · 발음 학습</p>
         </div>
       </div>
     </a>
