@@ -7,6 +7,7 @@ from flask import (
     Flask, render_template, request,
     redirect, url_for, session, jsonify
 )
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'slword_secret_2025')
@@ -192,7 +193,7 @@ def login():
             user = get_user(username)
         except Exception:
             return render_template('login.html', error='서버 오류가 발생했습니다.')
-        if user and user['password'] == password:
+        if user and check_password_hash(user['password'], password):
             session['username'] = username
             return redirect(url_for('main'))
         return render_template('login.html', error='아이디 또는 비밀번호가 틀렸습니다.')
@@ -221,7 +222,7 @@ def register():
                 return render_template('register.html', error='이미 사용 중인 닉네임입니다.')
             cur.execute(
                 'INSERT INTO users (username, password, nickname) VALUES (%s, %s, %s)',
-                (username, password, nickname)
+                (username, generate_password_hash(password), nickname)
             )
             conn.commit(); cur.close(); conn.close()
             session['username'] = username
@@ -753,13 +754,13 @@ def api_update_account():
                 return jsonify({'error': '이미 사용 중인 닉네임입니다.'}), 400
             updates.append('nickname=%s'); params.append(nickname)
         if new_pw:
-            if user['password'] != cur_pw:
+            if not check_password_hash(user['password'], cur_pw):
                 cur.close(); conn.close()
                 return jsonify({'error': '현재 비밀번호가 틀렸습니다.'}), 400
             if len(new_pw) < 6:
                 cur.close(); conn.close()
                 return jsonify({'error': '비밀번호는 6자 이상이어야 합니다.'}), 400
-            updates.append('password=%s'); params.append(new_pw)
+            updates.append('password=%s'); params.append(generate_password_hash(new_pw))
         if updates:
             params.append(session['username'])
             cur.execute(f"UPDATE users SET {', '.join(updates)} WHERE username=%s", params)
